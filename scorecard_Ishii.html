@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+body { background: #f0f2f5; display: flex; justify-content: center; }
+.card { width: 760px; margin: 20px auto; background: #fff;
+        border-radius: 8px; overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0,0,0,.15); }
+
+/* Header */
+.header { background: #1a1a2e; color: #fff; padding: 28px 32px 20px; display: flex; justify-content: space-between; align-items: flex-start; }
+.hdr-left .name { font-size: 30px; font-weight: 800; letter-spacing: .5px; }
+.hdr-left .subtitle { font-size: 12px; color: #8899bb; margin-top: 6px; line-height: 1.6; }
+.hdr-right { text-align: right; }
+.overall-label { font-size: 11px; color: #8899bb; text-transform: uppercase; letter-spacing: 1px; }
+.overall-grade { font-size: 62px; font-weight: 900; line-height: 1; margin-top: 2px; }
+
+/* Grade colours */
+.grade-a  { color: #2ecc71; }
+.grade-b  { color: #3498db; }
+.grade-c  { color: #f39c12; }
+.grade-d  { color: #e67e22; }
+.grade-f  { color: #e74c3c; }
+.grade-nc { color: #95a5a6; }
+
+/* Sections */
+.section { padding: 20px 32px; border-bottom: 1px solid #ecf0f1; }
+.section:last-child { border-bottom: none; }
+.section-title { font-size: 11px; font-weight: 700; text-transform: uppercase;
+                 letter-spacing: 1.2px; color: #7f8c8d; margin-bottom: 14px; }
+
+/* Executive summary */
+.exec-archetype { font-size: 11px; font-weight: 700; text-transform: uppercase;
+                  letter-spacing: 1.5px; color: #7f8c8d; margin-bottom: 6px; }
+.exec-archetype span { color: #2c3e50; font-size: 14px; font-weight: 800;
+                       text-transform: none; letter-spacing: 0; }
+.exec-summary { font-size: 12.5px; line-height: 1.65; color: #2c3e50; }
+
+/* Pillar rows */
+.pillar-row { display: flex; align-items: center; margin-bottom: 10px; }
+.pillar-label { width: 170px; font-size: 13px; font-weight: 600; color: #2c3e50; }
+.pillar-grade { width: 36px; font-size: 16px; font-weight: 800; margin-right: 10px; }
+.pillar-bar   { flex: 1; }
+.pillar-pct   { width: 50px; text-align: right; font-size: 12px; color: #7f8c8d; }
+
+/* Stat grid */
+.stat-grid { display: flex; flex-wrap: wrap; gap: 12px; }
+.stat-box { background: #f8f9fa; border-radius: 6px; padding: 12px 16px; flex: 1; min-width: 130px; }
+.stat-val { font-size: 22px; font-weight: 800; color: #2c3e50; }
+.stat-lbl { font-size: 11px; color: #7f8c8d; margin-top: 2px; line-height: 1.4; }
+
+/* Rankings row */
+.rank-row { display: flex; gap: 16px; }
+.rank-item { background: #f8f9fa; border-radius: 6px; padding: 10px 14px; flex: 1; }
+.rank-title { font-size: 10px; color: #7f8c8d; text-transform: uppercase; letter-spacing: 1px; }
+.rank-val   { font-size: 18px; font-weight: 800; color: #2c3e50; margin-top: 2px; }
+
+/* Insights */
+.insight { display: flex; align-items: flex-start; margin-bottom: 8px; font-size: 13px; line-height: 1.5; color: #444; }
+.insight .icon { width: 20px; flex-shrink: 0; font-weight: 700; }
+.good  .icon { color: #27ae60; }
+.warn  .icon { color: #f39c12; }
+.bad   .icon { color: #e74c3c; }
+
+/* Footer */
+.footer { background: #f8f9fa; padding: 12px 32px; font-size: 10px; color: #aaa; display: flex; justify-content: space-between; }
+
+/* Taxpayer alignment breakdown table */
+.ta-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.ta-table td { padding: 5px 8px; vertical-align: top; }
+.ta-table tr.group-header td { font-size: 10px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1px; color: #7f8c8d; padding-top: 14px; padding-bottom: 4px;
+    border-bottom: 1px solid #ecf0f1; }
+.ta-table tr.data-row td:first-child { color: #2c3e50; font-weight: 600; width: 200px; }
+.ta-table tr.data-row td.note { color: #7f8c8d; font-size: 11px; }
+.ta-table tr.data-row td.contrib { text-align: right; font-weight: 700; width: 70px; }
+.ta-table tr.data-row td.contrib.pos { color: #27ae60; }
+.ta-table tr.data-row td.contrib.neg { color: #e74c3c; }
+.ta-table tr.data-row td.contrib.zero { color: #95a5a6; }
+.ta-table tr.subtotal td { border-top: 1px solid #ecf0f1; padding-top: 7px; font-weight: 700;
+    color: #2c3e50; }
+.ta-table tr.subtotal td.contrib { text-align: right; font-weight: 800; }
+.ta-table tr.total-row td { border-top: 2px solid #2c3e50; padding-top: 8px; font-weight: 800;
+    font-size: 13px; color: #1a1a2e; }
+.ta-table tr.total-row td.contrib { text-align: right; }
+
+
+/* Mayor card accent */
+.mayor-badge {
+  display: inline-block;
+  background: #c0392b;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 2px 7px;
+  border-radius: 3px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+.mayor-note {
+  font-size: 11px;
+  color: #8899bb;
+  margin-top: 6px;
+  font-style: italic;
+  line-height: 1.5;
+}
+  </style>
+</head>
+<body>
+<div style="text-align:center;padding:8px 0 0;font-size:11px;color:#7f8c8d"><a href="index.html" style="color:#3498db;text-decoration:none">← All scorecards</a></div>
+<div class="card">
+
+  <div class="header">
+    <div class="hdr-left">
+      <div class="name">ISHII <span class="mayor-badge">Mayor</span></div>
+      <div class="subtitle">
+        At-Large &nbsp;&middot;&nbsp; Berkeley City Council<br>
+        2024-12-10 – 2026-03-24 · 51 meetings
+      </div>
+      <div class="mayor-note">
+        This scorecard evaluates the mayor&rsquo;s unique powers separately from
+        district council members. The grading dimension is <em>Mayoral Accountability</em>,
+        not Voter Alignment.
+      </div>
+    </div>
+    <div class="hdr-right">
+      <div class="overall-label">Mayoral Accountability</div>
+      <div class="overall-grade grade-d">D−</div>
+      <div style='font-size:10px;color:#8899bb;margin-top:4px'>as of 2026-03-24</div>
+    </div>
+  </div>
+
+  
+  <div class="section" style="background:#f8f9fa">
+    <div class="section-title">Mayor&rsquo;s Unique Powers &amp; Responsibilities</div>
+    <div style="font-size:12.5px;line-height:1.7;color:#2c3e50">
+      The Mayor of Berkeley holds powers unavailable to district council members:
+      <strong>sets and orders the meeting agenda</strong>, chairs all regular and
+      special council sessions, makes committee appointments, and issues the
+      city&rsquo;s official communications and proclamations. The mayor is also
+      the council&rsquo;s principal <strong>agenda curator</strong> — she decides
+      which problems rise to a vote and in what order. Because the structural
+      deficit and infrastructure backlog are the city&rsquo;s documented
+      crises, a mayor who uses her agenda-setting power to address them is
+      performing the job; one who fills the calendar with sanctuary resolutions,
+      ceremonial proclamations, and culture-war signaling while delegating all
+      fiscal discretion to staff is not. This scorecard evaluates those choices
+      directly, across 51 meeting transcripts (2024-12-10 &ndash; 2026-03-24).
+    </div>
+  </div>
+
+  
+  <div class="section">
+    <div class="section-title">Mayoral Accountability — Four Dimensions</div>
+    
+        <div class="pillar-row">
+          <div class="pillar-label">Agenda Curation <span style="font-size:10px;color:#aaa">(35%)</span></div>
+          <div class="pillar-grade grade-f">F</div>
+          <div class="pillar-bar"><svg width="260" height="18" style="vertical-align:middle"><rect width="260" height="18" rx="4" fill="#ecf0f1"/><rect width="39" height="18" rx="4" fill="#e74c3c"/></svg></div>
+          <div class="pillar-pct">15%</div>
+        </div>
+        <div class="pillar-row">
+          <div class="pillar-label">Communications <span style="font-size:10px;color:#aaa">(25%)</span></div>
+          <div class="pillar-grade grade-d">D−</div>
+          <div class="pillar-bar"><svg width="260" height="18" style="vertical-align:middle"><rect width="260" height="18" rx="4" fill="#ecf0f1"/><rect width="57" height="18" rx="4" fill="#e74c3c"/></svg></div>
+          <div class="pillar-pct">22%</div>
+        </div>
+        <div class="pillar-row">
+          <div class="pillar-label">Meeting Management <span style="font-size:10px;color:#aaa">(25%)</span></div>
+          <div class="pillar-grade grade-d">D+</div>
+          <div class="pillar-bar"><svg width="260" height="18" style="vertical-align:middle"><rect width="260" height="18" rx="4" fill="#ecf0f1"/><rect width="91" height="18" rx="4" fill="#e67e22"/></svg></div>
+          <div class="pillar-pct">35%</div>
+        </div>
+        <div class="pillar-row">
+          <div class="pillar-label">Accountability Gap <span style="font-size:10px;color:#aaa">(15%)</span></div>
+          <div class="pillar-grade grade-f">F</div>
+          <div class="pillar-bar"><svg width="260" height="18" style="vertical-align:middle"><rect width="260" height="18" rx="4" fill="#ecf0f1"/><rect width="26" height="18" rx="4" fill="#e74c3c"/></svg></div>
+          <div class="pillar-pct">10%</div>
+        </div>
+  </div>
+
+  
+  <div class="section">
+    <div class="section-title">1 · Agenda Curation &nbsp;<span style="font-size:10px;color:#aaa;font-weight:400">(35% of Mayoral Accountability score)</span></div>
+    <div style="font-size:12.5px;line-height:1.6;color:#2c3e50;margin-bottom:14px">
+      Of 53 items Ishii authored or cosponsored across the analysis period,
+      <strong style="color:#e74c3c">0 address a documented P1 fiscal or infrastructure problem</strong>.
+      All 7 P1-class items on Berkeley&rsquo;s agendas during this period
+      were brought by the City Manager or staff — not by the Mayor.
+      The mayor used her agenda discretion for everything except the crisis the
+      city&rsquo;s own documents say is &ldquo;not sustainable.&rdquo;
+    </div>
+    <div style="margin-bottom:16px">
+      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#7f8c8d;margin-bottom:8px">Item Category Breakdown — 53 Authored Items</div>
+      <table style="width:100%;border-collapse:collapse">
+        <thead>
+          <tr style="background:#f0f2f5">
+            <th style="text-align:left;font-size:9.5px;color:#7f8c8d;font-weight:600;padding:4px 8px 4px 0;text-transform:uppercase;letter-spacing:.5px">Category</th>
+            <th style="text-align:center;font-size:9.5px;color:#7f8c8d;font-weight:600;padding:4px 8px;text-transform:uppercase;letter-spacing:.5px">Items</th>
+            <th style="text-align:center;font-size:9.5px;color:#7f8c8d;font-weight:600;padding:4px 8px;text-transform:uppercase;letter-spacing:.5px">Share</th>
+            <th style="text-align:left;font-size:9.5px;color:#7f8c8d;font-weight:600;padding:4px 0 4px 8px;text-transform:uppercase;letter-spacing:.5px">Significance</th>
+          </tr>
+        </thead>
+        <tbody><tr><td style='font-size:12px;font-weight:600;color:#2c3e50;padding:5px 8px 5px 0'>Budget relinquishments</td><td style='font-size:12px;text-align:center;padding:5px 8px'>19</td><td style='font-size:12px;text-align:center;padding:5px 8px'>36%</td><td style='font-size:11px;color:#7f8c8d;padding:5px 0 5px 8px'>Items where the mayor's discretion was ceded to City Manager or staff — budget acceptances, AAO amendments, appropriations she did not author.</td></tr><tr><td style='font-size:12px;font-weight:600;color:#2c3e50;padding:5px 8px 5px 0'>Sanctuary / immigration</td><td style='font-size:12px;text-align:center;padding:5px 8px'>5</td><td style='font-size:12px;text-align:center;padding:5px 8px'>9%</td><td style='font-size:11px;color:#7f8c8d;padding:5px 0 5px 8px'>State-preempted and federal policy items: sanctuary resolutions, immigration communications, non-cooperation declarations. Zero operational effect on Berkeley budgets.</td></tr><tr><td style='font-size:12px;font-weight:600;color:#2c3e50;padding:5px 8px 5px 0'>Procedural / organizational</td><td style='font-size:12px;text-align:center;padding:5px 8px'>5</td><td style='font-size:12px;text-align:center;padding:5px 8px'>9%</td><td style='font-size:11px;color:#7f8c8d;padding:5px 0 5px 8px'>Seating, appointments, committee assignments. Required administrative items.</td></tr><tr><td style='font-size:12px;font-weight:600;color:#2c3e50;padding:5px 8px 5px 0'>Ceremonial / recognition</td><td style='font-size:12px;text-align:center;padding:5px 8px'>4</td><td style='font-size:12px;text-align:center;padding:5px 8px'>8%</td><td style='font-size:11px;color:#7f8c8d;padding:5px 0 5px 8px'>Proclamations, cultural month recognitions. Staff-drafted, no policy content.</td></tr><tr><td style='font-size:12px;font-weight:600;color:#2c3e50;padding:5px 8px 5px 0'>Equity / targeted programs</td><td style='font-size:12px;text-align:center;padding:5px 8px'>4</td><td style='font-size:12px;text-align:center;padding:5px 8px'>8%</td><td style='font-size:11px;color:#7f8c8d;padding:5px 0 5px 8px'>Demographic-specific program creation or expansion with no alternatives analysis.</td></tr><tr><td style='font-size:12px;font-weight:600;color:#2c3e50;padding:5px 8px 5px 0'>Charter / governance reform</td><td style='font-size:12px;text-align:center;padding:5px 8px'>3</td><td style='font-size:12px;text-align:center;padding:5px 8px'>6%</td><td style='font-size:11px;color:#7f8c8d;padding:5px 0 5px 8px'>Committee restructuring, vice-mayor term. Process items, not fiscal items.</td></tr><tr><td style='font-size:12px;font-weight:600;color:#2c3e50;padding:5px 8px 5px 0'>Other / miscellaneous</td><td style='font-size:12px;text-align:center;padding:5px 8px'>13</td><td style='font-size:12px;text-align:center;padding:5px 8px'>24%</td><td style='font-size:11px;color:#7f8c8d;padding:5px 0 5px 8px'>Remaining items spanning housing, transit, public health, and resolutions.</td></tr></tbody>
+      </table>
+    </div>
+    <div style="background:#fdf5f5;border-left:3px solid #e74c3c;padding:10px 14px;font-size:11.5px;line-height:1.6;color:#555">
+      <strong>Vote intelligence signal:</strong> On January 21, 2025, Ishii authored the seating
+      arrangement and vice mayor term revision item, which passed 4&ndash;3 — she cast a NO
+      vote on her own item, suggesting the final version was amended away from her preference.
+      A mayor who brings items to a vote without securing support is not reading her own council.
+    </div>
+  </div>
+
+  
+  <div class="section">
+    <div class="section-title">2 · Communications Platform &nbsp;<span style="font-size:10px;color:#aaa;font-weight:400">(25% of Mayoral Accountability score)</span></div>
+    <div style="font-size:12.5px;line-height:1.6;color:#2c3e50;margin-bottom:14px">
+      A mayor&rsquo;s constituent communications are a policy document: they tell residents
+      what the mayor thinks is important, what she takes credit for, and what she chooses
+      not to discuss. Analysis of Ishii&rsquo;s newsletters across the analysis period
+      reveals a pattern of <strong>celebrity branding over civic accountability</strong>.
+    </div>
+    <div style="margin-bottom:12px">
+      <div style="font-size:11px;font-weight:700;color:#c0392b;margin-bottom:6px">EGO SIGNALS — FOUND</div>
+      <div class="stat-grid">
+        <div class="stat-box">
+          <div style="font-size:13px;font-weight:700;color:#2c3e50">&ldquo;Team Ishii&rdquo;</div>
+          <div class="stat-lbl">Personal branding applied to city staff. City employees are public servants, not team members of an elected official.</div>
+        </div>
+        <div class="stat-box">
+          <div style="font-size:13px;font-weight:700;color:#2c3e50">Food &amp; social calendar</div>
+          <div class="stat-lbl">Newsletter real estate dedicated to personal food preferences, cultural events attended, and social appearances — not city business.</div>
+        </div>
+        <div class="stat-box">
+          <div style="font-size:13px;font-weight:700;color:#2c3e50">Intern bios</div>
+          <div class="stat-lbl">Substantial newsletter content describing intern backgrounds. Civic communications function as staff social media.</div>
+        </div>
+        <div class="stat-box">
+          <div style="font-size:13px;font-weight:700;color:#2c3e50">Inspirational copy</div>
+          <div class="stat-lbl">Motivational poster language in place of fiscal content. Tonal mismatch with the severity of the city&rsquo;s documented problems.</div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-bottom:12px">
+      <div style="font-size:11px;font-weight:700;color:#c0392b;margin-bottom:6px">FISCAL SILENCE — DOCUMENTED</div>
+      <div style="font-size:12px;line-height:1.6;color:#2c3e50">
+        Newsletters actively promoted the African American Holistic Resource Center
+        groundbreaking as a community achievement with <strong>zero mention of cost</strong>
+        ($15.1M capital, $1.5&ndash;2M/year ongoing) or its relationship to the structural
+        deficit. No newsletter across the analysis period contains structural deficit analysis,
+        CalPERS/OPEB discussion, or P1 infrastructure content. The fiscal crisis that
+        Berkeley&rsquo;s own City Manager called &ldquo;not sustainable&rdquo; does not appear
+        in the Mayor&rsquo;s constituent communications.
+      </div>
+    </div>
+    <div style="background:#fdf5f5;border-left:3px solid #e74c3c;padding:10px 14px;font-size:11.5px;line-height:1.6;color:#555">
+      Contrast with District 4 newsletters (Tregub), which at minimum name the fiscal crisis
+      in the opening paragraph before pivoting to glue traps. Ishii&rsquo;s newsletters do not
+      acknowledge the crisis at all — they function as constituent social media, not governance communication.
+    </div>
+  </div>
+
+  
+  <div class="section">
+    <div class="section-title">3 · Meeting Management &nbsp;<span style="font-size:10px;color:#aaa;font-weight:400">(25% of Mayoral Accountability score)</span></div>
+    <div style="font-size:12.5px;line-height:1.6;color:#2c3e50;margin-bottom:14px">
+      The mayor chairs council meetings and sets the pace. When meetings require
+      extension votes — formal motions to continue past the scheduled end time — it
+      is a ground-truth signal that the agenda exceeded what a governing body can
+      reasonably process. Decisions made at midnight, under sustained public pressure,
+      after hours of contentious comment, are not the same decisions that would be made
+      with adequate deliberation. Extended meetings also close democratic participation:
+      ordinary residents with jobs and families cannot wait until 1&nbsp;AM to speak.
+    </div>
+    <div class="stat-grid" style="margin-bottom:14px">
+      <div class="stat-box">
+        <div class="stat-val" style="color:#e67e22">19/51</div>
+        <div class="stat-lbl">Meetings requiring<br><b>at least one extension</b> (37%)</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val" style="color:#e74c3c">5</div>
+        <div class="stat-lbl">Meetings running<br><b>past 11&nbsp;PM</b></div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val" style="color:#e74c3c">2</div>
+        <div class="stat-lbl">Meetings running<br><b>past midnight</b></div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val" style="color:#27ae60">100%</div>
+        <div class="stat-lbl">Mayor&rsquo;s personal<br>attendance rate (100%)</div>
+      </div>
+    </div>
+    <div style="background:#fdf9f0;border-left:3px solid #e67e22;padding:10px 14px;font-size:11.5px;line-height:1.6;color:#555">
+      <strong>Case study — April 28, 2025:</strong> April 28, 2025 (Gaza ceasefire resolution): 3 extensions required, meeting ended 11:51 PM — the most contentious non-budget night of the period. June 24, 2025 (budget adoption) and July 22, 2025 ran past midnight.
+      The Gaza ceasefire item required three extension votes and kept the chamber
+      open past midnight for sustained public comment from organized advocacy groups.
+      Items with this level of organized public pressure are foreseeable; a mayor
+      who reads the room can sequence the agenda to limit decision fatigue on
+      unrelated items or set tighter comment limits. Public comment was not limited.
+    </div>
+  </div>
+
+  
+  <div class="section">
+    <div class="section-title">4 · Accountability Gap &nbsp;<span style="font-size:10px;color:#aaa;font-weight:400">(15% of Mayoral Accountability score)</span></div>
+    <div style="font-size:12.5px;line-height:1.6;color:#2c3e50;margin-bottom:14px">
+      Ishii ran for mayor in a cycle when Measure II — creating the Police Accountability
+      Board (PAB) and Office of the Director of Police Accountability (ODPA) — passed with
+      <strong>85% of the vote</strong>. Under her mayoralty, the institution voters mandated
+      did not survive in functional form.
+    </div>
+    <div style="margin-bottom:12px">
+      <div style="font-size:11px;font-weight:700;color:#c0392b;margin-bottom:8px">TIMELINE OF INSTITUTIONAL COLLAPSE</div>
+      <div style="font-size:12px;line-height:1.8;color:#2c3e50">
+        <div style="margin-bottom:4px">
+          <span style="color:#7f8c8d;font-size:10px;min-width:70px;display:inline-block">2020–2026</span>
+          All original PAB commissioners departed. Board dropped to 4 of 9 seats.
+        </div>
+        <div style="margin-bottom:4px">
+          <span style="color:#7f8c8d;font-size:10px;min-width:70px;display:inline-block">Jan 30, 2026</span>
+          Last two original commissioners resigned, writing the PAB was
+          &ldquo;even less empowered than its predecessor&rdquo; — the one the DOJ had cited as a national model.
+        </div>
+        <div style="margin-bottom:4px">
+          <span style="color:#7f8c8d;font-size:10px;min-width:70px;display:inline-block">Dec 2025</span>
+          ODPA Director Aguilar sued Police Chief Jen Louis to compel records release.
+          BPD had refused records requests, requiring multiple subpoenas.
+        </div>
+        <div style="margin-bottom:4px">
+          <span style="color:#7f8c8d;font-size:10px;min-width:70px;display:inline-block">Sep 2025</span>
+          Aguilar placed items on council agenda using his charter authority — the authority
+          voters designed him to have. Council members publicly criticized him for using it.
+        </div>
+        <div style="margin-bottom:4px">
+          <span style="color:#7f8c8d;font-size:10px;min-width:70px;display:inline-block">Feb 9, 2026</span>
+          Council voted <strong>8&ndash;0</strong> (Kesarwani absent) to fire Aguilar under
+          &ldquo;without cause&rdquo; contract terms, triggering mandatory severance.
+        </div>
+      </div>
+    </div>
+    <div style="background:#fdf5f5;border-left:3px solid #e74c3c;padding:10px 14px;margin-bottom:12px;font-size:11.5px;line-height:1.6;color:#555">
+      <strong>Post-vote statement — Ishii:</strong> &ldquo;The council remained committed to police
+      accountability and was focused on filling the PAB vacancies, finding a new director and
+      restoring credibility, trust and respect for both the accountability process and the
+      people involved in this work.&rdquo; — issued immediately after the unanimous vote to
+      eliminate the accountability office&rsquo;s leadership. A recommitment-to-accountability
+      statement issued in the moment the accountability office&rsquo;s director was fired is
+      the definitional form of performative governance.
+      <em>(Source: Berkeleyside, Alex N. Gecan, Feb. 9, 2026)</em>
+    </div>
+  </div>
+
+  
+  <div class="section">
+    <div class="section-title">Fiscal Votes &amp; Attendance (Reference)</div>
+    <div style="font-size:10px;color:#7f8c8d;margin-bottom:10px;font-style:italic">
+      These metrics are comparable to district council members — included for reference
+      but not the primary basis of the Mayoral Accountability score.
+    </div>
+    <div class="stat-grid" style="margin-bottom:10px">
+      <div class="stat-box">
+        <div class="stat-val" style="color:#27ae60">58/58</div>
+        <div class="stat-lbl">Sessions attended<br>(100% — zero absences)</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val" style="color:#27ae60">100%</div>
+        <div class="stat-lbl">On-time rate<br>(zero late arrivals)</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val" style="color:#e67e22">7/7</div>
+        <div class="stat-lbl">Major fiscal votes:<br>voted YES (status quo)</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val" style="color:#e67e22">$3.29B</div>
+        <div class="stat-lbl">Endorsed in tracked<br>fiscal authorizations</div>
+      </div>
+    </div>
+    <div style="font-size:11px;color:#7f8c8d;font-style:italic;line-height:1.5">
+      Ishii voted YES on all 7 tracked major fiscal items, including the FY2025&ndash;2026
+      budget adoption — a budget whose cover memo her own City Manager described as
+      following a trajectory that is &ldquo;not sustainable.&rdquo; Zero dissenting votes
+      across any tracked fiscal item; zero motions to cut, redirect, or reprioritize.
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Berkeley City Council Scorecard &nbsp;&middot;&nbsp; Mayor&rsquo;s accountability evaluated separately from district members</span>
+    <span>Generated 2026-04-12</span>
+  </div>
+
+</div>
+</body>
+</html>
