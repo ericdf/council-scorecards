@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+* { box-sizing: border-box; margin: 0; padding: 0;
+     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+body { background: white; color: #2c3e50; }
+
+.page-header { margin-bottom: 18px; border-bottom: 3px solid #1a1a2e; padding-bottom: 10px; }
+.page-header h1 { font-size: 20px; font-weight: 800; color: #1a1a2e; }
+.page-header h2 { font-size: 11px; color: #7f8c8d; font-weight: 400; margin-top: 4px; }
+
+table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+thead tr { background: #1a1a2e; }
+th {
+  color: white; padding: 9px 10px; text-align: left;
+  font-size: 10px; text-transform: uppercase; letter-spacing: .7px;
+  font-weight: 600;
+}
+tbody tr { border-bottom: 1px solid #ecf0f1; }
+tbody tr:nth-child(even) { background: #f8f9fa; }
+td { padding: 10px 10px; vertical-align: middle; }
+
+.col-rank  { width: 30px; color: #aaa; font-size: 11px; text-align: center; }
+.col-name  { width: 110px; font-size: 13px; line-height: 1.4; }
+.col-grade { width: 44px; font-size: 18px; font-weight: 800; text-align: center; }
+.col-bar   { width: 130px; }
+.col-num   { width: 70px; text-align: center; font-size: 12px; line-height: 1.4; }
+.col-trend { width: 36px; text-align: center; font-size: 16px; }
+.col-delta { width: 52px; text-align: center; font-size: 11px; font-weight: 700; }
+.subdist   { font-size: 10px; color: #999; font-weight: 400; }
+
+/* Grade colours — same palette as member cards */
+.grade-a  { color: #2ecc71; }
+.grade-b  { color: #3498db; }
+.grade-c  { color: #f39c12; }
+.grade-d  { color: #e67e22; }
+.grade-f  { color: #e74c3c; }
+.grade-nc { color: #95a5a6; }
+
+.footnote {
+  margin-top: 16px;
+  font-size: 9.5px;
+  color: #95a5a6;
+  line-height: 1.6;
+  border-top: 1px solid #ecf0f1;
+  padding-top: 8px;
+}
+.footnote b { color: #7f8c8d; }
+
+/* ---- About page (page 2) ---- */
+.about-page {
+  
+  color: #2c3e50;
+}
+.about-header { margin-bottom: 14px; border-bottom: 3px solid #1a1a2e; padding-bottom: 10px; }
+.about-header h1 { font-size: 20px; font-weight: 800; color: #1a1a2e; }
+.about-sub { font-size: 11px; color: #7f8c8d; margin-top: 4px; }
+.about-intro { font-size: 11.5px; line-height: 1.6; color: #444; margin-bottom: 18px; }
+.about-metrics { column-count: 2; column-gap: 32px; }
+.metric-block { margin-bottom: 14px; break-inside: avoid; }
+.metric-name { font-size: 12px; font-weight: 700; color: #1a1a2e; margin-bottom: 3px; }
+.metric-weight { font-weight: 400; color: #7f8c8d; font-size: 11px; }
+.metric-desc { font-size: 11px; line-height: 1.6; color: #555; }
+.about-notes {
+  margin-top: 18px;
+  font-size: 9.5px;
+  color: #95a5a6;
+  line-height: 1.6;
+  border-top: 1px solid #ecf0f1;
+  padding-top: 8px;
+}
+.about-notes b { color: #7f8c8d; }
+</style>
+</head>
+<body>
+<div style="text-align:center;padding:8px 0 0;font-size:11px;color:#7f8c8d"><a href="index.html" style="color:#3498db;text-decoration:none">← All scorecards</a></div>
+
+<div class="page-header">
+  <h1>Berkeley City Council — Member Scorecard Summary</h1>
+  <h2>Ranked by Voter Alignment &nbsp;·&nbsp; 51 meetings analyzed &nbsp;·&nbsp;
+      2024-12-10 – 2026-03-24 &nbsp;·&nbsp; Council block-vote rate: 91%
+      &nbsp;·&nbsp; <b>as of 2026-03-24</b></h2>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Member</th>
+      <th>Overall</th>
+      <th>Voter Alignment</th>
+      <th>$ Voted YES</th>
+      <th>HSO</th>
+      <th>Words/Turn</th>
+      <th>Staff Refs</th>
+      <th>Civic Temp.</th>
+      <th>Clarity</th>
+      <th>Change</th>
+      <th>Focus %</th>
+      <th>Focus Trend</th>
+    </tr>
+  </thead>
+  <tbody>
+        <tr>
+          <td class="col-rank">#1</td>
+          <td class="col-name"><b>Kesarwani</b><br><span class="subdist">District 1</span></td>
+          <td class="col-grade grade-a">A</td>
+          <td class="col-bar"><svg width="110" height="18" style="vertical-align:middle"><rect width="110" height="18" rx="4" fill="#ecf0f1"/><rect width="93" height="18" rx="4" fill="#2ecc71"/></svg></td>
+          <td class="col-num"><b>$61M</b><br><span class="subdist">3 votes</span></td>
+          <td class="col-num"><b style="color:#27ae60">0</b><br><span class="subdist" style="color:#27ae60">Low</span></td>
+          <td class="col-num">70w<br><span class="subdist">#2</span></td>
+          <td class="col-num">1</td>
+          <td class="col-grade grade-c">C</td>
+          <td class="col-grade grade-b">B</td>
+          <td class="col-delta"><span style="color:#ccc">—</span></td>
+          <td class="col-num">81%</td>
+          <td class="col-trend"><span style="color:#95a5a6">▬</span></td>
+        </tr>
+        <tr>
+          <td class="col-rank">#2</td>
+          <td class="col-name"><b>O'Keefe</b><br><span class="subdist">District 6 (fmr.)</span></td>
+          <td class="col-grade grade-b">B−</td>
+          <td class="col-bar"><svg width="110" height="18" style="vertical-align:middle"><rect width="110" height="18" rx="4" fill="#ecf0f1"/><rect width="68" height="18" rx="4" fill="#3498db"/></svg></td>
+          <td class="col-num"><b>$62M</b><br><span class="subdist">5 votes</span></td>
+          <td class="col-num"><b style="color:#7f8c8d">28</b><br><span class="subdist" style="color:#7f8c8d">Mix</span></td>
+          <td class="col-num">64w<br><span class="subdist">#5</span></td>
+          <td class="col-num">0</td>
+          <td class="col-grade grade-c">C+</td>
+          <td class="col-grade grade-b">B+</td>
+          <td class="col-delta"><span style="font-size:10px;font-weight:700;color:#e74c3c;margin-left:5px;white-space:nowrap">▼−25%</span></td>
+          <td class="col-num">87%</td>
+          <td class="col-trend"><span style="color:#27ae60">▲</span></td>
+        </tr>
+        <tr>
+          <td class="col-rank">#3</td>
+          <td class="col-name"><b>Blackaby</b><br><span class="subdist">District 8</span></td>
+          <td class="col-grade grade-c">C+</td>
+          <td class="col-bar"><svg width="110" height="18" style="vertical-align:middle"><rect width="110" height="18" rx="4" fill="#ecf0f1"/><rect width="59" height="18" rx="4" fill="#3498db"/></svg></td>
+          <td class="col-num"><b>$62M</b><br><span class="subdist">6 votes</span></td>
+          <td class="col-num"><b style="color:#7f8c8d">28</b><br><span class="subdist" style="color:#7f8c8d">Mix</span></td>
+          <td class="col-num">77w<br><span class="subdist">#4</span></td>
+          <td class="col-num">0</td>
+          <td class="col-grade grade-c">C</td>
+          <td class="col-grade grade-b">B−</td>
+          <td class="col-delta"><span style="font-size:10px;font-weight:700;color:#e74c3c;margin-left:5px;white-space:nowrap">▼−25%</span></td>
+          <td class="col-num">75%</td>
+          <td class="col-trend"></td>
+        </tr>
+        <tr>
+          <td class="col-rank">#4</td>
+          <td class="col-name"><b>Bartlett</b><br><span class="subdist">District 3</span></td>
+          <td class="col-grade grade-c">C−</td>
+          <td class="col-bar"><svg width="110" height="18" style="vertical-align:middle"><rect width="110" height="18" rx="4" fill="#ecf0f1"/><rect width="45" height="18" rx="4" fill="#e67e22"/></svg></td>
+          <td class="col-num"><b>$61M</b><br><span class="subdist">4 votes</span></td>
+          <td class="col-num"><b style="color:#27ae60">2</b><br><span class="subdist" style="color:#27ae60">Low</span></td>
+          <td class="col-num">93w<br><span class="subdist">#6</span></td>
+          <td class="col-num">0</td>
+          <td class="col-grade grade-c">C</td>
+          <td class="col-grade grade-b">B+</td>
+          <td class="col-delta"><span style="font-size:10px;font-weight:700;color:#e74c3c;margin-left:5px;white-space:nowrap">▼−2%</span></td>
+          <td class="col-num">78%</td>
+          <td class="col-trend"><span style="color:#27ae60">▲</span></td>
+        </tr>
+        <tr>
+          <td class="col-rank">#5</td>
+          <td class="col-name"><b>Taplin</b><br><span class="subdist">District 2</span></td>
+          <td class="col-grade grade-c">C−</td>
+          <td class="col-bar"><svg width="110" height="18" style="vertical-align:middle"><rect width="110" height="18" rx="4" fill="#ecf0f1"/><rect width="44" height="18" rx="4" fill="#e67e22"/></svg></td>
+          <td class="col-num"><b>$72M</b><br><span class="subdist">4 votes</span></td>
+          <td class="col-num"><b style="color:#7f8c8d">21</b><br><span class="subdist" style="color:#7f8c8d">Mix</span></td>
+          <td class="col-num">136w<br><span class="subdist">#8</span></td>
+          <td class="col-num">3</td>
+          <td class="col-grade grade-d">D+</td>
+          <td class="col-grade grade-d">D</td>
+          <td class="col-delta"><span style="font-size:10px;font-weight:700;color:#e74c3c;margin-left:5px;white-space:nowrap">▼−20%</span></td>
+          <td class="col-num">65%</td>
+          <td class="col-trend"><span style="color:#27ae60">▲</span></td>
+        </tr>
+        <tr>
+          <td class="col-rank">#6</td>
+          <td class="col-name"><b>Humbert</b><br><span class="subdist">At-Large</span></td>
+          <td class="col-grade grade-c">C−</td>
+          <td class="col-bar"><svg width="110" height="18" style="vertical-align:middle"><rect width="110" height="18" rx="4" fill="#ecf0f1"/><rect width="44" height="18" rx="4" fill="#e67e22"/></svg></td>
+          <td class="col-num"><b>$73M</b><br><span class="subdist">7 votes</span></td>
+          <td class="col-num"><b style="color:#e67e22">62</b><br><span class="subdist" style="color:#e67e22">Mod</span></td>
+          <td class="col-num">115w<br><span class="subdist">#7</span></td>
+          <td class="col-num">1</td>
+          <td class="col-grade grade-d">D+</td>
+          <td class="col-grade grade-b">B</td>
+          <td class="col-delta"><span style="font-size:10px;font-weight:700;color:#e74c3c;margin-left:5px;white-space:nowrap">▼−45%</span></td>
+          <td class="col-num">78%</td>
+          <td class="col-trend"><span style="color:#27ae60">▲</span></td>
+        </tr>
+        <tr>
+          <td class="col-rank">#7</td>
+          <td class="col-name"><b>Tregub</b><br><span class="subdist">District 7</span></td>
+          <td class="col-grade grade-d">D−</td>
+          <td class="col-bar"><svg width="110" height="18" style="vertical-align:middle"><rect width="110" height="18" rx="4" fill="#ecf0f1"/><rect width="25" height="18" rx="4" fill="#e74c3c"/></svg></td>
+          <td class="col-num"><b>$72M</b><br><span class="subdist">5 votes</span></td>
+          <td class="col-num"><b style="color:#c0392b">73</b><br><span class="subdist" style="color:#c0392b">High</span></td>
+          <td class="col-num">68w<br><span class="subdist">#3</span></td>
+          <td class="col-num">1</td>
+          <td class="col-grade grade-c">C</td>
+          <td class="col-grade grade-c">C+</td>
+          <td class="col-delta"><span style="font-size:10px;font-weight:700;color:#e74c3c;margin-left:5px;white-space:nowrap">▼−37%</span></td>
+          <td class="col-num">79%</td>
+          <td class="col-trend"></td>
+        </tr>
+        <tr>
+          <td class="col-rank">#8</td>
+          <td class="col-name"><b>LunaParra</b><br><span class="subdist">District 5</span></td>
+          <td class="col-grade grade-d">D−</td>
+          <td class="col-bar"><svg width="110" height="18" style="vertical-align:middle"><rect width="110" height="18" rx="4" fill="#ecf0f1"/><rect width="21" height="18" rx="4" fill="#e74c3c"/></svg></td>
+          <td class="col-num"><b>$73M</b><br><span class="subdist">6 votes</span></td>
+          <td class="col-num"><b style="color:#c0392b">85</b><br><span class="subdist" style="color:#c0392b">High</span></td>
+          <td class="col-num">42w<br><span class="subdist">#1</span></td>
+          <td class="col-num">1</td>
+          <td class="col-grade grade-b">B−</td>
+          <td class="col-grade grade-c">C+</td>
+          <td class="col-delta"><span style="font-size:10px;font-weight:700;color:#e74c3c;margin-left:5px;white-space:nowrap">▼−40%</span></td>
+          <td class="col-num">65%</td>
+          <td class="col-trend"></td>
+        </tr></tbody>
+</table>
+
+<div class="footnote">
+  <b>Voter Alignment</b> = Taxpayer Alignment 70% + Civic Focus 30% − attendance deduction (includes incidents, HSO, fiscal referrals, hypocrisy) &nbsp;·&nbsp;
+  <b>$ Voted YES</b> = total dollars on agenda items where member's roll-call vote was YES (partial coverage) &nbsp;·&nbsp;
+  <b>HSO</b> = Homeless Services Orthodoxy (0=reform-oriented, 100=status-quo aligned); measures investment in the prevailing $21.7M+/yr homeless services apparatus based on orthodoxy-aligned vs. accountability rhetoric in attributed speech &nbsp;·&nbsp;
+  <b>Civic Temperament</b> = Collegiality + Humility + Warmth − Ego &nbsp;·&nbsp;
+  <b>Clarity</b> = inverse of ego + off-mission + staff overreach + fiscal avoidance; A = clearest &nbsp;·&nbsp;
+  <b>Focus %</b> = share of member's speech on core city topics (budget, infrastructure, housing, public safety) &nbsp;·&nbsp;
+  <b>Focus Trend</b> ▲ improving &nbsp; ▼ declining (recent 90-day meeting focus vs. member's all-time avg) &nbsp;·&nbsp;
+  <b>Change</b> = Voter Alignment vs. prior scorecard run &nbsp;·&nbsp;
+  <b>Staff Refs</b> ≈ 40–80 hrs each, no opportunity-cost review &nbsp;·&nbsp;
+  See page 2 for full methodology &nbsp;·&nbsp; Generated 2026-04-12
+</div>
+
+
+<div style="margin:32px 0 0 0;padding:16px 20px;background:#fdf9f0;border-left:4px solid #e67e22;border-radius:4px">
+  <div style="font-size:14px;font-weight:bold;color:#e67e22;margin-bottom:6px">
+    Procurement Watch — 7 items flagged
+  </div>
+  <div style="font-size:10px;color:#7f8c8d;margin-bottom:10px;font-style:italic">
+    Items passed on the consent calendar where staff reports show waived competitive bids
+    or retroactive contracts. Consent calendar items are adopted as a bloc — individual
+    member attribution requires transcript vote records (not available for these items).
+  </div>
+  <table style="border-collapse:collapse;width:100%">
+    <tr><td style='padding:3px 10px 3px 0;font-size:11px;color:#555;white-space:nowrap'>2025-04-15 #4</td><td style='font-size:11px;color:#333'>Contract: University of California, San Francisco for Encampment Resol</td><td style='font-size:11px;padding-left:10px'><span style="color:#c0392b;font-weight:bold">waived bid</span></td><td style='font-size:11px;color:#7f8c8d;padding-left:10px'>$200,000 &nbsp; $200,000</td><td style='font-size:11px;color:#7f8c8d;padding-left:6px'>grant</td></tr><tr><td style='padding:3px 10px 3px 0;font-size:11px;color:#555;white-space:nowrap'>2025-07-22 #9</td><td style='font-size:11px;color:#333'>Supplemental Military Leave Compensation Policy</td><td style='font-size:11px;padding-left:10px'><span style="color:#c0392b;font-weight:bold">retroactive</span></td><td style='font-size:11px;color:#7f8c8d;padding-left:10px'></td><td style='font-size:11px;color:#7f8c8d;padding-left:6px'></td></tr><tr><td style='padding:3px 10px 3px 0;font-size:11px;color:#555;white-space:nowrap'>2026-01-27 #1</td><td style='font-size:11px;color:#333'>Contract: West Coast Drilling, Inc. for 2709 Hilgard Avenue Retaining </td><td style='font-size:11px;padding-left:10px'><span style="color:#c0392b;font-weight:bold">waived bid</span></td><td style='font-size:11px;color:#7f8c8d;padding-left:10px'>$496,369 &nbsp; $88,631</td><td style='font-size:11px;color:#7f8c8d;padding-left:6px'></td></tr><tr><td style='padding:3px 10px 3px 0;font-size:11px;color:#555;white-space:nowrap'>2026-02-24 #3</td><td style='font-size:11px;color:#333'>Contract: California Association of Environmental Health Administrator</td><td style='font-size:11px;padding-left:10px'><span style="color:#c0392b;font-weight:bold">waived bid</span></td><td style='font-size:11px;color:#7f8c8d;padding-left:10px'>$500,000 &nbsp; $100,000</td><td style='font-size:11px;color:#7f8c8d;padding-left:6px'></td></tr><tr><td style='padding:3px 10px 3px 0;font-size:11px;color:#555;white-space:nowrap'>2026-02-24 #5</td><td style='font-size:11px;color:#333'>Contracts: Future Ford of Concord, Michael Stead Hilltop Ford and Nich</td><td style='font-size:11px;padding-left:10px'><span style="color:#c0392b;font-weight:bold">waived bid</span></td><td style='font-size:11px;color:#7f8c8d;padding-left:10px'>$690,000 &nbsp; $690,000</td><td style='font-size:11px;color:#7f8c8d;padding-left:6px'></td></tr><tr><td style='padding:3px 10px 3px 0;font-size:11px;color:#555;white-space:nowrap'>2026-03-10 #6</td><td style='font-size:11px;color:#333'>City Contracts: Outdated Process Led to Non-Competitive Contracts</td><td style='font-size:11px;padding-left:10px'><span style="color:#c0392b;font-weight:bold">waived bid</span></td><td style='font-size:11px;color:#7f8c8d;padding-left:10px'>$50,000 &nbsp; $54,518,752</td><td style='font-size:11px;color:#7f8c8d;padding-left:6px'></td></tr><tr><td style='padding:3px 10px 3px 0;font-size:11px;color:#555;white-space:nowrap'>2026-03-24 #11</td><td style='font-size:11px;color:#333'>Contract: Peterson Trucks, Inc. for Heavy Duty Vehicle Parts and Servi</td><td style='font-size:11px;padding-left:10px'><span style="color:#c0392b;font-weight:bold">waived bid</span></td><td style='font-size:11px;color:#7f8c8d;padding-left:10px'>$300,000</td><td style='font-size:11px;color:#7f8c8d;padding-left:6px'></td></tr>
+  </table>
+</div>
+
+
+<div class="about-page">
+  <div class="about-header">
+    <h1>About This Scorecard</h1>
+    <p class="about-sub">Berkeley City Council &nbsp;·&nbsp; 2024-12-10 – 2026-03-24 &nbsp;·&nbsp; 51 meetings</p>
+  </div>
+
+  <div class="about-intro">
+    <p>These scorecards evaluate council members from the perspective of a Berkeley voter who wants city government focused on Berkeley: lower costs, maintained infrastructure, a police department that is trusted and functional, and housing that ordinary people can afford. Foreign policy statements, police oversight theater, and programs that expand city spending without evidence of impact are treated as off-mission.</p>
+    <p style="margin-top:8px">Scores are derived entirely from captioner transcripts using automated analysis — keyword classification, topic modeling, and state-machine speaker attribution. They measure what members <em>say and do in chambers</em>, not their policy positions or outside activities.</p>
+  </div>
+
+  <div class="about-metrics">
+
+    <div class="metric-block">
+      <div class="metric-name">Voter Alignment <span class="metric-weight">(Overall grade)</span></div>
+      <div class="metric-desc">Composite taxpayer-alignment score: Taxpayer Alignment pillar (70%) + Civic Focus (30%) − attendance deduction. Taxpayer Alignment incorporates transcript rhetoric, voting record, HSO score, incidents, fiscal referral authorship, and fiscal hypocrisy signals. This is the correct summary grade — it captures behavior, not just speech.</div>
+    </div>
+
+    <div class="metric-block">
+      <div class="metric-name">Legislative Skill <span class="metric-weight">(LSI)</span></div>
+      <div class="metric-desc">Legislative Sophistication Index — five components: domain fluency (knowing the subject matter), fiscal discipline (probing costs and trade-offs), inquiry quality (the precision of questions asked), decisiveness (moving items forward without endless hedging), and procedural efficiency (using council process correctly). High LSI members add signal; low LSI members add noise.</div>
+    </div>
+
+    <div class="metric-block">
+      <div class="metric-name">Civic Focus &amp; Focus % <span class="metric-weight">(pillar + summary column)</span></div>
+      <div class="metric-desc">Are the topics this member engages with aligned with what the voter sent them to do? Focus % is the share of their meeting speech on core city business: budget, infrastructure, zoning, housing, public safety, and economic development. The inverse — time spent on foreign policy, police oversight theater, sanctuary city statements, and proposals that expand spending without evidence of impact — lowers the score. Focus Trend shows whether their recent meetings are more or less on-target than their historical average.</div>
+    </div>
+
+    <div class="metric-block">
+      <div class="metric-name">Fiscal Discipline</div>
+      <div class="metric-desc">How often the member asks about cost, funding sources, or fiscal trade-offs before voting. The council rarely considers the opportunity cost of staff referrals (~40–80 hours each) or unfunded mandates. Members who routinely probe finances before committing the city earn higher scores here.</div>
+    </div>
+
+    <div class="metric-block">
+      <div class="metric-name">Civic Temperament</div>
+      <div class="metric-desc">A measure of the member as a colleague and public servant: collegiality (acknowledges and builds on others' contributions), humility (updates positions when presented with new information), and warmth (treats staff, colleagues, and the public with genuine respect), minus ego signals (credential-dropping, self-referential flexes, and debate-closing appeals to personal authority). High Civic Temperament members make the council function better; low scores mean the member makes it worse.</div>
+    </div>
+
+    <div class="metric-block">
+      <div class="metric-name">Clarity</div>
+      <div class="metric-desc">Does this member make the council's work clearer and more tractable, or do they add friction and noise? Clarity combines ego signals (credential-dropping, debate-closing appeals to personal authority), off-mission speech, staff referral overreach, and fiscal avoidance into a single behavioral score. A high-Clarity member simplifies: they say what needs saying, probe what needs probing, and yield the floor. A low-Clarity member complicates. Graded so A = clearest, F = most obstructive.</div>
+    </div>
+
+  </div>
+
+  <div class="about-notes">
+    <b>What these scores don't measure:</b> constituent services, committee work, external advocacy, or policy outcomes. Transcripts capture chamber behavior only.
+    &nbsp;·&nbsp; <b>Attribution:</b> Newer meetings use Zoom Boardroom format where speaker labels are assigned by state-machine inference — accuracy is estimated at ~80%.
+    &nbsp;·&nbsp; <b>Vote data</b> is extracted from roll-call text in transcripts; events with fewer than 3 named members are excluded.
+  </div>
+</div>
+
+
+</body>
+</html>

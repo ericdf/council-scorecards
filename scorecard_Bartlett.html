@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+body { background: #f0f2f5; display: flex; justify-content: center; }
+.card { width: 760px; margin: 20px auto; background: #fff;
+        border-radius: 8px; overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0,0,0,.15); }
+
+/* Header */
+.header { background: #1a1a2e; color: #fff; padding: 28px 32px 20px; display: flex; justify-content: space-between; align-items: flex-start; }
+.hdr-left .name { font-size: 30px; font-weight: 800; letter-spacing: .5px; }
+.hdr-left .subtitle { font-size: 12px; color: #8899bb; margin-top: 6px; line-height: 1.6; }
+.hdr-right { text-align: right; }
+.overall-label { font-size: 11px; color: #8899bb; text-transform: uppercase; letter-spacing: 1px; }
+.overall-grade { font-size: 62px; font-weight: 900; line-height: 1; margin-top: 2px; }
+
+/* Grade colours */
+.grade-a  { color: #2ecc71; }
+.grade-b  { color: #3498db; }
+.grade-c  { color: #f39c12; }
+.grade-d  { color: #e67e22; }
+.grade-f  { color: #e74c3c; }
+.grade-nc { color: #95a5a6; }
+
+/* Sections */
+.section { padding: 20px 32px; border-bottom: 1px solid #ecf0f1; }
+.section:last-child { border-bottom: none; }
+.section-title { font-size: 11px; font-weight: 700; text-transform: uppercase;
+                 letter-spacing: 1.2px; color: #7f8c8d; margin-bottom: 14px; }
+
+/* Executive summary */
+.exec-archetype { font-size: 11px; font-weight: 700; text-transform: uppercase;
+                  letter-spacing: 1.5px; color: #7f8c8d; margin-bottom: 6px; }
+.exec-archetype span { color: #2c3e50; font-size: 14px; font-weight: 800;
+                       text-transform: none; letter-spacing: 0; }
+.exec-summary { font-size: 12.5px; line-height: 1.65; color: #2c3e50; }
+
+/* Pillar rows */
+.pillar-row { display: flex; align-items: center; margin-bottom: 10px; }
+.pillar-label { width: 170px; font-size: 13px; font-weight: 600; color: #2c3e50; }
+.pillar-grade { width: 36px; font-size: 16px; font-weight: 800; margin-right: 10px; }
+.pillar-bar   { flex: 1; }
+.pillar-pct   { width: 50px; text-align: right; font-size: 12px; color: #7f8c8d; }
+
+/* Stat grid */
+.stat-grid { display: flex; flex-wrap: wrap; gap: 12px; }
+.stat-box { background: #f8f9fa; border-radius: 6px; padding: 12px 16px; flex: 1; min-width: 130px; }
+.stat-val { font-size: 22px; font-weight: 800; color: #2c3e50; }
+.stat-lbl { font-size: 11px; color: #7f8c8d; margin-top: 2px; line-height: 1.4; }
+
+/* Rankings row */
+.rank-row { display: flex; gap: 16px; }
+.rank-item { background: #f8f9fa; border-radius: 6px; padding: 10px 14px; flex: 1; }
+.rank-title { font-size: 10px; color: #7f8c8d; text-transform: uppercase; letter-spacing: 1px; }
+.rank-val   { font-size: 18px; font-weight: 800; color: #2c3e50; margin-top: 2px; }
+
+/* Insights */
+.insight { display: flex; align-items: flex-start; margin-bottom: 8px; font-size: 13px; line-height: 1.5; color: #444; }
+.insight .icon { width: 20px; flex-shrink: 0; font-weight: 700; }
+.good  .icon { color: #27ae60; }
+.warn  .icon { color: #f39c12; }
+.bad   .icon { color: #e74c3c; }
+
+/* Footer */
+.footer { background: #f8f9fa; padding: 12px 32px; font-size: 10px; color: #aaa; display: flex; justify-content: space-between; }
+
+/* Taxpayer alignment breakdown table */
+.ta-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.ta-table td { padding: 5px 8px; vertical-align: top; }
+.ta-table tr.group-header td { font-size: 10px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1px; color: #7f8c8d; padding-top: 14px; padding-bottom: 4px;
+    border-bottom: 1px solid #ecf0f1; }
+.ta-table tr.data-row td:first-child { color: #2c3e50; font-weight: 600; width: 200px; }
+.ta-table tr.data-row td.note { color: #7f8c8d; font-size: 11px; }
+.ta-table tr.data-row td.contrib { text-align: right; font-weight: 700; width: 70px; }
+.ta-table tr.data-row td.contrib.pos { color: #27ae60; }
+.ta-table tr.data-row td.contrib.neg { color: #e74c3c; }
+.ta-table tr.data-row td.contrib.zero { color: #95a5a6; }
+.ta-table tr.subtotal td { border-top: 1px solid #ecf0f1; padding-top: 7px; font-weight: 700;
+    color: #2c3e50; }
+.ta-table tr.subtotal td.contrib { text-align: right; font-weight: 800; }
+.ta-table tr.total-row td { border-top: 2px solid #2c3e50; padding-top: 8px; font-weight: 800;
+    font-size: 13px; color: #1a1a2e; }
+.ta-table tr.total-row td.contrib { text-align: right; }
+</style></head>
+<body>
+<div style="text-align:center;padding:8px 0 0;font-size:11px;color:#7f8c8d"><a href="index.html" style="color:#3498db;text-decoration:none">← All scorecards</a></div>
+<div class="card">
+
+  <div class="header">
+    <div class="hdr-left">
+      <div class="name">BARTLETT</div>
+      <div class="subtitle">
+        District 3 &nbsp;·&nbsp; Berkeley City Council<br>
+        2024-12-10 – 2026-03-24 · 51 meetings
+      </div>
+    </div>
+    <div class="hdr-right">
+      <div class="overall-label">Voter Alignment</div>
+      <div class="overall-grade grade-c">C−</div>
+      <div style='font-size:10px;color:#8899bb;margin-top:4px'>as of 2026-03-24</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Executive Summary</div>
+    <div class="exec-archetype">Character &nbsp;·&nbsp; <span>The Rhetorical Skeptic</span></div>
+    <div class="exec-summary">Asks pointed fiscal questions in chambers but votes yes alongside everyone else and missed five of seven major fiscal votes including both budget adoptions. Has a documented pattern of attaching himself as co-author to proposals after the primary work is done — gaining the visibility of authorship without the accountability of having shaped the item. The skepticism is real; the follow-through is not.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Performance Pillars</div>
+    
+        <div class="pillar-row">
+          <div class="pillar-label">Civic Focus</div>
+          <div class="pillar-grade grade-a">A+</div>
+          <div class="pillar-bar"><svg width="260" height="18" style="vertical-align:middle"><rect width="260" height="18" rx="4" fill="#ecf0f1"/><rect width="260" height="18" rx="4" fill="#2ecc71"/></svg></div>
+          <div class="pillar-pct">100%</div>
+        </div>
+        <div class="pillar-row">
+          <div class="pillar-label">Legislative Skill</div>
+          <div class="pillar-grade grade-b">B−</div>
+          <div class="pillar-bar"><svg width="260" height="18" style="vertical-align:middle"><rect width="260" height="18" rx="4" fill="#ecf0f1"/><rect width="149" height="18" rx="4" fill="#3498db"/></svg></div>
+          <div class="pillar-pct">57%</div>
+        </div>
+        <div class="pillar-row">
+          <div class="pillar-label">Taxpayer Alignment</div>
+          <div class="pillar-grade grade-b">B−</div>
+          <div class="pillar-bar"><svg width="260" height="18" style="vertical-align:middle"><rect width="260" height="18" rx="4" fill="#ecf0f1"/><rect width="152" height="18" rx="4" fill="#3498db"/></svg></div>
+          <div class="pillar-pct">59%<span style="font-size:10px;font-weight:700;color:#e74c3c;margin-left:5px;white-space:nowrap">▼−3%</span></div>
+        </div>
+        <div class="pillar-row">
+          <div class="pillar-label">Character & Conduct</div>
+          <div class="pillar-grade grade-c">C</div>
+          <div class="pillar-bar"><svg width="260" height="18" style="vertical-align:middle"><rect width="260" height="18" rx="4" fill="#ecf0f1"/><rect width="117" height="18" rx="4" fill="#e67e22"/></svg></div>
+          <div class="pillar-pct">45%</div>
+        </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Rankings  (of 8 scored members)</div>
+    <div class="rank-row">
+      <div class="rank-item">
+        <div class="rank-title">Voter Alignment</div>
+        <div class="rank-val">#4</div>
+      </div>
+      <div class="rank-item">
+        <div class="rank-title">Civic Temperament</div>
+        <div class="rank-val">#5</div>
+      </div>
+      <div class="rank-item">
+        <div class="rank-title">Clarity</div>
+        <div class="rank-val">#7 <span style="font-size:12px;color:#7f8c8d">(#1=least)</span></div>
+      </div>
+      <div class="rank-item">
+        <div class="rank-title">Efficiency</div>
+        <div class="rank-val">#6 <span style="font-size:12px;color:#7f8c8d">(93 w/turn)</span></div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="section">
+    <div class="section-title">Attendance — 58 Sessions (Annotated Agenda Record)</div>
+    <div style="font-size:10px;color:#7f8c8d;margin-bottom:10px;font-style:italic">
+      Source: post-meeting annotated agenda PDFs — the authoritative attendance record.
+      "Fully absent" = listed absent at roll call and never arrived.
+    </div>
+    <div class="stat-grid" style="margin-bottom:12px">
+      <div class="stat-box">
+        <div class="stat-val">54/58</div>
+        <div class="stat-lbl">Sessions present<br>(attended at some point)</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val" style="color:#e74c3c">4</div>
+        <div class="stat-lbl">Sessions <b>fully absent</b><br>(never arrived)</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val" style="color:#e74c3c">26</div>
+        <div class="stat-lbl">Sessions <b>late</b><br>(absent at roll, arrived later)</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val" style="color:#e74c3c">30</div>
+        <div class="stat-lbl">Sessions absent<br>at roll call</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="width:110px;font-size:11px;color:#555">Attendance rate</div>
+        <svg width="240" height="12"><rect width="240" height="12" rx="4" fill="#ecf0f1"/>
+          <rect width="223" height="12" rx="4" fill="#f39c12"/></svg>
+        <div style="font-size:11px;font-weight:700;color:#f39c12">93%</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="width:110px;font-size:11px;color:#555">On-time rate</div>
+        <svg width="240" height="12"><rect width="240" height="12" rx="4" fill="#ecf0f1"/>
+          <rect width="115" height="12" rx="4" fill="#e74c3c"/></svg>
+        <div style="font-size:11px;font-weight:700;color:#e74c3c">48%</div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="section">
+    <div class="section-title">Major Fiscal Votes — 7 Binding Decisions</div>
+    <div style="font-size:10px;color:#7f8c8d;margin-bottom:10px;font-style:italic">
+      Curated list of binding fiscal votes Dec 2024–Jul 2025. Source: annotated agenda PDFs.
+    </div>
+    <div class="stat-grid" style="margin-bottom:12px"><div class="stat-box"><div class="stat-val" style="color:#e74c3c">5/7</div><div class="stat-lbl">Binding fiscal votes<br><b>missed</b></div></div><div class="stat-box"><div class="stat-val" style="color:#e74c3c">$320.7M</div><div class="stat-lbl">In fiscal authorizations<br>absent for</div></div><div class="stat-box"><div class="stat-val" style="color:#e67e22">2</div><div class="stat-lbl">Endorsed status quo<br>(voted YES)</div></div></div>
+    <table style="width:100%;border-collapse:collapse">
+      <thead>
+        <tr style="background:#f0f2f5">
+          <th style="text-align:left;font-size:9.5px;color:#7f8c8d;font-weight:600;padding:4px 8px 4px 0;text-transform:uppercase;letter-spacing:.5px">Date</th>
+          <th style="text-align:left;font-size:9.5px;color:#7f8c8d;font-weight:600;padding:4px 8px;text-transform:uppercase;letter-spacing:.5px">Type</th>
+          <th style="text-align:left;font-size:9.5px;color:#7f8c8d;font-weight:600;padding:4px 8px;text-transform:uppercase;letter-spacing:.5px">Item</th>
+          <th style="text-align:right;font-size:9.5px;color:#7f8c8d;font-weight:600;padding:4px 8px;text-transform:uppercase;letter-spacing:.5px">Amount</th>
+          <th style="text-align:center;font-size:9.5px;color:#7f8c8d;font-weight:600;padding:4px 8px;text-transform:uppercase;letter-spacing:.5px">Position</th>
+        </tr>
+      </thead>
+      <tbody><tr><td style='padding:4px 8px 4px 0;font-size:10px;color:#777;white-space:nowrap'>2025-01-21</td><td style='font-size:10px;color:#888;white-space:nowrap'>TEFRA Bond</td><td style='font-size:10.5px;color:#2c3e50'>CMFA Bond – 2001 Ashby Ave</td><td style='font-size:10.5px;font-weight:700;text-align:right;white-space:nowrap'>$45.0M</td><td style='text-align:center;padding-left:8px'><span style='font-size:10px;font-weight:800;color:#e74c3c;white-space:nowrap'>ABSENT</span></td></tr><tr><td style='padding:4px 8px 4px 0;font-size:10px;color:#777;white-space:nowrap'>2025-05-20</td><td style='font-size:10px;color:#888;white-space:nowrap'>Revenue Bond</td><td style='font-size:10.5px;color:#2c3e50'>Lease Revenue Notes – Fire HQ</td><td style='font-size:10.5px;font-weight:700;text-align:right;white-space:nowrap'>$11.0M</td><td style='text-align:center;padding-left:8px'><span style='font-size:10px;font-weight:800;color:#e74c3c;white-space:nowrap'>ABSENT</span></td></tr><tr><td style='padding:4px 8px 4px 0;font-size:10px;color:#777;white-space:nowrap'>2025-05-20</td><td style='font-size:10px;color:#888;white-space:nowrap'>GO Bond</td><td style='font-size:10.5px;color:#2c3e50'>$35M GO Bonds – Measure O Housing</td><td style='font-size:10.5px;font-weight:700;text-align:right;white-space:nowrap'>$35.0M</td><td style='text-align:center;padding-left:8px'><span style='font-size:10px;font-weight:800;color:#e74c3c;white-space:nowrap'>ABSENT</span></td></tr><tr><td style='padding:4px 8px 4px 0;font-size:10px;color:#777;white-space:nowrap'>2025-05-20</td><td style='font-size:10px;color:#888;white-space:nowrap'>Budget Amendment</td><td style='font-size:10.5px;color:#2c3e50'>FY2025 Budget Amendment 1st Reading</td><td style='font-size:10.5px;font-weight:700;text-align:right;white-space:nowrap'>$85.7M</td><td style='text-align:center;padding-left:8px'><span style='font-size:10px;font-weight:800;color:#e74c3c;white-space:nowrap'>ABSENT</span></td></tr><tr><td style='padding:4px 8px 4px 0;font-size:10px;color:#777;white-space:nowrap'>2025-06-03</td><td style='font-size:10px;color:#888;white-space:nowrap'>Budget Amendment</td><td style='font-size:10.5px;color:#2c3e50'>FY2025 Budget Amendment 2nd Reading</td><td style='font-size:10.5px;font-weight:700;text-align:right;white-space:nowrap'>$144.0M</td><td style='text-align:center;padding-left:8px'><span style='font-size:10px;font-weight:800;color:#e74c3c;white-space:nowrap'>ABSENT</span></td></tr><tr><td style='padding:4px 8px 4px 0;font-size:10px;color:#777;white-space:nowrap'>2025-06-24</td><td style='font-size:10px;color:#888;white-space:nowrap'>Budget Adoption</td><td style='font-size:10.5px;color:#2c3e50'>FY2026 Budget Adoption 1st Reading</td><td style='font-size:10.5px;font-weight:700;text-align:right;white-space:nowrap'>$1.45B</td><td style='text-align:center;padding-left:8px'><span style='font-size:10px;font-weight:800;color:#e67e22;white-space:nowrap'>YES</span></td></tr><tr><td style='padding:4px 8px 4px 0;font-size:10px;color:#777;white-space:nowrap'>2025-07-08</td><td style='font-size:10px;color:#888;white-space:nowrap'>Budget Adoption</td><td style='font-size:10.5px;color:#2c3e50'>FY2026 Budget Adoption 2nd Reading</td><td style='font-size:10.5px;font-weight:700;text-align:right;white-space:nowrap'>$1.52B</td><td style='text-align:center;padding-left:8px'><span style='font-size:10px;font-weight:800;color:#e67e22;white-space:nowrap'>YES</span></td></tr></tbody>
+    </table>
+    <div style="margin-top:8px;font-size:10px;color:#7f8c8d;font-style:italic">YES = endorsed the spending authorization (budget adoptions = chose not to cut or reprioritize). ABSENT = dereliction — items are only on the agenda because the Mayor expects passage.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Voting Record — 195 Items (Annotated Agenda)</div>
+    <div style="font-size:10px;color:#7f8c8d;margin-bottom:8px;font-style:italic">
+      Source: annotated agenda PDFs across all 195 items with a parseable vote.
+      Council block-vote rate: 91% — individual deviations are high-signal precisely because they are rare.
+    </div>
+    <div class="stat-grid">
+      <div class="stat-box">
+        <div class="stat-val" style="color:#7f8c8d">0</div>
+        <div class="stat-lbl">NO votes<br>(dissent from bloc)</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val" style="color:#7f8c8d">0</div>
+        <div class="stat-lbl">Abstentions<br><em>(chose not to vote)</em></div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val" style="color:#e74c3c">23</div>
+        <div class="stat-lbl">Absent during vote<br>(item-level absences)</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val" style="color:#95a5a6">0</div>
+        <div class="stat-lbl">Contested abstentions<br><em>(others voted no)</em></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Agenda Impact &amp; Efficiency</div>
+    <div class="stat-grid">
+      <div class="stat-box">
+        <div class="stat-val">1</div>
+        <div class="stat-lbl">Sponsorship signals<br>(authored or co-authored items)</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val">0</div>
+        <div class="stat-lbl">Staff referrals<br>(40–80 hrs each, no opp-cost review)</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val">93w</div>
+        <div class="stat-lbl">Avg words per turn<br>Rank #6 of 8</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val">25%</div>
+        <div class="stat-lbl">Turns &gt;200 words<br>(monologue territory)</div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="section">
+    <div class="section-title">Spending Votes — Roll-Call Record</div>
+    <div style="font-size:10px;color:#7f8c8d;margin-bottom:8px;font-style:italic">
+      Dollar amounts from agenda items matched to extracted roll-calls.
+      Coverage is partial: unanimous voice votes and some formats not captured.
+    </div>
+    <div class="stat-grid"><div class="stat-box"><div class="stat-val" style="color:#2c3e50">$61.0M</div><div class="stat-lbl">Voted <b>YES</b> on<br>(4 spending votes)</div></div><div class="stat-box"><div class="stat-val" style="color:#95a5a6">—</div><div class="stat-lbl">Voted <b>NO</b> on<br>(dissent from block)</div></div><div class="stat-box"><div class="stat-val" style="color:#7f8c8d">100%</div><div class="stat-lbl">YES rate on<br>spending items</div></div></div>
+    <div style="margin-top:10px;padding:8px 12px;background:#f0f7ff;border-left:3px solid #3498db;border-radius:4px;font-size:12px;line-height:1.6"><b>Largest YES vote:</b> $61.0M &nbsp;·&nbsp; 2025-06-24<br><span style="color:#555">Borrowing of Funds and the Sale and Issuance of FY 2025-26 Tax an</span></div>
+  </div>
+
+  
+  <div class="section">
+    <div class="section-title">Homeless Services Orthodoxy</div>
+    <div style="font-size:10px;color:#7f8c8d;margin-bottom:8px;font-style:italic">
+      Berkeley spends $21.7M+/yr across 33 programs; H&amp;W up 65% vs 25% revenue growth.
+      Score measures investment in the prevailing homeless services apparatus vs.
+      accountability and reform orientation. Lower is better.
+      Based on attributed transcript speech; coverage partial.
+    </div>
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:4px">
+      <div style="font-size:28px;font-weight:bold;color:#27ae60">2</div>
+      <div>
+        <div style="font-size:13px;font-weight:bold;color:#27ae60">Reform-Oriented</div>
+        <svg width="200" height="12" style="display:block;margin-top:4px">
+          <rect x="0" y="0" width="200" height="12" rx="4" fill="#ecf0f1"/>
+          <rect x="0" y="0" width="3" height="12" rx="4" fill="#27ae60"/>
+        </svg>
+        <div style="font-size:10px;color:#95a5a6;margin-top:2px">0 = reform-oriented &nbsp;·&nbsp; 100 = status-quo aligned</div>
+      </div>
+    </div>
+    <div style='margin-top:6px;font-size:11px;color:#555'>Rhetoric: <b>1</b> orthodoxy-aligned signals (<em>housing first, trauma-informed, unhoused neighbors&hellip;</em>) &nbsp;&nbsp;<b>2</b> accountability signals (<em>Grants Pass, cost-per-client, metrics&hellip;</em>)</div>
+    
+  </div>
+
+  
+  <div class="section">
+    <div class="section-title">Agenda Behavior — Consent &amp; Action Calendars</div>
+    <div style="font-size:10px;color:#7f8c8d;margin-bottom:8px;font-style:italic">
+      Consent = block votes on buried items &nbsp;·&nbsp; Action = explicitly debated (heavier signal)
+    </div>
+    <div style="font-size:11px;font-weight:600;color:#7f8c8d;text-transform:uppercase;
+                letter-spacing:.8px;margin-bottom:6px">Consent Calendar</div>
+    <div class="stat-grid"><div class="stat-box"><div class="stat-val" style="font-size:18px;color:#2c3e50">0</div><div class="stat-lbl" style="margin-top:4px">Off-mission items<br>buried in consent (authored)</div></div><div class="stat-box"><div class="stat-val" style="font-size:18px;color:#2c3e50">0</div><div class="stat-lbl" style="margin-top:4px">Off-mission consent<br>items co-sponsored</div></div><div class="stat-box"><div class="stat-val" style="font-size:18px;color:#2c3e50">0</div><div class="stat-lbl" style="margin-top:4px">False &ldquo;None&rdquo; fiscal<br>claims (authored/cospon.)</div></div><div class="stat-box"><div class="stat-val" style="font-size:18px">$3,000</div><div class="stat-lbl" style="margin-top:4px">Discretionary relinquishments<br>(3 items from council budget)</div></div></div>
+    <div style="font-size:11px;font-weight:600;color:#7f8c8d;text-transform:uppercase;
+                letter-spacing:.8px;margin:12px 0 6px">Action Calendar</div>
+    <div class="stat-grid"><div class="stat-box"><div class="stat-val" style="font-size:18px;color:#2c3e50">0</div><div class="stat-lbl" style="margin-top:4px">Off-mission items<br>brought to action calendar</div></div><div class="stat-box"><div class="stat-val" style="font-size:18px;color:#2c3e50">0</div><div class="stat-lbl" style="margin-top:4px">Off-mission action<br>items co-sponsored</div></div></div>
+    
+  </div>
+
+  
+  <div class="section">
+    <div class="section-title">Taxpayer Alignment — Score Breakdown</div>
+    <div style="font-size:10px;color:#7f8c8d;margin-bottom:12px;font-style:italic">
+      How the 0.588 Taxpayer Alignment score is constructed.
+      Components sum to the raw figure; the final score is clamped to [0, 1].
+    </div>
+    <table class="ta-table">
+
+      <tr class="group-header"><td colspan="3">Base — from voting record and agenda behavior</td></tr>
+      <tr class="data-row">
+        <td>HSO alignment</td>
+        <td class="note">HSO score 1.8/100 → inverse 98% → quadratic → 96.4% &nbsp;(75% weight)</td>
+        <td class="contrib pos">+0.027</td>
+      </tr>
+      <tr class="data-row">
+        <td>Scope discipline</td>
+        <td class="note">Off-mission penalty 0.0% → discipline 100.0% &nbsp;(25% weight)</td>
+        <td class="contrib pos">+0.250</td>
+      </tr>
+      <tr class="subtotal">
+        <td colspan="2">Raw score</td>
+        <td class="contrib">+0.973</td>
+      </tr>
+
+      <tr class="group-header"><td colspan="3">Adjustments — documented behaviors and penalties</td></tr>
+      <tr class="data-row"><td>Incident record</td><td class="note">4 incidents, tier-weighted, capped ±0.30</td><td class="contrib neg">-0.210</td></tr>
+      <tr class="data-row"><td>Audit silence</td><td class="note">streets rocky road 2025</td><td class="contrib neg">-0.040</td></tr>
+      <tr class="data-row"><td>Revenue-seeking penalty</td><td class="note">Revenue advocacy without companion cut analysis</td><td class="contrib zero">—</td></tr>
+      <tr class="data-row"><td>Fiscal referral penalty</td><td class="note">Bond/tax campaign direction (capped −0.09)</td><td class="contrib neg">-0.040</td></tr>
+      <tr class="data-row"><td>Rhetoric penalty</td><td class="note">Fiscal concern rhetoric with no dissent votes (high HSO or serial fiscal-vote absence)</td><td class="contrib neg">-0.096</td></tr>
+
+      <tr class="total-row">
+        <td colspan="2">Final (clamped to [0, 1])</td>
+        <td class="contrib">+0.588</td>
+      </tr>
+    </table>
+    <div style="margin-top:14px;padding:10px 12px;background:#f8f9fa;border-radius:6px;font-size:11.5px;color:#2c3e50">
+      <b>P1 speech share:</b> 0.0% of words spoken
+      (0 of 34,821 words) were in turns engaging with a
+      documented structural failure (structural deficit, infrastructure backlog,
+      pension liability, investment non-compliance, reserve policy).
+      This is a diagnostic — not yet incorporated into the composite score.
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Key Findings</div>
+    <div class="insight good"><span class="icon">✓</span><span>Consistently probes cost, funding sources, and trade-offs</span></div><div class="insight good"><span class="icon">✓</span><span>No staff referrals issued — respects staff bandwidth</span></div><div class="insight warn"><span class="icon">△</span><span>No detected position changes — votes appear predetermined regardless of debate or public input</span></div><div class="insight bad"><span class="icon">✗</span><span>Roll-call record: voted YES on $61M in spending items while invoking fiscal-concern language 2 times</span></div><div class="insight bad"><span class="icon">✗</span><span>Fully absent from 4 of 58 sessions — never arrived, no vote cast</span></div><div class="insight bad"><span class="icon">✗</span><span>Missed 5 of 7 binding fiscal votes — $320.7M in authorizations voted on without them</span></div>
+    <p style='font-size:12px;color:#7f8c8d;margin-top:10px'>Recent focus trend: <b>improving</b> <span style="color:#27ae60">▲</span> (meeting focus +34.9% vs all-time avg)</p>
+  </div>
+
+  <div class="footer">
+    <span>Berkeley City Council Scorecard &nbsp;·&nbsp; Metrics explained in the <em>Berkeley City Council Scorecard Summary</em></span>
+    <span>Generated 2026-04-12</span>
+  </div>
+
+</div>
+</body>
+</html>
