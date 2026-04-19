@@ -72,6 +72,51 @@ td { padding: 10px 10px; vertical-align: middle; }
   padding-top: 8px;
 }
 .about-notes b { color: #7f8c8d; }
+
+/* ---- Council-wide Opportunities page ---- */
+.copp-page {
+  
+  color: #2c3e50;
+}
+.copp-header { margin-bottom: 16px; border-bottom: 3px solid #1a1a2e; padding-bottom: 10px; }
+.copp-header h1 { font-size: 20px; font-weight: 800; color: #1a1a2e; }
+.copp-sub { font-size: 11px; color: #7f8c8d; margin-top: 4px; }
+.copp-grid { column-count: 2; column-gap: 36px; }
+.copp-item { display: flex; gap: 14px; margin-bottom: 18px; break-inside: avoid; align-items: flex-start; }
+.copp-num { flex-shrink: 0; width: 26px; height: 26px; background: #1a1a2e; color: #fff;
+             border-radius: 50%; text-align: center; font-size: 12px; font-weight: 800;
+             line-height: 26px; }
+.copp-title { font-size: 13px; font-weight: 700; color: #1a1a2e; margin-bottom: 4px; }
+.copp-finding { font-size: 11px; color: #555; line-height: 1.6; margin-bottom: 4px; }
+.copp-action { font-size: 11px; color: #2980b9; line-height: 1.6; }
+.copp-footer {
+  margin-top: 20px;
+  font-size: 9.5px;
+  color: #95a5a6;
+  line-height: 1.6;
+  border-top: 1px solid #ecf0f1;
+  padding-top: 8px;
+}
+</style>
+
+<style>
+/* Evidentiary basis tooltip enhancement (HTML only) */
+.evid-basis {
+  cursor: help;
+  position: relative;
+}
+.evid-basis:hover::after {
+  content: attr(data-tip);
+  position: absolute;
+  left: 0; top: 120%;
+  background: #2c3e50; color: #fff;
+  font-size: 10px; font-weight: 400; text-transform: none;
+  letter-spacing: 0; line-height: 1.5;
+  white-space: normal; width: 240px;
+  padding: 6px 10px; border-radius: 4px;
+  z-index: 999; pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,.3);
+}
 </style>
 </head>
 <body>
@@ -92,13 +137,13 @@ td { padding: 10px 10px; vertical-align: middle; }
       <th>Overall</th>
       <th>Voter Alignment</th>
       <th>$ Voted YES</th>
-      <th>HSO</th>
+      <th>HSA</th>
       <th>Words/Turn</th>
       <th>Staff Refs</th>
       <th>Civic Temp.</th>
       <th>Clarity</th>
       <th>Change</th>
-      <th>Focus %</th>
+      <th>Core Agenda Share</th>
       <th>Focus Trend</th>
     </tr>
   </thead>
@@ -106,136 +151,136 @@ td { padding: 10px 10px; vertical-align: middle; }
         <tr>
           <td class="col-rank">#1</td>
           <td class="col-name"><b>Kesarwani</b><br><span class="subdist">District 1</span></td>
-          <td class="col-grade grade-b">B</td>
-          <td class="col-bar"><svg width="110" height="18" style="vertical-align:middle"><rect width="110" height="18" rx="4" fill="#ecf0f1"/><rect width="74" height="18" rx="4" fill="#3498db"/></svg></td>
+          <td class="col-grade grade-c">C+</td>
+          <td class="col-bar"><svg width="110" height="18" style="vertical-align:middle"><rect width="110" height="18" rx="4" fill="#ecf0f1"/><rect width="57" height="18" rx="4" fill="#3498db"/></svg></td>
           <td class="col-num"><b>$61M</b><br><span class="subdist">3 votes</span></td>
-          <td class="col-num"><b style="color:#27ae60">0</b><br><span class="subdist" style="color:#27ae60">Low</span></td>
-          <td class="col-num">70w<br><span class="subdist">#2</span></td>
-          <td class="col-num">1</td>
-          <td class="col-grade grade-c">C</td>
-          <td class="col-grade grade-b">B</td>
+          <td class="col-num"><b style="color:#7f8c8d">27</b><br><span class="subdist" style="color:#7f8c8d">Mix</span></td>
+          <td class="col-num">34w<br><span class="subdist">#5</span></td>
+          <td class="col-num">0</td>
+          <td class="col-grade grade-d">D+</td>
+          <td class="col-grade grade-a">A−</td>
           <td class="col-delta"><span style="color:#ccc">—</span></td>
-          <td class="col-num">81%</td>
-          <td class="col-trend"><span style="color:#95a5a6">▬</span></td>
+          <td class="col-num">82%</td>
+          <td class="col-trend"><span style="color:#27ae60">▲</span></td>
         </tr>
         <tr>
           <td class="col-rank">#2</td>
-          <td class="col-name"><b>O'Keefe</b><br><span class="subdist">District 5</span></td>
+          <td class="col-name"><b>Blackaby</b><br><span class="subdist">District 6</span></td>
           <td class="col-grade grade-c">C</td>
-          <td class="col-bar"><svg width="110" height="18" style="vertical-align:middle"><rect width="110" height="18" rx="4" fill="#ecf0f1"/><rect width="50" height="18" rx="4" fill="#e67e22"/></svg></td>
-          <td class="col-num"><b>$62M</b><br><span class="subdist">5 votes</span></td>
-          <td class="col-num"><b style="color:#7f8c8d">28</b><br><span class="subdist" style="color:#7f8c8d">Mix</span></td>
-          <td class="col-num">64w<br><span class="subdist">#5</span></td>
+          <td class="col-bar"><svg width="110" height="18" style="vertical-align:middle"><rect width="110" height="18" rx="4" fill="#ecf0f1"/><rect width="49" height="18" rx="4" fill="#e67e22"/></svg></td>
+          <td class="col-num"><b>$62M</b><br><span class="subdist">6 votes</span></td>
+          <td class="col-num"><b style="color:#7f8c8d">21</b><br><span class="subdist" style="color:#7f8c8d">Mix</span></td>
+          <td class="col-num">36w<br><span class="subdist">#7</span></td>
           <td class="col-num">0</td>
-          <td class="col-grade grade-c">C+</td>
-          <td class="col-grade grade-b">B+</td>
+          <td class="col-grade grade-b">B−</td>
+          <td class="col-grade grade-b">B−</td>
           <td class="col-delta"><span style="color:#ccc">—</span></td>
-          <td class="col-num">87%</td>
+          <td class="col-num">74%</td>
           <td class="col-trend"><span style="color:#27ae60">▲</span></td>
         </tr>
         <tr>
           <td class="col-rank">#3</td>
-          <td class="col-name"><b>Blackaby</b><br><span class="subdist">District 6</span></td>
-          <td class="col-grade grade-c">C−</td>
-          <td class="col-bar"><svg width="110" height="18" style="vertical-align:middle"><rect width="110" height="18" rx="4" fill="#ecf0f1"/><rect width="45" height="18" rx="4" fill="#e67e22"/></svg></td>
-          <td class="col-num"><b>$62M</b><br><span class="subdist">6 votes</span></td>
-          <td class="col-num"><b style="color:#7f8c8d">28</b><br><span class="subdist" style="color:#7f8c8d">Mix</span></td>
-          <td class="col-num">77w<br><span class="subdist">#4</span></td>
-          <td class="col-num">0</td>
+          <td class="col-name"><b>O'Keefe</b><br><span class="subdist">District 5</span></td>
           <td class="col-grade grade-c">C</td>
-          <td class="col-grade grade-b">B−</td>
-          <td class="col-delta"><span style="color:#ccc">—</span></td>
-          <td class="col-num">75%</td>
-          <td class="col-trend"></td>
-        </tr>
-        <tr>
-          <td class="col-rank">#4</td>
-          <td class="col-name"><b>Taplin</b><br><span class="subdist">District 2</span></td>
+          <td class="col-bar"><svg width="110" height="18" style="vertical-align:middle"><rect width="110" height="18" rx="4" fill="#ecf0f1"/><rect width="47" height="18" rx="4" fill="#e67e22"/></svg></td>
+          <td class="col-num"><b>$62M</b><br><span class="subdist">5 votes</span></td>
+          <td class="col-num"><b style="color:#7f8c8d">27</b><br><span class="subdist" style="color:#7f8c8d">Mix</span></td>
+          <td class="col-num">31w<br><span class="subdist">#6</span></td>
+          <td class="col-num">0</td>
           <td class="col-grade grade-c">C−</td>
-          <td class="col-bar"><svg width="110" height="18" style="vertical-align:middle"><rect width="110" height="18" rx="4" fill="#ecf0f1"/><rect width="41" height="18" rx="4" fill="#e67e22"/></svg></td>
-          <td class="col-num"><b>$72M</b><br><span class="subdist">4 votes</span></td>
-          <td class="col-num"><b style="color:#7f8c8d">21</b><br><span class="subdist" style="color:#7f8c8d">Mix</span></td>
-          <td class="col-num">136w<br><span class="subdist">#8</span></td>
-          <td class="col-num">3</td>
-          <td class="col-grade grade-d">D+</td>
-          <td class="col-grade grade-d">D</td>
+          <td class="col-grade grade-b">B</td>
           <td class="col-delta"><span style="color:#ccc">—</span></td>
-          <td class="col-num">65%</td>
+          <td class="col-num">83%</td>
           <td class="col-trend"><span style="color:#27ae60">▲</span></td>
         </tr>
         <tr>
-          <td class="col-rank">#5</td>
+          <td class="col-rank">#4</td>
           <td class="col-name"><b>Humbert</b><br><span class="subdist">District 8</span></td>
-          <td class="col-grade grade-d">D+</td>
-          <td class="col-bar"><svg width="110" height="18" style="vertical-align:middle"><rect width="110" height="18" rx="4" fill="#ecf0f1"/><rect width="34" height="18" rx="4" fill="#e67e22"/></svg></td>
+          <td class="col-grade grade-c">C−</td>
+          <td class="col-bar"><svg width="110" height="18" style="vertical-align:middle"><rect width="110" height="18" rx="4" fill="#ecf0f1"/><rect width="43" height="18" rx="4" fill="#e67e22"/></svg></td>
           <td class="col-num"><b>$73M</b><br><span class="subdist">7 votes</span></td>
-          <td class="col-num"><b style="color:#e67e22">62</b><br><span class="subdist" style="color:#e67e22">Mod</span></td>
-          <td class="col-num">115w<br><span class="subdist">#7</span></td>
-          <td class="col-num">1</td>
-          <td class="col-grade grade-d">D+</td>
+          <td class="col-num"><b style="color:#7f8c8d">44</b><br><span class="subdist" style="color:#7f8c8d">Mix</span></td>
+          <td class="col-num">35w<br><span class="subdist">#8</span></td>
+          <td class="col-num">3</td>
+          <td class="col-grade grade-c">C−</td>
           <td class="col-grade grade-b">B</td>
           <td class="col-delta"><span style="color:#ccc">—</span></td>
-          <td class="col-num">78%</td>
+          <td class="col-num">76%</td>
+          <td class="col-trend"><span style="color:#95a5a6">▬</span></td>
+        </tr>
+        <tr>
+          <td class="col-rank">#5</td>
+          <td class="col-name"><b>Taplin</b><br><span class="subdist">District 2</span></td>
+          <td class="col-grade grade-c">C−</td>
+          <td class="col-bar"><svg width="110" height="18" style="vertical-align:middle"><rect width="110" height="18" rx="4" fill="#ecf0f1"/><rect width="42" height="18" rx="4" fill="#e67e22"/></svg></td>
+          <td class="col-num"><b>$72M</b><br><span class="subdist">4 votes</span></td>
+          <td class="col-num"><b style="color:#7f8c8d">23</b><br><span class="subdist" style="color:#7f8c8d">Mix</span></td>
+          <td class="col-num">20w<br><span class="subdist">#1</span></td>
+          <td class="col-num">3</td>
+          <td class="col-grade grade-d">D−</td>
+          <td class="col-grade grade-d">D</td>
+          <td class="col-delta"><span style="color:#ccc">—</span></td>
+          <td class="col-num">68%</td>
           <td class="col-trend"><span style="color:#27ae60">▲</span></td>
         </tr>
         <tr>
           <td class="col-rank">#6</td>
-          <td class="col-name"><b>Bartlett</b><br><span class="subdist">District 3</span></td>
-          <td class="col-grade grade-d">D</td>
-          <td class="col-bar"><svg width="110" height="18" style="vertical-align:middle"><rect width="110" height="18" rx="4" fill="#ecf0f1"/><rect width="26" height="18" rx="4" fill="#e74c3c"/></svg></td>
-          <td class="col-num"><b>$61M</b><br><span class="subdist">4 votes</span></td>
-          <td class="col-num"><b style="color:#27ae60">2</b><br><span class="subdist" style="color:#27ae60">Low</span></td>
-          <td class="col-num">93w<br><span class="subdist">#6</span></td>
-          <td class="col-num">0</td>
+          <td class="col-name"><b>LunaParra</b><br><span class="subdist">District 7</span></td>
+          <td class="col-grade grade-d">D+</td>
+          <td class="col-bar"><svg width="110" height="18" style="vertical-align:middle"><rect width="110" height="18" rx="4" fill="#ecf0f1"/><rect width="40" height="18" rx="4" fill="#e67e22"/></svg></td>
+          <td class="col-num"><b>$73M</b><br><span class="subdist">6 votes</span></td>
+          <td class="col-num"><b style="color:#c0392b">85</b><br><span class="subdist" style="color:#c0392b">High</span></td>
+          <td class="col-num">27w<br><span class="subdist">#3</span></td>
+          <td class="col-num">1</td>
           <td class="col-grade grade-c">C</td>
-          <td class="col-grade grade-b">B+</td>
+          <td class="col-grade grade-c">C</td>
           <td class="col-delta"><span style="color:#ccc">—</span></td>
-          <td class="col-num">78%</td>
-          <td class="col-trend"><span style="color:#27ae60">▲</span></td>
+          <td class="col-num">68%</td>
+          <td class="col-trend"><span style="color:#e74c3c">▼</span></td>
         </tr>
         <tr>
           <td class="col-rank">#7</td>
-          <td class="col-name"><b>Tregub</b><br><span class="subdist">District 4</span></td>
-          <td class="col-grade grade-d">D−</td>
-          <td class="col-bar"><svg width="110" height="18" style="vertical-align:middle"><rect width="110" height="18" rx="4" fill="#ecf0f1"/><rect width="24" height="18" rx="4" fill="#e74c3c"/></svg></td>
-          <td class="col-num"><b>$72M</b><br><span class="subdist">5 votes</span></td>
-          <td class="col-num"><b style="color:#c0392b">73</b><br><span class="subdist" style="color:#c0392b">High</span></td>
-          <td class="col-num">68w<br><span class="subdist">#3</span></td>
+          <td class="col-name"><b>Bartlett</b><br><span class="subdist">District 3</span></td>
+          <td class="col-grade grade-d">D</td>
+          <td class="col-bar"><svg width="110" height="18" style="vertical-align:middle"><rect width="110" height="18" rx="4" fill="#ecf0f1"/><rect width="29" height="18" rx="4" fill="#e74c3c"/></svg></td>
+          <td class="col-num"><b>$61M</b><br><span class="subdist">4 votes</span></td>
+          <td class="col-num"><b style="color:#27ae60">0</b><br><span class="subdist" style="color:#27ae60">Low</span></td>
+          <td class="col-num">26w<br><span class="subdist">#2</span></td>
           <td class="col-num">1</td>
+          <td class="col-grade grade-f">F</td>
           <td class="col-grade grade-c">C</td>
-          <td class="col-grade grade-c">C+</td>
           <td class="col-delta"><span style="color:#ccc">—</span></td>
-          <td class="col-num">79%</td>
-          <td class="col-trend"></td>
+          <td class="col-num">69%</td>
+          <td class="col-trend"><span style="color:#27ae60">▲</span></td>
         </tr>
         <tr>
           <td class="col-rank">#8</td>
-          <td class="col-name"><b>LunaParra</b><br><span class="subdist">District 7</span></td>
+          <td class="col-name"><b>Tregub</b><br><span class="subdist">District 4</span></td>
+          <td class="col-grade grade-d">D</td>
+          <td class="col-bar"><svg width="110" height="18" style="vertical-align:middle"><rect width="110" height="18" rx="4" fill="#ecf0f1"/><rect width="26" height="18" rx="4" fill="#e74c3c"/></svg></td>
+          <td class="col-num"><b>$72M</b><br><span class="subdist">5 votes</span></td>
+          <td class="col-num"><b style="color:#7f8c8d">39</b><br><span class="subdist" style="color:#7f8c8d">Mix</span></td>
+          <td class="col-num">32w<br><span class="subdist">#4</span></td>
+          <td class="col-num">3</td>
           <td class="col-grade grade-d">D−</td>
-          <td class="col-bar"><svg width="110" height="18" style="vertical-align:middle"><rect width="110" height="18" rx="4" fill="#ecf0f1"/><rect width="22" height="18" rx="4" fill="#e74c3c"/></svg></td>
-          <td class="col-num"><b>$73M</b><br><span class="subdist">6 votes</span></td>
-          <td class="col-num"><b style="color:#c0392b">85</b><br><span class="subdist" style="color:#c0392b">High</span></td>
-          <td class="col-num">42w<br><span class="subdist">#1</span></td>
-          <td class="col-num">1</td>
-          <td class="col-grade grade-b">B−</td>
-          <td class="col-grade grade-c">C+</td>
+          <td class="col-grade grade-c">C−</td>
           <td class="col-delta"><span style="color:#ccc">—</span></td>
-          <td class="col-num">65%</td>
-          <td class="col-trend"></td>
+          <td class="col-num">67%</td>
+          <td class="col-trend"><span style="color:#27ae60">▲</span></td>
         </tr></tbody>
 </table>
 
 <div class="footnote">
-  <b>Voter Alignment</b> = Taxpayer Alignment 70% + Civic Focus 30% − attendance deduction (includes incidents, HSO, fiscal referrals, hypocrisy) &nbsp;·&nbsp;
+  <b>Voter Alignment</b> = Fiscal Stewardship Alignment 70% + Civic Focus 30% − attendance deduction (includes incidents, HSA, fiscal referrals, rhetoric–action gap) &nbsp;·&nbsp;
   <b>$ Voted YES</b> = total dollars on agenda items where member's roll-call vote was YES (partial coverage) &nbsp;·&nbsp;
-  <b>HSO</b> = Homeless Services Orthodoxy (0=reform-oriented, 100=status-quo aligned); measures investment in the prevailing $21.7M+/yr homeless services apparatus based on orthodoxy-aligned vs. accountability rhetoric in attributed speech &nbsp;·&nbsp;
-  <b>Civic Temperament</b> = Collegiality + Humility + Warmth − Ego &nbsp;·&nbsp;
-  <b>Clarity</b> = inverse of ego + off-mission + staff overreach + fiscal avoidance; A = clearest &nbsp;·&nbsp;
-  <b>Focus %</b> = share of member's speech on core city topics (budget, infrastructure, housing, public safety) &nbsp;·&nbsp;
+  <b>HSA</b> = Homeless Services Status-Quo Alignment (0=reform-oriented, 100=status-quo aligned); measures investment in the prevailing $21.7M+/yr homeless services apparatus based on status-quo vs. accountability rhetoric in attributed speech &nbsp;·&nbsp;
+  <b>Civic Temperament</b> = Collegiality + Humility + Warmth − Self-Referential Appeals &nbsp;·&nbsp;
+  <b>Clarity</b> = inverse of self-referential appeals + non-core speech + staff overreach + fiscal avoidance; A = clearest &nbsp;·&nbsp;
+  <b>Core Agenda Share</b> = share of member's speech on core city topics (budget, infrastructure, housing, public safety) &nbsp;·&nbsp;
   <b>Focus Trend</b> ▲ improving &nbsp; ▼ declining (recent 90-day meeting focus vs. member's all-time avg) &nbsp;·&nbsp;
   <b>Change</b> = Voter Alignment vs. prior scorecard run &nbsp;·&nbsp;
   <b>Staff Refs</b> ≈ 40–80 hrs each, no opportunity-cost review &nbsp;·&nbsp;
-  See page 2 for full methodology &nbsp;·&nbsp; Generated 2026-04-14
+  See page 2 for full methodology &nbsp;·&nbsp; Generated 2026-04-19
 </div>
 
 
@@ -254,6 +299,53 @@ td { padding: 10px 10px; vertical-align: middle; }
 </div>
 
 
+<div class="copp-page">
+  <div class="copp-header">
+    <h1>Council-Wide Opportunities for Improvement</h1>
+    <p class="copp-sub">Systemic findings derived from aggregate patterns across all active members</p>
+  </div>
+  <div class="copp-grid">
+    
+    <div class="copp-item">
+      <div class="copp-num">1</div>
+      <div>
+        <div class="copp-title">Reduce bloc voting</div>
+        <div class="copp-finding"><b>Finding:</b> The council votes unanimously 92% of the time, suppressing individual accountability and reducing the incentive for genuine deliberation.</div>
+        <div class="copp-action"><b>Recommendation:</b> Introduce more items with genuinely contested fiscal or policy trade-offs and require on-record position statements before major votes.</div>
+      </div>
+    </div>
+    <div class="copp-item">
+      <div class="copp-num">2</div>
+      <div>
+        <div class="copp-title">Establish fiscal pre-vote questions as a norm</div>
+        <div class="copp-finding"><b>Finding:</b> 8 of 8 members rarely ask about cost, funding sources, or fiscal trade-offs before voting.</div>
+        <div class="copp-action"><b>Recommendation:</b> Council rules or the mayor's agenda management could require cost/impact summaries be presented and acknowledged before major spending votes.</div>
+      </div>
+    </div>
+    <div class="copp-item">
+      <div class="copp-num">3</div>
+      <div>
+        <div class="copp-title">Triage staff referrals</div>
+        <div class="copp-finding"><b>Finding:</b> Members collectively generated ~11 staff referrals (avg 1.4/member). At 40–80 hrs each, this is significant unreviewed capacity consumption.</div>
+        <div class="copp-action"><b>Recommendation:</b> Implement a referral consent calendar requiring sponsors to affirm fiscal feasibility before an item reaches staff.</div>
+      </div>
+    </div>
+    <div class="copp-item">
+      <div class="copp-num">4</div>
+      <div>
+        <div class="copp-title">Refocus agenda authorship on core city business</div>
+        <div class="copp-finding"><b>Finding:</b> 7 of 8 members carry a non-core authorship penalty, meaning agenda time is regularly consumed by out-of-scope items.</div>
+        <div class="copp-action"><b>Recommendation:</b> The mayor or council president could require items cite a direct city operational impact before being calendared.</div>
+      </div>
+    </div>
+  </div>
+  <div class="copp-footer">
+    These are structural findings — patterns that no single member can fix alone. They reflect
+    council-wide norms, agenda management practices, and collective voting behavior.
+  </div>
+</div>
+
+
 <div class="about-page">
   <div class="about-header">
     <h1>About This Scorecard</h1>
@@ -261,7 +353,7 @@ td { padding: 10px 10px; vertical-align: middle; }
   </div>
 
   <div class="about-intro">
-    <p>These scorecards evaluate council members from the perspective of a Berkeley voter who wants city government focused on Berkeley: lower costs, maintained infrastructure, a police department that is trusted and functional, and housing that ordinary people can afford. Foreign policy statements, police oversight theater, and programs that expand city spending without evidence of impact are treated as off-mission.</p>
+    <p>These scorecards evaluate council members from the perspective of a Berkeley voter who wants city government focused on Berkeley: lower costs, maintained infrastructure, a police department that is trusted and functional, and housing that ordinary people can afford. Foreign policy statements, police oversight theater, and programs that expand city spending without evidence of impact are treated as non-core.</p>
     <p style="margin-top:8px">Scores are derived entirely from captioner transcripts using automated analysis — keyword classification, topic modeling, and state-machine speaker attribution. They measure what members <em>say and do in chambers</em>, not their policy positions or outside activities.</p>
   </div>
 
@@ -269,32 +361,32 @@ td { padding: 10px 10px; vertical-align: middle; }
 
     <div class="metric-block">
       <div class="metric-name">Voter Alignment <span class="metric-weight">(Overall grade)</span></div>
-      <div class="metric-desc">Composite taxpayer-alignment score: Taxpayer Alignment pillar (70%) + Civic Focus (30%) − attendance deduction. Taxpayer Alignment incorporates transcript rhetoric, voting record, HSO score, incidents, fiscal referral authorship, and fiscal hypocrisy signals. This is the correct summary grade — it captures behavior, not just speech.</div>
+      <div class="metric-desc">Championship score for fiscal stewardship: Fiscal Stewardship (55%) + Civic Focus (25%) + Legislative Skill (10%) + Character (10%) − attendance deduction. Champions don't just talk about fiscal discipline — they write and vote for things that matter: budget reform, capital maintenance, pension accountability. Fiscal Stewardship incorporates transcript rhetoric, voting record, HSA score, incidents, fiscal referral authorship, and rhetoric–action gap signals. Speech alone is not enough; the grade rewards members who move the needle.</div>
     </div>
 
     <div class="metric-block">
-      <div class="metric-name">Legislative Skill <span class="metric-weight">(LSI)</span></div>
-      <div class="metric-desc">Legislative Sophistication Index — five components: domain fluency (knowing the subject matter), fiscal discipline (probing costs and trade-offs), inquiry quality (the precision of questions asked), decisiveness (moving items forward without endless hedging), and procedural efficiency (using council process correctly). High LSI members add signal; low LSI members add noise.</div>
+      <div class="metric-name">Legislative Skill <span class="metric-weight">(LSI · 10% of grade)</span></div>
+      <div class="metric-desc">Legislative Sophistication Index — five components: domain fluency (knowing the subject matter), fiscal discipline (probing costs and trade-offs), inquiry quality (the precision of questions asked), decisiveness (moving items forward without endless hedging), and procedural efficiency (using council process correctly). Can this member move the needle? High LSI members add signal; low LSI members add noise. Cohort-normalized: scores reflect standing relative to this council.</div>
     </div>
 
     <div class="metric-block">
-      <div class="metric-name">Civic Focus &amp; Focus % <span class="metric-weight">(pillar + summary column)</span></div>
-      <div class="metric-desc">Are the topics this member engages with aligned with what the voter sent them to do? Focus % is the share of their meeting speech on core city business: budget, infrastructure, zoning, housing, public safety, and economic development. The inverse — time spent on foreign policy, police oversight theater, sanctuary city statements, and proposals that expand spending without evidence of impact — lowers the score. Focus Trend shows whether their recent meetings are more or less on-target than their historical average.</div>
+      <div class="metric-name">Civic Focus &amp; Core Agenda Share <span class="metric-weight">(25% of grade)</span></div>
+      <div class="metric-desc">Are the topics this member engages with aligned with what the voter sent them to do? Core Agenda Share is the share of their meeting speech on core city business: budget, infrastructure, zoning, housing, public safety, and economic development. The inverse — time spent on foreign policy, police oversight theater, sanctuary city statements, and proposals that expand spending without evidence of impact — lowers the score. Focus Trend shows whether their recent meetings are more or less on-target than their historical average.</div>
     </div>
 
     <div class="metric-block">
-      <div class="metric-name">Fiscal Discipline</div>
-      <div class="metric-desc">How often the member asks about cost, funding sources, or fiscal trade-offs before voting. The council rarely considers the opportunity cost of staff referrals (~40–80 hours each) or unfunded mandates. Members who routinely probe finances before committing the city earn higher scores here.</div>
+      <div class="metric-name">Character <span class="metric-weight">(10% of grade)</span></div>
+      <div class="metric-desc">A measure of the member as a colleague and public servant: collegiality (acknowledges and builds on others' contributions), humility (updates positions when presented with new information), warmth (treats staff, colleagues, and the public with genuine respect), minus self-referential appeals (credential-dropping, self-positioning, and debate-closing appeals to personal identity or authority rather than evidence). High character members make the council function better. Cohort-normalized: scores reflect standing relative to this council.</div>
     </div>
 
     <div class="metric-block">
-      <div class="metric-name">Civic Temperament</div>
-      <div class="metric-desc">A measure of the member as a colleague and public servant: collegiality (acknowledges and builds on others' contributions), humility (updates positions when presented with new information), and warmth (treats staff, colleagues, and the public with genuine respect), minus ego signals (credential-dropping, self-referential flexes, and debate-closing appeals to personal authority). High Civic Temperament members make the council function better; low scores mean the member makes it worse.</div>
+      <div class="metric-name">Discursive Discipline <span class="metric-weight">(ranking only)</span></div>
+      <div class="metric-desc">Brief, targeted remarks are harder to bury. Measures the balance of concise, focused turns vs. extended floor time — the discipline to make a point and stop. Ranked but not included in the composite grade.</div>
     </div>
 
     <div class="metric-block">
-      <div class="metric-name">Clarity</div>
-      <div class="metric-desc">Does this member make the council's work clearer and more tractable, or do they add friction and noise? Clarity combines ego signals (credential-dropping, debate-closing appeals to personal authority), off-mission speech, staff referral overreach, and fiscal avoidance into a single behavioral score. A high-Clarity member simplifies: they say what needs saying, probe what needs probing, and yield the floor. A low-Clarity member complicates. Graded so A = clearest, F = most obstructive.</div>
+      <div class="metric-name">Constituency Preference Gap <span class="metric-weight">(ranking only)</span></div>
+      <div class="metric-desc">How far is this member's behavior from what Berkeley voters demonstrably want? Combines waste speech, self-referential appeals, and low fiscal engagement. A narrow gap (#1) means the member's priorities track voter priorities closely. Ranked but not included in the composite grade.</div>
     </div>
 
   </div>

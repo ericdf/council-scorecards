@@ -38,8 +38,9 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
 .exec-summary { font-size: 12.5px; line-height: 1.65; color: #2c3e50; }
 
 /* Pillar rows */
-.pillar-row { display: flex; align-items: center; margin-bottom: 10px; }
-.pillar-label { width: 170px; font-size: 13px; font-weight: 600; color: #2c3e50; }
+.pillar-row { display: flex; align-items: center; margin-bottom: 12px; }
+.pillar-label { width: 190px; font-size: 13px; font-weight: 600; color: #2c3e50; line-height: 1.3; }
+.pillar-desc  { font-size: 10px; font-weight: 400; color: #95a5a6; margin-top: 1px; }
 .pillar-grade { width: 36px; font-size: 16px; font-weight: 800; margin-right: 10px; }
 .pillar-bar   { flex: 1; }
 .pillar-pct   { width: 50px; text-align: right; font-size: 12px; color: #7f8c8d; }
@@ -55,6 +56,7 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
 .rank-item { background: #f8f9fa; border-radius: 6px; padding: 10px 14px; flex: 1; }
 .rank-title { font-size: 10px; color: #7f8c8d; text-transform: uppercase; letter-spacing: 1px; }
 .rank-val   { font-size: 18px; font-weight: 800; color: #2c3e50; margin-top: 2px; }
+.rank-desc  { font-size: 10px; color: #aab; margin-top: 4px; line-height: 1.3; }
 
 /* Insights */
 .insight { display: flex; align-items: flex-start; margin-bottom: 8px; font-size: 13px; line-height: 1.5; color: #444; }
@@ -65,6 +67,47 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
 
 /* Footer */
 .footer { background: #f8f9fa; padding: 12px 32px; font-size: 10px; color: #aaa; display: flex; justify-content: space-between; }
+
+/* Opportunities for Improvement */
+.opp-item { display: flex; gap: 12px; margin-bottom: 14px; align-items: flex-start; }
+.opp-num  { flex-shrink: 0; width: 22px; height: 22px; background: #1a1a2e; color: #fff;
+            border-radius: 50%; text-align: center; font-size: 11px; font-weight: 800;
+            line-height: 22px; }
+.opp-action   { font-size: 12.5px; font-weight: 700; color: #2c3e50; margin-bottom: 3px; }
+.opp-rationale{ font-size: 11px; color: #7f8c8d; line-height: 1.55; }
+
+/* Evidentiary basis badges */
+.evid-basis {
+  display: inline-block; margin-left: 8px; padding: 1px 5px;
+  font-size: 8px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.8px; border-radius: 3px; vertical-align: middle;
+}
+.evid-official {
+  background: #d5e8d4; color: #2d6a2d;
+}
+.evid-text {
+  background: #dae8fc; color: #1a4a7a;
+}
+.evid-footnote {
+  padding: 10px 32px 14px;
+  font-size: 9px; color: #aaa; line-height: 1.7;
+  border-top: 1px solid #ecf0f1;
+}
+
+/* Descriptive / Normative layer dividers */
+.layer-divider {
+  padding: 10px 32px 8px;
+  background: #f0f2f5;
+  border-top: 2px solid #d5d8dc;
+  border-bottom: 2px solid #d5d8dc;
+}
+.layer-divider-label {
+  font-size: 10px; font-weight: 800; text-transform: uppercase;
+  letter-spacing: 1.5px; color: #5d6d7e;
+}
+.layer-divider-note {
+  font-size: 10px; color: #7f8c8d; margin-top: 2px; font-style: italic;
+}
 
 /* Taxpayer alignment breakdown table */
 .ta-table { width: 100%; border-collapse: collapse; font-size: 12px; }
@@ -84,7 +127,27 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
 .ta-table tr.total-row td { border-top: 2px solid #2c3e50; padding-top: 8px; font-weight: 800;
     font-size: 13px; color: #1a1a2e; }
 .ta-table tr.total-row td.contrib { text-align: right; }
-</style></head>
+</style>
+<style>
+/* Evidentiary basis tooltip enhancement (HTML only) */
+.evid-basis {
+  cursor: help;
+  position: relative;
+}
+.evid-basis:hover::after {
+  content: attr(data-tip);
+  position: absolute;
+  left: 0; top: 120%;
+  background: #2c3e50; color: #fff;
+  font-size: 10px; font-weight: 400; text-transform: none;
+  letter-spacing: 0; line-height: 1.5;
+  white-space: normal; width: 240px;
+  padding: 6px 10px; border-radius: 4px;
+  z-index: 999; pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,.3);
+}
+</style>
+</head>
 <body>
 <div style="text-align:center;padding:8px 0 0;font-size:11px;color:#7f8c8d"><a href="index.html" style="color:#3498db;text-decoration:none">← All scorecards</a></div>
 <div class="card">
@@ -99,7 +162,7 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
     </div>
     <div class="hdr-right">
       <div class="overall-label">Voter Alignment</div>
-      <div class="overall-grade grade-d">D+</div>
+      <div class="overall-grade grade-c">C−</div>
       <div style='font-size:10px;color:#8899bb;margin-top:4px'>as of 2026-03-24</div>
     </div>
   </div>
@@ -114,28 +177,36 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
     <div class="section-title">Performance Pillars</div>
     
         <div class="pillar-row">
-          <div class="pillar-label">Civic Focus</div>
+          <div class="pillar-label">Fiscal Stewardship <span style="font-size:10px;color:#aab;font-weight:400">55%</span>
+            <div class="pillar-desc">Votes, bills &amp; rhetoric on fiscal discipline</div>
+          </div>
+          <div class="pillar-grade grade-d">D</div>
+          <div class="pillar-bar"><svg width="260" height="18" style="vertical-align:middle"><rect width="260" height="18" rx="4" fill="#ecf0f1"/><rect width="72" height="18" rx="4" fill="#e74c3c"/></svg></div>
+          <div class="pillar-pct">28%</div>
+        </div>
+        <div class="pillar-row">
+          <div class="pillar-label">Civic Focus <span style="font-size:10px;color:#aab;font-weight:400">25%</span>
+            <div class="pillar-desc">Share of speech on core city business</div>
+          </div>
           <div class="pillar-grade grade-a">A+</div>
           <div class="pillar-bar"><svg width="260" height="18" style="vertical-align:middle"><rect width="260" height="18" rx="4" fill="#ecf0f1"/><rect width="260" height="18" rx="4" fill="#2ecc71"/></svg></div>
           <div class="pillar-pct">100%</div>
         </div>
         <div class="pillar-row">
-          <div class="pillar-label">Legislative Skill</div>
+          <div class="pillar-label">Legislative Skill <span style="font-size:10px;color:#aab;font-weight:400">10%</span>
+            <div class="pillar-desc">Can this member move the needle?</div>
+          </div>
           <div class="pillar-grade grade-b">B</div>
-          <div class="pillar-bar"><svg width="260" height="18" style="vertical-align:middle"><rect width="260" height="18" rx="4" fill="#ecf0f1"/><rect width="170" height="18" rx="4" fill="#3498db"/></svg></div>
-          <div class="pillar-pct">65%</div>
+          <div class="pillar-bar"><svg width="260" height="18" style="vertical-align:middle"><rect width="260" height="18" rx="4" fill="#ecf0f1"/><rect width="175" height="18" rx="4" fill="#3498db"/></svg></div>
+          <div class="pillar-pct">68%</div>
         </div>
         <div class="pillar-row">
-          <div class="pillar-label">Taxpayer Alignment</div>
-          <div class="pillar-grade grade-d">D−</div>
-          <div class="pillar-bar"><svg width="260" height="18" style="vertical-align:middle"><rect width="260" height="18" rx="4" fill="#ecf0f1"/><rect width="51" height="18" rx="4" fill="#e74c3c"/></svg></div>
-          <div class="pillar-pct">20%</div>
-        </div>
-        <div class="pillar-row">
-          <div class="pillar-label">Character & Conduct</div>
-          <div class="pillar-grade grade-d">D+</div>
-          <div class="pillar-bar"><svg width="260" height="18" style="vertical-align:middle"><rect width="260" height="18" rx="4" fill="#ecf0f1"/><rect width="79" height="18" rx="4" fill="#e67e22"/></svg></div>
-          <div class="pillar-pct">31%</div>
+          <div class="pillar-label">Character <span style="font-size:10px;color:#aab;font-weight:400">10%</span>
+            <div class="pillar-desc">Collegiality, humility &amp; restraint</div>
+          </div>
+          <div class="pillar-grade grade-c">C−</div>
+          <div class="pillar-bar"><svg width="260" height="18" style="vertical-align:middle"><rect width="260" height="18" rx="4" fill="#ecf0f1"/><rect width="106" height="18" rx="4" fill="#e67e22"/></svg></div>
+          <div class="pillar-pct">41%</div>
         </div>
   </div>
 
@@ -144,26 +215,35 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
     <div class="rank-row">
       <div class="rank-item">
         <div class="rank-title">Voter Alignment</div>
-        <div class="rank-val">#5</div>
+        <div class="rank-val">#4</div>
+        <div class="rank-desc">Champions fiscal stewardship in votes &amp; bills</div>
       </div>
       <div class="rank-item">
-        <div class="rank-title">Civic Temperament</div>
+        <div class="rank-title">Character</div>
+        <div class="rank-val">#3</div>
+        <div class="rank-desc">Collegiality, humility &amp; restraint as a colleague</div>
+      </div>
+      <div class="rank-item">
+        <div class="rank-title">Constituency Preference Gap</div>
+        <div class="rank-val">#3</div>
+        <div class="rank-desc">#1 = narrowest gap between member and voter priorities</div>
+      </div>
+      <div class="rank-item">
+        <div class="rank-title">Discursive Discipline</div>
         <div class="rank-val">#8</div>
-      </div>
-      <div class="rank-item">
-        <div class="rank-title">Clarity</div>
-        <div class="rank-val">#5 <span style="font-size:12px;color:#7f8c8d">(#1=least)</span></div>
-      </div>
-      <div class="rank-item">
-        <div class="rank-title">Efficiency</div>
-        <div class="rank-val">#7 <span style="font-size:12px;color:#7f8c8d">(115 w/turn)</span></div>
+        <div class="rank-desc">Brief, focused turns vs. extended floor time</div>
       </div>
     </div>
   </div>
 
+  <div class="layer-divider">
+    <div class="layer-divider-label">What the Record Shows</div>
+    <div class="layer-divider-note">Objective measures from official records and transcript attribution — no weighting or judgment applied.</div>
+  </div>
+
   
   <div class="section">
-    <div class="section-title">Attendance — 58 Sessions (Annotated Agenda Record)</div>
+    <div class="section-title">Attendance — 58 Sessions (Annotated Agenda Record)<span class="evid-basis evid-official" data-tip="Drawn from annotated agenda PDFs and official city records. Not subject to interpretation — these are the facts as recorded.">Official record</span></div>
     <div style="font-size:10px;color:#7f8c8d;margin-bottom:10px;font-style:italic">
       Source: post-meeting annotated agenda PDFs — the authoritative attendance record.
       "Fully absent" = listed absent at roll call and never arrived.
@@ -204,7 +284,7 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
 
   
   <div class="section">
-    <div class="section-title">Major Fiscal Votes — 7 Binding Decisions</div>
+    <div class="section-title">Major Fiscal Votes — 7 Binding Decisions<span class="evid-basis evid-official" data-tip="Drawn from annotated agenda PDFs and official city records. Not subject to interpretation — these are the facts as recorded.">Official record</span></div>
     <div style="font-size:10px;color:#7f8c8d;margin-bottom:10px;font-style:italic">
       Curated list of binding fiscal votes Dec 2024–Jul 2025. Source: annotated agenda PDFs.
     </div>
@@ -221,11 +301,11 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
       </thead>
       <tbody><tr><td style='padding:4px 8px 4px 0;font-size:10px;color:#777;white-space:nowrap'>2025-01-21</td><td style='font-size:10px;color:#888;white-space:nowrap'>TEFRA Bond</td><td style='font-size:10.5px;color:#2c3e50'>CMFA Bond – 2001 Ashby Ave</td><td style='font-size:10.5px;font-weight:700;text-align:right;white-space:nowrap'>$45.0M</td><td style='text-align:center;padding-left:8px'><span style='font-size:10px;font-weight:800;color:#e67e22;white-space:nowrap'>YES</span></td></tr><tr><td style='padding:4px 8px 4px 0;font-size:10px;color:#777;white-space:nowrap'>2025-05-20</td><td style='font-size:10px;color:#888;white-space:nowrap'>Revenue Bond</td><td style='font-size:10.5px;color:#2c3e50'>Lease Revenue Notes – Fire HQ</td><td style='font-size:10.5px;font-weight:700;text-align:right;white-space:nowrap'>$11.0M</td><td style='text-align:center;padding-left:8px'><span style='font-size:10px;font-weight:800;color:#e67e22;white-space:nowrap'>YES</span></td></tr><tr><td style='padding:4px 8px 4px 0;font-size:10px;color:#777;white-space:nowrap'>2025-05-20</td><td style='font-size:10px;color:#888;white-space:nowrap'>GO Bond</td><td style='font-size:10.5px;color:#2c3e50'>$35M GO Bonds – Measure O Housing</td><td style='font-size:10.5px;font-weight:700;text-align:right;white-space:nowrap'>$35.0M</td><td style='text-align:center;padding-left:8px'><span style='font-size:10px;font-weight:800;color:#e67e22;white-space:nowrap'>YES</span></td></tr><tr><td style='padding:4px 8px 4px 0;font-size:10px;color:#777;white-space:nowrap'>2025-05-20</td><td style='font-size:10px;color:#888;white-space:nowrap'>Budget Amendment</td><td style='font-size:10.5px;color:#2c3e50'>FY2025 Budget Amendment 1st Reading</td><td style='font-size:10.5px;font-weight:700;text-align:right;white-space:nowrap'>$85.7M</td><td style='text-align:center;padding-left:8px'><span style='font-size:10px;font-weight:800;color:#e67e22;white-space:nowrap'>YES</span></td></tr><tr><td style='padding:4px 8px 4px 0;font-size:10px;color:#777;white-space:nowrap'>2025-06-03</td><td style='font-size:10px;color:#888;white-space:nowrap'>Budget Amendment</td><td style='font-size:10.5px;color:#2c3e50'>FY2025 Budget Amendment 2nd Reading</td><td style='font-size:10.5px;font-weight:700;text-align:right;white-space:nowrap'>$144.0M</td><td style='text-align:center;padding-left:8px'><span style='font-size:10px;font-weight:800;color:#e67e22;white-space:nowrap'>YES</span></td></tr><tr><td style='padding:4px 8px 4px 0;font-size:10px;color:#777;white-space:nowrap'>2025-06-24</td><td style='font-size:10px;color:#888;white-space:nowrap'>Budget Adoption</td><td style='font-size:10.5px;color:#2c3e50'>FY2026 Budget Adoption 1st Reading</td><td style='font-size:10.5px;font-weight:700;text-align:right;white-space:nowrap'>$1.45B</td><td style='text-align:center;padding-left:8px'><span style='font-size:10px;font-weight:800;color:#e67e22;white-space:nowrap'>YES</span></td></tr><tr><td style='padding:4px 8px 4px 0;font-size:10px;color:#777;white-space:nowrap'>2025-07-08</td><td style='font-size:10px;color:#888;white-space:nowrap'>Budget Adoption</td><td style='font-size:10.5px;color:#2c3e50'>FY2026 Budget Adoption 2nd Reading</td><td style='font-size:10.5px;font-weight:700;text-align:right;white-space:nowrap'>$1.52B</td><td style='text-align:center;padding-left:8px'><span style='font-size:10px;font-weight:800;color:#e67e22;white-space:nowrap'>YES</span></td></tr></tbody>
     </table>
-    <div style="margin-top:8px;font-size:10px;color:#7f8c8d;font-style:italic">YES = endorsed the spending authorization (budget adoptions = chose not to cut or reprioritize). ABSENT = dereliction — items are only on the agenda because the Mayor expects passage.</div>
+    <div style="margin-top:8px;font-size:10px;color:#7f8c8d;font-style:italic">YES = endorsed the spending authorization (budget adoptions = chose not to cut or reprioritize). ABSENT = missed a binding vote — items are only on the agenda because the Mayor expects passage.</div>
   </div>
 
   <div class="section">
-    <div class="section-title">Voting Record — 196 Items (Annotated Agenda)</div>
+    <div class="section-title">Voting Record — 196 Items (Annotated Agenda)<span class="evid-basis evid-official" data-tip="Drawn from annotated agenda PDFs and official city records. Not subject to interpretation — these are the facts as recorded.">Official record</span></div>
     <div style="font-size:10px;color:#7f8c8d;margin-bottom:8px;font-style:italic">
       Source: annotated agenda PDFs across all 196 items with a parseable vote.
       Council block-vote rate: 91% — individual deviations are high-signal precisely because they are rare.
@@ -251,22 +331,22 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
   </div>
 
   <div class="section">
-    <div class="section-title">Agenda Impact &amp; Efficiency</div>
+    <div class="section-title">Agenda Impact &amp; Efficiency<span class="evid-basis evid-official" data-tip="Drawn from annotated agenda PDFs and official city records. Not subject to interpretation — these are the facts as recorded.">Official record</span></div>
     <div class="stat-grid">
       <div class="stat-box">
         <div class="stat-val">2</div>
-        <div class="stat-lbl">Sponsorship signals<br>(authored or co-authored items)</div>
+        <div class="stat-lbl">Agenda Authorship Activity<br>(authored or co-authored items)</div>
       </div>
       <div class="stat-box">
-        <div class="stat-val">1</div>
-        <div class="stat-lbl">Staff referrals<br>(40–80 hrs each, no opp-cost review)</div>
+        <div class="stat-val">3</div>
+        <div class="stat-lbl">Staff Direction Volume<br>(40–80 hrs each, no opp-cost review)</div>
       </div>
       <div class="stat-box">
-        <div class="stat-val">115w</div>
-        <div class="stat-lbl">Avg words per turn<br>Rank #7 of 8</div>
+        <div class="stat-val">35w</div>
+        <div class="stat-lbl">Avg words per turn<br>Rank #8 of 8</div>
       </div>
       <div class="stat-box">
-        <div class="stat-val">27%</div>
+        <div class="stat-val">2%</div>
         <div class="stat-lbl">Turns &gt;200 words<br>(monologue territory)</div>
       </div>
     </div>
@@ -274,7 +354,7 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
 
   
   <div class="section">
-    <div class="section-title">Spending Votes — Roll-Call Record</div>
+    <div class="section-title">Spending Votes — Roll-Call Record<span class="evid-basis evid-official" data-tip="Drawn from annotated agenda PDFs and official city records. Not subject to interpretation — these are the facts as recorded.">Official record</span></div>
     <div style="font-size:10px;color:#7f8c8d;margin-bottom:8px;font-style:italic">
       Dollar amounts from agenda items matched to extracted roll-calls.
       Coverage is partial: unanimous voice votes and some formats not captured.
@@ -285,7 +365,39 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
 
   
   <div class="section">
-    <div class="section-title">Homeless Services Orthodoxy</div>
+    <div class="section-title">Speech Content — What Was Said<span class="evid-basis evid-text" data-tip="Derived from keyword classification of attributed meeting transcripts, constituent communications, and member public statements. Full methodology at METHODOLOGY.md.">Text analysis</span></div>
+    <div class="stat-grid">
+      <div class="stat-box">
+        <div class="stat-val">76%</div>
+        <div class="stat-lbl">Core agenda share<br>(budget, infrastructure, safety, housing)</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val">22%</div>
+        <div class="stat-lbl">Non-core speech share<br>(foreign policy, ideological resolutions)</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val">2</div>
+        <div class="stat-lbl">Fiscal concern mentions<br>(0.5 per 10k words)</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val">1</div>
+        <div class="stat-lbl">New revenue mentions<br>(0.1 per 10k words; tax/bond advocacy)</div>
+      </div>
+    </div>
+    <div style="font-size:10px;color:#7f8c8d;margin-top:8px;font-style:italic">
+      Counts are decay-weighted (recent meetings count more than older ones).
+      Source: attributed transcript speech.
+    </div>
+  </div>
+
+  <div class="layer-divider">
+    <div class="layer-divider-label">Fiscal Stewardship Assessment</div>
+    <div class="layer-divider-note">The following sections apply this scorecard's fiscal-stewardship framework to the descriptive metrics above. Readers who dispute the weights or philosophy can engage at that level without disputing the factual record above.</div>
+  </div>
+
+  
+  <div class="section">
+    <div class="section-title">Homeless Services Status-Quo Alignment<span class="evid-basis evid-text" data-tip="Derived from keyword classification of attributed meeting transcripts, constituent communications, and member public statements. Full methodology at METHODOLOGY.md.">Text analysis</span></div>
     <div style="font-size:10px;color:#7f8c8d;margin-bottom:8px;font-style:italic">
       Berkeley spends $21.7M+/yr across 33 programs; H&amp;W up 65% vs 25% revenue growth.
       Score measures investment in the prevailing homeless services apparatus vs.
@@ -293,23 +405,23 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
       Based on attributed transcript speech; coverage partial.
     </div>
     <div style="display:flex;align-items:center;gap:16px;margin-bottom:4px">
-      <div style="font-size:28px;font-weight:bold;color:#e67e22">62</div>
+      <div style="font-size:28px;font-weight:bold;color:#7f8c8d">44</div>
       <div>
-        <div style="font-size:13px;font-weight:bold;color:#e67e22">Moderate Orthodoxy</div>
+        <div style="font-size:13px;font-weight:bold;color:#7f8c8d">Mixed</div>
         <svg width="200" height="12" style="display:block;margin-top:4px">
           <rect x="0" y="0" width="200" height="12" rx="4" fill="#ecf0f1"/>
-          <rect x="0" y="0" width="124" height="12" rx="4" fill="#e67e22"/>
+          <rect x="0" y="0" width="87" height="12" rx="4" fill="#7f8c8d"/>
         </svg>
         <div style="font-size:10px;color:#95a5a6;margin-top:2px">0 = reform-oriented &nbsp;·&nbsp; 100 = status-quo aligned</div>
       </div>
     </div>
-    <div style='margin-top:6px;font-size:11px;color:#555'>Rhetoric: <b>2</b> orthodoxy-aligned signals (<em>housing first, trauma-informed, unhoused neighbors&hellip;</em>) &nbsp;&nbsp;<b>0</b> accountability signals (<em>Grants Pass, cost-per-client, metrics&hellip;</em>)</div>
+    <div style='margin-top:6px;font-size:11px;color:#555'>Rhetoric: <b>2</b> status-quo-aligned signals (<em>housing first, trauma-informed, unhoused neighbors&hellip;</em>) &nbsp;&nbsp;<b>0</b> accountability signals (<em>Grants Pass, cost-per-client, metrics&hellip;</em>)</div>
     <div style='margin-top:4px;font-size:11px;color:#555'>Cosponsored/authored <b>1</b> homeless-services agenda item(s).</div>
   </div>
 
   
   <div class="section">
-    <div class="section-title">Agenda Behavior — Consent &amp; Action Calendars</div>
+    <div class="section-title">Agenda Behavior — Consent &amp; Action Calendars<span class="evid-basis evid-official" data-tip="Drawn from annotated agenda PDFs and official city records. Not subject to interpretation — these are the facts as recorded.">Official record</span></div>
     <div style="font-size:10px;color:#7f8c8d;margin-bottom:8px;font-style:italic">
       Consent = block votes on buried items &nbsp;·&nbsp; Action = explicitly debated (heavier signal)
     </div>
@@ -319,23 +431,23 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
     <div style="font-size:11px;font-weight:600;color:#7f8c8d;text-transform:uppercase;
                 letter-spacing:.8px;margin:12px 0 6px">Action Calendar</div>
     <div class="stat-grid"><div class="stat-box"><div class="stat-val" style="font-size:18px;color:#f39c12">1</div><div class="stat-lbl" style="margin-top:4px">Off-mission items<br>brought to action calendar</div></div><div class="stat-box"><div class="stat-val" style="font-size:18px;color:#2c3e50">0</div><div class="stat-lbl" style="margin-top:4px">Off-mission action<br>items co-sponsored</div></div></div>
-    <div style="margin-top:12px;padding:10px 12px;background:#fff5f5;border-left:3px solid #e74c3c;border-radius:4px;font-size:12px;line-height:1.6"><b style="color:#e74c3c">Fiscal Consistency Flag</b> — 3 fiscal-concern speeches vs. 1 off-mission items on action calendar<br><span style="color:#95a5a6;font-size:10.5px">3 fiscal-concern mentions; 1 off-mission items brought to action calendar</span></div>
+    <div style="margin-top:12px;padding:10px 12px;background:#fff5f5;border-left:3px solid #e74c3c;border-radius:4px;font-size:12px;line-height:1.6"><b style="color:#e74c3c">Fiscal Consistency Flag</b> — 2.49 fiscal-concern speeches vs. 1 non-core items on action calendar<br><span style="color:#95a5a6;font-size:10.5px">2.49 fiscal-concern mentions; 1 off-mission items brought to action calendar</span></div>
   </div>
 
   
   <div class="section">
-    <div class="section-title">Taxpayer Alignment — Score Breakdown</div>
+    <div class="section-title">Fiscal Stewardship Alignment — Score Breakdown<span class="evid-basis evid-text" data-tip="Derived from keyword classification of attributed meeting transcripts, constituent communications, and member public statements. Full methodology at METHODOLOGY.md.">Text analysis + official record</span></div>
     <div style="font-size:10px;color:#7f8c8d;margin-bottom:12px;font-style:italic">
-      How the 0.200 Taxpayer Alignment score is constructed.
+      How the 0.279 Fiscal Stewardship Alignment score is constructed.
       Components sum to the raw figure; the final score is clamped to [0, 1].
     </div>
     <table class="ta-table">
 
       <tr class="group-header"><td colspan="3">Base — from voting record and agenda behavior</td></tr>
       <tr class="data-row">
-        <td>HSO alignment</td>
-        <td class="note">HSO score 62.1/100 → inverse 38% → quadratic → 14.4% &nbsp;(75% weight)</td>
-        <td class="contrib pos">+0.642</td>
+        <td>HSA alignment</td>
+        <td class="note">HSA score 43.7/100 → inverse 56% → quadratic → 31.7% &nbsp;(75% weight)</td>
+        <td class="contrib pos">+0.512</td>
       </tr>
       <tr class="data-row">
         <td>Scope discipline</td>
@@ -344,24 +456,24 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
       </tr>
       <tr class="subtotal">
         <td colspan="2">Raw score</td>
-        <td class="contrib">+0.340</td>
+        <td class="contrib">+0.470</td>
       </tr>
 
       <tr class="group-header"><td colspan="3">Adjustments — documented behaviors and penalties</td></tr>
-      <tr class="data-row"><td>Incident record</td><td class="note">1 incident, tier-weighted, capped ±0.30</td><td class="contrib neg">-0.030</td></tr>
+      <tr class="data-row"><td>Incident record</td><td class="note">1 incident, tier-weighted, capped ±0.30</td><td class="contrib neg">-0.028</td></tr>
       <tr class="data-row"><td>Audit silence</td><td class="note">streets rocky road 2025</td><td class="contrib neg">-0.040</td></tr>
-      <tr class="data-row"><td>Revenue-seeking penalty</td><td class="note">Revenue advocacy without companion cut analysis</td><td class="contrib zero">—</td></tr>
+      <tr class="data-row"><td>New revenue preference penalty</td><td class="note">Revenue advocacy without companion cut analysis</td><td class="contrib zero">—</td></tr>
       <tr class="data-row"><td>Fiscal referral penalty</td><td class="note">Bond/tax campaign direction (capped −0.09)</td><td class="contrib neg">-0.040</td></tr>
-      <tr class="data-row"><td>Rhetoric penalty</td><td class="note">Fiscal concern rhetoric with no dissent votes (high HSO or serial fiscal-vote absence)</td><td class="contrib zero">—</td></tr>
+      <tr class="data-row"><td>Rhetoric penalty</td><td class="note">Fiscal concern rhetoric with no dissent votes (high HSA or serial fiscal-vote absence)</td><td class="contrib zero">—</td></tr>
 
       <tr class="total-row">
         <td colspan="2">Final (clamped to [0, 1])</td>
-        <td class="contrib">+0.200</td>
+        <td class="contrib">+0.279</td>
       </tr>
     </table>
     <div style="margin-top:14px;padding:10px 12px;background:#f8f9fa;border-radius:6px;font-size:11.5px;color:#2c3e50">
       <b>P1 speech share:</b> 0.0% of words spoken
-      (0 of 54,171 words) were in turns engaging with a
+      (0 of 49,227 words) were in turns engaging with a
       documented structural failure (structural deficit, infrastructure backlog,
       pension liability, investment non-compliance, reserve policy).
       This is a diagnostic — not yet incorporated into the composite score.
@@ -370,13 +482,45 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
 
   <div class="section">
     <div class="section-title">Key Findings</div>
-    <div class="insight warn"><span class="icon">△</span><span>No detected position changes — votes appear predetermined regardless of debate or public input</span></div><div class="insight bad"><span class="icon">✗</span><span>Roll-call record: voted YES on $73M in spending items while invoking fiscal-concern language 3 times</span></div><div class="insight good"><span class="icon">✓</span><span>Voted NO 3 times across all tracked items — among the most willing to dissent from bloc</span></div><div class="insight warn"><span class="icon">△</span><span>Least efficient speaker (115 words/turn avg) — long monologues consume meeting time</span></div>
-    <p style='font-size:12px;color:#7f8c8d;margin-top:10px'>Recent focus trend: <b>improving</b> <span style="color:#27ae60">▲</span> (meeting focus +33.5% vs all-time avg)</p>
+    <div class="insight good"><span class="icon">✓</span><span>Consistently probes cost, funding sources, and trade-offs</span></div><div class="insight warn"><span class="icon">△</span><span>3 staff referrals issued — each consumes 40–80 hours of staff time with no opportunity-cost analysis</span></div><div class="insight warn"><span class="icon">△</span><span>Credential-dropping detected (2×) — references personal expertise to close debate rather than open it</span></div><div class="insight bad"><span class="icon">✗</span><span>Roll-call record: voted YES on $73M in spending items while invoking fiscal-concern language 2.49 times</span></div><div class="insight good"><span class="icon">✓</span><span>Voted NO 3 times across all tracked items — among the most willing to dissent from bloc</span></div><div class="insight warn"><span class="icon">△</span><span>Least efficient speaker (35 words/turn avg) — long monologues consume meeting time</span></div>
+    <p style='font-size:12px;color:#7f8c8d;margin-top:10px'>Recent focus trend: <b>stable</b> <span style="color:#95a5a6">▬</span> (meeting focus +1.4% vs all-time avg)</p>
+  </div>
+
+  
+  <div class="section">
+    <div class="section-title">Opportunities for Improvement</div>
+    <div style="font-size:10px;color:#7f8c8d;margin-bottom:12px;font-style:italic">
+      Highest-leverage actions this member could take to improve their Fiscal Stewardship score,
+      ordered by estimated score impact. Based on the same methodology as the scorecard.
+    </div>
+    
+    <div class="opp-item">
+      <div class="opp-num">1</div>
+      <div class="opp-body">
+        <div class="opp-action">Engage on the record with Financial Condition Audit findings</div>
+        <div class="opp-rationale">Audit alignment score 0.15/1.0. The April 2026 audit documented a $32–33M structural deficit, 66% pension funded ratio, and $1.8B capital backlog. On-record statements supporting a structural balance policy, Section 115 Trust contributions, or investment policy compliance would each raise this sub-score and recover an estimated 0.06 composite points.</div>
+      </div>
+    </div>
+    <div class="opp-item">
+      <div class="opp-num">2</div>
+      <div class="opp-body">
+        <div class="opp-action">Redirect authorship from out-of-scope items (0 class-9 items)</div>
+        <div class="opp-rationale">Out-of-scope authorship generates a scope penalty of 0.07. Class-9 items are things the city arguably should not be doing — county service duplication, out-of-jurisdiction advocacy, governance structures that insulate dysfunction. Focusing authorship on P1/P2 items would recover ~0.01 points.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="evid-footnote">
+    <span class="evid-basis evid-official" data-tip="Drawn from annotated agenda PDFs and official city records. Not subject to interpretation — these are the facts as recorded." style="vertical-align:baseline">Official record</span>
+    &nbsp;Attendance, votes, and authorship drawn from annotated agenda PDFs and agenda item JSONs — primary public record, not subject to interpretation.
+    &nbsp;&nbsp;
+    <span class="evid-basis evid-text" data-tip="Derived from keyword classification of attributed meeting transcripts, constituent communications, and member public statements. Full methodology at METHODOLOGY.md." style="vertical-align:baseline">Text analysis</span>
+    &nbsp;Rhetoric signals derived from keyword classification of attributed meeting transcripts, constituent communications, and member statements. Full methodology at <em>METHODOLOGY.md</em>.
   </div>
 
   <div class="footer">
     <span>Berkeley City Council Scorecard &nbsp;·&nbsp; Metrics explained in the <em>Berkeley City Council Scorecard Summary</em></span>
-    <span>Generated 2026-04-14</span>
+    <span>Generated 2026-04-19</span>
   </div>
 
 </div>
