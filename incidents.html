@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Incident Record — Berkeley City Council</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+body { background: #f0f2f5; display: flex; justify-content: center; }
+.card { width: 760px; margin: 20px auto; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,.15); }
+.header { background: #1a1a2e; color: #fff; padding: 28px 32px 20px; }
+.header .page-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.8px; color: #e74c3c; margin-bottom: 8px; }
+.header .title { font-size: 22px; font-weight: 800; line-height: 1.3; }
+.header .meta { font-size: 11px; color: #8899bb; margin-top: 10px; line-height: 1.7; }
+.intro { padding: 20px 32px; border-bottom: 2px solid #ecf0f1; }
+.intro p { font-size: 13px; line-height: 1.75; color: #2c3e50; margin-bottom: 8px; }
+.intro p:last-child { margin-bottom: 0; }
+.incident-row { display: flex; align-items: flex-start; gap: 20px; padding: 20px 32px; border-bottom: 1px solid #ecf0f1; text-decoration: none; color: inherit; transition: background .15s; }
+.incident-row:hover { background: #f8f9fa; }
+.incident-letter { font-size: 28px; font-weight: 900; color: #bdc3c7; min-width: 32px; padding-top: 2px; }
+.incident-body { flex: 1; }
+.incident-title { font-size: 15px; font-weight: 800; color: #1a1a2e; line-height: 1.3; margin-bottom: 4px; }
+.incident-meta { font-size: 11px; color: #7f8c8d; margin-bottom: 8px; }
+.incident-summary { font-size: 12px; color: #4a5568; line-height: 1.65; }
+.incident-scores { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; min-width: 90px; }
+.score-chip { text-align: right; }
+.score-chip .member { font-size: 10px; color: #7f8c8d; font-weight: 600; }
+.score-chip .value { font-size: 26px; font-weight: 900; line-height: 1; }
+.score-chip .value.red    { color: #e74c3c; }
+.score-chip .value.orange { color: #e67e22; }
+.score-chip .value.yellow { color: #f39c12; }
+.pending-chip { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #f39c12; margin-top: 2px; }
+.section-label { padding: 10px 32px 6px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #7f8c8d; background: #f8f9fa; border-bottom: 1px solid #ecf0f1; }
+.footer { background: #f8f9fa; padding: 12px 32px; font-size: 10px; color: #aaa; display: flex; justify-content: space-between; }
+.footer a { color: #aaa; text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+.methodology-note { padding: 16px 32px; border-top: 2px solid #ecf0f1; font-size: 11px; color: #7f8c8d; line-height: 1.7; }
+.methodology-note a { color: #2980b9; text-decoration: none; }
+.methodology-note a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="header">
+    <div class="page-label">Accountability Record · Updated April 2026</div>
+    <div class="title">Berkeley City Council — Incident Record</div>
+    <div class="meta">
+      Documented incidents affecting scorecard standing.<br>
+      Scores decay 20% annually in the absence of similar incidents; reset if the pattern continues.
+    </div>
+  </div>
+
+  <div class="intro">
+    <p>The incident record captures specific accountability events that cannot be measured by transcript keyword analysis alone — conflicts of interest, credential misrepresentation, contractor oversight failures, and responses to documented wrongdoing. Each incident is scored on named dimensions with full reasoning. Scores are subject to revision as pending verifications are resolved.</p>
+    <p>Incident scores feed into the <strong>Character &amp; Conduct</strong> pillar and the separate <strong>Incident Record</strong> pillar on individual scorecards. Positive incidents — members who proactively called for accountability — are recorded here as well.</p>
+  </div>
+
+  <div class="section-label">April 2026</div>
+
+  <!-- Incident A -->
+  <a class="incident-row" href="incident_Bartlett_Upline.html">
+    <div class="incident-letter">A</div>
+    <div class="incident-body">
+      <div class="incident-title">Bartlett — Household Entanglement with City Subcontractor</div>
+      <div class="incident-meta">Documented April 22, 2026 · Source: SF Chronicle · Ben Bartlett, District 3</div>
+      <div class="incident-summary">Bartlett's wife co-incorporated Upline Solutions, which received city money as a subcontractor on a $607K cannabis education contract that failed to deliver its core obligations. No public disclosure of the household connection was identified. No recusal from related votes was identified. When asked about accountability, Bartlett proposed no review and suggested contractors might yet fulfill obligations from a closed grant period.</div>
+    </div>
+    <div class="incident-scores">
+      <div class="score-chip">
+        <div class="member">Bartlett</div>
+        <div class="value red">−18</div>
+      </div>
+    </div>
+  </a>
+
+  <!-- Incident B -->
+  <a class="incident-row" href="incident_BYA_Institutional.html">
+    <div class="incident-letter">B</div>
+    <div class="incident-body">
+      <div class="incident-title">BYA Cannabis Contract — Institutional Accountability Failure</div>
+      <div class="incident-meta">First documented April 22, 2026 · Source: SF Chronicle, Alameda County evaluation · Full Council + Bartlett additional</div>
+      <div class="incident-summary">Despite an April 2025 county evaluation documenting significant BYA contract failures, the council voted in June 2025 to reauthorize a $106,000 soda tax grant to BYA with no documented discussion. The reauthorization appears to have passed on the consent calendar. No council member is documented as having requested the evaluation, cited its findings, or moved to condition renewal on a performance review.</div>
+    </div>
+    <div class="incident-scores">
+      <div class="score-chip">
+        <div class="member">Full Council</div>
+        <div class="value yellow">−3</div>
+      </div>
+      <div class="score-chip">
+        <div class="member">Bartlett total</div>
+        <div class="value red">−7</div>
+      </div>
+      <div class="pending-chip">pending vote record</div>
+    </div>
+  </a>
+
+  <!-- Incident C -->
+  <a class="incident-row" href="incident_Ishii_Panel.html">
+    <div class="incident-letter">C</div>
+    <div class="incident-body">
+      <div class="incident-title">Ishii — Sugar Tax Panel Credential Misrepresentation and Duty of Care</div>
+      <div class="incident-meta">Period of concern: Ishii's panel tenure (dates TBC) · Adena Ishii, Mayor (formerly D1)</div>
+      <div class="incident-summary">Ishii was appointed to the Sugar-Sweetened Beverage Product Panel of Experts despite holding no credential in nutrition science, public health research, or medical practice — the backgrounds required by BMC §7.72.150. She subsequently cited the appointment in her 2024 mayoral campaign materials as evidence of policy expertise. During her tenure, BYA received panel-recommended soda tax grants; whether the panel conducted substantive performance review is unverified.</div>
+    </div>
+    <div class="incident-scores">
+      <div class="score-chip">
+        <div class="member">Ishii</div>
+        <div class="value orange">−11</div>
+      </div>
+      <div class="pending-chip">pending records</div>
+    </div>
+  </a>
+
+  <div class="methodology-note">
+    Scores are editorial assessments based on documented facts. Each incident page shows the full reasoning behind each dimensional score. Pending verifications are noted where vote records, panel meeting minutes, or tenure dates have not been independently confirmed. See <a href="methodology.html">methodology</a> for scoring framework.
+  </div>
+
+  <div class="footer">
+    <span><a href="index.html">← Scorecard Home</a></span>
+    <span>Berkeley Council Incident Record · Updated April 2026</span>
+  </div>
+
+</div>
+</body>
+</html>
