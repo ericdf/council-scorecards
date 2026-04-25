@@ -28,11 +28,15 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
 .incident-row { padding: 20px 32px; border-bottom: 1px solid #ecf0f1; text-decoration: none; color: inherit; display: block; transition: background .12s; }
 .incident-row:hover { background: #f8f9fa; }
 .incident-row.hidden { display: none; }
+.year-divider.hidden { display: none; }
 
 .inc-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
 .member-tag { display: inline-block; border-radius: 4px; padding: 2px 8px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .6px; }
 .tag-bartlett  { background: #fde8e8; color: #c0392b; }
 .tag-ishii     { background: #eaf4fb; color: #1a5276; }
+.tag-tregub    { background: #eafaf1; color: #1e8449; }
+.tag-lunaparra { background: #fdf2f8; color: #7d3c98; }
+.tag-taplin    { background: #fef9e7; color: #9a7d0a; }
 .tag-council   { background: #f0f0f0; color: #555; }
 .pillar-tag { display: inline-block; border-radius: 3px; padding: 2px 7px; font-size: 10px; font-weight: 600; letter-spacing: .5px; }
 .pillar-character { background: #f3e5f5; color: #7b1fa2; }
@@ -80,14 +84,92 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
     <span class="chip active" data-filter="all">All</span>
     <span class="chip" data-filter="Bartlett">Bartlett</span>
     <span class="chip" data-filter="Ishii">Ishii</span>
+    <span class="chip" data-filter="Tregub">Tregub</span>
+    <span class="chip" data-filter="LunaParra">LunaParra</span>
+    <span class="chip" data-filter="Taplin">Taplin</span>
     <span class="chip chip-council" data-filter="Full Council">Full Council</span>
   </div>
 
-  <div class="year-divider"><span>2026</span></div>
+  <!-- ===== 2026 ===== -->
+  <div class="year-divider" data-year="2026"><span>2026</span></div>
 
-  <!-- Incident A: Bartlett household entanglement -->
+  <!-- Bartlett American Renewal Plan -->
+  <a class="incident-row" href="2026-04/incident_Bartlett_Renewal.html"
+     data-members="Bartlett" data-year="2026">
+    <div class="inc-tags">
+      <span class="member-tag tag-bartlett">Bartlett</span>
+      <span class="pillar-tag pillar-character">Character &amp; Conduct</span>
+    </div>
+    <div class="inc-title">American Renewal Plan — Federal Policy Framework on District Office Platform</div>
+    <div class="inc-summary">Bartlett published a five-pillar national economic reform framework (32-hour workweek, public housing condo-ization, American Resource Dividend, credit-card interest deductibility, Modern Debt Jubilee) on his council office platform — addressed to federal policymakers — while Berkeley faces an unresolved structural fiscal crisis and unaddressed local service failures. None of the plan's pillars touches any Berkeley P1 problem.</div>
+    <div class="inc-scores">
+      <div class="score-chip">
+        <div class="sc-member">Bartlett</div>
+        <div class="sc-val red">−10</div>
+      </div>
+    </div>
+    <div class="inc-link">Full incident record →</div>
+  </a>
+
+  <!-- Flock Contract Rejection -->
+  <a class="incident-row" href="2026-03/incident_Flock_Rejection.html"
+     data-members="LunaParra,Ishii,Tregub" data-year="2026">
+    <div class="inc-tags">
+      <span class="member-tag tag-lunaparra">LunaParra</span>
+      <span class="member-tag tag-ishii">Ishii</span>
+      <span class="member-tag tag-tregub">Tregub</span>
+      <span class="pillar-tag pillar-fiscal">Fiscal Stewardship</span>
+    </div>
+    <div class="inc-title">Flock Safety Contract — Negotiated Protections Dismissed</div>
+    <div class="inc-summary">LunaParra and Ishii authored a supplemental calling to "reject any renewal" of the Flock ALPR contract; Tregub co-sponsored. Their stated rationale — sanctuary city data exposure — ignored that Berkeley's City Attorney had already negotiated comprehensive protections addressing exactly those concerns. Officers publicly identified the Flock system as "the singular piece of technology" keeping them engaged, during a documented BPD attrition crisis.</div>
+    <div class="inc-scores">
+      <div class="score-chip">
+        <div class="sc-member">LunaParra</div>
+        <div class="sc-val red">−9</div>
+      </div>
+      <div class="score-chip">
+        <div class="sc-member">Ishii</div>
+        <div class="sc-val red">−8</div>
+      </div>
+      <div class="score-chip">
+        <div class="sc-member">Tregub</div>
+        <div class="sc-val orange">−6</div>
+      </div>
+    </div>
+    <div class="inc-link">Full incident record →</div>
+  </a>
+
+  <!-- PAB / Aguilar Firing -->
+  <a class="incident-row" href="2026-02/incident_PAB_Aguilar.html"
+     data-members="Full Council,LunaParra,Ishii" data-year="2026">
+    <div class="inc-tags">
+      <span class="member-tag tag-council">Full Council</span>
+      <span class="member-tag tag-lunaparra">LunaParra · additional</span>
+      <span class="member-tag tag-ishii">Ishii · additional</span>
+      <span class="pillar-tag pillar-character">Character &amp; Conduct</span>
+    </div>
+    <div class="inc-title">Police Accountability Board Collapse — Aguilar Firing</div>
+    <div class="inc-summary">The council voted 8–0 to fire Hansel Aguilar, ODPA Director, while the PAB was at 4 of 9 seats with all original commissioners departed and BPD in an active records dispute with the office. LunaParra voted yes then issued a statement she was "concerned that the City and City Council does not prioritize or value Police accountability." Ishii stated the council "remained committed to police accountability" immediately after eliminating the office's leadership.</div>
+    <div class="inc-scores">
+      <div class="score-chip">
+        <div class="sc-member">Full Council</div>
+        <div class="sc-val orange">−7</div>
+      </div>
+      <div class="score-chip">
+        <div class="sc-member">LunaParra</div>
+        <div class="sc-val red">−12</div>
+      </div>
+      <div class="score-chip">
+        <div class="sc-member">Ishii</div>
+        <div class="sc-val orange">−10</div>
+      </div>
+    </div>
+    <div class="inc-link">Full incident record →</div>
+  </a>
+
+  <!-- Bartlett household entanglement -->
   <a class="incident-row" href="2026-04/incident_Bartlett_Upline.html"
-     data-members="Bartlett">
+     data-members="Bartlett" data-year="2026">
     <div class="inc-tags">
       <span class="member-tag tag-bartlett">Bartlett</span>
       <span class="pillar-tag pillar-character">Character &amp; Conduct</span>
@@ -103,9 +185,9 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
     <div class="inc-link">Full incident record →</div>
   </a>
 
-  <!-- Incident B: BYA institutional accountability -->
+  <!-- BYA institutional -->
   <a class="incident-row" href="2026-04/incident_BYA_Institutional.html"
-     data-members="Full Council,Bartlett">
+     data-members="Full Council,Bartlett" data-year="2026">
     <div class="inc-tags">
       <span class="member-tag tag-council">Full Council</span>
       <span class="member-tag tag-bartlett">Bartlett (additional)</span>
@@ -128,9 +210,9 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
     <div class="inc-link">Full incident record →</div>
   </a>
 
-  <!-- Incident C: Ishii panel -->
+  <!-- Ishii panel -->
   <a class="incident-row" href="2026-04/incident_Ishii_Panel.html"
-     data-members="Ishii">
+     data-members="Ishii" data-year="2026">
     <div class="inc-tags">
       <span class="member-tag tag-ishii">Ishii</span>
       <span class="pillar-tag pillar-character">Character &amp; Conduct</span>
@@ -143,6 +225,84 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
       <div class="score-chip">
         <div class="sc-member">Ishii</div>
         <div class="sc-val orange">−11</div>
+      </div>
+    </div>
+    <div class="inc-link">Full incident record →</div>
+  </a>
+
+  <!-- ===== 2025 ===== -->
+  <div class="year-divider" data-year="2025"><span>2025</span></div>
+
+  <!-- Rocky Road Bond -->
+  <a class="incident-row" href="2025-10/incident_Rocky_Road_Bond.html"
+     data-members="Full Council,Taplin,Tregub" data-year="2025">
+    <div class="inc-tags">
+      <span class="member-tag tag-council">Full Council</span>
+      <span class="member-tag tag-taplin">Taplin · additional</span>
+      <span class="member-tag tag-tregub">Tregub · additional</span>
+      <span class="pillar-tag pillar-fiscal">Fiscal Stewardship</span>
+    </div>
+    <div class="inc-title">Rocky Road Streets Audit — Findings Received, Lessons Ignored</div>
+    <div class="inc-summary">The council voted to "receive and file" the City Auditor's Rocky Road streets audit (PCI 57; $42M/year gap; structural bond dependence as root cause), then five months later unanimously directed a fifth bond cycle — the exact pattern the audit had documented as the cause of failure. Taplin authored the bond schedule referral concurrent with the audit filing; Tregub co-sponsored the bond direction and called it "essential" in his newsletter with no mention of the audit's findings.</div>
+    <div class="inc-scores">
+      <div class="score-chip">
+        <div class="sc-member">Full Council</div>
+        <div class="sc-val orange">−5</div>
+      </div>
+      <div class="score-chip">
+        <div class="sc-member">Taplin</div>
+        <div class="sc-val red">−10</div>
+      </div>
+      <div class="score-chip">
+        <div class="sc-member">Tregub</div>
+        <div class="sc-val orange">−9</div>
+      </div>
+    </div>
+    <div class="inc-link">Full incident record →</div>
+  </a>
+
+  <!-- ===== 2024 ===== -->
+  <div class="year-divider" data-year="2024"><span>2024</span></div>
+
+  <!-- Tregub Hotel -->
+  <a class="incident-row" href="2024-12/incident_Tregub_Hotel.html"
+     data-members="Tregub" data-year="2024">
+    <div class="inc-tags">
+      <span class="member-tag tag-tregub">Tregub</span>
+      <span class="pillar-tag pillar-character">Character &amp; Conduct</span>
+    </div>
+    <div class="inc-title">Howard Johnson Motel — Community Meeting Three Weeks After Council Vote</div>
+    <div class="inc-summary">Tregub held a community meeting on the Howard Johnson Motel interim housing project on December 11, 2024 — three weeks after the council had already voted on November 19 to approve the operating contract with Dorothy Day House. His invitation email acknowledged the vote had occurred, then framed the meeting as a community conversation. The outcome was already determined; the meeting could inform implementation but not the decision itself.</div>
+    <div class="inc-scores">
+      <div class="score-chip">
+        <div class="sc-member">Tregub</div>
+        <div class="sc-val orange">−8</div>
+      </div>
+    </div>
+    <div class="inc-link">Full incident record →</div>
+  </a>
+
+  <!-- ===== 2023 ===== -->
+  <div class="year-divider" data-year="2023"><span>2023</span></div>
+
+  <!-- Taplin Staffing -->
+  <a class="incident-row" href="2023-11/incident_Taplin_Staffing.html"
+     data-members="Taplin,Bartlett" data-year="2023">
+    <div class="inc-tags">
+      <span class="member-tag tag-taplin">Taplin</span>
+      <span class="member-tag tag-bartlett">Bartlett (co-author)</span>
+      <span class="pillar-tag pillar-fiscal">Fiscal Stewardship</span>
+    </div>
+    <div class="inc-title">Council Office Staffing Doubled on Consent Calendar During Structural Deficit</div>
+    <div class="inc-summary">Taplin authored and Bartlett co-authored a consent calendar item doubling authorized council office staffing from 1 to 2 FTEs per office — approximately $442,000 in annual recurring cost — during a period of acknowledged structural deficit. No floor debate, no alternatives analysis, and no cost-benefit consideration relative to competing priorities. The item justified the expansion by citing that some offices were already informally over-staffed, institutionalizing existing informal spending without evaluating whether it was appropriate.</div>
+    <div class="inc-scores">
+      <div class="score-chip">
+        <div class="sc-member">Taplin</div>
+        <div class="sc-val red">−8</div>
+      </div>
+      <div class="score-chip">
+        <div class="sc-member">Bartlett</div>
+        <div class="sc-val orange">−4</div>
       </div>
     </div>
     <div class="inc-link">Full incident record →</div>
@@ -165,15 +325,16 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
 (function() {
   var chips = document.querySelectorAll('.chip');
   var rows  = document.querySelectorAll('.incident-row');
+  var dividers = document.querySelectorAll('.year-divider');
   var noRes = document.getElementById('no-results');
 
   function applyFilter(filter) {
     var visible = 0;
+
     rows.forEach(function(row) {
       var members = row.getAttribute('data-members') || '';
       var show = filter === 'all';
       if (!show) {
-        // Individual member filter: show if member OR Full Council is implicated
         if (filter === 'Full Council') {
           show = members.indexOf('Full Council') !== -1;
         } else {
@@ -183,6 +344,19 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
       row.classList.toggle('hidden', !show);
       if (show) visible++;
     });
+
+    // Hide year-dividers that have no visible rows following them
+    dividers.forEach(function(div) {
+      var year = div.getAttribute('data-year');
+      var hasVisible = false;
+      rows.forEach(function(row) {
+        if (row.getAttribute('data-year') === year && !row.classList.contains('hidden')) {
+          hasVisible = true;
+        }
+      });
+      div.classList.toggle('hidden', !hasVisible);
+    });
+
     noRes.style.display = visible === 0 ? 'block' : 'none';
   }
 

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Incident: Rocky Road Audit — Findings Received, Lessons Ignored</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+body { background: #f0f2f5; display: flex; justify-content: center; }
+.card { width: 760px; margin: 20px auto; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,.15); }
+.header { background: #1a1a2e; color: #fff; padding: 28px 32px 20px; }
+.header .incident-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.8px; color: #e74c3c; margin-bottom: 8px; }
+.header .title { font-size: 22px; font-weight: 800; line-height: 1.3; }
+.header .meta { font-size: 11px; color: #8899bb; margin-top: 10px; line-height: 1.7; }
+.header .member-tag { display: inline-block; background: #2c3e50; color: #cdd; border-radius: 4px; padding: 2px 8px; font-size: 11px; font-weight: 600; margin-right: 6px; margin-top: 6px; }
+.section { padding: 20px 32px; border-bottom: 1px solid #ecf0f1; }
+.section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #7f8c8d; margin-bottom: 14px; }
+.facts { font-size: 13px; line-height: 1.75; color: #2c3e50; }
+.facts p { margin-bottom: 10px; }
+.facts p:last-child { margin-bottom: 0; }
+.member-block { border-top: 3px solid #1a1a2e; padding: 24px 32px; border-bottom: 1px solid #ecf0f1; }
+.member-block.shared { background: #fafafa; }
+.member-name { font-size: 16px; font-weight: 800; color: #1a1a2e; }
+.member-role { font-size: 11px; color: #7f8c8d; margin-top: 2px; margin-bottom: 16px; }
+.dim-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #7f8c8d; margin-bottom: 4px; }
+.pillar-tag { display: inline-block; border-radius: 3px; padding: 2px 7px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; margin-bottom: 8px; }
+.pillar-character { background: #f3e5f5; color: #7b1fa2; }
+.pillar-fiscal    { background: #e3f2fd; color: #1565c0; }
+.dim-score { font-size: 64px; font-weight: 900; line-height: 1; margin: 4px 0 14px; }
+.score-red    { color: #e74c3c; }
+.score-orange { color: #e67e22; }
+.score-yellow { color: #f39c12; }
+.dim-reasoning { font-size: 13px; line-height: 1.75; color: #2c3e50; }
+.dim-reasoning p { margin-bottom: 10px; }
+.dim-reasoning p:last-child { margin-bottom: 0; }
+.net-row { display: flex; gap: 16px; padding: 20px 32px; border-bottom: 1px solid #ecf0f1; flex-wrap: wrap; }
+.net-item { background: #f8f9fa; border-radius: 6px; padding: 12px 16px; flex: 1; min-width: 160px; }
+.net-item-name { font-size: 11px; font-weight: 700; color: #2c3e50; }
+.net-item-score { font-size: 28px; font-weight: 900; color: #e74c3c; margin-top: 4px; }
+.net-item-note { font-size: 10px; color: #7f8c8d; margin-top: 3px; line-height: 1.4; }
+.decay-box { background: #f8f9fa; border-left: 4px solid #bdc3c7; padding: 12px 16px; font-size: 11px; color: #7f8c8d; border-radius: 0 4px 4px 0; line-height: 1.6; margin-top: 16px; }
+.related { padding: 16px 32px; border-top: 1px solid #ecf0f1; }
+.related-title { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #7f8c8d; margin-bottom: 8px; }
+.related a { font-size: 12px; color: #2980b9; text-decoration: none; display: block; margin-bottom: 4px; }
+.related a:hover { text-decoration: underline; }
+.footer { background: #f8f9fa; padding: 12px 32px; font-size: 10px; color: #aaa; display: flex; justify-content: space-between; }
+.footer a { color: #aaa; text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <div class="header">
+    <div class="incident-label">Incident Record · October 2025 – March 2026</div>
+    <div class="title">Rocky Road Streets Audit — Findings Received, Lessons Ignored</div>
+    <div class="meta">
+      Sources: Agenda record Oct. 28, 2025, Item 35 ("Rocky Road: Berkeley Streets at Risk and Significantly Underfunded");<br>
+      Agenda record Mar. 17, 2026, Item 1 (bond direction); Tregub March 2026 Part 2 newsletter<br>
+      <span class="member-tag">Full Council</span>
+      <span class="member-tag">Terry Taplin · additional</span>
+      <span class="member-tag">Igor Tregub · additional</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">What Happened</div>
+    <div class="facts">
+      <p>On October 28, 2025, the Berkeley City Council voted to "receive and file" the City Auditor's "Rocky Road" streets audit. The audit documented a Pavement Condition Index (PCI) of 57, a structural funding gap of $42 million per year, and a cycle of bond dependence that had crowded out general fund reprioritization for more than a decade. The audit's strategic finding was explicit: Berkeley's road condition problems are not primarily an engineering problem; they are a fiscal management and prioritization problem. No council member introduced a follow-up motion to reform the Five Year Paving Plan, redirect general fund dollars, or address any of the strategic failures the audit documented.</p>
+      <p>Five months later, in March 2026, the council voted unanimously to direct staff to develop a $300 million infrastructure bond for the November 2026 ballot — the fifth bond cycle addressing streets since 2012. The direction came with no companion motion to address the causes of the funding gap the audit had documented. Taplin had authored the bond schedule referral in November 2025, before the ink on the audit was dry. Tregub's March 2026 newsletter described both the $300M bond and a sales tax as "essential" — revenue-first framing with no mention of the audit's structural findings.</p>
+      <p>The pattern the audit described — receiving findings, then authorizing bonds, then repeating — was visible to every member of the council at the time of the bond direction vote. The vote proceeded anyway.</p>
+    </div>
+  </div>
+
+  <!-- FULL COUNCIL -->
+  <div class="member-block shared">
+    <div class="member-name">Full Council</div>
+    <div class="member-role">Unanimous bond direction, March 2026 — filed the audit, then authorized a fifth bond cycle</div>
+
+    <div class="dim-title">Audit Absorbed Without Reform Motion</div>
+    <div class="pillar-tag pillar-fiscal">Fiscal Stewardship</div>
+    <div class="dim-score score-orange">−5</div>
+    <div class="dim-reasoning">
+      <p>Receiving and filing an audit is a formal acknowledgment that its findings are part of the public record. Voting five months later to add another bond cycle — without any motion addressing the structural causes the audit identified — converts an accountability document into a borrowing justification. The audit describes why bonds haven't worked; the council used the audit's evidence of underfunding to authorize another bond.</p>
+      <p>The shared score is lower than the individual additional scores because the bond-over-reform choice reflects a multi-year political equilibrium, not a single member's decision. No member introduced the structural alternative either. The score reflects the body's failure to act, not any individual's specific additional culpability.
+
+      <div class="decay-box">
+        <strong>Decay policy:</strong> Full weight from March 2026 (bond direction vote). Reduces 20% per year. Resets if a sixth bond cycle is authorized without structural reform of the paving plan.
+      </div>
+    </div>
+  </div>
+
+  <!-- TAPLIN ADDITIONAL -->
+  <div class="member-block">
+    <div class="member-name">Terry Taplin</div>
+    <div class="member-role">Additional — authored bond schedule referral while the audit was pending; pattern of revenue-first fiscal posture</div>
+
+    <div class="dim-title">Bond Schedule Authored Concurrent With Audit Filing</div>
+    <div class="pillar-tag pillar-fiscal">Fiscal Stewardship</div>
+    <div class="dim-score score-orange">−5</div>
+    <div class="dim-reasoning">
+      <p>Taplin authored the "Advanced Fiscal Policies — Bond Schedule" referral on November 18, 2025 — three weeks after the council voted to receive and file the Rocky Road audit. The referral directed the City Manager to develop a predictable bond issuance schedule, explicitly articulating an "we are underbonded" philosophy. The audit had just documented, in precise terms, that Berkeley's streets problem is not a bonding frequency problem. Taplin's referral treats the audit's diagnosis as confirmation that Berkeley should borrow more, not that it should reform its prioritization and repay-from-general-fund obligations.</p>
+      <p>This sits within Taplin's broader revenue-first pattern: bond schedule, $300M bond direction, sales tax polling, newsletter framing that presents borrowing as infrastructure investment without structural cost analysis. The bond schedule referral is not scored separately in the incident ledger; it is scored here because its timing — authored while the audit was still fresh — shows the audit's structural findings were processed as bond-justification rather than reform-mandate.</p>
+
+      <div class="decay-box">
+        <strong>Decay policy:</strong> Full weight from October 2025 (audit vote). Standard 20% annual decay. Resets if Taplin authors a sixth bond cycle without a companion structural reform motion.
+      </div>
+    </div>
+  </div>
+
+  <!-- TREGUB ADDITIONAL -->
+  <div class="member-block">
+    <div class="member-name">Igor Tregub</div>
+    <div class="member-role">Additional — co-sponsored bond direction; newsletter described bond and sales tax as "essential" with no mention of audit's structural findings</div>
+
+    <div class="dim-title">Revenue-First Co-Sponsorship After Audit Filing</div>
+    <div class="pillar-tag pillar-fiscal">Fiscal Stewardship</div>
+    <div class="dim-score score-yellow">−4</div>
+    <div class="dim-reasoning">
+      <p>Tregub voted to receive and file the Rocky Road audit and subsequently co-authored the bond direction and characterized both the $300M bond and a sales tax as "essential" in his March 2026 newsletter — with no mention of the audit's finding that bond cycles are the structural cause of Berkeley's pavement maintenance failure, not its solution. The newsletter framing is revenue-first: it tells constituents what to fund, not why previous funding approaches have underperformed.</p>
+
+      <div class="decay-box">
+        <strong>Decay policy:</strong> Full weight from March 2026 (bond direction). Standard 20% annual decay. No reset mechanism unless pattern continues.
+      </div>
+    </div>
+  </div>
+
+  <!-- NET SCORES -->
+  <div class="net-row">
+    <div class="net-item">
+      <div class="net-item-name">Full Council (shared)</div>
+      <div class="net-item-score">−5</div>
+      <div class="net-item-note">Bond direction without reform motion</div>
+    </div>
+    <div class="net-item">
+      <div class="net-item-name">Taplin (this incident)</div>
+      <div class="net-item-score">−10</div>
+      <div class="net-item-note">Shared −5 + additional −5</div>
+    </div>
+    <div class="net-item">
+      <div class="net-item-name">Tregub (this incident)</div>
+      <div class="net-item-score">−9</div>
+      <div class="net-item-note">Shared −5 + additional −4</div>
+    </div>
+  </div>
+
+  <div class="related">
+    <div class="related-title">Related Incidents</div>
+    <a href="../2023-11/incident_Taplin_Staffing.html">Council Staffing Doubled on Consent Calendar (Taplin, Bartlett)</a>
+    <a href="../index.html">← All Incidents</a>
+  </div>
+
+  <div class="footer">
+    <span><a href="../index.html">← Incident Index</a></span>
+    <span>Berkeley Council Incident Record · Updated April 2026</span>
+  </div>
+
+</div>
+</body>
+</html>
