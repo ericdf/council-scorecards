@@ -10,31 +10,56 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
 .header .page-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.8px; color: #e74c3c; margin-bottom: 8px; }
 .header .title { font-size: 22px; font-weight: 800; line-height: 1.3; }
 .header .meta { font-size: 11px; color: #8899bb; margin-top: 10px; line-height: 1.7; }
-.intro { padding: 20px 32px; border-bottom: 2px solid #ecf0f1; }
-.intro p { font-size: 13px; line-height: 1.75; color: #2c3e50; margin-bottom: 8px; }
-.intro p:last-child { margin-bottom: 0; }
-.incident-row { display: flex; align-items: flex-start; gap: 20px; padding: 20px 32px; border-bottom: 1px solid #ecf0f1; text-decoration: none; color: inherit; transition: background .15s; }
+
+.definition { padding: 18px 32px; border-bottom: 2px solid #ecf0f1; background: #fafafa; }
+.definition p { font-size: 12.5px; line-height: 1.75; color: #444; }
+.definition strong { color: #1a1a2e; }
+
+.filters { padding: 14px 32px; border-bottom: 1px solid #ecf0f1; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.filter-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; color: #7f8c8d; margin-right: 4px; }
+.chip { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 600; cursor: pointer; border: 1.5px solid #ddd; color: #555; background: #fff; transition: all .15s; user-select: none; }
+.chip:hover { border-color: #aaa; }
+.chip.active { background: #1a1a2e; color: #fff; border-color: #1a1a2e; }
+.chip.chip-council.active { background: #7f8c8d; border-color: #7f8c8d; }
+
+.year-divider { padding: 8px 32px; background: #f0f2f5; border-bottom: 1px solid #e0e4e8; }
+.year-divider span { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #7f8c8d; }
+
+.incident-row { padding: 20px 32px; border-bottom: 1px solid #ecf0f1; text-decoration: none; color: inherit; display: block; transition: background .12s; }
 .incident-row:hover { background: #f8f9fa; }
-.incident-letter { font-size: 28px; font-weight: 900; color: #bdc3c7; min-width: 32px; padding-top: 2px; }
-.incident-body { flex: 1; }
-.incident-title { font-size: 15px; font-weight: 800; color: #1a1a2e; line-height: 1.3; margin-bottom: 4px; }
-.incident-meta { font-size: 11px; color: #7f8c8d; margin-bottom: 8px; }
-.incident-summary { font-size: 12px; color: #4a5568; line-height: 1.65; }
-.incident-scores { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; min-width: 90px; }
-.score-chip { text-align: right; }
-.score-chip .member { font-size: 10px; color: #7f8c8d; font-weight: 600; }
-.score-chip .value { font-size: 26px; font-weight: 900; line-height: 1; }
-.score-chip .value.red    { color: #e74c3c; }
-.score-chip .value.orange { color: #e67e22; }
-.score-chip .value.yellow { color: #f39c12; }
-.pending-chip { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #f39c12; margin-top: 2px; }
-.section-label { padding: 10px 32px 6px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #7f8c8d; background: #f8f9fa; border-bottom: 1px solid #ecf0f1; }
-.footer { background: #f8f9fa; padding: 12px 32px; font-size: 10px; color: #aaa; display: flex; justify-content: space-between; }
-.footer a { color: #aaa; text-decoration: none; }
-.footer a:hover { text-decoration: underline; }
+.incident-row.hidden { display: none; }
+
+.inc-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
+.member-tag { display: inline-block; border-radius: 4px; padding: 2px 8px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .6px; }
+.tag-bartlett  { background: #fde8e8; color: #c0392b; }
+.tag-ishii     { background: #eaf4fb; color: #1a5276; }
+.tag-council   { background: #f0f0f0; color: #555; }
+.pillar-tag { display: inline-block; border-radius: 3px; padding: 2px 7px; font-size: 10px; font-weight: 600; letter-spacing: .5px; }
+.pillar-character { background: #f3e5f5; color: #7b1fa2; }
+.pillar-fiscal    { background: #e3f2fd; color: #1565c0; }
+.pending-tag { display: inline-block; background: #fef9e7; border: 1px solid #f39c12; color: #7d6608; border-radius: 3px; padding: 2px 7px; font-size: 10px; font-weight: 600; }
+
+.inc-title { font-size: 15px; font-weight: 800; color: #1a1a2e; line-height: 1.3; margin-bottom: 6px; }
+.inc-summary { font-size: 12px; color: #4a5568; line-height: 1.65; margin-bottom: 10px; }
+.inc-scores { display: flex; gap: 16px; flex-wrap: wrap; }
+.score-chip { text-align: center; background: #f8f9fa; border-radius: 6px; padding: 6px 12px; }
+.score-chip .sc-member { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: #7f8c8d; }
+.score-chip .sc-val { font-size: 22px; font-weight: 900; line-height: 1.1; }
+.score-chip .sc-val.red    { color: #e74c3c; }
+.score-chip .sc-val.orange { color: #e67e22; }
+.score-chip .sc-val.yellow { color: #f39c12; }
+.score-chip .sc-val.green  { color: #27ae60; }
+
+.inc-link { font-size: 11px; font-weight: 700; color: #2980b9; margin-top: 8px; display: inline-block; }
+
+.no-results { padding: 32px; text-align: center; font-size: 13px; color: #7f8c8d; font-style: italic; display: none; }
+
 .methodology-note { padding: 16px 32px; border-top: 2px solid #ecf0f1; font-size: 11px; color: #7f8c8d; line-height: 1.7; }
 .methodology-note a { color: #2980b9; text-decoration: none; }
 .methodology-note a:hover { text-decoration: underline; }
+.footer { background: #f8f9fa; padding: 12px 32px; font-size: 10px; color: #aaa; display: flex; justify-content: space-between; }
+.footer a { color: #aaa; text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
@@ -43,75 +68,90 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
   <div class="header">
     <div class="page-label">Accountability Record · Updated April 2026</div>
     <div class="title">Berkeley City Council — Incident Record</div>
-    <div class="meta">
-      Documented incidents affecting scorecard standing.<br>
-      Scores decay 20% annually in the absence of similar incidents; reset if the pattern continues.
-    </div>
+    <div class="meta">All documented accountability incidents · Scores decay 20% annually in the absence of similar incidents</div>
   </div>
 
-  <div class="intro">
-    <p>The incident record captures specific accountability events that cannot be measured by transcript keyword analysis alone — conflicts of interest, credential misrepresentation, contractor oversight failures, and responses to documented wrongdoing. Each incident is scored on named dimensions with full reasoning. Scores are subject to revision as pending verifications are resolved.</p>
-    <p>Incident scores feed into the <strong>Character &amp; Conduct</strong> pillar and the separate <strong>Incident Record</strong> pillar on individual scorecards. Positive incidents — members who proactively called for accountability — are recorded here as well.</p>
+  <div class="definition">
+    <p><strong>What is an incident?</strong> An incident is a documented accountability event that cannot be captured by automated transcript or voting analysis alone. Incidents can arise from any verifiable source — meeting transcripts, constituent communications, news coverage, court filings, public records requests, or other public documents. Each incident is scored on named dimensions; each dimension carries a pillar tag indicating which aspect of a council member's performance it implicates (Character &amp; Conduct or Fiscal Stewardship). Scores are editorial assessments grounded in documented facts. Reasonable people may weigh the same facts differently; the reasoning behind each score is shown in full on the incident page. Incidents can be positive as well as negative — a member who proactively exposes a problem or demands accountability earns points here.</p>
   </div>
 
-  <div class="section-label">April 2026</div>
+  <div class="filters">
+    <span class="filter-label">Filter by:</span>
+    <span class="chip active" data-filter="all">All</span>
+    <span class="chip" data-filter="Bartlett">Bartlett</span>
+    <span class="chip" data-filter="Ishii">Ishii</span>
+    <span class="chip chip-council" data-filter="Full Council">Full Council</span>
+  </div>
 
-  <!-- Incident A -->
-  <a class="incident-row" href="2026-04/incident_Bartlett_Upline.html">
-    <div class="incident-letter">A</div>
-    <div class="incident-body">
-      <div class="incident-title">Bartlett — Household Entanglement with City Subcontractor</div>
-      <div class="incident-meta">Documented April 22, 2026 · Source: SF Chronicle · Ben Bartlett, District 3</div>
-      <div class="incident-summary">Bartlett's wife co-incorporated Upline Solutions, which received city money as a subcontractor on a $607K cannabis education contract that failed to deliver its core obligations. No public disclosure of the household connection was identified. No recusal from related votes was identified. When asked about accountability, Bartlett proposed no review and suggested contractors might yet fulfill obligations from a closed grant period.</div>
+  <div class="year-divider"><span>2026</span></div>
+
+  <!-- Incident A: Bartlett household entanglement -->
+  <a class="incident-row" href="2026-04/incident_Bartlett_Upline.html"
+     data-members="Bartlett">
+    <div class="inc-tags">
+      <span class="member-tag tag-bartlett">Bartlett</span>
+      <span class="pillar-tag pillar-character">Character &amp; Conduct</span>
     </div>
-    <div class="incident-scores">
+    <div class="inc-title">Household Entanglement with City Subcontractor</div>
+    <div class="inc-summary">Bartlett's wife co-incorporated Upline Solutions, a city subcontractor on a $607K cannabis education contract that failed to deliver its core obligations. No public disclosure of the household financial connection was identified in council records. No recusal from related votes was identified. When asked about accountability, Bartlett proposed no review and suggested contractors might yet fulfill obligations from a closed grant period.</div>
+    <div class="inc-scores">
       <div class="score-chip">
-        <div class="member">Bartlett</div>
-        <div class="value red">−18</div>
+        <div class="sc-member">Bartlett</div>
+        <div class="sc-val red">−18</div>
       </div>
     </div>
+    <div class="inc-link">Full incident record →</div>
   </a>
 
-  <!-- Incident B -->
-  <a class="incident-row" href="2026-04/incident_BYA_Institutional.html">
-    <div class="incident-letter">B</div>
-    <div class="incident-body">
-      <div class="incident-title">BYA Cannabis Contract — Institutional Accountability Failure</div>
-      <div class="incident-meta">First documented April 22, 2026 · Source: SF Chronicle, Alameda County evaluation · Full Council + Bartlett additional</div>
-      <div class="incident-summary">Despite an April 2025 county evaluation documenting significant BYA contract failures, the council voted in June 2025 to reauthorize a $106,000 soda tax grant to BYA with no documented discussion. The reauthorization appears to have passed on the consent calendar. No council member is documented as having requested the evaluation, cited its findings, or moved to condition renewal on a performance review.</div>
+  <!-- Incident B: BYA institutional accountability -->
+  <a class="incident-row" href="2026-04/incident_BYA_Institutional.html"
+     data-members="Full Council,Bartlett">
+    <div class="inc-tags">
+      <span class="member-tag tag-council">Full Council</span>
+      <span class="member-tag tag-bartlett">Bartlett (additional)</span>
+      <span class="pillar-tag pillar-fiscal">Fiscal Stewardship</span>
+      <span class="pillar-tag pillar-character">Character &amp; Conduct</span>
+      <span class="pending-tag">Pending verification</span>
     </div>
-    <div class="incident-scores">
+    <div class="inc-title">BYA Cannabis Contract — Institutional Accountability Failure</div>
+    <div class="inc-summary">Despite an April 2025 county evaluation documenting significant BYA contract failures, the council voted in June 2025 to reauthorize a $106,000 soda tax grant to BYA with no documented discussion — consistent with a consent calendar block vote. No council member is documented as having requested the evaluation, cited its findings, or moved to condition renewal on a performance review. Bartlett additionally responded to the documented failures by suggesting contractors might yet succeed, with no accountability measures proposed.</div>
+    <div class="inc-scores">
       <div class="score-chip">
-        <div class="member">Full Council</div>
-        <div class="value yellow">−3</div>
+        <div class="sc-member">Full Council</div>
+        <div class="sc-val yellow">−3</div>
       </div>
       <div class="score-chip">
-        <div class="member">Bartlett total</div>
-        <div class="value red">−7</div>
+        <div class="sc-member">Bartlett total</div>
+        <div class="sc-val red">−7</div>
       </div>
-      <div class="pending-chip">pending vote record</div>
     </div>
+    <div class="inc-link">Full incident record →</div>
   </a>
 
-  <!-- Incident C -->
-  <a class="incident-row" href="2026-04/incident_Ishii_Panel.html">
-    <div class="incident-letter">C</div>
-    <div class="incident-body">
-      <div class="incident-title">Ishii — Sugar Tax Panel Credential Misrepresentation and Duty of Care</div>
-      <div class="incident-meta">Period of concern: Ishii's panel tenure (dates TBC) · Adena Ishii, Mayor (formerly D1)</div>
-      <div class="incident-summary">Ishii was appointed to the Sugar-Sweetened Beverage Product Panel of Experts despite holding no credential in nutrition science, public health research, or medical practice — the backgrounds required by BMC §7.72.150. She subsequently cited the appointment in her 2024 mayoral campaign materials as evidence of policy expertise. During her tenure, BYA received panel-recommended soda tax grants; whether the panel conducted substantive performance review is unverified.</div>
+  <!-- Incident C: Ishii panel -->
+  <a class="incident-row" href="2026-04/incident_Ishii_Panel.html"
+     data-members="Ishii">
+    <div class="inc-tags">
+      <span class="member-tag tag-ishii">Ishii</span>
+      <span class="pillar-tag pillar-character">Character &amp; Conduct</span>
+      <span class="pillar-tag pillar-fiscal">Fiscal Stewardship</span>
+      <span class="pending-tag">Pending verification</span>
     </div>
-    <div class="incident-scores">
+    <div class="inc-title">Sugar Tax Panel — Credential Misrepresentation and Duty of Care</div>
+    <div class="inc-summary">Ishii was appointed to the Sugar-Sweetened Beverage Product Panel of Experts despite holding no credential in nutrition science, public health research, or medical practice — the backgrounds required by BMC §7.72.150. She subsequently cited the appointment in her 2024 mayoral campaign as evidence of policy expertise. During her tenure, BYA received panel-recommended soda tax grants; whether the panel conducted substantive performance review is unverified pending panel meeting records.</div>
+    <div class="inc-scores">
       <div class="score-chip">
-        <div class="member">Ishii</div>
-        <div class="value orange">−11</div>
+        <div class="sc-member">Ishii</div>
+        <div class="sc-val orange">−11</div>
       </div>
-      <div class="pending-chip">pending records</div>
     </div>
+    <div class="inc-link">Full incident record →</div>
   </a>
+
+  <div class="no-results" id="no-results">No incidents match this filter.</div>
 
   <div class="methodology-note">
-    Scores are editorial assessments based on documented facts. Each incident page shows the full reasoning behind each dimensional score. Pending verifications are noted where vote records, panel meeting minutes, or tenure dates have not been independently confirmed. See <a href="../methodology.html">methodology</a> for scoring framework.
+    Scores are editorial assessments based on documented facts. Each incident page shows full reasoning for every dimensional score. Pending verifications are noted where vote records, meeting minutes, or tenure dates have not been independently confirmed. Incident scores feed into member scorecards via the Character &amp; Conduct and Fiscal Stewardship pillars according to each dimension's pillar tag. See <a href="../methodology.html">methodology</a> for the full scoring framework.
   </div>
 
   <div class="footer">
@@ -120,5 +160,56 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
   </div>
 
 </div>
+
+<script>
+(function() {
+  var chips = document.querySelectorAll('.chip');
+  var rows  = document.querySelectorAll('.incident-row');
+  var noRes = document.getElementById('no-results');
+
+  function applyFilter(filter) {
+    var visible = 0;
+    rows.forEach(function(row) {
+      var members = row.getAttribute('data-members') || '';
+      var show = filter === 'all';
+      if (!show) {
+        // Individual member filter: show if member OR Full Council is implicated
+        if (filter === 'Full Council') {
+          show = members.indexOf('Full Council') !== -1;
+        } else {
+          show = members.indexOf(filter) !== -1 || members.indexOf('Full Council') !== -1;
+        }
+      }
+      row.classList.toggle('hidden', !show);
+      if (show) visible++;
+    });
+    noRes.style.display = visible === 0 ? 'block' : 'none';
+  }
+
+  function setFilter(filter) {
+    chips.forEach(function(c) {
+      c.classList.toggle('active', c.getAttribute('data-filter') === filter);
+    });
+    applyFilter(filter);
+    history.replaceState(null, '', '#' + filter.toLowerCase().replace(/ /g, '-'));
+  }
+
+  chips.forEach(function(chip) {
+    chip.addEventListener('click', function() {
+      setFilter(this.getAttribute('data-filter'));
+    });
+  });
+
+  // Apply filter from URL hash on load
+  var hash = window.location.hash.replace('#', '').replace(/-/g, ' ');
+  var matchedChip = null;
+  chips.forEach(function(c) {
+    if (c.getAttribute('data-filter').toLowerCase() === hash) matchedChip = c;
+  });
+  if (matchedChip) {
+    setFilter(matchedChip.getAttribute('data-filter'));
+  }
+})();
+</script>
 </body>
 </html>

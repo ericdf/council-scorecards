@@ -210,31 +210,141 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
         </div>
   </div>
 
-  <div class="section">
-    <div class="section-title">Rankings  (of 8 scored members)</div>
-    <div class="rank-row">
-      <div class="rank-item">
-        <div class="rank-title">Voter Alignment</div>
-        <div class="rank-val">#5</div>
-        <div class="rank-desc">Champions fiscal stewardship in votes &amp; bills</div>
-      </div>
-      <div class="rank-item">
-        <div class="rank-title">Character</div>
-        <div class="rank-val">#4</div>
-        <div class="rank-desc">Collegiality, humility &amp; restraint as a colleague</div>
-      </div>
-      <div class="rank-item">
-        <div class="rank-title">Constituency Preference Gap</div>
-        <div class="rank-val">#2</div>
-        <div class="rank-desc">#1 = narrowest gap between member and voter priorities</div>
-      </div>
-      <div class="rank-item">
-        <div class="rank-title">Discursive Discipline</div>
-        <div class="rank-val">#6</div>
-        <div class="rank-desc">Brief, focused turns vs. extended floor time</div>
-      </div>
+
+  <div class="recent-inc-section">
+    <div class="recent-inc-header">
+      Incident Record
+      <a href="incidents/index.html#humbert">Full incident log →</a>
     </div>
+    
+    <a class="recent-inc-row" href="incidents/2026-04/incident_BYA_Institutional.html">
+      <div class="rir-score">-3</div>
+      <div class="rir-body">
+        <div class="rir-title">BYA Cannabis Contract — Institutional Accountability Failure</div>
+        <div class="rir-pillars">Fiscal Stewardship · Character & Conduct</div>
+      </div>
+      <div class="rir-arrow">→</div>
+    </a>
   </div>
+
+<style>
+  .inc-record-section {
+    margin: 0 24px 16px;
+    border: 1px solid #e8ecef;
+    border-radius: 6px;
+    overflow: hidden;
+    font-size: 12px;
+  }
+  .inc-record-header {
+    background: #f0f2f5;
+    padding: 7px 12px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    color: #7f8c8d;
+    border-bottom: 1px solid #e0e4e8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .inc-record-all {
+    font-size: 10px;
+    font-weight: 600;
+    color: #2980b9;
+    text-decoration: none;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .inc-record-all:hover { text-decoration: underline; }
+  .inc-none {
+    padding: 10px 14px;
+    color: #aaa;
+    font-size: 11.5px;
+    font-style: italic;
+  }
+  .inc-pages { padding: 4px 0; }
+  .inc-page-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 7px 14px;
+    border-bottom: 1px solid #f0f2f5;
+  }
+  .inc-page-row:last-child { border-bottom: none; }
+  .inc-alert { color: #e74c3c; font-size: 13px; flex-shrink: 0; }
+  .inc-page-link {
+    color: #2c3e50;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 1.4;
+    flex: 1;
+  }
+  .inc-page-link:hover { color: #2980b9; text-decoration: underline; }
+  .inc-score-chip {
+    font-size: 13px;
+    font-weight: 900;
+    color: #e74c3c;
+    white-space: nowrap;
+  }
+  .inc-pillars { font-size: 9px; color: #7f8c8d; margin-top: 2px; }
+
+  /* Recent incidents section (card top, replacing Rankings) */
+  .recent-inc-section {
+    margin: 0;
+    border-bottom: 1px solid #ecf0f1;
+  }
+  .recent-inc-header {
+    background: #fdf5f5;
+    padding: 8px 24px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    color: #c0392b;
+    border-bottom: 1px solid #fde8e8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .recent-inc-header a {
+    font-size: 10px;
+    font-weight: 600;
+    color: #c0392b;
+    text-decoration: none;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .recent-inc-header a:hover { text-decoration: underline; }
+  .recent-inc-none {
+    padding: 10px 24px;
+    color: #aaa;
+    font-size: 12px;
+    font-style: italic;
+  }
+  .recent-inc-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 24px;
+    border-bottom: 1px solid #fde8e8;
+    text-decoration: none;
+    color: inherit;
+  }
+  .recent-inc-row:last-child { border-bottom: none; }
+  .recent-inc-row:hover { background: #fdf5f5; }
+  .rir-score {
+    font-size: 20px;
+    font-weight: 900;
+    color: #e74c3c;
+    min-width: 36px;
+    text-align: right;
+  }
+  .rir-body { flex: 1; }
+  .rir-title { font-size: 12px; font-weight: 700; color: #1a1a2e; line-height: 1.3; }
+  .rir-pillars { font-size: 10px; color: #7f8c8d; margin-top: 2px; }
+  .rir-arrow { font-size: 11px; color: #aaa; }
+</style>
 
   <div class="layer-divider">
     <div class="layer-divider-label">What the Record Shows</div>
@@ -538,69 +648,20 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
 
   <div class="inc-record-section">
     <div class="inc-record-header">
-      Incident Record
-      <a href="incidents/index.html" class="inc-record-all">All incidents &rarr;</a>
+      Full Incident Record
+      <a href="incidents/index.html#humbert" class="inc-record-all">Incident log →</a>
     </div>
-    <div class="inc-none">No incidents on record.</div>
+    <div class="inc-pages">
+      <div class="inc-page-row">
+        <span class="inc-alert">&#9888;</span>
+        <a href="incidents/2026-04/incident_BYA_Institutional.html" class="inc-page-link">
+          BYA Cannabis Contract — Institutional Accountability Failure
+          <div class="inc-pillars">Fiscal Stewardship · Character & Conduct</div>
+        </a>
+        <span class="inc-score-chip">-3</span>
+      </div>
+    </div>
   </div>
-<style>
-  .inc-record-section {
-    margin: 0 24px 16px;
-    border: 1px solid #e8ecef;
-    border-radius: 6px;
-    overflow: hidden;
-    font-size: 12px;
-  }
-  .inc-record-header {
-    background: #f0f2f5;
-    padding: 7px 12px;
-    font-size: 10px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: .8px;
-    color: #7f8c8d;
-    border-bottom: 1px solid #e0e4e8;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .inc-record-all {
-    font-size: 10px;
-    font-weight: 600;
-    color: #2980b9;
-    text-decoration: none;
-    text-transform: none;
-    letter-spacing: 0;
-  }
-  .inc-record-all:hover { text-decoration: underline; }
-  .inc-none {
-    padding: 10px 14px;
-    color: #aaa;
-    font-size: 11.5px;
-    font-style: italic;
-  }
-  .inc-pages { padding: 6px 0; }
-  .inc-page-row {
-    display: flex;
-    align-items: baseline;
-    gap: 8px;
-    padding: 6px 14px;
-    border-bottom: 1px solid #f0f2f5;
-  }
-  .inc-page-row:last-child { border-bottom: none; }
-  .inc-alert {
-    color: #e74c3c;
-    font-size: 13px;
-    flex-shrink: 0;
-  }
-  .inc-page-link {
-    color: #2c3e50;
-    text-decoration: none;
-    font-size: 12px;
-    line-height: 1.4;
-  }
-  .inc-page-link:hover { color: #2980b9; text-decoration: underline; }
-</style>
 </div>
 </body>
 </html>
