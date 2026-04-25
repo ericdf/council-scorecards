@@ -61,6 +61,10 @@ strong { color: #1a1a2e; }
 <strong>Scope:</strong> Years of city budgets, audited fiscal reports, and audit findings; 51 meeting transcripts (Dec 2024 – Mar 2026); 58 annotated agenda sessions; member campaign records and constituent communications<br />
 <strong>Audience:</strong> Insiders briefing document — describes signals, sources, and weightings</p>
 <hr />
+<p>Berkeley's nine-member City Council is responsible for managing a mid-size city: a $630M budget, a structural fiscal deficit its own staff calls unsustainable, $1.8B in unfunded capital obligations and deferred maintenance, $695M in net pension liability, a public safety apparatus under sustained pressure, and labor agreements that constrain what any of those problems can look like as policy. That job competes with a political culture that rewards a different kind of activity — constituent casework at a concierge level, ideological positioning, and aspirations that reach well past the council's legal authority, from regional housing policy to national economic reform.</p>
+<p>Evaluating performance in that environment requires choices. These scorecards look at the factual record — votes, attendance, speech patterns, fiscal choices, and what members communicate to constituents — and apply a deliberately opinionated lens to what that record means. We believe residents are best served when their elected representatives direct the council's limited time and the city's finite resources toward Berkeley's most pressing documented problems, and when they resist the temptation to dilute that focus. Members who govern Berkeley get credit for it. Members who treat the office as a platform for something else are scored accordingly.</p>
+<p>If you disagree with that framing, you should engage with it — that is the point of publishing the methodology.</p>
+<hr />
 <h2>Scorecard Structure: Descriptive and Normative Layers</h2>
 <p>Each member scorecard is divided into two explicit layers:</p>
 <p><strong>Layer A — What the Record Shows:</strong> Objective measures drawn from official records and attributed transcript speech. No weighting or judgment applied. Includes: attendance, major fiscal vote participation, voting record (NO votes, abstentions, absences), items authored/cosponsored, staff direction volume, core/non-core speech share, fiscal concern mentions, new revenue preference mentions, spending votes. These facts are nearly unimpeachable — critics who dispute the overall grade must engage at the layer B level (philosophy and weights), not at this level.</p>
@@ -531,12 +535,22 @@ strong { color: #1a1a2e; }
 <hr />
 <h2>Incident Tracking</h2>
 <p>Transcripts and agenda records capture what happens on the dais and in formal meetings. They do not capture everything that matters.</p>
-<p><strong>Incidents</strong> are documented behaviors or actions observed outside formal council proceedings that reveal something meaningful about a member's disposition toward taxpayers, constituents, or public resources. Examples:</p>
+<p><strong>Incidents</strong> are documented accountability events that cannot be measured by transcript keyword analysis or voting records alone. An incident can arise from any verifiable source: meeting transcripts, constituent communications, news coverage, court filings, public records requests, auditor reports, or other public documents. Incidents are not limited to behavior inside formal proceedings — a newspaper article, a court filing, or a public records violation can all be the basis for an incident.</p>
+<p>Incidents are scored on named <strong>dimensions</strong>, each of which carries a <strong>pillar tag</strong> indicating which aspect of a council member's performance is implicated:</p>
+<ul>
+<li><strong>Character &amp; Conduct</strong> — conflicts of interest, disclosure and recusal failures, public misrepresentation, abuse of office, quality of response to documented wrongdoing</li>
+<li><strong>Fiscal Stewardship</strong> — contractor oversight failures, spending decisions made without available performance evidence, use of public funds without accountability mechanisms</li>
+</ul>
+<p>A single incident can implicate multiple pillars: a conflict-of-interest failure affects Character &amp; Conduct; if that conflict also caused public funds to flow to a contractor without proper oversight, it affects Fiscal Stewardship as well. Each dimension is scored and pillar-tagged independently, and its score rolls into its tagged pillar at full weight — there is no splitting or dilution across pillars.</p>
+<p>Incidents can be <strong>positive</strong> as well as negative. A member who proactively surfaces a conflict of interest, demands a performance review, or votes no on a contractor reauthorization pending an audit earns points here.</p>
+<p>Members with no incidents on record are not assumed clean — it means nothing has been documented yet.</p>
+<h3>Behavioral incidents (automated pipeline)</h3>
+<p>A separate, automated incident system (<code>incidents.json</code>) tracks behavioral patterns observable in transcripts and agenda records:</p>
 <ul>
 <li>A constituent interaction that reveals a pattern of evasion or performative engagement</li>
 <li>A public statement expressing a preference for borrowing over cutting</li>
 <li>A pattern of scheduling "input meetings" after votes have already occurred</li>
-<li>An observable disposition (e.g., backing a new institution built on demographic grievance rather than service gaps) that is visible in their agenda record but not explicitly verbalized</li>
+<li>An observable disposition visible in the agenda record but not explicitly verbalized</li>
 </ul>
 <h3>How incidents are documented</h3>
 <p>Incidents are stored in <code>incidents.json</code> with structured fields:</p>
@@ -655,8 +669,9 @@ strong { color: #1a1a2e; }
 </tbody>
 </table>
 <h3>How incidents feed into scoring</h3>
-<p>The strength of a claim should be proportional to the strength of the evidence behind it. Each incident's raw <code>scoring_impact</code> is multiplied by its tier weight before being summed (see evidence tier table above). Incidents linked to a City Auditor finding via <code>audit_ref</code> receive an additional 0.50× multiplier: the audit mechanism already penalizes the council's failure to act on a finding; the incident captures the member's specific behavior within that context. Applying full incident weight on top of the audit penalty would double-charge the same underlying failure.</p>
-<p>Weighted incident totals are capped at ±0.30 per member before being applied as an adjustment to the <strong>Fiscal Stewardship Alignment</strong> component of the composite grade. The cap prevents any single member's incident record from dominating the overall score.</p>
+<p><strong>Editorial incidents</strong> (the publicly documented incident pages) carry dimension-level pillar tags. Each dimension's score rolls into its tagged pillar at full weight. A dimension tagged Character &amp; Conduct affects the Character pillar; a dimension tagged Fiscal Stewardship affects the Fiscal Stewardship pillar. If a single incident has dimensions in two pillars, both pillars are affected independently — there is no dilution. A per-pillar cap of ±0.30 prevents any single incident from zeroing out any one pillar.</p>
+<p><strong>Behavioral incidents</strong> (<code>incidents.json</code>) feed into the automated composite via the Fiscal Stewardship Alignment component. Each incident's raw <code>scoring_impact</code> is multiplied by its tier weight before being summed. Incidents linked to a City Auditor finding via <code>audit_ref</code> receive an additional 0.50× multiplier: the audit mechanism already penalizes the council's failure to act on a finding; the incident captures the member's specific behavior within that context.</p>
+<p>Weighted behavioral incident totals are capped at ±0.30 before being applied to Fiscal Stewardship Alignment. The cap prevents any single member's incident record from dominating the overall score.</p>
 <p>Members with no incidents in the log are not assumed clean — it means nothing has been documented yet. A member with many incidents has a richer evidentiary record.</p>
 <h4>Audit silence</h4>
 <p>A separate penalty applies to members who were present at a formal audit presentation, voted to receive and file, and produced no follow-up motion within the response window. This is distinct from an incident: it is an automated signal for undifferentiated silence. Members who have a documented incident with an <code>audit_ref</code> matching the audit are exempt — their behavior post-audit is already individually characterized, whether positive or negative. Members in the <code>follow_up_authored_by</code> list in <code>audit_findings.json</code> are also exempt.</p>
