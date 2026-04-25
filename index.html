@@ -25,13 +25,13 @@
     tbody tr { border-bottom: 1px solid #ecf0f1; }
     tbody tr:hover { background: #f8f9fa; }
     td { padding: 12px 16px; vertical-align: middle; }
-    .rank  { width: 32px; font-size: 11px; color: #aaa; text-align: center; }
     .name  { font-size: 14px; font-weight: 600; }
     .name a { color: #2c3e50; text-decoration: none; }
     .name a:hover { color: #3498db; }
     .sub   { font-size: 11px; color: #999; font-weight: 400; }
     .grade { width: 52px; font-size: 22px; font-weight: 900; text-align: center; }
-    .score { width: 56px; text-align: right; font-size: 13px; color: #7f8c8d; }
+    .inc-badge { color: #e74c3c; font-size: 13px; text-decoration: none;
+                  margin-right: 4px; vertical-align: middle; }
     .grade-a  { color: #2ecc71; }
     .grade-b  { color: #3498db; }
     .grade-c  { color: #f39c12; }
@@ -49,7 +49,7 @@
   <div class="header">
     <h1>Berkeley City Council Scorecards</h1>
     <p>
-      Ranked by Voter Alignment &nbsp;·&nbsp; 52 meetings analyzed<br>
+      52 meetings analyzed &nbsp;·&nbsp; &#9888; = active incident record<br>
       As of 2026-03-24 &nbsp;·&nbsp; Generated 2026-04-24
     </p>
   </div>
@@ -66,84 +66,66 @@
   <table>
     <thead>
       <tr>
-        <th></th>
         <th>Member</th>
         <th>Grade</th>
-        <th>Score</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td class="rank">1</td>
         <td class="name">
           <a href="scorecard_Kesarwani.html">Kesarwani</a><br>
           <span class="sub">District 1</span>
         </td>
         <td class="grade grade-b">B−</td>
-        <td class="score">59%</td>
       </tr>
       <tr>
-        <td class="rank">2</td>
         <td class="name">
           <a href="scorecard_Blackaby.html">Blackaby</a><br>
           <span class="sub">District 6</span>
         </td>
         <td class="grade grade-c">C</td>
-        <td class="score">46%</td>
       </tr>
       <tr>
-        <td class="rank">3</td>
         <td class="name">
           <a href="scorecard_OKeefe.html">O'Keefe</a><br>
           <span class="sub">District 5</span>
         </td>
         <td class="grade grade-c">C</td>
-        <td class="score">44%</td>
       </tr>
       <tr>
-        <td class="rank">4</td>
         <td class="name">
           <a href="scorecard_Taplin.html">Taplin</a><br>
           <span class="sub">District 2</span>
         </td>
         <td class="grade grade-c">C−</td>
-        <td class="score">40%</td>
       </tr>
       <tr>
-        <td class="rank">5</td>
         <td class="name">
           <a href="scorecard_Humbert.html">Humbert</a><br>
           <span class="sub">District 8</span>
         </td>
         <td class="grade grade-c">C−</td>
-        <td class="score">39%</td>
       </tr>
       <tr>
-        <td class="rank">6</td>
         <td class="name">
           <a href="scorecard_LunaParra.html">LunaParra</a><br>
           <span class="sub">District 7</span>
         </td>
         <td class="grade grade-c">C−</td>
-        <td class="score">37%</td>
       </tr>
       <tr>
-        <td class="rank">7</td>
         <td class="name">
-          <a href="scorecard_Bartlett.html">Bartlett</a><br>
+          <a href="incidents/index.html" class="inc-badge" title="Active incident record — click for details">&#9888;</a> <a href="scorecard_Bartlett.html">Bartlett</a><br>
           <span class="sub">District 3</span>
         </td>
         <td class="grade grade-d">D</td>
-        <td class="score">27%</td>
       </tr>
       <tr>
-        <td class="rank">8</td>
         <td class="name">
           <a href="scorecard_Tregub.html">Tregub</a><br>
           <span class="sub">District 4</span>
         </td>
         <td class="grade grade-d">D</td>
-        <td class="score">27%</td>
       </tr>
     </tbody>
   </table>

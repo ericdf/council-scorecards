@@ -488,58 +488,28 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
     <span>Generated 2026-04-24</span>
   </div>
 
-</div>
 
-<div class="incidents-section">
-  <div class="incidents-header">Recent behavior</div>
-  <table class="incidents-table">
-    <tbody>
-      <tr class="inc-row">
-        <td class="inc-date">2026-04-14</td>
-        <td class="inc-body">
-          <span class="inc-cat">Alternatives dismissed</span>
-          <span class="inc-desc">Declared opposition to the Flock contract — officers' 'singular piece of technology' — the same day BPD reported record-low staffing. City Attorney had already negotiated full sanctuary protections.</span>
-        </td>
-        <td class="inc-meta">
-          <span class="inc-tier" style="color:#2ecc71">Tier A</span>
-          <span class="inc-dots" style="color:#e74c3c;letter-spacing:-1px" title="Impact: -0.10">●●●</span>
-        </td>
-      </tr>
-      <tr class="inc-row">
-        <td class="inc-date">2026-02-09</td>
-        <td class="inc-body">
-          <span class="inc-cat">Symbolic engagement</span>
-          <span class="inc-desc">After voting to fire the Police Accountability Director, issued a statement that the council 'remained committed to police accountability.'</span>
-        </td>
-        <td class="inc-meta">
-          <span class="inc-tier" style="color:#f39c12">Tier B</span>
-          <span class="inc-dots" style="color:#e74c3c;letter-spacing:-1px" title="Impact: -0.08">●●○</span>
-        </td>
-      </tr>
-      <tr class="inc-row">
-        <td class="inc-date">2020-2026</td>
-        <td class="inc-body">
-          <span class="inc-cat">Symbolic engagement</span>
-          <span class="inc-desc">Ran on police accountability; under her mayoralty the PAB collapsed and the accountability director was fired — she told voters the commitment was intact as it happened.</span>
-        </td>
-        <td class="inc-meta">
-          <span class="inc-tier" style="color:#f39c12">Tier B</span>
-          <span class="inc-dots" style="color:#e74c3c;letter-spacing:-1px" title="Impact: -0.09">●●●</span>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="incidents-footer"><a href="incidents/index.html">Full incident record →</a></div>
-</div>
+  <div class="inc-record-section">
+    <div class="inc-record-header">
+      Incident Record
+      <a href="incidents/index.html" class="inc-record-all">All incidents &rarr;</a>
+    </div>
+    <div class="inc-pages">
+      <div class="inc-page-row">
+        <span class="inc-alert">&#9888;</span>
+        <a href="incidents/2026-04/incident_Ishii_Panel.html" class="inc-page-link">Sugar Tax Panel — Credential Misrepresentation and Duty of Care</a>
+      </div>
+    </div>
+  </div>
 <style>
-  .incidents-section {
-    margin: 16px 24px 8px;
+  .inc-record-section {
+    margin: 0 24px 16px;
     border: 1px solid #e8ecef;
     border-radius: 6px;
     overflow: hidden;
-    font-size: 11.5px;
+    font-size: 12px;
   }
-  .incidents-header {
+  .inc-record-header {
     background: #f0f2f5;
     padding: 7px 12px;
     font-size: 10px;
@@ -548,72 +518,47 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
     letter-spacing: .8px;
     color: #7f8c8d;
     border-bottom: 1px solid #e0e4e8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
-  .incidents-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  .inc-row {
-    border-bottom: 1px solid #f0f2f5;
-  }
-  .inc-row:last-child {
-    border-bottom: none;
-  }
-  .inc-date {
-    padding: 7px 8px 7px 12px;
+  .inc-record-all {
     font-size: 10px;
-    color: #aaa;
-    white-space: nowrap;
-    vertical-align: top;
-    min-width: 72px;
-  }
-  .inc-body {
-    padding: 7px 8px;
-    vertical-align: top;
-    line-height: 1.4;
-  }
-  .inc-cat {
-    display: block;
-    font-size: 9.5px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: .5px;
-    color: #95a5a6;
-    margin-bottom: 2px;
-  }
-  .inc-desc {
-    font-size: 11.5px;
-    color: #34495e;
-  }
-  .inc-meta {
-    padding: 7px 12px 7px 4px;
-    vertical-align: top;
-    text-align: right;
-    white-space: nowrap;
-  }
-  .inc-tier {
-    display: block;
-    font-size: 9px;
-    font-weight: 700;
-    margin-bottom: 3px;
-  }
-  .inc-dots {
-    font-size: 9px;
-  }
-  .incidents-footer {
-    padding: 6px 12px;
-    text-align: right;
-    border-top: 1px solid #e8ecef;
-    background: #f8f9fa;
-  }
-  .incidents-footer a {
-    font-size: 10px;
-    font-weight: 700;
+    font-weight: 600;
     color: #2980b9;
     text-decoration: none;
-    letter-spacing: .3px;
+    text-transform: none;
+    letter-spacing: 0;
   }
-  .incidents-footer a:hover { text-decoration: underline; }
+  .inc-record-all:hover { text-decoration: underline; }
+  .inc-none {
+    padding: 10px 14px;
+    color: #aaa;
+    font-size: 11.5px;
+    font-style: italic;
+  }
+  .inc-pages { padding: 6px 0; }
+  .inc-page-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 6px 14px;
+    border-bottom: 1px solid #f0f2f5;
+  }
+  .inc-page-row:last-child { border-bottom: none; }
+  .inc-alert {
+    color: #e74c3c;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+  .inc-page-link {
+    color: #2c3e50;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  .inc-page-link:hover { color: #2980b9; text-decoration: underline; }
 </style>
+</div>
 </body>
 </html>
