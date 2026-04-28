@@ -180,11 +180,14 @@ strong { color: #1a1a2e; }
 <p>A single A–F composite representing overall alignment with taxpayer interests. Computed from weighted sub-scores (see below). Designed to be the one number a busy voter can reference.</p>
 <p><strong>Composite formula:</strong></p>
 <pre><code>composite = max(0.0,
-    taxpayer_alignment × 0.70 + focus × 0.30
+    taxpayer_alignment × 0.55 + focus × 0.25
+    + lsi × 0.10 + character × 0.10
     − attendance_deduction
     − low_engagement_adj
+    + audit_penalties
 )
 </code></pre>
+<p>Where <code>taxpayer_alignment = taxpayer_base × 0.60 + audit_composite × 0.40</code>.</p>
 <p><strong>Component weights and deductions:</strong></p>
 <table>
 <thead>
@@ -197,13 +200,23 @@ strong { color: #1a1a2e; }
 <tbody>
 <tr>
 <td>Taxpayer alignment</td>
-<td>70% weight</td>
-<td>The core question: whose interests does this member champion?</td>
+<td>55% weight</td>
+<td>The core question: whose interests does this member champion? (blended with audit alignment at 60/40)</td>
 </tr>
 <tr>
 <td>Focus</td>
-<td>30% weight</td>
+<td>25% weight</td>
 <td>What did they spend the council's time on?</td>
+</tr>
+<tr>
+<td>LSI</td>
+<td>10% weight</td>
+<td>Legislative sophistication (domain knowledge, fiscal literacy, inquiry rate, decisiveness, process)</td>
+</tr>
+<tr>
+<td>Character</td>
+<td>10% weight</td>
+<td>Collegiality, humility, warmth, low self-referential appeals</td>
 </tr>
 <tr>
 <td>Attendance deduction</td>
@@ -214,6 +227,11 @@ strong { color: #1a1a2e; }
 <td>Low engagement adjustment</td>
 <td>Up to −0.10</td>
 <td>Triggered when member authors no Priority 1 (P1) referrals AND shows low fiscal engagement (see P1/P2/P3 Framework)</td>
+</tr>
+<tr>
+<td>Audit-grounded penalties</td>
+<td>−0.05 to −0.20</td>
+<td>Applied after composite blend: structural silence, one-time masking, cross-fund transfers, Section 115 depletion</td>
 </tr>
 </tbody>
 </table>
@@ -485,6 +503,7 @@ strong { color: #1a1a2e; }
 <li>New revenue preference: authored/supported new tax or bond measures without accompanying cut analysis — scored <em>negative</em>, not neutral (see below)</li>
 <li>Rhetoric–action gap: voiced fiscal concern AND voted yes on large spending items</li>
 <li>Votes no on spending (rare and high-signal)</li>
+<li>Fiscal understatement: council-authored items claiming "None" or "Staff time" fiscal impact when the scope clearly incurs real obligations — new permit regimes, bans, citywide policy frameworks. Detected via <code>check_fiscal_understatement()</code> in <code>agenda_scraper.py</code>; scored −0.015/item authored, −0.007/item cosponsored, capped at −0.04. The failure may reflect naivete (not understanding what the proposal will require), weak effort (not thinking it through), or disregard for transparency — the penalty applies regardless of motive because the result is the same: the council and public lack a realistic cost picture when the item is heard.</li>
 <li>Special interest alignment score (inverse: deeper alignment with a spending constituency's status quo — e.g. homeless services apparatus, cycle track advocacy — without demanding accountability for outcomes = less taxpayer-aligned; Homeless Services Status-Quo Alignment (HSA) is the primary implemented instance)</li>
 <li><strong>New revenue preference vs. fiscal concern:</strong> These are not the same signal. Asking "what can we cut?" is fiscal work. Asking "should we put a bond on the ballot?" is identifying a revenue path without doing the reprioritization work first. The two are tracked separately. New revenue preference without companion cut analysis scores negative (up to −0.10). Partial credit applies if the same member also uses fiscal probing language (cut_credit).</li>
 </ul>
