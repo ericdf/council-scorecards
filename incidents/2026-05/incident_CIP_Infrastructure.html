@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Incident: FY2027–2031 CIP — Infrastructure Backlog Reaches $2.1B With No Structural Fix</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+body { background: #f0f2f5; display: flex; justify-content: center; }
+.card { width: 760px; margin: 20px auto; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,.15); }
+.header { background: #1a1a2e; color: #fff; padding: 28px 32px 20px; }
+.header .incident-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.8px; color: #e74c3c; margin-bottom: 8px; }
+.header .title { font-size: 22px; font-weight: 800; line-height: 1.3; }
+.header .meta { font-size: 11px; color: #8899bb; margin-top: 10px; line-height: 1.7; }
+.header .member-tag { display: inline-block; background: #2c3e50; color: #cdd; border-radius: 4px; padding: 2px 8px; font-size: 11px; font-weight: 600; margin-right: 6px; margin-top: 6px; }
+.section { padding: 20px 32px; border-bottom: 1px solid #ecf0f1; }
+.section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #7f8c8d; margin-bottom: 14px; }
+.facts { font-size: 13px; line-height: 1.75; color: #2c3e50; }
+.facts p { margin-bottom: 10px; }
+.facts p:last-child { margin-bottom: 0; }
+.data-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 12px; }
+.data-table th { background: #f0f2f5; text-align: left; padding: 7px 12px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; color: #7f8c8d; border-bottom: 2px solid #e0e4e8; }
+.data-table td { padding: 8px 12px; border-bottom: 1px solid #ecf0f1; color: #2c3e50; }
+.data-table tr:last-child td { border-bottom: none; }
+.data-table .num { font-weight: 700; font-variant-numeric: tabular-nums; }
+.data-table .arrow { color: #e74c3c; font-weight: 700; }
+.member-block { border-top: 3px solid #1a1a2e; padding: 24px 32px; border-bottom: 1px solid #ecf0f1; }
+.member-block.shared { background: #fafafa; }
+.member-name { font-size: 16px; font-weight: 800; color: #1a1a2e; }
+.member-role { font-size: 11px; color: #7f8c8d; margin-top: 2px; margin-bottom: 16px; }
+.dim-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #7f8c8d; margin-bottom: 4px; }
+.pillar-tag { display: inline-block; border-radius: 3px; padding: 2px 7px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; margin-bottom: 8px; }
+.pillar-character { background: #f3e5f5; color: #7b1fa2; }
+.pillar-fiscal    { background: #e3f2fd; color: #1565c0; }
+.dim-score { font-size: 64px; font-weight: 900; line-height: 1; margin: 4px 0 14px; }
+.score-red    { color: #e74c3c; }
+.score-orange { color: #e67e22; }
+.score-yellow { color: #f39c12; }
+.dim-reasoning { font-size: 13px; line-height: 1.75; color: #2c3e50; }
+.dim-reasoning p { margin-bottom: 10px; }
+.dim-reasoning p:last-child { margin-bottom: 0; }
+.net-row { display: flex; gap: 16px; padding: 20px 32px; border-bottom: 1px solid #ecf0f1; flex-wrap: wrap; }
+.net-item { background: #f8f9fa; border-radius: 6px; padding: 12px 16px; flex: 1; min-width: 160px; }
+.net-item-name { font-size: 11px; font-weight: 700; color: #2c3e50; }
+.net-item-score { font-size: 28px; font-weight: 900; color: #e74c3c; margin-top: 4px; }
+.net-item-note { font-size: 10px; color: #7f8c8d; margin-top: 3px; line-height: 1.4; }
+.decay-box { background: #f8f9fa; border-left: 4px solid #bdc3c7; padding: 12px 16px; font-size: 11px; color: #7f8c8d; border-radius: 0 4px 4px 0; line-height: 1.6; margin-top: 16px; }
+.narrative-section { padding: 24px 32px; border-bottom: 1px solid #ecf0f1; background: #fafcff; }
+.narrative-section .section-title { margin-bottom: 16px; }
+.narrative { font-size: 13px; line-height: 1.8; color: #2c3e50; }
+.narrative p { margin-bottom: 12px; }
+.narrative p:last-child { margin-bottom: 0; }
+.narrative .lede { font-size: 15px; font-weight: 700; line-height: 1.5; margin-bottom: 16px; color: #1a1a2e; }
+.related { padding: 16px 32px; border-top: 1px solid #ecf0f1; }
+.related-title { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #7f8c8d; margin-bottom: 8px; }
+.related a { font-size: 12px; color: #2980b9; text-decoration: none; display: block; margin-bottom: 4px; }
+.related a:hover { text-decoration: underline; }
+.footer { background: #f8f9fa; padding: 12px 32px; font-size: 10px; color: #aaa; display: flex; justify-content: space-between; }
+.footer a { color: #aaa; text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+</style>
+<style>
+body { flex-direction: column !important; align-items: center !important; }
+.top-bar-nav { width: 100%; background: #1a1a2e; padding: 10px 40px; }
+.top-bar-nav a { text-decoration: none; display: block; }
+.top-bar-nav .brand-title { font-size: 13px; font-weight: 800; color: #fff; letter-spacing: .4px; }
+.top-bar-nav .brand-sub { font-size: 11px; color: #8899bb; margin-top: 3px; }
+.top-bar-nav a:hover .brand-title { color: #4e8ecb; }
+</style>
+</head>
+<body>
+<div class="top-bar-nav"><a href="../../index.html"><div class="brand-title">&#8962; BERKELEY CITY COUNCIL SCORECARDS</div><div class="brand-sub">Independent analysis. Informed voters. Better government.</div></a></div>
+<div class="card">
+
+  <div class="header">
+    <div class="incident-label">Institutional Record · May 28, 2026 — Budget &amp; Finance Policy Committee</div>
+    <div class="title">FY2027–2031 CIP — Infrastructure Backlog Reaches $2.1B With No Structural Fix</div>
+    <div class="meta">
+      Source: City of Berkeley Proposed Capital Improvement Program FY2027–FY2031, presented May 28, 2026;<br>
+      City Auditor "Rocky Road" report (2025); MTC Pavement Condition Index data 2022–2024<br>
+      <span class="member-tag">City Council (9-0) — institutional</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">What Happened</div>
+    <div class="facts">
+      <p>On May 28, 2026, the City presented the FY2027–2031 Capital Improvement Program to the Budget and Finance Policy Committee. The document's headline number: $2.115 billion in unfunded capital needs — up from $1.1 billion in 2021, despite three bond cycles in that period. Streets account for $263 million of the unfunded total. Berkeley's Pavement Condition Index, as reported by the Metropolitan Transportation Commission, stood at 56 in 2024 — in the "at risk" category — flat since 2022.</p>
+      <p>The CIP projects $410 million in capital spending over five years. Of that, the General Fund baseline contribution is approximately $12 million per year — the same figure that has appeared in prior cycles. Three rounds of voter-approved bonds have not reduced the backlog. They have allowed the General Fund baseline to remain flat while the unfunded gap has grown by nearly $1 billion in five years.</p>
+      <p>The document itself confirms, without using the word, the mechanism the City Auditor described in the 2025 Rocky Road report: bond proceeds substitute for, rather than supplement, general fund baseline investment. The result is that Berkeley borrows to maintain the same road condition it would have maintained anyway — while interest and debt service accumulate — and the structural backlog grows regardless.</p>
+      <p>The FY2027-2028 biennial budget adopted in June 2026 does not change the General Fund baseline contribution. No council member at the May 28 committee meeting, or at subsequent budget hearings, proposed a motion to do so.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">The Backlog In Numbers</div>
+    <div class="facts">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Unfunded Capital Needs</th>
+            <th>Change</th>
+            <th>Context</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2021</td>
+            <td class="num">$1.10B</td>
+            <td>—</td>
+            <td>Measure T1 (2016) and prior bond cycles in effect</td>
+          </tr>
+          <tr>
+            <td>2022</td>
+            <td class="num">$1.65B</td>
+            <td class="arrow">↑ $550M</td>
+            <td>CIP FY2023–2027</td>
+          </tr>
+          <tr>
+            <td>2024</td>
+            <td class="num">$1.65B</td>
+            <td>Flat</td>
+            <td>CIP FY2025–2029</td>
+          </tr>
+          <tr>
+            <td>2026</td>
+            <td class="num">$2.115B</td>
+            <td class="arrow">↑ $465M</td>
+            <td>CIP FY2027–2031 (this document)</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Streets PCI (MTC data): 57 in 2022 → 56 in 2024. San Leandro: 55 → 57 (improving). Oakland: 54 → 58 (improving). Berkeley: flat to declining despite ongoing bond activity.</p>
+    </div>
+  </div>
+
+  <!-- FULL COUNCIL (INSTITUTIONAL) -->
+  <div class="member-block shared">
+    <div class="member-name">Full Council — Institutional</div>
+    <div class="member-role">The CIP documents a multi-cycle governance failure: three bond rounds, flat general fund baseline, growing backlog. No member has proposed a structural fix.</div>
+
+    <div class="dim-title">Bond-Then-Displace Pattern: Four Cycles Documented</div>
+    <div class="pillar-tag pillar-fiscal">Fiscal Stewardship</div>
+    <div class="dim-score score-red">−8</div>
+    <div class="dim-reasoning">
+      <p>The CIP document makes the mechanism visible in its own numbers. Five-year projected spending: $410M. Of that, the General Fund contributes roughly $60M ($12M/year × 5). The remaining $350M depends on bond proceeds, grants, and other non-recurring sources. When bond proceeds arrive, they do not raise total infrastructure investment above the baseline trajectory — they replace what the General Fund would have had to contribute, freeing those dollars for other uses. The unfunded backlog continues to grow because the replacement logic caps total investment at approximately what the bond covers, not at what the maintenance math requires.</p>
+      <p>The City Auditor documented this pattern in 2025. The CIP confirms it quantitatively in 2026. The council received both documents and, as of the June 2026 budget adoption, has not introduced a motion to reform the General Fund baseline contribution.</p>
+      <p>For comparison: Berkeley has approximately 200 miles of streets. Streets last roughly 20 years without maintenance. A city maintaining its network at steady state would need to resurface about 10 miles per year. The CIP's stated target — 12 miles over five years — is 2.4 miles per year. At that rate, the average street is resurfaced once every 83 years. No member has raised this arithmetic in public debate.</p>
+      <p>The score reflects the body's collective failure to engage with the structural mechanism across multiple budget cycles, not any single vote. Neighboring cities — San Leandro and Oakland, neither wealthy — have improved their PCI scores over the same period by treating pavement investment as a baseline commitment rather than a bond-funded variable.</p>
+
+      <div class="decay-box">
+        <strong>Score timeline:</strong> Full weight from May 2026. Reduces 20% per year. Resets — and increases — if the council places a fifth infrastructure bond on the November 2026 ballot without a companion motion establishing a General Fund floor for streets maintenance. The next natural reset point is the budget adoption vote (June 23, 2026).
+      </div>
+    </div>
+  </div>
+
+  <!-- NET SCORES -->
+  <div class="net-row">
+    <div class="net-item">
+      <div class="net-item-name">Full Council (institutional)</div>
+      <div class="net-item-score">−8</div>
+      <div class="net-item-note">Four-cycle bond-then-displace pattern; $2.1B backlog with no structural response</div>
+    </div>
+  </div>
+
+  <!-- NARRATIVE -->
+  <div class="narrative-section">
+    <div class="section-title">Analysis: Berkeley's Infrastructure Is Deteriorating — By Design</div>
+    <div class="narrative">
+      <p class="lede">Berkeley's roads are getting worse. The city knows why. The council has been told what to do about it. None of that has changed anything.</p>
+
+      <p>The FY2027–2031 Capital Improvement Program, presented to the Budget and Finance Policy Committee on May 28, documents $2.115 billion in unfunded capital needs — nearly double the figure from 2021. Three bond cycles have passed in that span. The backlog has grown by nearly $1 billion anyway.</p>
+
+      <p>The mechanism is not complicated. Berkeley spends about $12 million per year of General Fund money on capital infrastructure. When bonds arrive, they don't add to that — they substitute for it, keeping total investment roughly flat while the bonds accumulate debt service. The City Auditor explained this in the 2025 Rocky Road report. The CIP confirms it in its own numbers. Streets PCI: 56, flat since 2022, in the "at risk" category. At Berkeley's current resurfacing rate, the average street is repaved once every 83 years.</p>
+
+      <p>This is visible and comprehensible. The Metropolitan Transportation Commission publishes pavement condition scores for every Bay Area jurisdiction annually. San Leandro — not a wealthy city — went from 55 to 57 between 2022 and 2024. Oakland went from 54 to 58. Both improved by treating streets as a baseline commitment. Berkeley went from 57 to 56 while conducting two bond campaigns.</p>
+
+      <p>Council members have been told this directly. The City Auditor has done two major streets reports. Staff present pavement condition charts at budget hearings. The MTC data is public. What the council has not done — at any hearing, in any session — is introduce a motion to raise the General Fund baseline contribution for streets, or to condition future bond measures on a structural maintenance floor being established first.</p>
+
+      <p>The FY2027-2028 budget about to be adopted does not change this. The $300 million infrastructure bond being prepared for November 2026 will, if passed, fund the same displacement dynamic the CIP documents: bond proceeds in, general fund dollars freed for other purposes, backlog unchanged. When that bond matures and the next CIP is written, the unfunded needs figure will be larger still. Voters asked to support the November bond should ask what, specifically, is different this time.</p>
+    </div>
+  </div>
+
+  <div class="related">
+    <div class="related-title">Related Incidents</div>
+    <a href="incident_May19_Lockstep.html">May 19 Budget Hearing — Revenue-Only Lockstep, No Structural Fix</a>
+    <a href="../2025-10/incident_Rocky_Road_Bond.html">Rocky Road Streets Audit — Findings Received, Lessons Ignored (Full Council, Taplin, Tregub)</a>
+    <a href="../index.html">← All Incidents</a>
+  </div>
+
+  <div class="footer">
+    <span><a href="../index.html">← Incident Index</a></span>
+    <span>Berkeley Council Incident Record · Updated June 2026</span>
+  </div>
+
+</div>
+</body>
+</html>
