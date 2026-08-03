@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Incident: The Hopkins Vote — Two Members Cross Coalitions, Neither Explains Why</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+body { background: #f0f2f5; display: flex; justify-content: center; }
+.card { width: 760px; margin: 20px auto; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,.15); }
+.header { background: #1a1a2e; color: #fff; padding: 28px 32px 20px; }
+.header .incident-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.8px; color: #e74c3c; margin-bottom: 8px; }
+.header .title { font-size: 22px; font-weight: 800; line-height: 1.3; }
+.header .meta { font-size: 11px; color: #8899bb; margin-top: 10px; line-height: 1.7; }
+.header .member-tag { display: inline-block; background: #2c3e50; color: #cdd; border-radius: 4px; padding: 2px 8px; font-size: 11px; font-weight: 600; margin-right: 6px; margin-top: 6px; }
+.section { padding: 20px 32px; border-bottom: 1px solid #ecf0f1; }
+.section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #7f8c8d; margin-bottom: 14px; }
+.facts { font-size: 13px; line-height: 1.75; color: #2c3e50; }
+.facts p { margin-bottom: 10px; }
+.facts p:last-child { margin-bottom: 0; }
+.data-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 12px; }
+.data-table th { background: #f0f2f5; text-align: left; padding: 7px 12px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; color: #7f8c8d; border-bottom: 2px solid #e0e4e8; }
+.data-table td { padding: 8px 12px; border-bottom: 1px solid #ecf0f1; color: #2c3e50; }
+.data-table tr:last-child td { border-bottom: none; }
+.data-table .num { font-weight: 700; font-variant-numeric: tabular-nums; }
+.data-table .arrow { color: #e74c3c; font-weight: 700; }
+.member-block { border-top: 3px solid #1a1a2e; padding: 24px 32px; border-bottom: 1px solid #ecf0f1; }
+.member-block.shared { background: #fafafa; }
+.member-name { font-size: 16px; font-weight: 800; color: #1a1a2e; }
+.member-role { font-size: 11px; color: #7f8c8d; margin-top: 2px; margin-bottom: 16px; }
+.dim-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #7f8c8d; margin-bottom: 4px; }
+.pillar-tag { display: inline-block; border-radius: 3px; padding: 2px 7px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; margin-bottom: 8px; }
+.pillar-character { background: #f3e5f5; color: #7b1fa2; }
+.pillar-fiscal    { background: #e3f2fd; color: #1565c0; }
+.dim-score { font-size: 64px; font-weight: 900; line-height: 1; margin: 4px 0 14px; }
+.score-red    { color: #e74c3c; }
+.score-orange { color: #e67e22; }
+.score-yellow { color: #f39c12; }
+.dim-reasoning { font-size: 13px; line-height: 1.75; color: #2c3e50; }
+.dim-reasoning p { margin-bottom: 10px; }
+.dim-reasoning p:last-child { margin-bottom: 0; }
+.net-row { display: flex; gap: 16px; padding: 20px 32px; border-bottom: 1px solid #ecf0f1; flex-wrap: wrap; }
+.net-item { background: #f8f9fa; border-radius: 6px; padding: 12px 16px; flex: 1; min-width: 160px; }
+.net-item-name { font-size: 11px; font-weight: 700; color: #2c3e50; }
+.net-item-score { font-size: 28px; font-weight: 900; color: #e74c3c; margin-top: 4px; }
+.net-item-note { font-size: 10px; color: #7f8c8d; margin-top: 3px; line-height: 1.4; }
+.decay-box { background: #f8f9fa; border-left: 4px solid #bdc3c7; padding: 12px 16px; font-size: 11px; color: #7f8c8d; border-radius: 0 4px 4px 0; line-height: 1.6; margin-top: 16px; }
+.narrative-section { padding: 24px 32px; border-bottom: 1px solid #ecf0f1; background: #fafcff; }
+.narrative-section .section-title { margin-bottom: 16px; }
+.narrative { font-size: 13px; line-height: 1.8; color: #2c3e50; }
+.narrative p { margin-bottom: 12px; }
+.narrative p:last-child { margin-bottom: 0; }
+.narrative .lede { font-size: 15px; font-weight: 700; line-height: 1.5; margin-bottom: 16px; color: #1a1a2e; }
+.related { padding: 16px 32px; border-top: 1px solid #ecf0f1; }
+.related-title { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #7f8c8d; margin-bottom: 8px; }
+.related a { font-size: 12px; color: #2980b9; text-decoration: none; display: block; margin-bottom: 4px; }
+.related a:hover { text-decoration: underline; }
+.footer { background: #f8f9fa; padding: 12px 32px; font-size: 10px; color: #aaa; display: flex; justify-content: space-between; }
+.footer a { color: #aaa; text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+</style>
+<style>
+body { flex-direction: column !important; align-items: center !important; }
+.top-bar-nav { width: 100%; background: #1a1a2e; padding: 10px 40px; }
+.top-bar-nav a { text-decoration: none; display: block; }
+.top-bar-nav .brand-title { font-size: 13px; font-weight: 800; color: #fff; letter-spacing: .4px; }
+.top-bar-nav .brand-sub { font-size: 11px; color: #8899bb; margin-top: 3px; }
+.top-bar-nav a:hover .brand-title { color: #4e8ecb; }
+</style>
+</head>
+<body>
+<div class="top-bar-nav"><a href="../../index.html"><div class="brand-title">&#8962; BERKELEY CITY COUNCIL SCORECARDS</div><div class="brand-sub">Independent analysis. Informed voters. Better government.</div></a></div>
+<div class="card">
+
+
+  <div class="header">
+    <div class="incident-label">Incident Record &middot; July 28, 2026 — Regular Meeting, Item 27 (Hopkins Corridor)</div>
+    <div class="title">The Hopkins Vote — Two Members Cross Coalitions, Neither Explains Why</div>
+    <div class="meta">
+      Source: Berkeley City Council regular meeting Zoom caption transcript, July 28, 2026 (uncertified by the City);<br>
+      three recorded roll calls at 06:10:10, 06:13:06, and 06:15:05 elapsed<br>
+      <span class="member-tag">Tregub</span>
+      <span class="member-tag">Bartlett</span>
+      <span class="member-tag">Full Council — 7&ndash;2</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">What Happened</div>
+    <div class="facts">
+      <p>After eight years of process and roughly three hours of public comment, the Council approved the Hopkins Corridor plan 7&ndash;2 on July 28, 2026. The final tally suggests a lopsided consensus. The motion sequence that produced it shows something else: a Council split roughly down the middle, converted into a supermajority by two members who voted for mutually incompatible outcomes without reconciling them in public.</p>
+      <p>Three motions were taken in succession. Councilmember O'Keefe (District 5, which contains the affected commercial district) moved a substitute retaining repaving and pedestrian safety improvements but removing the Class IV separated cycle track. It failed 3&ndash;6. Councilmember Blackaby (District 6) then moved an analysis-first substitute directing staff to develop the cycle-track concept and a Hopkins-Ada-Rose alternative in parallel, with explicit parking, business-impact, and transit analysis, returning to Council before detailed engineering — work he argued fit inside the existing paving schedule. It failed 4&ndash;5. The main motion then carried 7&ndash;2.</p>
+      <p>The two district representatives most directly exposed to the project's local consequences — O'Keefe and Blackaby, both answerable to their voters through 2028 — were the two no votes on the plan that was adopted.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">The Motion Sequence</div>
+    <div class="facts">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Member</th>
+            <th>O'Keefe substitute</th>
+            <th>Blackaby substitute</th>
+            <th>Main motion</th>
+            <th>Pattern</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Kesarwani</td><td>No</td><td>No</td><td>Yes</td><td>Consistent — sponsor</td></tr>
+          <tr><td>Taplin</td><td>No</td><td>No</td><td>Yes</td><td>Consistent</td></tr>
+          <tr><td><strong>Bartlett</strong></td><td class="arrow">Yes</td><td class="arrow">Yes</td><td class="arrow">Yes</td><td class="arrow">Voted for all three</td></tr>
+          <tr><td><strong>Tregub</strong></td><td>No</td><td class="arrow">Yes</td><td class="arrow">Yes</td><td class="arrow">Reversed without explanation</td></tr>
+          <tr><td>O'Keefe</td><td>Yes</td><td>Yes</td><td>No</td><td>Consistent — opposed</td></tr>
+          <tr><td>Blackaby</td><td>Yes</td><td>Yes</td><td>No</td><td>Consistent — opposed</td></tr>
+          <tr><td>LunaParra</td><td>No</td><td>No</td><td>Yes</td><td>Consistent</td></tr>
+          <tr><td>Humbert</td><td>No</td><td>No</td><td>Yes</td><td>Consistent</td></tr>
+          <tr><td>Mayor Ishii</td><td>No</td><td>No</td><td>Yes</td><td>Consistent</td></tr>
+        </tbody>
+      </table>
+      <p>Five members consistently supported the main plan. Two consistently opposed it. Two crossed between coalitions. Without Bartlett and Tregub, the record would show a Council divided 5&ndash;4 — a bare majority imposing a project over the objection of both affected district representatives. With them, it reads 7&ndash;2.</p>
+    </div>
+  </div>
+
+  <div class="member-block">
+    <div class="member-name">Igor Tregub</div>
+    <div class="member-role">District 4 · seeking re-election November 2026</div>
+    <div class="pillar-tag pillar-character">Character &amp; Conduct</div>
+    <div class="dim-title">Stated Standard, Then Voted Against It</div>
+    <div class="dim-score score-red">&minus;14</div>
+    <div class="dim-reasoning">
+      <p>Tregub's questioning during the item was substantive. He asked whether the designs had been coordinated with AC Transit and East Bay Paratransit, raised the commissions on disability and aging, and pressed on staff discretion. These were among the most relevant questions asked all evening.</p>
+      <p>He then stated a clear process standard in his own words, at 05:53:24 elapsed:</p>
+      <p style="border-left: 3px solid #bdc3c7; padding-left: 14px; color: #555; font-style: italic;">&ldquo;Personally, I would like to provide our staff, especially our fire department and transportation division, with the greatest possible flexibility and trust. They're professionals and specialists in their fields, and I would like them to present us with a plan that truly works. One that includes official outreach to all members of the community and gathers feedback from nearby residents and those who use the corridor. I also want to make sure that the commissions on disability and aging&hellip; have an opportunity to weigh in <strong>before anything beyond the reform to study options is adopted.</strong>&rdquo;</p>
+      <p>And, at 05:54:55:</p>
+      <p style="border-left: 3px solid #bdc3c7; padding-left: 14px; color: #555; font-style: italic;">&ldquo;I am concerned that if we were to constrain our staff's options at the outset, we may be putting ourselves in a corner, both financially and in terms of the range of solutions available to us.&rdquo;</p>
+      <p>He voted for Blackaby's analysis-first substitute, consistent with that standard. It failed 4&ndash;5 at 06:13:34. Ninety seconds later, at 06:15:05, he voted for a main motion that fixed the basic alignment and street-space allocation before any of the analysis he had just called essential was performed — constraining staff's options at the outset in precisely the manner he had described as putting the City in a corner.</p>
+      <p>The transcript record between the two votes contains no explanation. The only intervening business was a friendly amendment offered and declined. Tregub did not say what had changed, why the standard no longer applied, or why the request of the two affected district representatives no longer controlled his vote.</p>
+      <p>This is the third documented instance of the same pattern: substantive questions raised, then abandoned without follow-through — after the county service-duplication question (April 23) and priority-based budgeting (May 19). At three occurrences it is no longer an anecdote about a busy meeting. It is a characterization of how this member operates: the questioning establishes a reputation for rigor, and the voting record does not sustain it.</p>
+      <p>The charitable reading is an unspoken fallback hierarchy — that he preferred analysis first but would accept the project over further delay. That reading is available to him. He simply never offered it, and the silence is his own doing. Fickleness, weak resolve, strategic positioning, and a performative display of receptiveness before joining a coalition he intended to support all remain live explanations on this record. His vote was not decisive — the motion would have carried 6&ndash;3 without him — but it enlarged the majority and diminished the visible force of the objection from the members who will answer for the outcome.</p>
+    </div>
+  </div>
+
+  <div class="member-block shared">
+    <div class="member-name">Ben Bartlett</div>
+    <div class="member-role">District 3 · term through 2028</div>
+    <div class="pillar-tag pillar-character">Character &amp; Conduct</div>
+    <div class="dim-title">Voted for Three Mutually Incompatible Motions</div>
+    <div class="dim-score score-orange">&minus;9</div>
+    <div class="dim-reasoning">
+      <p>Bartlett voted yes on O'Keefe's substitute (remove the cycle track), yes on Blackaby's substitute (study alternatives before committing), and yes on the main motion (build the cycle track now). These are not three compatible positions. The first two were offered specifically as alternatives to the third.</p>
+      <p>A preference hierarchy can legitimately produce this pattern — first preserve parking, then compare options, and if both fail, approve the safety project rather than leave Hopkins unresolved after eight years. That is a defensible legislative strategy, and nothing in the record contradicts it.</p>
+      <p>The failure is explanatory rather than substantive. A member who supports materially incompatible motions owes the public an account of what each vote meant and why the fallback remained acceptable. Bartlett provided no such reconciliation. The practical effect was to convert a closely divided Council into a superficially overwhelming majority, obscuring from the public record how narrow the actual support for the adopted alignment was.</p>
+      <p>This scoring is distinct from Bartlett's established attendance pattern. Here he was present and voted on every motion. The deficiency is that presence without stated reasoning does not discharge the representative function — it produces a vote total without a public rationale attached to it.</p>
+    </div>
+  </div>
+
+  <div class="net-row">
+    <div class="net-item">
+      <div class="net-item-name">Tregub</div>
+      <div class="net-item-score">&minus;14</div>
+      <div class="net-item-note">Stated a process standard, then voted against it 90 seconds later without explanation. Third instance of the pattern.</div>
+    </div>
+    <div class="net-item">
+      <div class="net-item-name">Bartlett</div>
+      <div class="net-item-score">&minus;9</div>
+      <div class="net-item-note">Voted for three incompatible motions with no public reconciliation.</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">What Is Not Being Claimed</div>
+    <div class="facts">
+      <p>This record makes no finding on the engineering merits of the Hopkins plan. Kesarwani's location-specific crash analysis — a pedestrian fatality, severe bicycle injuries, and a severe pedestrian injury at identified intersections, with treatments varying by segment and no protected treatment proposed west of Peralta where the injury pattern differed — was the most disciplined problem definition offered at the meeting. The project may well improve safety.</p>
+      <p>Nor is public comment treated as a measure of opinion. Participation was self-selected, capped at three hours, drew organized regional advocacy groups and residents of other districts, included at least one self-identified former Berkeley resident, and did not verify residency. Kesarwani's office reported more than 1,100 emails it considered roughly evenly divided. That establishes intense contestation, not a majority in either direction.</p>
+      <p>The scoring here concerns one thing only: whether members who moved between coalitions gave the public an account of why. Two did not.</p>
+    </div>
+  </div>
+
+  <div class="narrative-section">
+    <div class="section-title">Why This Matters</div>
+    <div class="narrative">
+      <p class="lede">A 7&ndash;2 vote tells voters the Council was nearly unanimous. The motion sequence tells them it was not. Only one of those records was visible the next morning.</p>
+      <p>Berkeley's Council votes together roughly 92 percent of the time. That statistic is usually read as consensus. Hopkins shows the mechanism that manufactures part of it: on a genuinely divided question, members who cross between incompatible coalitions without explanation inflate the final margin and erase the disagreement from the public record. The vote total is accurate and the deliberation it summarizes is not.</p>
+      <p>The cost falls unevenly. The Council had full legal authority to make this decision, and the concentration of consequences on one commercial corridor does not give any district a veto over a city street. But both representatives whose constituents bear the direct effects — loading and curb access, merchant operations, church and school access, hill residents for whom driving is the realistic option — asked the Council to proceed differently. Overriding both should raise, not lower, the majority's burden of explanation. Instead the two members who supplied the margin explained nothing.</p>
+      <p>The sequencing question outlasts the vote. The majority demanded location-specific evidence for collision risk and accepted deferred mitigation for everything else: merchant operations, loading, waste collection, driveway conflicts, disability access, AC Transit and paratransit coordination, and displaced parking demand were all left to detailed design. Once the alignment was fixed, later outreach could refine implementation but could not reopen the central choice. That is a policy decision about which risks must be measured before commitment and which can be managed afterward — a defensible one, but not a technocratic conclusion, and one made without the analysis two members had just called essential.</p>
+      <p>If the project succeeds, this record will read as an argument about procedure that history resolved. If it damages access, commerce, or neighborhood institutions, the costs fall on residents whose representatives warned the Council and were overridden by colleagues bearing less of the immediate risk — two of whom never said why they changed their minds.</p>
+    </div>
+  </div>
+
+  <div class="related">
+    <div class="related-title">Related</div>
+    <a href="../../hopkins-assessment.html">Full assessment: The Hopkins Street Vote — public positions, council performance, and shifting alliances</a>
+    <a href="../../framework.html">Berkeley Budget Framework — sequencing, decision gates, and the Hopkins case</a>
+    <a href="../2026-05/incident_May19_Lockstep.html">May 19 Budget Hearing — Revenue-Only Lockstep, No Structural Fix</a>
+    <a href="../index.html">← All Incidents</a>
+  </div>
+
+  <div class="footer">
+    <span><a href="../index.html">← Incident Index</a></span>
+    <span>Berkeley Council Incident Record · Updated August 2026</span>
+  </div>
+
+</div>
+</body>
+</html>

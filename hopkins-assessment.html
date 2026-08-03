@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Hopkins Street Vote — Meeting Assessment, July 28, 2026</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+body { background: #f0f2f5; color: #2c3e50; }
+a { color: #2980b9; }
+
+/* ── Pinned nav: brand + document actions in one bar ── */
+.navbar { position: sticky; top: 0; z-index: 100; background: #1a1a2e;
+          border-bottom: 1px solid #2f3d5c; box-shadow: 0 2px 14px rgba(0,0,0,.32); }
+.nav-inner { display: flex; align-items: center; gap: 12px; padding: 9px 30px; }
+.nav-brand { text-decoration: none; flex-shrink: 0; }
+.nav-brand .brand-title { font-size: 13px; font-weight: 800; color: #fff; letter-spacing: .4px; white-space: nowrap; }
+.nav-brand .brand-sub { font-size: 11px; color: #8899bb; margin-top: 3px; white-space: nowrap; }
+.nav-brand:hover .brand-title { color: #4e8ecb; }
+.nav-acts { display: flex; gap: 8px; align-items: center; margin-left: auto; flex-wrap: wrap;
+            justify-content: flex-end; }
+.dl-btn { display: inline-block; background: #4e8ecb; color: #fff; text-decoration: none;
+          font-size: 12px; font-weight: 700; padding: 7px 14px; border-radius: 4px; white-space: nowrap; }
+.dl-btn:hover { background: #6ba3d9; }
+.dl-btn.alt { background: transparent; border: 1px solid #3d5680; color: #8fbde8; }
+.dl-btn.alt:hover { background: #1e2a47; border-color: #4e8ecb; }
+.lbl-full { display: inline; }
+.lbl-short { display: none; }
+@media (max-width: 900px) {
+  .nav-inner { padding: 8px 16px; gap: 8px; flex-wrap: wrap; }
+  .nav-brand .brand-sub { display: none; }
+  .dl-btn { font-size: 11px; padding: 6px 10px; }
+  .lbl-full { display: none; }
+  .lbl-short { display: inline; }
+}
+@media (max-width: 620px) {
+  .nav-brand .brand-title { font-size: 0; letter-spacing: 0; }
+  .nav-brand .brand-title::before { content: "\2302 SCORECARDS"; font-size: 11.5px; letter-spacing: .4px; }
+  /* Give the actions their own full-width row rather than squeezing one line. */
+  .nav-brand { flex: 1 1 100%; }
+  .nav-acts { flex: 1 1 100%; margin-left: 0; justify-content: flex-start;
+              gap: 6px; padding-top: 2px; }
+  .dl-btn { font-size: 10.5px; padding: 6px 9px; }
+}
+
+.fw-hero { background: #1a1a2e; padding: 44px 40px 38px; }
+.fw-hero-inner { max-width: 860px; margin: 0 auto; }
+.fw-kicker { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #4e8ecb; margin-bottom: 14px; }
+.fw-hero h1 { font-size: 38px; font-weight: 900; color: #fff; line-height: 1.12; letter-spacing: -.4px; }
+.fw-hero .sub { font-size: 16px; color: #aab4cc; margin-top: 14px; line-height: 1.6; }
+.fw-hero .byline { font-size: 12px; color: #7d8aa5; margin-top: 20px; }
+
+.wrap { max-width: 860px; margin: 24px auto 40px; padding: 0 20px; }
+.panel { background: #fff; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,.08); margin-bottom: 20px; overflow: hidden; }
+.panel-pad { padding: 28px 34px; }
+h2 { font-size: 23px; font-weight: 800; color: #1a1a2e; margin-bottom: 8px; line-height: 1.25; }
+h2 .num { color: #4e8ecb; }
+h3 { font-size: 16px; font-weight: 800; color: #1a1a2e; margin: 22px 0 8px; }
+h3:first-child { margin-top: 0; }
+p { font-size: 14px; line-height: 1.75; margin-bottom: 12px; }
+p:last-child { margin-bottom: 0; }
+ul { margin: 10px 0 12px 22px; }
+li { font-size: 14px; line-height: 1.7; margin-bottom: 8px; }
+.lede { font-size: 16px; line-height: 1.65; color: #34495e; }
+.section-eyebrow { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.4px; color: #7f8c8d; margin-bottom: 10px; }
+
+.callout { background: #eaf2fa; border-left: 4px solid #4e8ecb; padding: 16px 20px; border-radius: 0 5px 5px 0; margin: 18px 0; }
+.callout .ct { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: #2471a3; margin-bottom: 8px; }
+.callout p { font-size: 14px; color: #1a3a5c; line-height: 1.7; margin: 0; }
+.warn { background: #fdf5f5; border-left: 4px solid #c0392b; padding: 14px 18px; border-radius: 0 5px 5px 0; margin: 16px 0; }
+.warn .ct { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: #a93226; margin-bottom: 8px; }
+.warn p { font-size: 13.5px; color: #7b2d26; margin: 0; line-height: 1.7; }
+
+table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; }
+th { background: #f0f2f5; text-align: left; padding: 9px 12px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; color: #7f8c8d; border-bottom: 2px solid #e0e4e8; }
+td { padding: 10px 12px; border-bottom: 1px solid #ecf0f1; line-height: 1.6; vertical-align: top; }
+tr:last-child td { border-bottom: none; }
+.tbl-scroll { overflow-x: auto; }
+.yes { color: #1e8449; font-weight: 700; } .no { color: #c0392b; font-weight: 700; }
+.flip { background: #fef9e7; }
+
+.pos { border-left: 4px solid #7f8c8d; padding: 4px 0 4px 18px; margin: 18px 0; }
+.pos.a { border-color: #2471a3; } .pos.b { border-color: #b7950b; } .pos.c { border-color: #1e8449; }
+.pos-name { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.1px; margin-bottom: 6px; }
+.pos.a .pos-name { color: #2471a3; } .pos.b .pos-name { color: #9a7d0a; } .pos.c .pos-name { color: #1e8449; }
+
+.member { border-top: 1px solid #ecf0f1; padding: 22px 34px; }
+.member:first-of-type { border-top: none; }
+.member h3 { margin: 0 0 3px; font-size: 17px; }
+.member .role { font-size: 11px; color: #7f8c8d; margin-bottom: 12px; }
+
+blockquote { border-left: 3px solid #bdc3c7; padding-left: 16px; margin: 14px 0; color: #555; font-style: italic; font-size: 13.5px; line-height: 1.7; }
+
+.footer { background: #f8f9fa; padding: 14px 34px; font-size: 10px; color: #aaa; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+.footer a { color: #aaa; text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+
+@media (max-width: 700px) {
+  .fw-hero { padding: 30px 20px 26px; }
+  .fw-hero h1 { font-size: 27px; }
+  .panel-pad, .member { padding: 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <div class="nav-inner">
+    <a class="nav-brand" href="index.html">
+      <div class="brand-title">&#8962; BERKELEY CITY COUNCIL SCORECARDS</div>
+      <div class="brand-sub">Independent analysis. Informed voters. Better government.</div>
+    </a>
+    <div class="nav-acts">
+      <a class="dl-btn alt" href="incidents/2026-07/incident_Hopkins_Votes.html"><span class="lbl-full">Scored incident record</span><span class="lbl-short">Incident</span></a>
+      <a class="dl-btn" href="documents/Hopkins_Street_Meeting_Political_Assessment.pdf" target="_blank" rel="noopener noreferrer"><span class="lbl-full">Full assessment (PDF)</span><span class="lbl-short">PDF</span></a>
+    </div>
+  </div>
+</div>
+
+<div class="fw-hero">
+  <div class="fw-hero-inner">
+    <div class="fw-kicker">Meeting Assessment &middot; July 28, 2026</div>
+    <h1>The Hopkins Street Vote</h1>
+    <p class="sub">Public positions, council performance, shifting alliances, and the politics of unequal exposure.</p>
+    <div class="byline">Assessment of the Berkeley City Council regular meeting of July 28, 2026 &middot; Published July 30, 2026</div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="panel"><div class="panel-pad">
+    <div class="callout">
+      <div class="ct">Top-line judgment</div>
+      <p>The Council confronted a genuine street-safety problem, but it did so through a politically asymmetric coalition. The two district representatives most exposed to the project's local consequences &mdash; Shoshana O'Keefe and Brent Blackaby &mdash; opposed the adopted alignment or sought an analysis-first alternative. The majority was assembled largely from members whose own districts are farther from the immediate effects, together with two lame-duck members who will not face voters again. Mayor Adena Ishii is the important exception: geographically remote from Hopkins but accountable to affected voters through a citywide electorate. The result was legally legitimate and may have reflected sincere safety and climate values, but it placed concentrated neighborhood costs on constituents whose representatives asked the Council to proceed differently.</p>
+    </div>
+    <p>This report evaluates the meeting record rather than the ultimate engineering merits of the project. It asks four questions: What did the public actually say? What can and cannot be inferred about public support? How well did each councilmember perform? And what did the final sequence of substitute motions reveal about political accountability and alliance movement?</p>
+    <p>The underlying transcript was generated by Zoom and expressly disclaimed by the City as uncertified. Names and isolated phrases are occasionally garbled. Conclusions below rely on repeated context, timestamps, motion summaries and roll calls rather than uncertain wording.</p>
+
+    <h3>Executive findings</h3>
+    <ul>
+      <li>Public comment demonstrated intense division, not a reliable measure of Berkeley-resident opinion. Participation was self-selected, capped at three hours, and included immediate neighbors, residents from other districts, organizational advocates and at least one self-identified former Berkeley resident.</li>
+      <li>The dispute was not simply safety versus parking. Three distinct positions emerged: protected lanes now; paving and pedestrian safety without the Class IV track; and an analysis-first comparison of the cycle-track design against a Hopkins-Ada-Rose alternative.</li>
+      <li>The strongest argument for the adopted plan was Kesarwani's location-specific crash analysis. Its central weakness was sequencing: the Council selected the basic allocation of street space before completing equivalent analysis of merchant operations, disability access, transit coordination, driveway conflicts and displacement of parking demand.</li>
+      <li>O'Keefe and Blackaby carried the greatest combination of geographic exposure, neighborhood knowledge and electoral accountability. Their opposition did not give them a veto, but overriding both affected representatives should have required a particularly complete and transparent justification.</li>
+      <li>The final vote concealed meaningful disagreement. Five members consistently supported the main plan, two consistently opposed it, and two &mdash; Bartlett and Tregub &mdash; moved between coalitions.</li>
+      <li>Humbert was substantively consistent: he opposed both substitutes and supported the main motion. The separate question of whether councilmembers or their households routinely rely on cars is relevant not merely to behavioral consistency but to possible hypocrisy. The pending public-records request must be evaluated before attributing that double standard to any particular member.</li>
+    </ul>
+  </div></div>
+
+  <div class="panel"><div class="panel-pad">
+    <h2><span class="num">1.</span> The political structure of the decision</h2>
+    <h3>Concentrated consequences, dispersed decision-making</h3>
+    <p>Hopkins is a city street and the Council had full authority to make a citywide policy choice. But the effects of that choice are not distributed evenly. The removal and reallocation of curb space, changes in loading and access, construction disruption, and any effect on neighborhood commerce fall most directly on the commercial district, nearby residents, institutions and people who approach the corridor from the hills.</p>
+    <p>That makes district representation politically significant. O'Keefe represents District 5, which contains the principal commercial area and park segment she described as bearing the plan's largest tradeoffs. Blackaby represents District 6, including hill residents for whom transit and cycling may be impractical and driving may be the only realistic access to Hopkins. Both remain answerable to their voters through 2028.</p>
+    <p>The strongest supporters did not face the same combination of local and electoral exposure. Taplin, Bartlett and Humbert represent districts substantially removed from the corridor's immediate operational consequences. Kesarwani has a real District 1 connection to the western corridor, but announced that she will not seek another term. Lunaparra likewise will leave office after 2026. Their policy convictions may be entirely sincere; the relevant point is that they could impose a durable local decision without facing a future district election on its results.</p>
+
+    <h3>The mayor: geographically remote, electorally exposed</h3>
+    <p>Mayor Ishii is the odd case. She lives and governs at the greatest practical remove from Hopkins, but she is elected citywide and her term runs through 2028. She therefore does face the judgment of affected voters. Their influence, however, is diluted within a citywide electorate and may be offset by a broader constituency that strongly favors bicycle infrastructure, Vision Zero and climate policy.</p>
+    <p>Her vote is best understood not as politically cost-free, but as a choice to accept concentrated local opposition in exchange for a citywide policy coalition. That is a legitimate mayoral calculation. It also means the mayor should be judged on whether she fully confronted the localized burdens rather than treating them as details to be solved after the central decision.</p>
+
+    <h3>Political exposure matrix</h3>
+    <div class="tbl-scroll">
+    <table>
+      <thead><tr><th>Official(s)</th><th>Direct geographic exposure</th><th>Future electoral exposure</th><th>Political implication</th></tr></thead>
+      <tbody>
+        <tr><td><strong>O'Keefe / Blackaby</strong></td><td>High</td><td>High &mdash; terms through 2028</td><td>Most direct neighborhood knowledge and strongest accountability for local outcomes.</td></tr>
+        <tr><td><strong>Mayor Ishii</strong></td><td>Low personally; citywide institutionally</td><td>High but dispersed &mdash; term through 2028</td><td>Can be punished by affected voters, but can offset them with a citywide pro-project coalition.</td></tr>
+        <tr><td><strong>Taplin / Bartlett</strong></td><td>Low</td><td>Moderate &mdash; terms through 2028</td><td>Can vote principally on citywide values while bearing little district-specific cost.</td></tr>
+        <tr><td><strong>Humbert</strong></td><td>Low</td><td>Immediate &mdash; term expires 2026, seeking another</td><td>Held a clear position, but most Hopkins consequences fall outside his district.</td></tr>
+        <tr><td><strong>Kesarwani</strong></td><td>Partial connection through District 1</td><td>Minimal &mdash; not seeking another term</td><td>Principal author with local knowledge of the western corridor, but insulated from future electoral judgment.</td></tr>
+        <tr><td><strong>Lunaparra</strong></td><td>Low</td><td>Minimal &mdash; leaving office after 2026</td><td>Could act on strong citywide values without facing another election.</td></tr>
+        <tr><td><strong>Tregub</strong></td><td>Low</td><td>Immediate &mdash; seeking another term in District 4</td><td>Electorally exposed, but not primarily to the residents bearing the direct Hopkins costs.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div></div>
+
+  <div class="panel"><div class="panel-pad">
+    <h2><span class="num">2.</span> What the public positions actually were</h2>
+    <p>The meeting is better understood as a contest among three policy models than as a binary fight between bicycles and automobiles.</p>
+
+    <div class="pos a">
+      <div class="pos-name">Position A &middot; Protected lanes now</div>
+      <p>Supporters accepted Kesarwani's diagnosis that Hopkins is a high-injury corridor and argued that protected, one-way bicycle lanes are the appropriate treatment. They emphasized serious and fatal collisions, children traveling to schools and recreation, network continuity, climate goals, and the inadequacy of sharrows or unprotected paint. Several speakers argued that further study after eight years of debate would be delay in another form.</p>
+      <p>This coalition included Berkeley residents living on or near Hopkins and residents from other districts, as well as representatives or participants associated with Walk Bike Berkeley, the Sierra Club, East Bay for Everyone and bicycle advocacy organizations. Its best argument was that cyclists have a lawful right to use Hopkins and that sending them to another street does not make Hopkins itself safe.</p>
+      <p>Its recurring blind spot was the tendency to treat lost curb access as inconvenience rather than access. Some speakers recognized the need for curb management and disability accommodation. Others implied that extra walking, ride-hailing or mode substitution could solve the problem. That response does not adequately address people who cannot walk several blocks, carry purchases, ride, afford repeated ride-hailing, or depend on direct vehicle access without necessarily holding a disability placard.</p>
+    </div>
+
+    <div class="pos b">
+      <div class="pos-name">Position B &middot; Paving and safety without the Class IV track</div>
+      <p>O'Keefe's position retained repaving and pedestrian improvements while removing the separated cycle track and minimizing parking loss. Public supporters of this approach emphasized the corridor as a destination rather than merely a through-route: Monterey Market, small shops, the pool and track, schools, houses of worship, residences, deliveries and service access.</p>
+      <p>This was not a defense of doing nothing. Many opponents called for repaving, traffic calming, pedestrian improvements, safer crossings, bicycle boulevards or bicycle infrastructure on adjacent streets. Their strongest contribution was granular knowledge of how the commercial district functions and who depends on it.</p>
+      <p>Their weakest claims were predictions of commercial collapse and declarations of overwhelming neighborhood opposition. O'Keefe grounded her view in extensive door-knocking rather than the evening's turnout or email volume, which is meaningful constituent evidence. It is still not a representative survey, and the meeting record did not contain a completed merchant-impact analysis.</p>
+    </div>
+
+    <div class="pos c">
+      <div class="pos-name">Position C &middot; Compare alternatives without delaying paving</div>
+      <p>Blackaby proposed that staff develop two plans in parallel: the cycle-track concept and a more flexible Hopkins-Ada-Rose alternative with explicit parking and business-impact analysis, transit coordination and a return to Council before detailed engineering. He argued that the work could be completed within the existing paving schedule and need not delay construction.</p>
+      <p>This was the meeting's strongest process proposal because it attempted to preserve urgency while testing competing causal claims. Its vulnerability was political: after years of controversy, supporters reasonably feared that another round of study could become another veto point, even if the formal schedule did not change.</p>
+    </div>
+
+    <div class="warn">
+      <div class="ct">A contested meeting is not a public-opinion survey</div>
+      <p>Kesarwani reported more than 1,100 emails that her office considered approximately evenly divided. That is evidence of organized and genuine conflict, but not of an even split among Berkeley voters. The meeting limited comment to three hours; some online speakers were not heard; residency was not systematically verified; organized regional groups participated; and at least one supporter identified herself as a former Berkeley resident. The responsible conclusion is that the issue is intensely contested, not that either side demonstrated a majority.</p>
+    </div>
+  </div></div>
+
+  <div class="panel"><div class="panel-pad">
+    <h2><span class="num">3.</span> The substantive policy test</h2>
+    <h3>The adopted plan had a strong safety rationale</h3>
+    <p>Kesarwani identified a pedestrian fatality, severe bicycle injuries and another severe pedestrian injury at specific Hopkins intersections. She connected those locations to the proposed treatments and declined to extend the same protected treatment west of Peralta because the serious-injury data did not show the same pattern there. That is disciplined problem definition and is the strongest feature of her presentation.</p>
+
+    <h3>But the Council applied unequal evidentiary standards</h3>
+    <p>For collision risk, the majority demanded and supplied location-specific evidence. For the plan's competing consequences, it largely accepted future mitigation. Merchant operations, loading, waste collection, driveway conflicts, church access, parking displacement, AC Transit and paratransit coordination, and the full range of disability needs were to be addressed during detailed design.</p>
+    <p>That sequence matters. Once Council fixed the basic alignment and street-space allocation, later outreach could refine implementation but could not fairly reconsider the central choice. The majority therefore treated demonstrated crash risk as sufficient to commit to the intervention while treating other potential harms as manageable design problems that had not yet been measured.</p>
+
+    <h3>Accessibility was a conflict within accessibility</h3>
+    <p>Supporters correctly argued that protected infrastructure can benefit people who walk, use wheelchairs or mobility devices, ride transit, or cannot drive. Opponents correctly argued that other disabled, elderly or physically limited residents require close vehicle access. These groups cannot be collapsed into a single disability constituency.</p>
+    <p>The meeting record shows that the proposed designs had not yet been coordinated with AC Transit or East Bay Paratransit. Councilmembers promised ADA spaces, ramps, curb cuts, loading zones and improved design practice. Those are relevant mitigations, but they do not fully answer the needs of people who require vehicle proximity yet do not possess a placard or cannot count on a limited designated space being available.</p>
+
+    <div class="callout">
+      <div class="ct">Overall substantive judgment</div>
+      <p>The majority had a defensible causal chain for a real danger: serious collisions occur on Hopkins; separation reduces bicycle-vehicle exposure; therefore protected lanes should be installed. The opposition had detailed evidence about neighborhood function and access but less rigorous proof of the magnitude of predicted harm. Council resolved the uncertainty by prioritizing demonstrated collision risk and accepting the risk that operational and accessibility harms could be mitigated later. That is a policy choice, not a neutral technocratic conclusion.</p>
+    </div>
+  </div></div>
+
+  <div class="panel">
+    <div class="panel-pad" style="padding-bottom:8px;"><h2><span class="num">4.</span> Councilmember performance</h2></div>
+
+    <div class="member">
+      <h3>Rashi Kesarwani &mdash; strongest causal case, incomplete sequencing</h3>
+      <div class="role">District 1 &middot; not seeking re-election</div>
+      <p>Kesarwani gave the best evidence-based explanation of why action was needed and why treatments varied by segment. She acknowledged that the correspondence was divided and called the right-of-way reallocation unprecedented. Her performance was serious and substantively engaged.</p>
+      <p>The weakness was that her evidentiary rigor was asymmetric. The plan specified the intervention before completing transit, business, parking and disability analysis. Her promise of future outreach was meaningful, but it came after the decision had been narrowed to implementation rather than genuine option selection.</p>
+    </div>
+
+    <div class="member">
+      <h3>Shoshana O'Keefe &mdash; strongest district representation</h3>
+      <div class="role">District 5 &middot; term through 2028</div>
+      <p>O'Keefe clearly separated the propositions she accepted &mdash; paving and pedestrian safety &mdash; from the Class IV alignment she opposed. She identified concrete users and functions that would bear the cost and made the district-representation issue explicit. Her forceful conclusion reflected the unusual position of watching colleagues impose a major project on the neighborhood she represents.</p>
+      <p>Her assertion that a significant majority of the neighborhood opposed the plan rested on extensive personal canvassing, not a formal survey. Her late emotional language risked making a detailed accessibility and cost argument sound territorial. Even so, she was the member most clearly performing the representative function for the directly affected commercial district.</p>
+    </div>
+
+    <div class="member">
+      <h3>Brent Blackaby &mdash; strongest alternative process</h3>
+      <div class="role">District 6 &middot; term through 2028</div>
+      <p>Blackaby framed the problem as a multi-objective design question: safety, access, business vitality, network connection, transit and cost. His parallel-plan proposal directly answered the majority's delay objection by placing the analysis within the existing paving schedule. He also amended it to reduce reliance on sharrows and require parking and business-impact analysis.</p>
+      <p>Some of his behavioral and customer-loss assumptions remained estimates rather than completed findings. That limitation strengthened, rather than weakened, his core request: test the competing claims before fixing the alignment.</p>
+    </div>
+
+    <div class="member">
+      <h3>Igor Tregub &mdash; serious questions, inconsistent and potentially insincere follow-through</h3>
+      <div class="role">District 4 &middot; seeking re-election</div>
+      <p>Tregub asked materially relevant questions about transit coordination, East Bay Paratransit, accessibility, staff discretion and the need to compare options. His support for Blackaby's substitute followed from a clearly stated process position: preserve professional flexibility, consult affected stakeholders and return with recommendations informed by data and technical expertise. His questioning was serious, and he was initially receptive to O'Keefe and Blackaby's demand for greater precision.</p>
+      <p>His failure was not merely opacity. After the analysis-first substitute failed, Tregub supported a main motion that fixed the basic alignment before completing the analysis he had just described as important. He did not explain what had changed or why the affected representatives' request no longer controlled his vote. The most charitable explanation is an unspoken fallback hierarchy. Other plausible explanations are fickleness, weak resolve, strategic positioning, or bad faith &mdash; that the analysis-first posture was a temporary display of receptiveness rather than a sincere standard capable of governing his final vote. The transcript cannot establish his private motive, but it does support a firm public-performance judgment: his stated reasoning and final vote were inconsistent, and his unexplained reversal gives the public reasonable grounds to question his sincerity.</p>
+    </div>
+
+    <div class="member">
+      <h3>Mark Humbert &mdash; substantively consistent, politically distant</h3>
+      <div class="role">District 8 &middot; seeking re-election</div>
+      <p>Humbert staked out a clear position and held it. He opposed O'Keefe's and Blackaby's substitutes and supported Kesarwani's motion. Unlike the swing voters, he did not create ambiguity about his ordering of values.</p>
+      <p>His limitation was distance from the consequences. District 8 residents do not bear the same direct neighborhood effects as Districts 5 and 6. The pending CPRA may also permit a separate examination of whether Humbert and other members routinely use automobiles for city business. Until records are produced, that is a question, not a finding.</p>
+    </div>
+
+    <div class="member">
+      <h3>Terry Taplin and Cecilia Lunaparra &mdash; consistent network advocates</h3>
+      <div class="role">Districts 2 and 7</div>
+      <p>Taplin consistently supported the protected-network approach and sought an extension to Standage. Lunaparra co-sponsored that extension and remained with the main-plan coalition. Their position treated Hopkins as part of a citywide and regional low-stress network rather than as an isolated commercial street.</p>
+      <p>That was coherent, but it also made it easier to discount the corridor's destination function and the localized accessibility costs. Lunaparra's lame-duck status further reduced the electoral consequences of the choice.</p>
+    </div>
+
+    <div class="member">
+      <h3>Mayor Adena Ishii &mdash; accountable citywide, but chose design-later sequencing</h3>
+      <div class="role">Mayor &middot; term through 2028</div>
+      <p>Ishii managed an extremely difficult meeting and acknowledged that prior bicycle-lane and bus-island designs had not always served disabled users well. She accepted responsibility for ensuring that later design addressed accessibility.</p>
+      <p>Politically, she chose the citywide safety-and-climate coalition over the two most affected district representatives. Because she must face a citywide electorate, that was not costless. Her substantive vulnerability is that she accepted a process in which the central allocation was decided first and the hardest operational questions were deferred.</p>
+    </div>
+  </div>
+
+  <div class="panel"><div class="panel-pad">
+    <h2><span class="num">5.</span> Shifting alliances and the final vote</h2>
+    <p>The final 7&ndash;2 result gives a misleading impression of consensus. The motion sequence reveals a stable core, a stable opposition and two members who crossed between coalitions.</p>
+
+    <div class="tbl-scroll">
+    <table>
+      <thead><tr><th>Councilmember</th><th>O'Keefe substitute</th><th>Blackaby substitute</th><th>Kesarwani main motion</th><th>Assessment</th></tr></thead>
+      <tbody>
+        <tr><td>Kesarwani</td><td class="no">No</td><td class="no">No</td><td class="yes">Yes</td><td>Consistent main-plan sponsor</td></tr>
+        <tr><td>Taplin</td><td class="no">No</td><td class="no">No</td><td class="yes">Yes</td><td>Consistent main-plan / extension supporter</td></tr>
+        <tr class="flip"><td><strong>Bartlett</strong></td><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td><td>Supported every available outcome; preference ordering unexplained</td></tr>
+        <tr class="flip"><td><strong>Tregub</strong></td><td class="no">No</td><td class="yes">Yes</td><td class="yes">Yes</td><td>Backed analysis-first alternative, then abandoned that standard without reconciliation</td></tr>
+        <tr><td>O'Keefe</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="no">No</td><td>Consistent opposition to fixed Class IV alignment</td></tr>
+        <tr><td>Blackaby</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="no">No</td><td>Consistent analysis-first / alternative supporter</td></tr>
+        <tr><td>Lunaparra</td><td class="no">No</td><td class="no">No</td><td class="yes">Yes</td><td>Consistent main-plan supporter</td></tr>
+        <tr><td>Humbert</td><td class="no">No</td><td class="no">No</td><td class="yes">Yes</td><td>Consistent main-plan supporter</td></tr>
+        <tr><td>Mayor Ishii</td><td class="no">No</td><td class="no">No</td><td class="yes">Yes</td><td>Consistent main-plan supporter</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3>Bartlett: maximal flexibility or avoidance of choice?</h3>
+    <p>Bartlett voted for O'Keefe's substitute, Blackaby's substitute and the final Kesarwani motion. The charitable interpretation is a clear preference hierarchy: first preserve parking, then compare alternatives, but if both fail, approve the safety project rather than leave Hopkins unresolved. That is a legitimate legislative strategy.</p>
+    <p>The problem is explanatory. A member who supports materially incompatible motions should tell the public what each vote means and why the fallback remains acceptable. Bartlett did not provide a sufficiently clear reconciliation. His behavior helped convert a divided Council into a superficially overwhelming final majority.</p>
+
+    <h3>Tregub: the most consequential unexplained pivot</h3>
+    <p>Tregub did not support O'Keefe's substitute. He did, however, articulate and endorse the central reasoning behind Blackaby's alternative: preserve professional staff flexibility; compare multiple options; coordinate with AC Transit and East Bay Paratransit; incorporate affected stakeholders; and return with recommendations informed by data and technical expertise. In his own words, at 05:53:24 elapsed:</p>
+    <blockquote>&ldquo;I would like to provide our staff&hellip; with the greatest possible flexibility and trust&hellip; I also want to make sure that the commissions on disability and aging&hellip; have an opportunity to weigh in <strong>before anything beyond the reform to study options is adopted.</strong>&rdquo;</blockquote>
+    <blockquote>&ldquo;I am concerned that if we were to constrain our staff's options at the outset, we may be putting ourselves in a corner, both financially and in terms of the range of solutions available to us.&rdquo;</blockquote>
+    <p>He then voted for Blackaby's substitute. When it failed 4&ndash;5, Tregub immediately joined the main motion &mdash; which constrained staff's options at the outset in precisely the manner he had just described. The transcript contains no substantive explanation of why a motion that fixed the alignment before the analysis satisfied the process standard he had endorsed ninety seconds earlier.</p>
+    <p>This is more than political opacity. The record permits several interpretations: a sincere but unexplained fallback preference; fickleness or weak resolve; strategic positioning; or bad faith, in which the analysis-first language functioned as a display of receptiveness before he joined the coalition he intended to support. The transcript cannot conclusively select among those motives, but Tregub's failure to reconcile the votes is itself evidence of inconsistency and makes doubt about his sincerity reasonable. His vote was not numerically decisive &mdash; the main motion would have passed 6&ndash;3 without him &mdash; but it enlarged the majority and diminished the visible force of O'Keefe and Blackaby's objection.</p>
+
+    <div class="warn">
+      <div class="ct">Judgment on the Tregub question</div>
+      <p>The record cannot establish whether Tregub broke a private promise or what was in his mind. That evidentiary limit does not require describing the conduct as mere opacity. The charitable inference is that he had an unspoken fallback hierarchy. The adverse inference &mdash; also plausible on this record &mdash; is that his concern for precision was performative or insincere, and that he displayed receptiveness to O'Keefe and Blackaby before joining the majority he preferred all along. Fickleness, weak resolve, strategic positioning and bad faith therefore remain live explanations. Because he offered no reconciliation, the uncertainty is of his own making.</p>
+    </div>
+
+    <h3>The stable coalitions</h3>
+    <p>Kesarwani, Taplin, Lunaparra, Humbert and Ishii consistently preferred the main plan. O'Keefe and Blackaby consistently preferred alternatives and opposed the fixed Class IV alignment. That consistency does not establish that either coalition was correct, but it gives voters a clear account of each member's governing priorities. The analytical concern falls most heavily on the members whose votes moved without a corresponding public explanation.</p>
+  </div></div>
+
+  <div class="panel"><div class="panel-pad">
+    <h2><span class="num">6.</span> Behavioral consistency and the pending CPRA</h2>
+    <p>A California Public Records Act request has been submitted concerning councilmember transportation practices. Those records may raise a legitimate question: do officials who support reducing automobile access themselves or through their households routinely preserve the same automobile advantages they are making less available to other residents?</p>
+    <p>The relevant standard is not perfection and it is not whether a member has ever entered a car. It is whether an official or household routinely relies on automobile access for the same burdens affected residents describe &mdash; carrying groceries, documents or equipment; transporting children or disabled family members; meeting tight schedules; traveling safely after dark; or reaching places poorly served by transit &mdash; while publicly minimizing those needs when asserted by others. Those are not special governmental burdens. They are precisely the ordinary burdens this vote reallocates.</p>
+
+    <h3>Questions the records could answer</h3>
+    <ul>
+      <li>How often did each councilmember claim mileage, parking or other automobile-related reimbursement for trips within Berkeley?</li>
+      <li>What were the origins, destinations, timing and stated purposes of those trips?</li>
+      <li>Were realistic walking, cycling or transit alternatives available within the required schedule?</li>
+      <li>Do members or their households use cars to carry groceries, materials or equipment, transport family members, attend consecutive obligations or reach areas poorly served by transit?</li>
+      <li>Do the records show that even able, well-resourced officials preserve automobile access because it is practically necessary or materially more convenient for ordinary Berkeley life?</li>
+      <li>Have members publicly characterized driving to Hopkins as readily substitutable while privately treating comparable automobile access as necessary for themselves or their households?</li>
+    </ul>
+    <p>The final question is the politically important one. Collision evidence does not disappear because a project supporter drives. But routine personal or household automobile use would expose a serious hypocrisy if that official minimizes the same needs when asserted by residents. A councilmember who preserves those advantages in private while voting to make them materially less available to others is practicing &ldquo;green for thee but not for me.&rdquo; The issue is not whether the official ever enters a car; it is whether the official's normal conduct contradicts the claim that comparable automobile access is unnecessary or easily replaced.</p>
+    <div class="warn">
+      <p><strong>No conclusion about any particular councilmember should appear as a factual finding until the CPRA response is received and analyzed.</strong> The governing standard, however, need not be softened: evidence of routine automobile reliance, combined with public dismissal of comparable resident needs, would support a finding of hypocrisy. Any such analysis should be published with a transparent methodology, the complete universe of responsive records, and clear distinctions among reimbursed travel, unreimbursed travel, household travel that can be reliably established, and trips for which no record exists.</p>
+    </div>
+  </div></div>
+
+  <div class="panel"><div class="panel-pad">
+    <h2><span class="num">7.</span> Final assessment</h2>
+    <div class="callout">
+      <div class="ct">What the meeting revealed</div>
+      <p>The Hopkins meeting was not principally a contest between people who cared about safety and people who cared about parking. It was a contest over which risks had to be measured before commitment and which could be managed afterward. The majority treated collision risk as demonstrated and access risk as mitigable. The affected district representatives asked the Council to compare options before fixing the alignment. The Council rejected that sequencing.</p>
+    </div>
+    <p>The political top line follows from that substantive choice. The officials closest to the consequences and most answerable for them asked for a different approach. Several of those who imposed the decision were geographically removed, and two principal supporters were leaving office. The mayor was geographically remote but remained citywide accountable. These differences do not determine the merits, but they should have raised the majority's burden of explanation.</p>
+    <p>That burden was only partly met. Kesarwani explained the safety case. O'Keefe and Blackaby explained the access and process case. Humbert and the stable majority made their values clear. Bartlett and especially Tregub helped create the appearance of broad consensus without adequately explaining why they moved from alternative coalitions to the final motion.</p>
+    <p class="lede">The fairest final judgment is therefore that the Council made a legitimate but politically unbalanced decision under incomplete information. The project may ultimately improve safety and function well. If it instead damages access, commerce or neighborhood institutions, the costs will fall most directly on residents whose representatives warned the Council and were overridden by colleagues who bore less of the immediate risk.</p>
+  </div></div>
+
+  <div class="panel"><div class="panel-pad" style="background:#fafbfc;">
+    <h2>Source notes and limitations</h2>
+    <ol style="margin-left:20px;">
+      <li style="font-size:12.5px;line-height:1.7;margin-bottom:10px;">Berkeley City Council regular meeting Zoom caption transcript, July 28, 2026, 258 pages. Relevant sections: item introduction and supplementals, approx. 01:04:30&ndash;01:28:20; public comment, approx. 02:28:00&ndash;05:25:30; Council comments and motions, approx. 05:25:38&ndash;06:15:30. The document states that Zoom supplied the text and the City cannot certify it.</li>
+      <li style="font-size:12.5px;line-height:1.7;margin-bottom:10px;">Council Roster, City of Berkeley. Current district assignments and term expiration dates as of July 2026.</li>
+      <li style="font-size:12.5px;line-height:1.7;margin-bottom:10px;">&ldquo;Exclusive: Rashi Kesarwani will not seek re-election,&rdquo; <em>The Berkeley Scanner</em>, April 9, 2026. Also reports that Cecilia Lunaparra will step aside, while Igor Tregub and Mark Humbert intend to seek another term.</li>
+      <li style="font-size:12.5px;line-height:1.7;">&ldquo;Controversial bike lane in Berkeley wins approval after heated 8-year saga,&rdquo; <em>San Francisco Chronicle</em>, July 30, 2026. Contemporary account of the 7&ndash;2 vote, the parking reduction and the competing safety and access positions.</li>
+    </ol>
+
+    <h3>Interpretive limits</h3>
+    <ul>
+      <li>The transcript records spoken claims; it does not independently validate collision statistics, parking estimates, economic predictions or speakers' residency.</li>
+      <li>Public comment is analyzed qualitatively. It is not counted as a referendum or survey.</li>
+      <li>Descriptions of geographic and electoral exposure are political analysis, not claims that district representatives possess a formal veto over citywide streets.</li>
+      <li>No conclusion is drawn about any particular councilmember's or household member's travel behavior pending the CPRA response.</li>
+      <li>The term <em>lame duck</em> is used only for members publicly reported as leaving office after the current term, not merely for every member whose term expires in 2026.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <span><a href="index.html">← Scorecards home</a> &middot; <a href="incidents/2026-07/incident_Hopkins_Votes.html">Incident record</a> &middot; <a href="framework.html">Budget framework</a></span>
+    <span>Assessment published July 30, 2026</span>
+  </div>
+  </div>
+
+</div>
+</body>
+</html>
