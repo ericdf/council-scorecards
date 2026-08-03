@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Consultation After the Fact — Two District 4 Siting Decisions</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --ground:#f6f7f9; --panel:#fff; --ink:#1a1f2b; --ink-2:#586074; --ink-3:#8b93a5;
+  --rule:#e0e4ea; --rule-soft:#eef1f5;
+  --accent:#7a4b8f; --accent-soft:#f5eff8;
+  --quote:#2c4a7c; --quote-soft:#eef3fa;
+  --him:#8a5a1f; --him-soft:#fbf4e9;
+  --serif: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  --sans: ui-sans-serif, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --ground:#13161d; --panel:#1a1e27; --ink:#e7eaf0; --ink-2:#a4acbc; --ink-3:#7a8296;
+    --rule:#2c333f; --rule-soft:#232935; --accent:#c194d8; --accent-soft:#241b2a;
+    --quote:#8fb3e0; --quote-soft:#1a2331; --him:#d8a86a; --him-soft:#261f14; }
+}
+:root[data-theme="dark"] {
+  --ground:#13161d; --panel:#1a1e27; --ink:#e7eaf0; --ink-2:#a4acbc; --ink-3:#7a8296;
+  --rule:#2c333f; --rule-soft:#232935; --accent:#c194d8; --accent-soft:#241b2a;
+  --quote:#8fb3e0; --quote-soft:#1a2331; --him:#d8a86a; --him-soft:#261f14;
+}
+:root[data-theme="light"] {
+  --ground:#f6f7f9; --panel:#fff; --ink:#1a1f2b; --ink-2:#586074; --ink-3:#8b93a5;
+  --rule:#e0e4ea; --rule-soft:#eef1f5; --accent:#7a4b8f; --accent-soft:#f5eff8;
+  --quote:#2c4a7c; --quote-soft:#eef3fa; --him:#8a5a1f; --him-soft:#fbf4e9;
+}
+body { background: var(--ground); color: var(--ink); font-family: var(--serif); line-height: 1.72;
+       -webkit-font-smoothing: antialiased; }
+
+.nav { position: sticky; top: 0; z-index: 50; background: #1a1a2e; border-bottom: 1px solid #2f3d5c; }
+.nav a { display: block; padding: 9px 26px; text-decoration: none; }
+.nav .t { font-size: 13px; font-weight: 800; color: #fff; letter-spacing: .4px; font-family: var(--sans); }
+.nav .s { font-size: 11px; color: #8899bb; margin-top: 3px; font-family: var(--sans); }
+.nav a:hover .t { color: #4e8ecb; }
+
+.wrap { max-width: 40rem; margin: 0 auto; padding: 3rem 1.4rem 5rem; }
+.kicker { font-family: var(--sans); font-size: .69rem; font-weight: 700; letter-spacing: .16em;
+          text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+h1 { font-size: 2.25rem; line-height: 1.12; font-weight: 600; letter-spacing: -.02em;
+     text-wrap: balance; margin-bottom: .9rem; }
+.standfirst { font-size: 1.16rem; color: var(--ink-2); line-height: 1.6; margin-bottom: 1.1rem; }
+.byline { font-family: var(--sans); font-size: .78rem; color: var(--ink-3);
+          padding-bottom: 1.6rem; border-bottom: 2px solid var(--ink); margin-bottom: 2.2rem; }
+
+h2 { font-family: var(--sans); font-size: 1.28rem; font-weight: 700; line-height: 1.3;
+     margin: 2.6rem 0 .9rem; letter-spacing: -.01em; text-wrap: balance; }
+h2 .when { display: block; font-size: .69rem; font-weight: 700; letter-spacing: .13em;
+           text-transform: uppercase; color: var(--accent); margin-bottom: .32rem; }
+h3 { font-family: var(--sans); font-size: 1rem; font-weight: 700; margin: 1.8rem 0 .6rem; }
+p { margin-bottom: 1.05rem; }
+p:last-child { margin-bottom: 0; }
+
+/* his words get a distinct treatment from document quotes */
+blockquote { margin: 1.2rem 0; padding: 1rem 1.2rem; background: var(--quote-soft);
+             border-left: 3px solid var(--quote); border-radius: 0 4px 4px 0;
+             font-size: 1rem; line-height: 1.65; }
+blockquote.him { background: var(--him-soft); border-left-color: var(--him); }
+blockquote p { margin-bottom: .7rem; }
+blockquote p:last-child { margin-bottom: 0; }
+.attrib { font-family: var(--sans); font-size: .74rem; color: var(--ink-3); margin-top: .6rem; }
+
+.tw { overflow-x: auto; margin: 1.4rem 0; border: 1px solid var(--rule); border-radius: 4px;
+      background: var(--panel); }
+table { border-collapse: collapse; width: 100%; font-family: var(--sans); font-size: .82rem; }
+th { text-align: left; font-size: .68rem; font-weight: 700; letter-spacing: .09em;
+     text-transform: uppercase; color: var(--ink-2); padding: .65rem .9rem;
+     border-bottom: 1px solid var(--rule); white-space: nowrap; }
+td { padding: .62rem .9rem; border-bottom: 1px solid var(--rule-soft); vertical-align: top;
+     line-height: 1.5; }
+tbody tr:last-child td { border-bottom: 0; }
+td.d { white-space: nowrap; font-variant-numeric: tabular-nums; font-weight: 700; }
+tr.money td { background: var(--accent-soft); }
+tr.money td.d { color: var(--accent); }
+
+.pull { margin: 2rem 0; padding: 1.2rem 0 1.2rem 1.3rem; border-left: 4px solid var(--accent);
+        font-size: 1.2rem; font-weight: 600; line-height: 1.45; }
+
+.face { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin: 1.5rem 0;
+        border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; }
+.face > div { padding: 1rem 1.1rem; background: var(--panel); }
+.face > div:first-child { border-right: 1px solid var(--rule); }
+.face .lbl { font-family: var(--sans); font-size: .68rem; font-weight: 700; letter-spacing: .1em;
+             text-transform: uppercase; color: var(--him); margin-bottom: .5rem; }
+.face p { font-size: .95rem; margin: 0; }
+
+.notclaim { background: var(--panel); border: 1px solid var(--rule); border-radius: 4px;
+            padding: 1.2rem 1.3rem; margin: 1.6rem 0; }
+.notclaim h3 { font-family: var(--sans); font-size: .93rem; font-weight: 700; margin: 0 0 .6rem; }
+.notclaim h3 ~ h3 { margin-top: 1.1rem; }
+.notclaim p { font-size: .92rem; margin-bottom: 0; }
+
+footer { margin-top: 3rem; padding-top: 1.3rem; border-top: 1px solid var(--rule);
+         font-family: var(--sans); font-size: .79rem; color: var(--ink-2); line-height: 1.62; }
+footer h3 { font-size: .84rem; color: var(--ink); margin: 0 0 .5rem; font-weight: 700; }
+footer p { margin-bottom: .8rem; }
+footer a { color: var(--quote); }
+
+@media (max-width: 640px) {
+  .wrap { padding: 2rem 1.1rem 3.5rem; }
+  h1 { font-size: 1.7rem; }
+  h2 { font-size: 1.1rem; }
+  .pull { font-size: 1.03rem; }
+  .face { grid-template-columns: 1fr; }
+  .face > div:first-child { border-right: 0; border-bottom: 1px solid var(--rule); }
+  .nav a { padding: 8px 16px; }
+}
+</style>
+</head>
+<body>
+
+<div class="nav"><a href="index.html"><div class="t">&#8962; BERKELEY CITY COUNCIL SCORECARDS</div><div class="s">Independent analysis. Informed voters. Better government.</div></a></div>
+
+<div class="wrap">
+
+  <div class="kicker">Explainer</div>
+  <h1>Consultation After the Fact</h1>
+  <p class="standfirst">Twice in eleven months, Councilmember Igor Tregub told District 4 about a shelter project in the neighborhood after the money had already been approved. Both times, the community meeting came after the decision. Both times, a grant deadline was the reason given.</p>
+  <div class="byline">Written for readers with no prior knowledge of the projects &middot; August 2026</div>
+
+  <p>This is an account of two decisions and the correspondence around them. Every quotation is verbatim from Councilmember Tregub&rsquo;s own emails or from the City&rsquo;s agenda record.</p>
+
+  <h2>What a &ldquo;consent calendar&rdquo; is</h2>
+  <p>Berkeley&rsquo;s City Council passes most business in a single batch vote called the <strong>consent calendar</strong>. Dozens of items are approved together, in one motion, with no individual discussion. It exists so routine business &mdash; minutes, small contracts, ceremonial resolutions &mdash; doesn&rsquo;t consume a meeting.</p>
+  <p>Any councilmember can &ldquo;pull&rdquo; an item off consent to have it debated separately. Pulling an item is the ordinary way a member says <em>this one deserves a conversation</em>.</p>
+  <p>Both money votes described below were on the consent calendar. Neither was pulled.</p>
+
+  <h2><span class="when">Episode one &mdash; November 2024</span>The Howard Johnson motel</h2>
+  <p>On the morning of <strong>November 19, 2024</strong>, District 4 residents received their monthly newsletter. Partway down, under &ldquo;District 4 Updates&rdquo;:</p>
+  <blockquote class="him">
+    <p>&ldquo;At our Council meeting <strong>tonight, November 19th</strong>, we will vote on approving a contract with Dorothy Day House to operate interim housing at the Howard Johnson motel&hellip;</p>
+    <p>Our office plans to hold an in-person community meeting to discuss this project in more detail&hellip; <strong>Please save the date: Wednesday, December 11th, 5:30&ndash;7:00 PM.</strong>&rdquo;</p>
+    <div class="attrib">Councilmember Igor Tregub, District 4 newsletter, November 19 2024, 10:42 AM</div>
+  </blockquote>
+  <p>Notice of the vote and notice of the consultation arrived in the same email, hours before the Council met. The community meeting was scheduled for <strong>22 days after</strong> the decision it was meant to inform.</p>
+  <p>A constituent wrote to ask why. The reply, the next day:</p>
+  <blockquote class="him">
+    <p>&ldquo;I acknowledge&hellip; that the timing of this matter was <strong>less than ideal</strong>. We had a <strong>narrow window of opportunity to accept the Governor&rsquo;s grant</strong> once awarded to us.&rdquo;</p>
+    <div class="attrib">Tregub to constituent, November 20 2024</div>
+  </blockquote>
+  <p>The grant deadline is the explanation. Hold onto it.</p>
+
+  <h2><span class="when">Episode two &mdash; August to November 2025</span>CareBridge at the Signature Inn</h2>
+  <p>Eleven months later, a second project: the Berkeley CareBridge Program, a post-arrest diversion and reentry programme funded by an <strong>$8 million</strong> state Proposition 47 grant, to run <strong>January 2026 through December 2028</strong>. The site selected was the Signature Inn at 1761 University Avenue &mdash; roughly half a mile from the Howard Johnson.</p>
+  <p>Here is the sequence, with his own statements set against the City&rsquo;s agenda record.</p>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>Date</th><th>What happened</th><th>Source</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="d">~June 2025</td>
+          <td>Prop 47 grant application submitted. Preparing it involved City staff, the City Manager&rsquo;s office, Options Recovery Services, Dorothy Day House, and BPD.</td>
+          <td>correspondence</td>
+        </tr>
+        <tr>
+          <td class="d">late Aug 2025</td>
+          <td><strong>&ldquo;I first became aware of the specific location in late August of 2025.&rdquo;</strong></td>
+          <td>Tregub, Oct 30</td>
+        </tr>
+        <tr class="money">
+          <td class="d">Sep 30 2025</td>
+          <td><strong>$8,000,000 grant accepted by Council — on the consent calendar.</strong> Not pulled for discussion.</td>
+          <td>agenda record</td>
+        </tr>
+        <tr>
+          <td class="d">Oct 21 2025</td>
+          <td>Neighbors told about the project and the site. A community meeting is promised &ldquo;in the coming weeks.&rdquo;</td>
+          <td>Tregub newsletter</td>
+        </tr>
+        <tr class="money">
+          <td class="d">Nov 18 2025</td>
+          <td><strong>$7,920,000 contract with Options Recovery approved — on the consent calendar.</strong> Not pulled.</td>
+          <td>agenda record</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>The neighborhood was informed <strong>21 days after</strong> the Council had already accepted the $8 million.</p>
+
+  <h2>Two statements, the same day</h2>
+  <p>Asked about the timing, Councilmember Tregub sent two emails on <strong>October 30, 2025</strong>, roughly six hours apart.</p>
+
+  <div class="face">
+    <div>
+      <div class="lbl">5:00 AM</div>
+      <p>&ldquo;My office became aware of the proposed location <strong>very recently</strong>. We shared this information with the community <strong>shortly after</strong> it became available to us.&rdquo;</p>
+    </div>
+    <div>
+      <div class="lbl">10:58 AM</div>
+      <p>&ldquo;I <strong>first became aware of the specific location in late August of 2025</strong>.&rdquo;</p>
+    </div>
+  </div>
+
+  <p>Late August to October 21 is <strong>eight weeks</strong>. Inside those eight weeks, on September 30, the Council accepted the $8 million on the consent calendar &mdash; and the councilmember for the district in which the money would be spent did not pull the item, and had not yet told the district it existed.</p>
+  <div class="pull">&ldquo;Very recently&rdquo; and &ldquo;shortly after&rdquo; describe a two-month gap that contained the funding vote.</div>
+
+  <h2>The alternatives</h2>
+  <p>Asked why this site, the answer was that there wasn&rsquo;t much choice:</p>
+  <blockquote class="him">
+    <p>&ldquo;While the alternative to this project would <strong>likely be a long-term vacant motel</strong>, I understand and share your concern about concentrating non-congregate shelter services predominantly within the downtown and West Berkeley districts.&rdquo;</p>
+    <div class="attrib">Tregub to constituent, October 26 2025</div>
+  </blockquote>
+  <p>The premise there is worth examining. The Signature Inn is privately owned, on a commercial corridor, and by the City&rsquo;s own account <em>the owners approached the City</em> to offer it. A motel whose owners are actively seeking a buyer or tenant is not obviously destined to sit empty; the City was one interested party among the possible others. No comparison of alternative sites appears in the record.</p>
+  <p>Pressed further, the councilmember was direct about the constraint he now accepts:</p>
+  <blockquote class="him">
+    <p>&ldquo;I am <strong>not inclined to support additional projects</strong> for prior low-level offenders or other potentially higher-risk populations in our district <strong>absent a commitment of other parts of the region or other Berkeley districts to shoulder the load</strong>.&rdquo;</p>
+    <div class="attrib">Tregub to constituent, October 30 2025, 10:58 AM</div>
+  </blockquote>
+  <p>That is a substantive commitment, made in private correspondence after two projects had already been sited.</p>
+
+  <h2>Why the pattern matters more than either episode</h2>
+  <p>Taken alone, either could be bad luck &mdash; a grant window that closed faster than a calendar could be cleared. Taken together they describe a method:</p>
+  <div class="tw">
+    <table>
+      <thead><tr><th></th><th>Howard Johnson, 2024</th><th>CareBridge, 2025</th></tr></thead>
+      <tbody>
+        <tr><td>Outside grant with a deadline</td><td>Governor&rsquo;s grant</td><td>Prop 47, $8M</td></tr>
+        <tr><td>District told</td><td>Morning of the vote</td><td>21 days after the money vote</td></tr>
+        <tr><td>Community meeting</td><td>22 days after</td><td>&ldquo;In the coming weeks&rdquo;</td></tr>
+        <tr><td>Money votes on consent</td><td>—</td><td>Both ($15.92M total)</td></tr>
+        <tr><td>Reason given</td><td>&ldquo;Narrow window&hellip; to accept the Governor&rsquo;s grant&rdquo;</td><td>&ldquo;Became aware&hellip; very recently&rdquo;</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>The second episode happened <strong>after</strong> a constituent had objected to the first in writing, and after the councilmember had conceded the first was &ldquo;less than ideal.&rdquo; Whatever explains the first, the second was not a surprise.</p>
+
+  <h2>The standard this fails</h2>
+  <p>The <a href="framework.html">Berkeley Budget Framework</a> names this exact failure mode. On grant money:</p>
+  <blockquote>
+    <p>&ldquo;A grant changes the financing of an undertaking; it does not determine the undertaking&rsquo;s category or priority&hellip; <strong>Dollars attracted is not a success metric if the award creates obligations that outlive the money.</strong>&rdquo;</p>
+  </blockquote>
+  <p>And on deadlines specifically:</p>
+  <blockquote>
+    <p>&ldquo;Urgency can justify a faster process. It does not justify pretending that quality gates do not apply&hellip; <strong>Missing a funding window may be less costly than accepting a durable obligation the City cannot execute well.</strong>&rdquo;</p>
+  </blockquote>
+  <p>A three-year programme in a fixed location is a durable obligation. The grant that pays for it expires in December 2028; the neighborhood does not. Whether the projects are good is a separate question from whether the district was given any opportunity to weigh in before the money was committed &mdash; and on the second question the record is unambiguous.</p>
+
+  <h2>What this does and does not establish</h2>
+  <div class="notclaim">
+    <h3>It does not establish that the projects are bad</h3>
+    <p>Dorothy Day House and Options Recovery Services are long-standing Berkeley providers. Interim housing and post-arrest diversion are legitimate municipal undertakings. Nothing here evaluates whether either programme works.</p>
+    <h3>It does not establish that he lied</h3>
+    <p>Two statements made hours apart are difficult to reconcile, and the reader can weigh them. But &ldquo;very recently&rdquo; is a vague phrase, and a person can characterize the same interval differently in different sentences without intending to deceive. The verifiable facts are the dates, and the dates are set out above.</p>
+    <h3>It does not establish that he could have stopped either project</h3>
+    <p>One member of nine does not control an outcome. What one member does control is whether their own district hears about a project before the vote, and whether an item is pulled from consent for discussion. Both were available; neither was used.</p>
+  </div>
+
+  <h2>The question left standing</h2>
+  <p>A community meeting held after the money is approved cannot change the decision. It can explain the decision, answer questions about operations, and absorb complaint &mdash; all of which have value. What it cannot do is influence whether the thing happens, or where.</p>
+  <div class="pull">Twice, the meeting that might have shaped the outcome was scheduled for after the outcome was fixed.</div>
+  <p>The councilmember has since said he is &ldquo;not inclined to support additional projects&hellip; absent a commitment of other parts of the region or other Berkeley districts to shoulder the load.&rdquo; That commitment was made in an email to one constituent. Whether it is repeated on the record, and whether it governs the next vote, is checkable.</p>
+
+  <footer>
+    <h3>Sources</h3>
+    <p><strong>Correspondence.</strong> Councilmember Igor Tregub, District 4 newsletter of November 19 2024; emails to a constituent dated November 20 2024, October 26 2025, October 27 2025, and October 30 2025 (5:00 AM and 10:58 AM); constituent newsletter of October 21 2025. Supplied by the recipient, quoted verbatim.</p>
+    <p><strong>Agenda record.</strong> City of Berkeley Council agenda, September 30 2025, consent calendar item 3 — &ldquo;Authorize Acceptance of Proposition 47 Cohort 5 Grant,&rdquo; $8,000,000, from the City Manager. Council agenda, November 18 2025, consent calendar item 7 — &ldquo;Contract with Options Recovery Services for Berkeley CareBridge Program,&rdquo; $7,920,000, from the City Manager. Council agenda, November 19 2024 — Dorothy Day House contract for the Howard Johnson motel.</p>
+    <p><strong>Standard applied.</strong> <em>Berkeley Budget Framework: A Strategy for Strategy</em>, sections on the grant rule and bounded urgency exceptions.</p>
+    <h3>Related</h3>
+    <p><a href="framework.html">The Berkeley Budget Framework</a> &middot; <a href="hopkins-fire-review.html">The Hopkins Street fire review</a> &middot; <a href="index.html">Scorecards home</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
