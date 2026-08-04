@@ -98,7 +98,41 @@
     .method-inner a:hover { text-decoration: underline; }
 
     /* ── Scorecards section ── */
-    .sc-section { padding: 32px 16px 48px; }
+    /* ── Material Governance Failures band ──────────────────────────────────────
+   Deliberately the loudest thing on the page after the hero. These are the
+   findings a voter should read first, so the band uses the alert accent rather
+   than the framework blue and sits above the member scorecards. */
+.mgf-band  { background: #fdf2f0; border-top: 3px solid #a03434;
+              border-bottom: 1px solid #e8c4bc; }
+.mgf-inner { max-width: 1100px; margin: 0 auto; padding: 34px 40px 34px; }
+.mgf-eyebrow{ font-size: 10px; font-weight: 800; text-transform: uppercase;
+              letter-spacing: 2px; color: #a03434; margin-bottom: 10px; }
+.mgf-h2    { font-size: 26px; font-weight: 800; color: #1a1a2e; line-height: 1.2;
+              margin-bottom: 10px; letter-spacing: -.4px; }
+.mgf-lede  { font-size: 14px; line-height: 1.7; color: #5a4340; max-width: 74ch;
+              margin-bottom: 22px; }
+.mgf-grid  { display: grid; grid-template-columns: repeat(auto-fit, minmax(232px, 1fr));
+              gap: 14px; }
+.mgf-card  { display: block; background: #fff; border: 1px solid #e8c4bc;
+              border-left: 4px solid #a03434; border-radius: 0 4px 4px 0;
+              padding: 15px 17px; text-decoration: none; transition: box-shadow .15s ease; }
+.mgf-card:hover { box-shadow: 0 3px 14px rgba(160,52,52,.18); }
+.mgf-when  { font-size: 10px; font-weight: 700; text-transform: uppercase;
+              letter-spacing: 1.2px; color: #a03434; margin-bottom: 6px; }
+.mgf-t     { font-size: 14.5px; font-weight: 800; color: #1a1a2e; line-height: 1.32;
+              margin-bottom: 7px; }
+.mgf-card p{ font-size: 12.5px; line-height: 1.62; color: #55606e; margin-bottom: 9px; }
+.mgf-more  { font-size: 11.5px; font-weight: 700; color: #a03434; }
+.mgf-foot  { font-size: 12px; line-height: 1.65; color: #7a6560; margin-top: 20px;
+              padding-top: 14px; border-top: 1px dashed #e0c0b8; max-width: 88ch; }
+.mgf-foot a{ color: #8a2f2f; font-weight: 600; }
+@media (max-width: 640px) {
+  .mgf-inner { padding: 24px 18px; }
+  .mgf-h2 { font-size: 21px; }
+  .mgf-grid { grid-template-columns: 1fr; }
+}
+
+.sc-section { padding: 32px 16px 48px; }
     .card { max-width: 540px; margin: 0 auto; background: #fff;
              border-radius: 8px; overflow: hidden;
              box-shadow: 0 4px 20px rgba(0,0,0,.12); }
@@ -258,6 +292,62 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- ── Material Governance Failures ──
+     These are the most consequential findings on the site and they sit ABOVE the
+     member scorecards deliberately. A reader who only reads one thing should read
+     these: they are decisions the city carries for years, and how a member showed
+     up on them matters more than any number of routine votes. -->
+<div class="mgf-band">
+  <div class="mgf-inner">
+    <div class="mgf-eyebrow">&#9888; Start here</div>
+    <h2 class="mgf-h2">Four decisions the city will live with</h2>
+    <p class="mgf-lede">Berkeley&rsquo;s council votes together about nine times out of ten, so
+    the vote tally rarely tells you much. These four are different. In each one the record put
+    before the Council was wrong or incomplete, the consequence is durable, and the choice was
+    made anyway. Each has a full explainer with the primary sources.</p>
+
+    <div class="mgf-grid">
+      <a class="mgf-card" href="hopkins-fire-review.html">
+        <div class="mgf-when">28 July 2026</div>
+        <div class="mgf-t">A street design approved on a fire review that did not exist</div>
+        <p>The item said the Fire Department had signed off. Four hours before the vote the Fire
+        Chief said on the record that his department had never reviewed the design. The Council
+        adopted it unchanged, 7&ndash;2.</p>
+        <span class="mgf-more">Read the explainer &rarr;</span>
+      </a>
+      <a class="mgf-card" href="oxford-site.html">
+        <div class="mgf-when">15 October 2025</div>
+        <div class="mgf-t">A ready-made public site sold while the city hunted for one</div>
+        <p>For five years Berkeley argued about where to put shelters. For five years a 1.26-acre
+        public site with a paved yard, restrooms and a commercial kitchen sat empty. It drew zero
+        sealed bids and sold to a private developer for $3 million.</p>
+        <span class="mgf-more">Read the explainer &rarr;</span>
+      </a>
+      <a class="mgf-card" href="public-safety-budget.html">
+        <div class="mgf-when">23 June 2026</div>
+        <div class="mgf-t">Fire positions restored, police and crisis response cut</div>
+        <p>The Council found $200,000 to reverse a fire station closure and save nine firefighter
+        posts. In the same motion it let 39 police and dispatch positions go, plus the mobile
+        crisis team &mdash; on a county backstop the City&rsquo;s own report called uncertain.</p>
+        <span class="mgf-more">Read the explainer &rarr;</span>
+      </a>
+      <a class="mgf-card" href="district4-siting.html">
+        <div class="mgf-when">2024&ndash;2025</div>
+        <div class="mgf-t">Consultation scheduled after the money was approved, twice</div>
+        <p>Two transitional-housing projects sited in one district in eleven months. Both times
+        the neighbourhood was told after the funds were committed. Neither staff report named
+        the site; neither consent item was pulled.</p>
+        <span class="mgf-more">Read the explainer &rarr;</span>
+      </a>
+    </div>
+
+    <p class="mgf-foot">These are four examples of the council&rsquo;s performance on recent
+    topics of consequence &mdash; not a complete account. A member who does not appear in one of
+    them has not been cleared of anything; that decision simply has not been examined.
+    <a href="methodology.html">How a governance failure is defined and tested &rarr;</a></p>
   </div>
 </div>
 
