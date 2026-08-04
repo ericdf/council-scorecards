@@ -98,7 +98,30 @@
     .method-inner a:hover { text-decoration: underline; }
 
     /* ── Scorecards section ── */
-    /* ── Material Governance Failures band ──────────────────────────────────────
+    /* ── Tier 2: how the council decides ───────────────────────────────────────
+   Sits between the framework band (the standard) and the MGF band (the damage).
+   Deliberately quieter than both: these are patterns, not proposals or events. */
+.pat-band  { background: #f3f5f8; border-top: 1px solid #dfe4ec; }
+.pat-inner { max-width: 1100px; margin: 0 auto; padding: 26px 40px 24px; }
+.pat-eyebrow{ font-size: 10px; font-weight: 700; text-transform: uppercase;
+              letter-spacing: 2px; color: #55617a; margin-bottom: 14px; }
+.pat-grid  { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+              gap: 14px; }
+.pat-card  { display: block; background: #fff; border: 1px solid #dfe4ec;
+              border-radius: 4px; padding: 15px 17px; text-decoration: none;
+              transition: box-shadow .15s ease; }
+.pat-card:hover { box-shadow: 0 3px 12px rgba(30,45,80,.12); }
+.pat-t     { font-size: 15px; font-weight: 800; color: #1a1a2e; margin-bottom: 7px; }
+.pat-card p{ font-size: 12.5px; line-height: 1.62; color: #55606e; margin-bottom: 9px; }
+.pat-more  { font-size: 11.5px; font-weight: 700; color: #2c4a7c; }
+.pat-foot  { font-size: 12px; line-height: 1.6; color: #6b7484; margin-top: 16px;
+              max-width: 88ch; }
+@media (max-width: 640px) {
+  .pat-inner { padding: 20px 18px; }
+  .pat-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Material Governance Failures band ──────────────────────────────────────
    Deliberately the loudest thing on the page after the hero. These are the
    findings a voter should read first, so the band uses the alert accent rather
    than the framework blue and sits above the member scorecards. */
@@ -274,8 +297,6 @@
         <div class="fw-actions">
           <a class="fw-btn" href="framework.html">Read the white paper</a>
           <a class="fw-btn ghost" href="framework-slides.html">View the slides</a>
-          <a class="fw-btn ghost" href="crayon-box.html">The crayon box</a>
-          <a class="fw-btn ghost" href="bond-alibi.html">The bond is the alibi</a>
         </div>
         <div class="fw-tools">
           <div class="fw-tools-lbl">Interactive tools</div>
@@ -292,6 +313,37 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- ── How the council actually decides ──
+     Tier 2 of three. The framework band above states the STANDARD (normative,
+     drawn from the white paper). This strip carries empirical findings about
+     method — council-wide, no dates, no individual attribution. The MGF band
+     below is what that method produced in specific dated decisions. Keeping
+     these separate matters: collapsing them into the framework band implied the
+     findings were part of the proposal. -->
+<div class="pat-band">
+  <div class="pat-inner">
+    <div class="pat-eyebrow">&#9670; How the council actually decides</div>
+    <div class="pat-grid">
+      <a class="pat-card" href="crayon-box.html">
+        <div class="pat-t">The Crayon Box</div>
+        <p>There are at least seven ways to close a deficit. Berkeley reaches for four, and every
+        one of them raises money from somebody. The three that would change what the city spends
+        stay in the box.</p>
+        <span class="pat-more">Read &rarr;</span>
+      </a>
+      <a class="pat-card" href="bond-alibi.html">
+        <div class="pat-t">The Bond Is the Alibi</div>
+        <p>Five ballot measures for streets since 2012, while the recurring General Fund
+        contribution sat at $1.925 million a year. A bond is a campaign; reprioritising a budget
+        is an argument nobody wants to have.</p>
+        <span class="pat-more">Read &rarr;</span>
+      </a>
+    </div>
+    <p class="pat-foot">These describe patterns, not incidents &mdash; council-wide habits of
+    method with no single member to attribute them to. What those habits produced is below.</p>
   </div>
 </div>
 
