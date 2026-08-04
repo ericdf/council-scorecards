@@ -59,6 +59,13 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
 .rank-desc  { font-size: 10px; color: #aab; margin-top: 4px; line-height: 1.3; }
 
 /* Insights */
+.ownership .oo-lede { font-size: 12px; color: #566573; line-height: 1.6; margin-bottom: 10px; }
+.ownership .oo-h { font-size: 11px; font-weight: 800; text-transform: uppercase;
+            letter-spacing: 1px; margin: 12px 0 6px; }
+.ownership .oo-shown { color: #1e7a4d; }
+.ownership .oo-declined { color: #a03434; }
+.ownership .oo-list { margin: 0 0 4px 18px; padding: 0; }
+.ownership .oo-list li { font-size: 12.5px; line-height: 1.65; margin-bottom: 6px; color: #2c3e50; }
 .why-grade .wg-h { font-size: 11px; font-weight: 800; text-transform: uppercase;
             letter-spacing: 1px; margin: 12px 0 6px; }
 .why-grade .wg-good { color: #1e7a4d; }
@@ -67,6 +74,16 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
 .why-grade .wg-list li { font-size: 12.5px; line-height: 1.65; margin-bottom: 6px; color: #2c3e50; }
 .why-grade .wg-bottom { margin-top: 12px; padding-top: 10px; border-top: 1px solid #e4e8ed;
             font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.6; }
+/* The at-a-glance line leads the section: this council votes together 91% of the
+   time, so how a member got to the vote is the differentiating fact, not the vote. */
+.why-grade .wg-unanimity { font-size: 11.5px; color: #6b7280; line-height: 1.6;
+            margin: 0 0 10px; font-style: italic; }
+.why-grade .wg-lead { margin-top: 0; padding: 12px 14px; border-top: 0;
+            border-left: 4px solid #1a1a2e; background: #f6f7f9; border-radius: 0 3px 3px 0;
+            font-size: 13.5px; }
+/* Gaps must be legible: silence in the record is not a verdict. */
+.why-grade .wg-gap { margin-top: 12px; padding-top: 9px; border-top: 1px dashed #d8dde3;
+            font-size: 11px; color: #7a8290; line-height: 1.55; }
 .mgf-notice { background: #fdf2f0; border: 1px solid #e8c4bc; border-left: 4px solid #a03434;
               border-radius: 0 4px 4px 0; padding: 14px 18px; margin: 0 0 16px; }
 .mgf-notice .mgf-h { font-size: 11px; font-weight: 800; text-transform: uppercase;
@@ -76,6 +93,15 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
 .mgf-notice li { font-size: 12px; line-height: 1.6; color: #6b3530; margin-bottom: 5px; }
 .mgf-notice a { color: #8a2f2f; }
 .mgf-notice .mgf-foot { font-size: 11px; color: #8a6560; margin-bottom: 0; }
+/* The verdict leads: what did this member do on the consequential decisions. */
+.mgf-notice .mgf-verdict { font-size: 15px; line-height: 1.5; color: #1a1a2e;
+              font-weight: 600; margin: 0 0 10px; padding-bottom: 9px;
+              border-bottom: 1px solid #e8c4bc; }
+.mgf-notice .mgf-verdict strong { font-weight: 800; }
+.mgf-notice .mgf-wrote  strong { color: #8a1f1f; }
+.mgf-notice .mgf-waved  strong { color: #a05a1f; }
+.mgf-notice .mgf-fixed  strong { color: #1e7a4d; }
+.mgf-notice .mgf-absent strong { color: #6b7280; }
 .insight { display: flex; align-items: flex-start; margin-bottom: 8px; font-size: 13px; line-height: 1.5; color: #444; }
 .insight .icon { width: 20px; flex-shrink: 0; font-weight: 700; }
 .good  .icon { color: #27ae60; }
@@ -192,11 +218,11 @@ body { flex-direction: column !important; align-items: center !important; }
     </div>
   </div>
 
-  <div class="section">
-    <div class="section-title">Executive Summary</div>
-    <div class="exec-archetype">Character &nbsp;·&nbsp; <span>The Constituent Vessel</span></div>
-    <div class="exec-summary">Asks pointed fiscal questions in chambers and has a documented pattern of attaching co-author credit to proposals after the primary work is done. On issues where his constituents speak loudly and clearly — notably Flock, where he stated every constituent told him to vote no and he did — he follows through. Missed major fiscal votes including both budget adoptions. The constituent-following is real; whether it scales to structural fiscal problems his constituents can't easily organize around remains the open question.</div>
-  </div>
+    <!-- Archetype summaries removed Aug 2026: hand-authored,
+       went stale, and began contradicting the generated "Why this grade" block
+       and the governance-failure notices below. See grade_explainer.py. -->
+
+  <div class="mgf-notice"><div class="mgf-h">Material governance failures</div><p class="mgf-verdict mgf-waved">On the four examined below, Bartlett <strong>waved it through</strong>.</p><p>These are decisions with consequences the city will carry for years — a street design fixed before the safety review that was its stated basis, a public site sold while the City searched for one, shelter siting settled after the money was committed, a budget that cut emergency response. How a member showed up on these matters more than any number of routine votes.</p><ul><li><strong><a href="hopkins-fire-review.html">Hopkins Street Fire Review Representation</a></strong> — 2026-07-28. Role: post notice ratifier (no score attributed).</li><li><strong><a href="oxford-site.html">Oxford Elementary Site — A Ready-Made Public Site Sold While the City Searched for Locations</a></strong> — 2025-10-15. Role: passive nonparticipant (no score — not present).</li><li><strong><a href="public-safety-budget.html">FY2027-28 Budget — Fire Positions Restored, Police, Dispatch and Crisis Response Cut</a></strong> — 2026-06-23. Role: post notice ratifier (no score attributed).</li></ul><p class="mgf-foot"><strong>What this is:</strong> four examples of the council's performance on recent topics of consequence to the community. It is not a complete account of everything this council has done, and a member who does not appear on one of these has not been cleared of anything — that decision simply has not been examined. No grade ceiling applies here: the roles above carry lower weight than authorship or sponsorship, so they affect the score without capping it. A ceiling prevents unrelated strengths from restoring a top grade after a threshold failure; the numerical score is never altered to match it. See the methodology for the qualification test and role multipliers.</p></div>
 
   <div class="section">
     <div class="section-title">Performance Pillars</div>
@@ -645,9 +671,9 @@ body { flex-direction: column !important; align-items: center !important; }
     </div>
   </div>
 
-  
+  <div class="section ownership"><div class="section-title">Ownership of Outcome</div><p class="oo-lede">Whether this member behaved as the decision-maker on consequential matters where they had standing to act. Losing an argument counts as ownership; declining to have it does not.</p><p class="oo-lede"><em>Too few documented instances (1) to characterise. Not scored.</em></p><div class="oo-h oo-declined">Declined to engage</div><ul class="oo-list"><li><strong><a href="bond-alibi.html">Rocky Road streets audit — received and filed five years after issue</a></strong> — 2025-10-28. Present. The status report on a 2020 City Auditor finding of structural street underfunding was received and filed; the annotated agenda records the action in full as 'Received and filed.' No motion on paving-policy reform, the recurring General Fund allocation, or the district-split practice.</li></ul></div>
 
-  <div class="section why-grade"><div class="section-title">Why this grade — D</div><div class="wg-h wg-good">What Bartlett does well</div><ul class="wg-list"><li class="wg-i-good">Asks about cost and value more than almost anyone else on the council — most fiscally engaged of nine.</li><li class="wg-i-good">Writes and moves real legislation — third-most active of nine in authoring items that create municipal work.</li><li class="wg-i-good">Has 1 documented instance of doing the right thing when it was inconvenient — see the incident record.</li></ul><div class="wg-h wg-bad">What went wrong</div><ul class="wg-list"><li class="wg-i-bad">Missed 5 full sessions — the job requires being in the room.</li><li class="wg-i-bad">Absent for 5 major binding budget votes, covering $321M in spending.</li><li class="wg-i-bad">29% of speaking time goes to matters outside the city's control or authority.</li><li class="wg-i-bad">4 further documented incidents of substance — see the incident record.</li></ul><div class="wg-bottom">A mixed record: real strengths, and real failures alongside them.</div></div>
+  <div class="section why-grade"><div class="section-title">Why this grade — D</div><p class="wg-unanimity">This council votes together: 91% of recorded votes were unanimous, and the two least-aligned members still agree 93% of the time. Comparing votes alone will not tell them apart. What follows is how this member got there.</p><div class="wg-bottom wg-lead">Shows up at the last minute. He posts the council's strongest taxpayer alignment score and is among its more active authors — and he missed five full sessions and five binding budget votes covering $321 million, more absent dollars than the rest of the council combined. On Hopkins he voted for both alternatives and then for the main motion when they failed. The instincts are the best on the council; the attendance means they are frequently not in the room.</div><div class="wg-h wg-good">What Bartlett does well</div><ul class="wg-list"><li class="wg-i-good">Asks about cost and value more than almost anyone else on the council — most fiscally engaged of nine.</li><li class="wg-i-good">Writes and moves real legislation — third-most active of nine in authoring items that create municipal work.</li><li class="wg-i-good">Has 1 documented instance of doing the right thing when it was inconvenient — see the incident record.</li></ul><div class="wg-h wg-bad">What went wrong</div><ul class="wg-list"><li class="wg-i-bad">Missed 5 full sessions — the job requires being in the room.</li><li class="wg-i-bad">Absent for 5 major binding budget votes, covering $321M in spending.</li><li class="wg-i-bad">29% of speaking time goes to matters outside the city's control or authority.</li><li class="wg-i-bad">4 further documented incidents of substance — see the incident record.</li></ul><p class="wg-gap">This is built from the public record and it is not complete. Absence of a finding here means we have not documented one, not that none exists. Corrections and additions are welcome.</p></div>
 
   <div class="section">
     <div class="section-title">Key Findings</div>

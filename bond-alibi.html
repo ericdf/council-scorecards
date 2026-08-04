@@ -73,6 +73,15 @@ td { padding: .68rem .9rem; border-bottom: 1px solid var(--rule-soft); vertical-
      line-height: 1.55; }
 tbody tr:last-child td { border-bottom: 0; }
 
+/* Instrument type is load-bearing on this page: a GO bond is borrowed capital repaid
+   through property tax over decades, a parcel tax is recurring revenue collected annually.
+   The table distinguishes them so the reader can see that the pattern is not "bonds" but
+   "any new money except reprioritisation". */
+.inst { font-family: var(--sans); font-size: .74rem; font-weight: 700; white-space: nowrap;
+        letter-spacing: .02em; }
+.inst-bond { color: var(--accent); }
+.inst-tax  { color: var(--quote); }
+
 .pull { margin: 2rem 0; padding: 1.2rem 0 1.2rem 1.3rem; border-left: 4px solid var(--accent);
         font-size: 1.22rem; font-weight: 600; line-height: 1.45; color: var(--ink); }
 
@@ -105,6 +114,8 @@ footer a { color: var(--quote); }
   .nav a { padding: 8px 16px; }
 }
 </style>
+</head>
+<body>
 <div class="nav"><a href="index.html"><div class="t">&#8962; BERKELEY CITY COUNCIL SCORECARDS</div><div class="s">Independent analysis. Informed voters. Better government.</div></a></div>
 
 <div class="wrap">
@@ -141,16 +152,18 @@ footer a { color: var(--quote); }
   <p>The record bears this out at every cycle:</p>
   <div class="tw">
     <table>
-      <thead><tr><th>Measure</th><th>Scope</th><th>Result</th></tr></thead>
+      <thead><tr><th>Measure</th><th>Instrument</th><th>Scope</th><th>Result</th></tr></thead>
       <tbody>
-        <tr><td><strong>M</strong> (2012)</td><td>$30M GO bond &mdash; street improvements <em>and</em> integrated green infrastructure. Funded 63 street projects and 11 green-infrastructure projects.</td><td>Passed</td></tr>
-        <tr><td><strong>T1</strong> (2016)</td><td>$100M GO bond for a broad infrastructure portfolio: streets, sidewalks, buildings, parks, storm drains, community centers. Streets eligible, not protected.</td><td>Passed</td></tr>
-        <tr><td><strong>L</strong> (2022)</td><td>$650M &mdash; housing, streets, undergrounding, buildings, climate resilience, safety. The broadest package attempted.</td><td><strong>Failed at 59.42%</strong></td></tr>
-        <tr><td><strong>EE vs FF</strong> (2024)</td><td>EE: ~$10.5M/yr, at least 36% pavement. FF: ~$15M/yr, 45% pavement, 30% safety, 15% sidewalks, 10% environmental and administrative.</td><td>FF passed, EE failed</td></tr>
-        <tr><td><strong>Nov 2026</strong></td><td>$300M GO bond covering 34 projects including the 911 dispatch centre, waterfront sea-level work and Civic Center seismic renovation.</td><td>On the ballot</td></tr>
+        <tr><td><strong>M</strong> (2012)</td><td class="inst inst-bond">GO bond</td><td>$30M &mdash; street improvements <em>and</em> integrated green infrastructure. Funded 63 street projects and 11 green-infrastructure projects.</td><td>Passed</td></tr>
+        <tr><td><strong>T1</strong> (2016)</td><td class="inst inst-bond">GO bond</td><td>$100M for a broad infrastructure portfolio: streets, sidewalks, buildings, parks, storm drains, community centers. Streets eligible, not protected.</td><td>Passed</td></tr>
+        <tr><td><strong>L</strong> (2022)</td><td class="inst inst-bond">GO bond</td><td>$650M &mdash; housing, streets, undergrounding, buildings, climate resilience, safety. The broadest package attempted.</td><td><strong>Failed at 59.42%</strong></td></tr>
+        <tr><td><strong>EE vs FF</strong> (2024)</td><td class="inst inst-tax">Parcel tax</td><td>Competing special taxes, not bonds. EE: ~$10.5M/yr, at least 36% pavement. FF: ~$15M/yr, 45% pavement, 30% safety, 15% sidewalks, 10% environmental and administrative &mdash; levied at $0.17 per square foot on residential and $0.25 on other property, for 14 years.</td><td>FF passed, EE failed</td></tr>
+        <tr><td><strong>Nov 2026</strong></td><td class="inst inst-bond">GO bond</td><td>$300M covering 34 projects including the 911 dispatch centre, waterfront sea-level work and Civic Center seismic renovation.</td><td>On the ballot</td></tr>
       </tbody>
     </table>
   </div>
+  <p>The instrument column matters more than it first appears. A general obligation bond is borrowed capital repaid from property taxes over decades; a parcel tax is recurring revenue collected every year. They are different tools with different costs and different legal tests. What does not vary is the direction: <strong>every measure in this table asks voters for money the city does not currently collect.</strong> None of them reallocates a dollar the city already has. The 2024 contest is the clearest case &mdash; EE and FF were competing parcel taxes, so the choice put to voters was not whether to raise new revenue for streets but which new revenue to raise, and how widely to spread it.</p>
+
   <p>Measure T1&rsquo;s first allocation makes the arithmetic explicit. Of the initial $37.365 million, <strong>Complete Streets received $8.5 million &mdash; 22.7 percent</strong>. Facilities received $14.4 million, parks nearly $7 million, and project management and bond costs another $5.4 million.</p>
 
   <h2>What was happening to the baseline meanwhile</h2>
@@ -200,7 +213,8 @@ footer a { color: var(--quote); }
     <h3>Sources</h3>
     <p>Berkeley City Auditor, <em>Failing Streets: Time to Change Direction to Achieve Sustainability</em> (2011). Berkeley City Auditor, <em>Rocky Road: Berkeley Streets at Risk and Significantly Underfunded</em> (November 2020). Pavement Engineering Inc., Berkeley Pavement Management Program Updates (2022; 2024 final April 2025). City Council, <em>Implementing Phase 1 of the Measure T1 Infrastructure Bond Program</em>, June 27 2017. City of Berkeley measure pages for Measure M, Measure T1 and Measure FF, including the FF allocation and maintenance-of-effort terms. City of Berkeley November 2024 ballot measure documents, Measures EE and FF, including signed arguments. Confirmation of the November 8 2022 election results (Measure L, 59.42%). Street Rehabilitation Five-Year Plan / FY2023&ndash;FY2024 funding update. Berkeleyside reporting on the 2023 Measure T1 shortfall and the redirection of Hopkins project funds. City Council agenda, March 17 2026, on the potential $300 million bond and 0.5% sales tax.</p>
     <h3>Related</h3>
-    <p><a href="framework.html">The Berkeley Budget Framework</a> &middot; <a href="hopkins-fire-review.html">The Hopkins Street fire review</a> &middot; <a href="index.html">Scorecards home</a></p>
+    <p><a href="crayon-box.html">The crayon box</a> &middot;
+  <a href="framework.html">The Berkeley Budget Framework</a> &middot; <a href="hopkins-fire-review.html">The Hopkins Street fire review</a> &middot; <a href="index.html">Scorecards home</a></p>
   </footer>
 
 </div>
