@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Incident: Hopkins Item 27 — Fire Department Review Claim Not Supported by Its Own Source</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+body { background: #f0f2f5; display: flex; justify-content: center; }
+.card { width: 760px; margin: 20px auto; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,.15); }
+.header { background: #1a1a2e; color: #fff; padding: 28px 32px 20px; }
+.header .incident-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.8px; color: #e74c3c; margin-bottom: 8px; }
+.header .title { font-size: 22px; font-weight: 800; line-height: 1.3; }
+.header .meta { font-size: 11px; color: #8899bb; margin-top: 10px; line-height: 1.7; }
+.header .member-tag { display: inline-block; background: #2c3e50; color: #cdd; border-radius: 4px; padding: 2px 8px; font-size: 11px; font-weight: 600; margin-right: 6px; margin-top: 6px; }
+.section { padding: 20px 32px; border-bottom: 1px solid #ecf0f1; }
+.section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #7f8c8d; margin-bottom: 14px; }
+.facts { font-size: 13px; line-height: 1.75; color: #2c3e50; }
+.facts p { margin-bottom: 10px; }
+.facts p:last-child { margin-bottom: 0; }
+.data-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 12px; }
+.data-table th { background: #f0f2f5; text-align: left; padding: 7px 12px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; color: #7f8c8d; border-bottom: 2px solid #e0e4e8; }
+.data-table td { padding: 8px 12px; border-bottom: 1px solid #ecf0f1; color: #2c3e50; }
+.data-table tr:last-child td { border-bottom: none; }
+.data-table .num { font-weight: 700; font-variant-numeric: tabular-nums; }
+.data-table .arrow { color: #e74c3c; font-weight: 700; }
+.member-block { border-top: 3px solid #1a1a2e; padding: 24px 32px; border-bottom: 1px solid #ecf0f1; }
+.member-block.shared { background: #fafafa; }
+.member-name { font-size: 16px; font-weight: 800; color: #1a1a2e; }
+.member-role { font-size: 11px; color: #7f8c8d; margin-top: 2px; margin-bottom: 16px; }
+.dim-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #7f8c8d; margin-bottom: 4px; }
+.pillar-tag { display: inline-block; border-radius: 3px; padding: 2px 7px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; margin-bottom: 8px; }
+.pillar-character { background: #f3e5f5; color: #7b1fa2; }
+.pillar-fiscal    { background: #e3f2fd; color: #1565c0; }
+.dim-score { font-size: 64px; font-weight: 900; line-height: 1; margin: 4px 0 14px; }
+.score-red    { color: #e74c3c; }
+.score-orange { color: #e67e22; }
+.score-yellow { color: #f39c12; }
+.dim-reasoning { font-size: 13px; line-height: 1.75; color: #2c3e50; }
+.dim-reasoning p { margin-bottom: 10px; }
+.dim-reasoning p:last-child { margin-bottom: 0; }
+.net-row { display: flex; gap: 16px; padding: 20px 32px; border-bottom: 1px solid #ecf0f1; flex-wrap: wrap; }
+.net-item { background: #f8f9fa; border-radius: 6px; padding: 12px 16px; flex: 1; min-width: 160px; }
+.net-item-name { font-size: 11px; font-weight: 700; color: #2c3e50; }
+.net-item-score { font-size: 28px; font-weight: 900; color: #e74c3c; margin-top: 4px; }
+.net-item-note { font-size: 10px; color: #7f8c8d; margin-top: 3px; line-height: 1.4; }
+.decay-box { background: #f8f9fa; border-left: 4px solid #bdc3c7; padding: 12px 16px; font-size: 11px; color: #7f8c8d; border-radius: 0 4px 4px 0; line-height: 1.6; margin-top: 16px; }
+.narrative-section { padding: 24px 32px; border-bottom: 1px solid #ecf0f1; background: #fafcff; }
+.narrative-section .section-title { margin-bottom: 16px; }
+.narrative { font-size: 13px; line-height: 1.8; color: #2c3e50; }
+.narrative p { margin-bottom: 12px; }
+.narrative p:last-child { margin-bottom: 0; }
+.narrative .lede { font-size: 15px; font-weight: 700; line-height: 1.5; margin-bottom: 16px; color: #1a1a2e; }
+.related { padding: 16px 32px; border-top: 1px solid #ecf0f1; }
+.related-title { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #7f8c8d; margin-bottom: 8px; }
+.related a { font-size: 12px; color: #2980b9; text-decoration: none; display: block; margin-bottom: 4px; }
+.related a:hover { text-decoration: underline; }
+.footer { background: #f8f9fa; padding: 12px 32px; font-size: 10px; color: #aaa; display: flex; justify-content: space-between; }
+.footer a { color: #aaa; text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+</style>
+<style>
+body { flex-direction: column !important; align-items: center !important; }
+.top-bar-nav { width: 100%; background: #1a1a2e; padding: 10px 40px; }
+.top-bar-nav a { text-decoration: none; display: block; }
+.top-bar-nav .brand-title { font-size: 13px; font-weight: 800; color: #fff; letter-spacing: .4px; }
+.top-bar-nav .brand-sub { font-size: 11px; color: #8899bb; margin-top: 3px; }
+.top-bar-nav a:hover .brand-title { color: #4e8ecb; }
+</style>
+</head>
+<body>
+<div class="top-bar-nav"><a href="../../index.html"><div class="brand-title">&#8962; BERKELEY CITY COUNCIL SCORECARDS</div><div class="brand-sub">Independent analysis. Informed voters. Better government.</div></a></div>
+<div class="card">
+
+
+  <div class="header">
+    <div class="incident-label">Incident Record &middot; July 28, 2026 — Regular Meeting, Item 27 (Hopkins Corridor)</div>
+    <div class="title">The Fire Department Review That Did Not Cover the Plan Council Adopted</div>
+    <div class="meta">
+      Sources: Agenda Packet, July 28 2026, Item 27, p.7 of 28 (authored by Councilmember Kesarwani);<br>
+      Fire Chief David Sprague, sworn testimony at 01:31:48 elapsed; &ldquo;Hopkins Street Alternatives 1 and 2 Overview,&rdquo;<br>
+      FITES Policy Committee, April 15 2026 (the item&rsquo;s own footnote 1)<br>
+      <span class="member-tag">Kesarwani — author</span>
+      <span class="member-tag">Humbert — co-sponsor</span>
+      <span class="member-tag">Ishii — co-sponsor</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">What Happened</div>
+    <div class="facts">
+      <p>Item 27 asked Council to commit Hopkins Street to one-way Class IV separated bikeways on both sides of the street. The recommendation's opening clause made a Fire Department finding the stated predicate for the entire referral: <em>&ldquo;Given new information presented by the Fire Department that pedestrian and bike safety infrastructure on Hopkins Street 'retains workable emergency access,' refer to the City Manager to repave Hopkins Street&hellip; with inclusion of one-way Class IV separated bikeways on each side.&rdquo;</em></p>
+      <p>Page 7 of the item carries the heading <strong>&ldquo;Updated Review by Fire Department Shows Class IV Separated Bikeways Can Retain Workable Emergency Access,&rdquo;</strong> and states that the fire safety objections which had paused the project since 2023 <strong>&ldquo;no longer exist.&rdquo;</strong></p>
+      <p>At 01:31:48 elapsed &mdash; roughly four hours before the vote &mdash; Fire Chief David Sprague was asked directly for the Fire Department's position. He said the Department had not reviewed the configuration before Council.</p>
+      <p>The Council adopted the plan 7&ndash;2 at 06:15:05.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">The Three Documents</div>
+    <div class="facts">
+      <p><strong>1. What the item claimed</strong> &mdash; Agenda Packet p.7 of 28, on Councilmember Kesarwani's office letterhead:</p>
+      <p style="border-left: 3px solid #c0392b; padding-left: 14px; color: #555;">&ldquo;Updated Review by Fire Department Shows Class IV Separated Bikeways Can Retain Workable Emergency Access&hellip; Fire staff have confirmed that lane widths of 11 feet preferred and 10.5 feet minimum are acceptable&mdash;<strong>the same widths that a one-way Class IV separated bikeway configuration on each side of Hopkins would maintain.</strong> The fire safety objections that contributed to the indefinite pause of this project&hellip; no longer exist.&rdquo;</p>
+
+      <p><strong>2. What the Fire Chief said</strong> &mdash; live testimony, 01:31:48 elapsed:</p>
+      <p style="border-left: 3px solid #bdc3c7; padding-left: 14px; color: #555; font-style: italic;">&ldquo;FIRE has reviewed and approved the traffic calming features in the Hopkins Alternative 1 and 2&hellip; We also generally have confirmed that lane widths&hellip; are acceptable. <strong>However, for the new&hellip; proposed configuration that you're discussing tonight&hellip; There is not a design yet, so we have not seen that, we have not reviewed it, and we would need a complete design set from Public Works.</strong> Once that's available, we can evaluate&hellip; potential impacts to evacuation times, and confirm that design maintains workable access for day-to-day fire and medical emergencies.&rdquo;</p>
+      <p>Asked how long that review would take, Sprague said <strong>two to four weeks</strong> once Public Works delivers a complete design set.</p>
+
+      <p><strong>3. What the item's own footnote points to</strong> &mdash; the quoted phrase &ldquo;retains workable emergency access&rdquo; is sourced in footnote 1 to <em>&ldquo;Hopkins Street Alternatives 1 and 2 Overview,&rdquo;</em> FITES Policy Committee, April 15, 2026. That document uses the phrase exactly twice, and scopes it explicitly both times:</p>
+      <p style="border-left: 3px solid #bdc3c7; padding-left: 14px; color: #555; font-style: italic;">&ldquo;Fire: <strong>Alternative 1</strong> retains workable emergency access overall.&rdquo;<br>&ldquo;Fire: <strong>Alternative 2</strong> retains workable emergency access overall.&rdquo;</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Why the Substitution Matters</div>
+    <div class="facts">
+      <p>The two alternatives the Fire Department actually reviewed were not the plan Council adopted.</p>
+      <table class="data-table">
+        <thead>
+          <tr><th>Configuration</th><th>Description</th><th>Fire reviewed?</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Alternative 1</strong></td><td>A <strong>two-way</strong> cycle track on one side, Gilman&ndash;McGee and Josephine&ndash;Sutter; ~84 parking spaces repurposed; $14&ndash;15M</td><td>Yes</td></tr>
+          <tr><td><strong>Alternative 2</strong></td><td>Pedestrian safety only &mdash; crosswalks, refuge islands, bulbouts, sharrows; no protected bikeway; $11&ndash;12M</td><td>Yes</td></tr>
+          <tr><td class="arrow"><strong>Adopted July 28</strong></td><td class="arrow"><strong>One-way</strong> Class IV separated bikeways on <strong>both sides</strong>, The Alameda to Peralta/Ohlone Greenway</td><td class="arrow"><strong>No</strong></td></tr>
+        </tbody>
+      </table>
+      <p>The FITES source document mentions a cycle track exactly once, describing Alternative 1's <em>two-way</em> design. The one-way-both-sides configuration is a third geometry that document never evaluated. Sprague confirmed as much: his approval covered Alternatives 1 and 2 and the lane-width standard in the abstract, not the design on the table.</p>
+      <p>The item's move is an inference presented as a finding: Fire approved certain lane widths &rarr; the Class IV configuration would use those widths &rarr; therefore Fire's approval extends to Class IV. Sprague rejected that inference on the record the same evening. Lane width is one input to emergency access; the Chief identified evacuation-time impact and day-to-day apparatus access as the questions still requiring evaluation.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">No Caveat Anywhere in 754 Pages</div>
+    <div class="facts">
+      <p>A search of the complete July 28 agenda packet returns <strong>zero instances</strong> of &ldquo;has not been reviewed,&rdquo; &ldquo;not yet reviewed,&rdquo; &ldquo;pending fire review,&rdquo; or &ldquo;subject to fire review&rdquo; in connection with this item. The written record contains no qualification. It asserts the opposite &mdash; that the fire safety objections &ldquo;no longer exist.&rdquo;</p>
+      <p>The claim also carries budgetary weight. The item's Fiscal Impacts section states that the February 2026 pedestrian-only version <em>&ldquo;was based on our prior understanding of the need for significant infrastructure upgrades to meet concerns raised by the Fire Department,&rdquo;</em> and that <strong>&ldquo;With Fire concerns addressed without the need for costly infrastructure upgrades,&rdquo;</strong> the added cost is worth bearing. The unreviewed fire finding is therefore the stated basis for both the design choice and an approximately <strong>$3&ndash;4 million</strong> increase, from $11M to $14&ndash;15M.</p>
+    </div>
+  </div>
+
+  <div class="member-block">
+    <div class="member-name">Rashi Kesarwani</div>
+    <div class="member-role">District 1 &middot; item author &middot; not seeking re-election</div>
+    <div class="pillar-tag pillar-character">Character &amp; Conduct</div>
+    <div class="dim-title">Predicated a Binding Referral on a Review That Had Not Occurred</div>
+    <div class="dim-score score-red">&minus;22</div>
+    <div class="dim-reasoning">
+      <p>Kesarwani authored the item, wrote the page 7 heading, supplied the footnote, and led the item through the meeting. The heading asserts a Fire Department review of Class IV separated bikeways. The footnoted source evaluates Alternatives 1 and 2 and scopes its finding to each by name. The Fire Chief stated on the record that the adopted configuration had not been reviewed.</p>
+      <p>Her spoken remarks were narrower than the written item and, read alone, defensible: at 01:08:51 she said the April FITES committee <em>&ldquo;confirmed that bike safety infrastructure on Hopkins retains workable emergency access,&rdquo;</em> calling it <em>&ldquo;a significant development that made this item possible.&rdquo;</em> That is a fair characterization of the April finding. What she did not do &mdash; in remarks, in the item, or after Sprague's testimony &mdash; was tell Council that the configuration in front of them was outside the scope of that review.</p>
+      <p>The severity here is not the inference itself. Councilmembers advocate, and reasoning from an approved lane-width standard toward a compatible design is a legitimate argument to make. The severity is that it was presented as a completed Fire Department review in the operative clause of a binding referral, in a heading, and in the fiscal justification &mdash; and that after the Chief publicly corrected the record four hours before the vote, neither the item nor its author was amended to reflect it.</p>
+      <p>This is the most consequential documented accuracy failure in the scorecard period. It concerns emergency access and evacuation on a designated Emergency Access and Evacuation Route in a city whose own wildfire planning identifies constrained ingress and egress as a core vulnerability. It supplied the stated basis for a multi-million-dollar cost increase. And it was contradicted by the responsible department head, in public, before the vote it was used to secure.</p>
+    </div>
+  </div>
+
+  <div class="member-block shared">
+    <div class="member-name">Humbert &amp; Ishii</div>
+    <div class="member-role">Co-sponsors of Item 27</div>
+    <div class="pillar-tag pillar-character">Character &amp; Conduct</div>
+    <div class="dim-title">Co-Sponsored and Did Not Revisit After the Correction</div>
+    <div class="dim-score score-orange">&minus;6</div>
+    <div class="dim-reasoning">
+      <p>Both co-sponsored the item and both voted for it after hearing Sprague's testimony. Neither moved to amend the recommendation's predicate clause, to hold the item pending the two-to-four-week review the Chief described, nor to correct the page 7 characterization.</p>
+      <p>Their culpability is materially lesser than the author's &mdash; they did not write the claim &mdash; but a co-sponsor who hears the responsible department head contradict the item's stated basis and proceeds without addressing it has adopted the claim.</p>
+    </div>
+  </div>
+
+  <div class="net-row">
+    <div class="net-item">
+      <div class="net-item-name">Kesarwani</div>
+      <div class="net-item-score">&minus;22</div>
+      <div class="net-item-note">Authored the claim; footnoted source does not support it; not corrected after the Chief's testimony.</div>
+    </div>
+    <div class="net-item">
+      <div class="net-item-name">Humbert</div>
+      <div class="net-item-score">&minus;6</div>
+      <div class="net-item-note">Co-sponsor; voted after the correction without addressing it.</div>
+    </div>
+    <div class="net-item">
+      <div class="net-item-name">Ishii</div>
+      <div class="net-item-score">&minus;6</div>
+      <div class="net-item-note">Co-sponsor; presided over the meeting in which the contradiction was stated.</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">What Is Not Being Claimed</div>
+    <div class="facts">
+      <p><strong>Not a finding that the project is unsafe.</strong> Sprague did not say the configuration would fail review. He said it had not been reviewed and that the Department needed a complete design set to evaluate evacuation impact and apparatus access. The design may well pass. The finding is that Council was told the question was settled when it was not.</p>
+      <p><strong>Not a finding about intent.</strong> The record establishes what the item said, what its source said, and what the Chief said. It does not establish whether the mischaracterization was deliberate, a genuine misreading of the April findings, or advocacy that outran its evidence. No motive is asserted here.</p>
+      <p><strong>Not a challenge to the safety case.</strong> Kesarwani's collision analysis for the corridor &mdash; a pedestrian fatality, severe bicycle injuries, and a severe pedestrian injury at identified intersections &mdash; was the most disciplined problem definition offered at the meeting and is unaffected by this finding.</p>
+      <p><strong>One element remains unverified.</strong> A speaker quoted Sprague from the April FITES meeting audio as saying of bike lanes and emergency response, <em>&ldquo;it feels risky to me. I don't know that it's not an option, but it doesn't feel super safe.&rdquo;</em> That audio has not been reviewed for this record and the quotation is not relied on here.</p>
+    </div>
+  </div>
+
+  <div class="narrative-section">
+    <div class="section-title">Why This Matters</div>
+    <div class="narrative">
+      <p class="lede">A councilmember may argue that a design will satisfy the Fire Department. A councilmember may not tell Council that the Fire Department already has.</p>
+      <p>Berkeley's council operates on staff findings it cannot independently verify. Nine members cannot re-derive fire code compliance, evacuation modeling, or apparatus clearance; they rely on the record in front of them being an accurate account of what the responsible departments have concluded. That reliance is the entire basis on which a part-time legislature can govern a technical city. An item that presents an inference as a completed departmental review does not merely overstate a point &mdash; it defeats the mechanism by which the body checks itself.</p>
+      <p>The failure here was also uniquely recoverable, which is what elevates it. This was not an error discovered months later in an audit. The Fire Chief stated the correction in open session, in response to a direct question, <strong>four hours before the vote</strong>. Any member could have moved to hold the item for the two-to-four-week review Sprague described. Blackaby's analysis-first substitute would have accomplished nearly that and failed 4&ndash;5. The Council had every fact it needed and voted on the original predicate anyway.</p>
+      <p>The subject matter compounds it. Hopkins is a designated Emergency Access and Evacuation Route. Berkeley's Community Wildfire Protection Plan identifies narrow streets, constrained ingress and egress, and evacuation capacity as core vulnerabilities. Fire Department concerns are what paused this project in 2023. Telling Council those concerns &ldquo;no longer exist,&rdquo; when the department had not evaluated the geometry being adopted, removes the one check specific to the risk the corridor actually carries.</p>
+      <p>Two members &mdash; O'Keefe and Blackaby, representing the districts that bear the consequences &mdash; voted no. The seven-vote majority that carried the item rested on a stated finding that the Fire Chief had already told them was not a finding.</p>
+    </div>
+  </div>
+
+  <div class="related">
+    <div class="related-title">Related</div>
+    <a href="incident_Hopkins_Votes.html">The Hopkins Vote — Two Members Cross Coalitions, Neither Explains Why</a>
+    <a href="../../hopkins-assessment.html">Full assessment: The Hopkins Street Vote</a>
+    <a href="../../framework.html">Berkeley Budget Framework — decision gates and sequencing</a>
+    <a href="../index.html">← All Incidents</a>
+  </div>
+
+  <div class="footer">
+    <span><a href="../index.html">← Incident Index</a></span>
+    <span>Berkeley Council Incident Record · Updated August 2026</span>
+  </div>
+
+</div>
+</body>
+</html>

@@ -739,6 +739,300 @@ strong { color: #1a1a2e; }
 <p><strong>Behavioral incidents</strong> (<code>incidents.json</code>) feed into the automated composite via the Fiscal Stewardship Alignment component. Each incident's raw <code>scoring_impact</code> is multiplied by its tier weight before being summed. Incidents linked to a City Auditor finding via <code>audit_ref</code> receive an additional 0.50× multiplier: the audit mechanism already penalizes the council's failure to act on a finding; the incident captures the member's specific behavior within that context.</p>
 <p>Weighted behavioral incident totals are capped at ±0.30 before being applied to Fiscal Stewardship Alignment. The cap prevents any single member's incident record from dominating the overall score.</p>
 <p>Members with no incidents in the log are not assumed clean — it means nothing has been documented yet. A member with many incidents has a richer evidentiary record.</p>
+<h4>What the cap cannot do</h4>
+<p>The ±0.30 cap is correct for ordinary incidents. It prevents a heavily documented member from being punished merely because more evidence was collected about them, and it limits the effect of any single editorial judgment.</p>
+<p>It has one consequence worth stating plainly: <strong>once a member reaches the cap, additional incidents have no effect, and severity becomes invisible.</strong> Twelve accumulated minor lapses and one catastrophic failure both land on the same floor. A member at −0.30 from a decade of small things scores identically to a member at −0.30 from a single event that misrepresented a public-safety finding to the Council.</p>
+<p>That is the wrong result. It is addressed not by removing the cap but by removing a specific class of event from the capped pool entirely — see <strong>Material Governance Failures</strong> below.</p>
+<hr />
+<h2>Material Governance Failures</h2>
+<p>Most incidents are additive: they accumulate, and the cap keeps that accumulation proportionate. Some failures are not additive. They are <strong>threshold</strong> failures — single events that call a member's governing judgment, honesty, or fitness into question in a way that no amount of routine good conduct offsets.</p>
+<p>A <strong>Material Governance Failure</strong> is scored as a discrete event outside the ordinary incident pool. It bypasses the ±0.30 cap, cannot be cancelled by unrelated positive incidents, is attributed individually by role, and may impose a <strong>grade ceiling</strong> as well as a direct composite deduction.</p>
+<p>This extends a mechanism the scorecard already uses. A+ Ceiling Conditions (above) establish that some conduct cannot be fully compensated for by strength elsewhere. Material Governance Failures apply the same logic further down the scale.</p>
+<h3>Qualification test</h3>
+<p>An event enters this lane only when <strong>all four</strong> conditions hold. Any one failing returns it to the ordinary pool.</p>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>High-stakes action</strong></td>
+<td>Public safety, emergency response or evacuation, substantial expenditure, taxation or debt, legal exposure, conflict of interest, material contractor or program oversight, or a difficult-to-reverse commitment</td>
+</tr>
+<tr>
+<td><strong>Material premise failure</strong></td>
+<td>A factual, professional, legal, or evidentiary premise offered in support is unsupported by its cited source, outside the scope of the cited review, contradicted by an authoritative source, stated with materially greater certainty than the evidence supports, or presented as completed analysis that has not occurred. The premise must matter to the decision — a peripheral error does not qualify.</td>
+</tr>
+<tr>
+<td><strong>Authoritative notice</strong></td>
+<td>Before final action, the member receives notice sufficient to understand the premise may be wrong: a department head's statement, City Attorney opinion, auditor finding, staff report, written correction, or a direct statement in open session</td>
+</tr>
+<tr>
+<td><strong>Practical opportunity to cure</strong></td>
+<td>Before final action, the member could have corrected the document, amended the motion, disclosed the uncertainty, postponed, referred the matter, voted no, or supported a substitute preserving analysis</td>
+</tr>
+</tbody>
+</table>
+<h3>Event severity</h3>
+<p>Seven factors, each scored 0, 1, or 2. Raw severity is their sum, 0–14.</p>
+<table>
+<thead>
+<tr>
+<th>Factor</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Decision centrality</td>
+<td>Peripheral</td>
+<td>Materially supported the action</td>
+<td>The stated or indispensable basis</td>
+</tr>
+<tr>
+<td>Stakes</td>
+<td>Low</td>
+<td>Meaningful policy or financial consequence</td>
+<td>Safety, major expenditure, or legal exposure</td>
+</tr>
+<tr>
+<td>Evidentiary clarity</td>
+<td>Genuinely disputed</td>
+<td>Strong contrary evidence</td>
+<td>Direct contradiction from an authoritative primary source</td>
+</tr>
+<tr>
+<td>Notice before action</td>
+<td>None meaningful</td>
+<td>Member had reason to know</td>
+<td>Explicit correction before the decision</td>
+</tr>
+<tr>
+<td>Opportunity to cure</td>
+<td>None practical</td>
+<td>Limited</td>
+<td>Clear opportunity to correct, amend, postpone, or vote no</td>
+</tr>
+<tr>
+<td>Failure to cure</td>
+<td>Corrected before action</td>
+<td>Partially addressed</td>
+<td>Claim stood and action proceeded</td>
+</tr>
+<tr>
+<td><strong>Durability</strong></td>
+<td>Reversible at low cost</td>
+<td>Creates a multi-year obligation</td>
+<td>Creates a long-lived or practically irreversible obligation</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Why durability is scored separately.</strong> <em>A Strategy for Strategy</em> identifies the recurring Berkeley failure as commitments that outlive the assumptions and the money that justified them: grant deadlines substituting for evidence packages, pilots made permanent without their promised evaluation, capital built without an operating plan. A decision that is wrong and reversible is a mistake; a decision that is wrong and locks the City in for a decade is a different kind of failure. Folding irreversibility into "stakes" made the two score identically. It is now its own factor, and a maximum-severity finding requires it.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Raw severity</th>
+<th>Event classification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0–4</td>
+<td>Routine — ordinary incident pool</td>
+</tr>
+<tr>
+<td style="text-align: right;">5–7</td>
+<td>Serious — ordinary incident pool</td>
+</tr>
+<tr>
+<td style="text-align: right;">8–11</td>
+<td>Major Governance Failure</td>
+</tr>
+<tr>
+<td style="text-align: right;">12–14</td>
+<td>Critical Governance Failure</td>
+</tr>
+</tbody>
+</table>
+<p>Raw severity describes the <em>event</em>. It does not yet describe any member's responsibility.</p>
+<h3>Individual attribution</h3>
+<p>Responsibility is assigned by role. Nine members participating in one event receive one event record and nine attribution records — never nine duplicate incidents.</p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th style="text-align: right;">Multiplier</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Originator</td>
+<td style="text-align: right;">1.00</td>
+<td>Authored, introduced, or formally asserted the premise</td>
+</tr>
+<tr>
+<td>Post-notice defender</td>
+<td style="text-align: right;">0.85</td>
+<td>Repeated or defended the premise after correction</td>
+</tr>
+<tr>
+<td>Co-sponsor</td>
+<td style="text-align: right;">0.80</td>
+<td>Lent their name to the item itself</td>
+</tr>
+<tr>
+<td>Post-notice ratifier</td>
+<td style="text-align: right;">0.50</td>
+<td>Voted to proceed after correction without seeking a cure</td>
+</tr>
+<tr>
+<td>Attempted cure, then ratified</td>
+<td style="text-align: right;">0.35</td>
+<td>Supported a motion that would have cured the failure, then ratified when it failed</td>
+</tr>
+<tr>
+<td>Pre-notice supporter</td>
+<td style="text-align: right;">0.25</td>
+<td>Supported before correction, took no position after</td>
+</tr>
+<tr>
+<td>Passive nonparticipant</td>
+<td style="text-align: right;">0.00</td>
+<td>Absent or recused</td>
+</tr>
+<tr>
+<td>Corrective actor</td>
+<td style="text-align: right;">0.00</td>
+<td>Sought correction, delay, or analysis; or voted against proceeding</td>
+</tr>
+</tbody>
+</table>
+<p><code>effective_severity = raw_severity × role_multiplier</code>, then classified on the same 8.0 / 12.0 thresholds. A member's role can therefore produce a different classification from the event's.</p>
+<h3>Consequences</h3>
+<table>
+<thead>
+<tr>
+<th>Individual classification</th>
+<th style="text-align: right;">Composite adjustment</th>
+<th>Grade ceiling</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Serious participation</td>
+<td style="text-align: right;">Ordinary pool only</td>
+<td>None</td>
+</tr>
+<tr>
+<td>Major Governance Failure</td>
+<td style="text-align: right;">−0.05</td>
+<td>B+</td>
+</tr>
+<tr>
+<td>Critical Governance Failure</td>
+<td style="text-align: right;">−0.10</td>
+<td>C+</td>
+</tr>
+<tr>
+<td>Proven deliberate deception, or second unmitigated critical failure</td>
+<td style="text-align: right;">−0.15</td>
+<td>D+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Why both a deduction and a ceiling.</strong> The deduction measures how much the event should move the composite. The ceiling prevents unrelated strengths — attendance, collegiality, routine fiscal signals — from restoring a top grade after a threshold failure. Without it, a member could retain an A-range grade following a critical integrity failure, which would misstate what the grade means.</p>
+<p>When a ceiling lowers the displayed grade below the calculated composite, <strong>both are shown</strong>. The numerical score is never silently altered to match the ceiling; the normative judgment is made explicit and auditable.</p>
+<h3>Deliberate deception is a separate, higher finding</h3>
+<p>A false representation is not a lie. <strong>Proven deliberate deception</strong> requires clear evidence that the member knew the representation was false or materially unsupported, intended reliance on it, and repeated or concealed it despite that knowledge — contemporaneous emails, prior written acknowledgments, admissions, or deliberate alteration of source language.</p>
+<p>Absent that evidence, findings use language such as <em>material misrepresentation</em>, <em>unsupported representation</em>, <em>claim contradicted by the responsible official</em>, or <em>material premise left uncorrected</em>. The scorecard does not state that a member lied merely because a representation was false.</p>
+<h3>Anti-double-counting</h3>
+<p>A Material Governance Failure <strong>replaces</strong> ordinary incident scoring for the same conduct. The same act is not scored twice under two labels. Independent signals measuring genuinely separate acts — the underlying vote record, attendance, a later refusal to correct the record, concealment or retaliation after the fact — may remain.</p>
+<h3>Non-fungibility and remediation</h3>
+<p>Unrelated positive conduct cannot offset a Material Governance Failure. Good constituent service, attendance, and sponsorship of useful unrelated measures do not purchase forgiveness for a threshold failure. Only conduct responsive to <em>the same failure</em> mitigates it:</p>
+<table>
+<thead>
+<tr>
+<th>Remediation</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cured before final action</td>
+<td>Returns to ordinary incident treatment</td>
+</tr>
+<tr>
+<td>Prompt correction after action, plus meaningful reconsideration</td>
+<td>Deduction halved; ceiling raised one band</td>
+</tr>
+<tr>
+<td>Partial correction or disclosed uncertainty</td>
+<td>Deduction reduced 25%</td>
+</tr>
+<tr>
+<td>Admission without corrective action</td>
+<td>Deduction reduced no more than 25%; ceiling stands</td>
+</tr>
+<tr>
+<td>Later analysis happens to validate the decision</td>
+<td><strong>No mitigation</strong></td>
+</tr>
+<tr>
+<td>Defensive restatement, blame-shifting, or silent deletion</td>
+<td>No mitigation</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Outcome does not erase process failure.</strong> A subsequent favorable result does not retroactively validate a decision made on a misrepresented evidentiary basis. That a design later passes review does not establish that it had been reviewed when the Council was told it had.</p>
+<h3>Decay</h3>
+<p>Material Governance Failures do not use ordinary incident decay. They hold full weight for the term in which they occurred:</p>
+<table>
+<thead>
+<tr>
+<th>Age</th>
+<th style="text-align: right;">Weight</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0–2 years</td>
+<td style="text-align: right;">1.00</td>
+</tr>
+<tr>
+<td>&gt;2–4 years</td>
+<td style="text-align: right;">0.75</td>
+</tr>
+<tr>
+<td>&gt;4–6 years</td>
+<td style="text-align: right;">0.50</td>
+</tr>
+<tr>
+<td>&gt;6 years</td>
+<td style="text-align: right;">0.25</td>
+</tr>
+</tbody>
+</table>
+<p>Documented remediation can reduce a failure faster than time does. Passive passage of time is not evidence of reform.</p>
+<h3>Evidence standard and required disclosure</h3>
+<p>A Major or Critical finding must rest primarily on <strong>Tier A</strong> evidence — agenda records, official recommendations, meeting transcripts, department-head statements, staff reports, auditor reports, vote records, or public records. Tier B reporting may supply context but cannot independently establish the finding. Tier C observation is never sufficient.</p>
+<p>Every Major or Critical finding must publish: the material claim; the source cited for it; what that source actually established; the authoritative contradiction; when each member received notice; what cures were available; what each member did afterward; the severity scoring factor by factor; each member's role multiplier; and any remediation considered.</p>
+<h3>Clustering is expected</h3>
+<p>A single event can produce a finding against most of the council at once. That is not a malfunction of the method, and it should not be read as one.</p>
+<p>Berkeley's council votes as a block roughly <strong>90% of the time</strong> across recorded vote events. A body that acts as one unit fails as one unit. When a failure is genuinely council-wide — an item nobody amended, an opportunity nobody took — a council-wide finding is the accurate description of what happened.</p>
+<p>These records are <strong>not a stack ranking</strong>. Individual attribution exists to distinguish <em>roles</em> within a shared failure — who authored it, who co-sponsored, who ratified, who tried to cure it — not to sort members against one another. A member with no attribution on a given event was absent, recused, or acted correctively; it does not mean they governed better in general, and a member carrying a ceiling is not thereby the worst member on the council.</p>
+<p>The scorecard's per-member grades answer a different question from these event records. Where the two are in tension, the event record is the more specific claim and carries the citations.</p>
+<h3>Safeguard</h3>
+<p>This classification requires Tier A evidence, satisfaction of all four qualification conditions, factor-by-factor scoring, individual role attribution, a published explanation, an explicit anti-double-counting review, and consistent application regardless of whether the scorecard author agrees with the policy outcome.</p>
+<blockquote>
+<p><strong>It must never be applied because the author disagrees with the result. The trigger is the failure of the governing process under consequential conditions — not the merits of the decision that process produced.</strong></p>
+</blockquote>
+<p>Events are recorded in <code>governance_failures.json</code>, one event object with per-member attribution records.</p>
 <h4>Audit silence</h4>
 <p>A separate penalty applies to members who were present at a formal audit presentation, voted to receive and file, and produced no follow-up motion within the response window. This is distinct from an incident: it is an automated signal for undifferentiated silence. Members who have a documented incident with an <code>audit_ref</code> matching the audit are exempt — their behavior post-audit is already individually characterized, whether positive or negative. Members in the <code>follow_up_authored_by</code> list in <code>audit_findings.json</code> are also exempt.</p>
 <p>The silence penalty is −0.04 per audit event, applied to Fiscal Stewardship Alignment before the composite calculation.</p>
@@ -774,6 +1068,8 @@ strong { color: #1a1a2e; }
 <li><strong>Committee participation:</strong> The Finance Committee and Budget &amp; Finance Working Group are where substantive fiscal deliberation often occurs, but their minutes record only votes — not participation, debate, or the questions members asked. A member who does serious fiscal work in committee and is quieter in plenary sessions would be undercounted; a member who performs engagement in plenary while contributing nothing in committee would be overcounted. This gap is unresolvable with publicly available records.</li>
 <li><strong>Composite grade calibration:</strong> The Tier 1 letter grade is implemented and producing results (as of Apr 2026). The formula (70% taxpayer, 30% focus, attendance/low-engagement deductions) will continue to be refined as more data accumulates.</li>
 <li><strong>Fiscal referral author-matching:</strong> The agenda JSON parser may not always identify the primary author of a referral item when authorship is attributed informally or through co-sponsorship structures. Members whose referral activity is undercounted via the automated parser should be cross-checked against the manual incident record. A more robust author-matching pass is planned.</li>
+<li><strong>Material Governance Failure — ratifier calibration:</strong> At a 0.50 multiplier, a bare post-notice ratifier on a maximum-severity event scores 6.0 effective severity — inside the "serious" band, below the 7.0 Major threshold. A member who votes to proceed after an authoritative correction therefore receives no direct consequence unless they also authored or co-sponsored the item. This may be correct: a councilmember can reasonably defer to an item's sponsor on technical findings, and the vote itself remains in the public record. It may also be too lenient. The multiplier is deliberately documented here rather than tuned to produce a particular result, and should be revisited after the algorithm has been applied to several historical events.</li>
+<li><strong>Material Governance Failure — historical backfill:</strong> The two-lane model was adopted in August 2026 and first applied to a July 2026 event. Incidents predating adoption have not been re-screened against the qualification test. A keyword screen identified seven candidates; preliminary review disqualified three (one on evidence tier, two as policy disagreements rather than premise failures) and left four requiring full four-condition review against primary sources. Until that review is complete, the absence of a Material Governance Failure finding for an earlier event means only that the event has not been assessed under this framework — not that it was assessed and cleared.</li>
 </ul>
 <hr />
 <h2>Proposing Changes</h2>
