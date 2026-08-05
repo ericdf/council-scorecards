@@ -121,6 +121,37 @@
   .pat-grid { grid-template-columns: 1fr; }
 }
 
+/* ── Tier 4: what could have been asked instead ────────────────────────────
+   The site's other three tiers state a standard and then document departures
+   from it. Without this band the whole thing only ever prosecutes. Placed AFTER
+   the failures deliberately: the page's own argument is that the alternative
+   should surface before you choose between two bad options, so a reader feels
+   the cost of not having asked and then sees what asking looks like. */
+.alt-band  { background: #f2f7f4; border-top: 3px solid #2f7d5c;
+              border-bottom: 1px solid #d5e3db; }
+.alt-inner { max-width: 1100px; margin: 0 auto; padding: 30px 40px 30px; }
+.alt-eyebrow{ font-size: 10px; font-weight: 700; text-transform: uppercase;
+              letter-spacing: 2px; color: #2f7d5c; margin-bottom: 10px; }
+.alt-grid  { display: grid; grid-template-columns: 1.15fr 1fr; gap: 26px; align-items: start; }
+.alt-h2    { font-size: 24px; font-weight: 800; color: #1a1a2e; line-height: 1.22;
+              margin-bottom: 10px; letter-spacing: -.3px; }
+.alt-h2 a  { color: inherit; text-decoration: none; }
+.alt-h2 a:hover { color: #2f7d5c; }
+.alt-p     { font-size: 13.5px; line-height: 1.72; color: #45505f; margin-bottom: 12px; }
+.alt-btn   { display: inline-block; background: #2f7d5c; color: #fff; font-size: 12px;
+              font-weight: 700; padding: 9px 16px; border-radius: 4px; text-decoration: none; }
+.alt-btn:hover { background: #266449; }
+.alt-box   { background: #fff; border: 1px solid #d5e3db; border-radius: 4px; padding: 14px 16px; }
+.alt-box-h { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.3px;
+              color: #2f7d5c; margin-bottom: 9px; }
+.alt-box ul { margin: 0; padding-left: 16px; }
+.alt-box li { font-size: 12.5px; line-height: 1.6; color: #55606e; margin-bottom: 6px; }
+@media (max-width: 760px) {
+  .alt-inner { padding: 22px 18px; }
+  .alt-grid { grid-template-columns: 1fr; gap: 16px; }
+  .alt-h2 { font-size: 20px; }
+}
+
 /* ── Material Governance Failures band ──────────────────────────────────────
    Deliberately the loudest thing on the page after the hero. These are the
    findings a voter should read first, so the band uses the alert accent rather
@@ -407,6 +438,35 @@
     topics of consequence &mdash; not a complete account. A member who does not appear in one of
     them has not been cleared of anything; that decision simply has not been examined.
     <a href="methodology.html">How a governance failure is defined and tested &rarr;</a></p>
+  </div>
+</div>
+
+<!-- ── Tier 4: the constructive counterpart ── -->
+<div class="alt-band">
+  <div class="alt-inner">
+    <div class="alt-eyebrow">&#9670; What could have been asked instead</div>
+    <div class="alt-grid">
+      <div>
+        <div class="alt-h2"><a href="wrong-question.html">What if Hopkins was the wrong question?</a></div>
+        <p class="alt-p">Everything above documents a decision that went badly. This one does the
+        opposite. It takes the sharpest crayon in the box &mdash; <em>explore alternatives</em>
+        &mdash; and works out what an hour of using it on Hopkins would have produced.</p>
+        <p class="alt-p">The answer is an option nobody costed, which turns out to serve the ferry's
+        parking problem, the Marina's isolation, the neighborhood commercial districts, and the
+        arithmetic of where homeless services get sited. It might not have won. It was never on
+        the table.</p>
+        <a class="alt-btn" href="wrong-question.html">Read the worked example &rarr;</a>
+      </div>
+      <div class="alt-box">
+        <div class="alt-box-h">Why this page exists</div>
+        <ul>
+          <li>A critique that only prosecutes is easy to dismiss.</li>
+          <li>The framework is worth more as a tool than as a verdict.</li>
+          <li>Berkeley's decisions are routinely framed as two positions, each needing the other to lose.</li>
+          <li>That feels like rigor. It is what a small option set looks like from the inside.</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
 
