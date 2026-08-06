@@ -90,6 +90,20 @@ td.held { color: var(--ink-2); white-space: nowrap; }
           text-transform: uppercase; color: var(--accent); margin-bottom: .6rem; }
 .beat p { font-size: .96rem; }
 
+/* Tool callout. The Budget Lab is the interactive form of this page's argument — it makes a
+   reader use the crayons the Council leaves in the box — so it gets an accent-filled panel
+   rather than a link buried in a paragraph. */
+.tool { background: var(--accent-soft); border: 1px solid var(--accent);
+        border-left: 5px solid var(--accent); border-radius: 0 4px 4px 0;
+        padding: 1.2rem 1.35rem; margin: 1.8rem 0; }
+.tool-h { font-family: var(--sans); font-size: .69rem; font-weight: 800; letter-spacing: .13em;
+          text-transform: uppercase; color: var(--accent); margin-bottom: .6rem; }
+.tool p { font-size: .96rem; margin-bottom: .8rem; }
+.tool-btn { display: inline-block; font-family: var(--sans); font-size: .82rem; font-weight: 700;
+            background: var(--accent); color: #fff; text-decoration: none;
+            padding: .55rem 1rem; border-radius: 4px; }
+.tool-btn:hover { filter: brightness(1.12); }
+
 .clock { font-family: var(--sans); font-variant-numeric: tabular-nums; font-weight: 700;
          color: var(--accent); font-size: .8rem; letter-spacing: .04em; }
 
@@ -219,6 +233,17 @@ the city does with the money it already has.</p>
   <div class="crayon off"><span class="stick"></span><span class="cname">Explore alternatives</span>
     <span class="cdesc">Who delivers this, and could someone deliver it better &mdash; city staff,
     county, nonprofit, private, partnership &mdash; tested on equal criteria.</span></div>
+</div>
+
+<div class="tool">
+  <div class="tool-h">&#9881; Interactive &mdash; use the sharp crayons yourself</div>
+  <p>The argument on this page is easier to feel than to read. <strong>The Berkeley Budget
+  Lab</strong> hands you the City Manager&rsquo;s own scenarios and asks you to close the gap:
+  protect a department, accept its baseline cut, or make it absorb more. Every service you
+  protect pushes the savings onto one you did not.</p>
+  <p>That constraint is the whole point. Reprioritizing means naming what stops, and the tool
+  will not let you avoid naming it &mdash; which is exactly why the crayon stays in the box.</p>
+  <a class="tool-btn" href="https://ericdf.github.io/budget_lab/" target="_blank" rel="noopener noreferrer">Open the Budget Lab &rarr;</a>
 </div>
 
 <p>The city's own auditor has said the same thing in the city's own language. The April 2026

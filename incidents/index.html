@@ -50,7 +50,9 @@ a.incident-row:hover { background: #f8f9fa; }
 .score-chip .sc-val.yellow { color: #f39c12; }
 .score-chip .sc-val.green  { color: #27ae60; }
 .inc-link { font-size: 11px; font-weight: 700; color: #2980b9; margin-top: 8px; display: inline-block; }
-.no-results { padding: 32px; text-align: center; font-size: 13px; color: #7f8c8d; font-style: italic; display: none; }
+.no-results { padding: 28px 32px; text-align: center; font-size: 12.5px; line-height: 1.7;
+               color: #7f8c8d; display: none; max-width: 72ch; margin: 0 auto; }
+.no-results a { color: #2980b9; text-decoration: underline; text-underline-offset: 2px; }
 .methodology-note { padding: 16px 32px; border-top: 2px solid #ecf0f1; font-size: 11px; color: #7f8c8d; line-height: 1.7; }
 .methodology-note a { color: #2980b9; text-decoration: none; }
 .methodology-note a:hover { text-decoration: underline; }
@@ -88,6 +90,7 @@ body { flex-direction: column !important; align-items: center !important; }
     <span class="chip" data-filter="Ishii">Ishii</span>
     <span class="chip" data-filter="Kesarwani">Kesarwani</span>
     <span class="chip" data-filter="LunaParra">LunaParra</span>
+    <span class="chip" data-filter="OKeefe">OKeefe</span>
     <span class="chip" data-filter="Taplin">Taplin</span>
     <span class="chip" data-filter="Tregub">Tregub</span>
     <span class="chip chip-council" data-filter="Full Council">Full Council</span>
@@ -348,7 +351,10 @@ body { flex-direction: column !important; align-items: center !important; }
     <div class="inc-link">Full incident record →</div>
   </a>
 
-  <div class="no-results" id="no-results">No incidents match this filter.</div>
+  <div class="no-results" id="no-results">No incidents are on record for this filter. That is not
+  a finding of good conduct &mdash; it means no qualifying incident has been documented and scored
+  here yet. See the <a href="../methodology.html">methodology</a> for what gets recorded, and the
+  member&rsquo;s scorecard for the scored record.</div>
 
   <div class="methodology-note">
     Scores are editorial assessments based on documented facts. Each incident page shows full reasoning for every dimensional score. Pending verifications are noted where vote records, meeting minutes, or tenure dates have not been independently confirmed. Incident scores feed into member scorecards via the Character &amp; Conduct and Fiscal Stewardship pillars according to each dimension's pillar tag. See <a href="../methodology.html">methodology</a> for the full scoring framework.

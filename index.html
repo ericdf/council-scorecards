@@ -59,12 +59,6 @@
     .fw-btn:hover { background: #6ba3d9; }
     .fw-btn.ghost { background: transparent; border: 1px solid #3d5680; color: #8fbde8; }
     .fw-btn.ghost:hover { background: #1e2a47; }
-    .fw-btn.lab { background: #1e8449; }
-    .fw-btn.lab:hover { background: #25a05a; }
-    .fw-tools    { margin-top: 16px; padding-top: 15px; border-top: 1px solid #2a3a5c; }
-    .fw-tools-lbl{ font-size: 10px; font-weight: 700; text-transform: uppercase;
-                    letter-spacing: 1.4px; color: #6f9fd0; margin-bottom: 9px; }
-    .fw-tools-row{ display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
     .fw-quote  { border-left: 3px solid #4e8ecb; padding: 4px 0 4px 16px; }
     .fw-quote-t{ font-size: 17px; font-weight: 700; color: #fff; line-height: 1.5; }
     .fw-quote-b{ font-size: 11.5px; color: #7d8aa5; margin-top: 10px; line-height: 1.6; }
@@ -103,8 +97,12 @@
    Deliberately quieter than both: these are patterns, not proposals or events. */
 .pat-band  { background: #f3f5f8; border-top: 1px solid #dfe4ec; }
 .pat-inner { max-width: 1100px; margin: 0 auto; padding: 26px 40px 24px; }
-.pat-eyebrow{ font-size: 10px; font-weight: 700; text-transform: uppercase;
-              letter-spacing: 2px; color: #55617a; margin-bottom: 14px; }
+.pat-eyebrow{ font-size: 10px; font-weight: 800; text-transform: uppercase;
+              letter-spacing: 2px; color: #55617a; margin-bottom: 10px; }
+.pat-h2    { font-size: 26px; font-weight: 800; color: #1a1a2e; line-height: 1.2;
+              margin-bottom: 10px; letter-spacing: -.4px; }
+.pat-lede  { font-size: 14px; line-height: 1.7; color: #4a5364; max-width: 74ch;
+              margin-bottom: 22px; }
 .pat-grid  { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
               gap: 14px; }
 .pat-card  { display: block; background: #fff; border: 1px solid #dfe4ec;
@@ -113,12 +111,40 @@
 .pat-card:hover { box-shadow: 0 3px 12px rgba(30,45,80,.12); }
 .pat-t     { font-size: 15px; font-weight: 800; color: #1a1a2e; margin-bottom: 7px; }
 .pat-card p{ font-size: 12.5px; line-height: 1.62; color: #55606e; margin-bottom: 9px; }
+/* Where a card cites an external authority rather than our own reading of the record,
+   the attribution should carry more weight than the surrounding summary. */
+.pat-card strong { color: #2b3444; font-weight: 700; }
 .pat-more  { font-size: 11.5px; font-weight: 700; color: #2c4a7c; }
+/* The Budget Lab is the interactive form of the Crayon Box argument, so it sits with the
+   habits rather than only in the framework band's sidebar. Green marks it as a tool to use
+   rather than another card to read. */
+.pat-tool  { display: flex; gap: 20px; align-items: center; flex-wrap: wrap;
+              background: #eef6f1; border: 1px solid #cfe3d8; border-left: 4px solid #2f7d5c;
+              border-radius: 0 4px 4px 0; padding: 15px 18px; margin-top: 16px; }
+.pat-tool-l { flex: 1 1 380px; min-width: 260px; }
+.pat-tool-h { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.3px;
+              color: #2f7d5c; margin-bottom: 7px; }
+.pat-tool p { font-size: 12.5px; line-height: 1.62; color: #45535f; margin-bottom: 9px; }
+.pat-tool p:last-child { margin-bottom: 0; }
+.pat-tool p strong { color: #23303c; }
+.pat-tool-h a { color: inherit; text-decoration: underline; text-underline-offset: 2px;
+              text-decoration-thickness: 1px; }
+.pat-tool-h a:hover { color: #23303c; }
+.pat-tool p a { color: #2f7d5c; font-weight: 700; text-decoration: underline;
+              text-underline-offset: 2px; }
+.pat-tool p a:hover { color: #1f5a41; }
+.pat-tool-btn { flex: 0 0 auto; display: inline-block; background: #2f7d5c; color: #fff;
+              font-size: 12px; font-weight: 700; padding: 10px 16px; border-radius: 4px;
+              text-decoration: none; white-space: nowrap; }
+.pat-tool-btn:hover { background: #266449; }
 .pat-foot  { font-size: 12px; line-height: 1.6; color: #6b7484; margin-top: 16px;
               max-width: 88ch; }
 @media (max-width: 640px) {
   .pat-inner { padding: 20px 18px; }
+  .pat-h2 { font-size: 21px; }
   .pat-grid { grid-template-columns: 1fr; }
+  .pat-tool { gap: 13px; }
+  .pat-tool-btn { width: 100%; text-align: center; }
 }
 
 /* ── Tier 4: what could have been asked instead ────────────────────────────
@@ -332,13 +358,6 @@
           <a class="fw-btn" href="framework.html">Read the white paper</a>
           <a class="fw-btn ghost" href="framework-slides.html">View the slides</a>
         </div>
-        <div class="fw-tools">
-          <div class="fw-tools-lbl">Interactive tools</div>
-          <div class="fw-tools-row">
-            <a class="fw-btn lab" href="https://ericdf.github.io/budget_lab/" target="_blank" rel="noopener noreferrer">&#9881; Explore Priority-Based Budgeting</a>
-            <a class="fw-btn lab" href="https://ericdf.github.io/berkeley-tax-explorer/" target="_blank" rel="noopener noreferrer">&#9881; Explore What 2026 Tax Measures Mean For You</a>
-          </div>
-        </div>
       </div>
       <div class="fw-right">
         <div class="fw-quote">
@@ -360,6 +379,22 @@
 <div class="pat-band">
   <div class="pat-inner">
     <div class="pat-eyebrow">&#9670; How the council actually decides</div>
+    <h2 class="pat-h2">Seven habits of method, each with a worked example</h2>
+    <p class="pat-lede">Berkeley&rsquo;s decision-making process is itself the subject. These five
+    explainers are the case for that: each takes a recent issue and follows it far enough to show
+    the habit underneath. <strong>The Crayon Box</strong> shows the set of available solutions
+    being narrowed before anyone chooses among them, and <strong>Which Version, Never
+    Whether</strong> shows the same narrowing applied to the public &mdash; consultations that ask
+    which design rather than whether to proceed. <strong>The ferry</strong> shows a
+    decision gate written into an agreement and then treated as a formality, review routed around
+    the commission with jurisdiction, and the one document holding every number left unpresented
+    and unrevised while the facts moved under it. <strong>Bonds</strong> shows a political calculus that pays better for new money than
+    for spending discipline. <strong>Buy Once</strong> shows capital outlay counted and the
+    thirty-year operating bill left uncounted, with none of the exit criteria or partner
+    commitments a <a href="framework.html#cat2">Category&nbsp;2</a> undertaking requires.
+    <strong>Two Calendars</strong> shows durable
+    <a href="framework.html#cat1">Category&nbsp;1</a> and 2 commitments passing unremarked while
+    scarce Council attention goes to <a href="framework.html#cat3">Category&nbsp;3</a>.</p>
     <div class="pat-grid">
       <a class="pat-card" href="crayon-box.html">
         <div class="pat-t">The Crayon Box</div>
@@ -369,11 +404,12 @@
         <span class="pat-more">Read &rarr;</span>
       </a>
       <a class="pat-card" href="pier-ferry.html">
-        <div class="pat-t">Funding a Ferry With More Questions Than Answers</div>
-        <p>A project can advance for years on design money without anyone deciding whether the
-        city can afford to build it. Berkeley has designed a $104 million ferry terminal &mdash;
-        the terminal, not the ferries &mdash; with no construction funding, at a site needing a
-        breakwater and 400,000 cubic yards of dredging.</p>
+        <div class="pat-t">Checkpoints That Don&rsquo;t Check</div>
+        <p>A condition written to stop a project unless funding appears will not stop it. Reviews
+        get routed past the commission with jurisdiction. The document holding every number goes
+        four years without an update and is never presented to the body voting the money. Six
+        years and $104 million of design later, nobody has decided whether the city can &mdash; or
+        even should &mdash; build it.</p>
         <span class="pat-more">Read &rarr;</span>
       </a>
       <a class="pat-card" href="bond-alibi.html">
@@ -391,6 +427,24 @@
         pass unremarked, while a performative resolution consumes an evening.</p>
         <span class="pat-more">Read &rarr;</span>
       </a>
+      <a class="pat-card" href="constrained-choice.html">
+        <div class="pat-t">Which Version, Never Whether</div>
+        <p>A survey can only measure the choices it offers. Berkeley Considers asks residents to
+        &ldquo;select among options being considered&rdquo; &mdash; which design, which location,
+        which of these priorities &mdash; but rarely whether to proceed at all. On one survey,
+        five of 186 commenters noticed. The City promises the input will &ldquo;help shape&rdquo;
+        the outcome and never says how.</p>
+        <span class="pat-more">Read &rarr;</span>
+      </a>
+      <a class="pat-card" href="measuring-nothing.html">
+        <div class="pat-t">Measuring Nothing</div>
+        <p>The city counts what it does, not whether anything got better. <strong>Berkeley&rsquo;s
+        elected City Auditor found no outcome tracking system for $21.7 million a year of
+        homeless programs</strong> &mdash; the city cannot tell whether they work. Without that,
+        nothing can be ranked, so a cut applied evenly to everything is the only method left.
+        Even the decision to start measuring passed on consent.</p>
+        <span class="pat-more">Read &rarr;</span>
+      </a>
       <a class="pat-card" href="small-sites.html">
         <div class="pat-t">Buy Once, Maintain Forever</div>
         <p>Buying a building is one decision. Owning it is a bill arriving for thirty years, on a
@@ -399,10 +453,41 @@
         <span class="pat-more">Read &rarr;</span>
       </a>
     </div>
-    <p class="pat-foot">These describe patterns, not incidents &mdash; council-wide habits of
-    method with no single member to attribute them to. The last is a single program followed
-    from first appropriation to fourth, to show what the habits cost when they run for decades.
-    What those habits produced in specific dated decisions is below.</p>
+    <div class="pat-tool">
+      <div class="pat-tool-l">
+        <div class="pat-tool-h">&#9881; Interactive &mdash; try <a href="crayon-box.html">the Crayon Box</a> yourself</div>
+        <p><a href="crayon-box.html">The Crayon Box</a> argues that Berkeley reaches for the four
+        options that raise money and leaves the three that would change what it spends. <strong>The Berkeley Budget Lab</strong>
+        puts you in the chair with the City Manager&rsquo;s own scenarios: protect a department,
+        accept its cut, or make it absorb more. Every service you protect pushes the savings onto
+        one you did not &mdash; which is the choice reprioritizing forces, and the reason it is
+        rarely proposed.</p>
+      </div>
+      <a class="pat-tool-btn" href="https://ericdf.github.io/budget_lab/" target="_blank" rel="noopener noreferrer">Open the Budget Lab &rarr;</a>
+    </div>
+    <p class="pat-foot">Together, these habits produce durable and objectively bad outcomes.
+    They are patterns, not incidents &mdash; council-wide method, with no single member to
+    attribute them to. What they produced in specific dated decisions is below.</p>
+    <div class="pat-tool">
+      <div class="pat-tool-l">
+        <div class="pat-tool-h">&#9881; Interactive &mdash; what the habits cost you</div>
+        <p>Those outcomes arrive as a bill. <strong>The Berkeley Tax Explorer</strong> lets you do
+        that calculation comprehensively &mdash; every <strong>2026 measure</strong> together with
+        what you already pay, modeled against your own household rather than a typical one, and
+        projected out thirty years. It runs entirely in your browser: no account, no cookies, no
+        server, nothing collected, nothing shared.</p>
+        <p>Measure FF reached voters as a <em>rate</em> &mdash; 17 cents per square foot of
+        residential improvements &mdash; next to the aggregate it would raise, about $15 million a
+        year. Both true; neither is what a household pays. <strong>The voter had to do the
+        multiplication:</strong> 17 cents is $255 a year on a 1,500-square-foot home, $340 on
+        2,000, $425 on 2,500. A rate looks small, an aggregate looks like someone else&rsquo;s
+        money, and the number in between is the one nobody prints.</p>
+        <p><strong>And nobody rolls them up.</strong> Each measure seemed modest in isolation.
+        The butcher&rsquo;s bill is the cumulative tax burden &mdash; and assembling it is left to
+        you, which is why new revenue is <a href="crayon-box.html">the easy crayon</a>.</p>
+      </div>
+      <a class="pat-tool-btn" href="https://ericdf.github.io/berkeley-tax-explorer/" target="_blank" rel="noopener noreferrer">Open the Tax Explorer &rarr;</a>
+    </div>
   </div>
 </div>
 
@@ -413,12 +498,17 @@
      up on them matters more than any number of routine votes. -->
 <div class="mgf-band">
   <div class="mgf-inner">
-    <div class="mgf-eyebrow">&#9888; Where it went wrong</div>
+    <div class="mgf-eyebrow">&#9888; Where it went wrong &mdash; Material Governance Failures</div>
     <h2 class="mgf-h2">Four decisions the city will live with</h2>
-    <p class="mgf-lede">Berkeley&rsquo;s council votes together about nine times out of ten, so
-    the vote tally rarely tells you much. These four are different. In each one the record put
-    before the Council was wrong or incomplete, the consequence is durable, and the choice was
-    made anyway. Each has a full explainer with the primary sources.</p>
+    <p class="mgf-lede">This is what the habits above produce. Not bad luck and not a bad night
+    &mdash; the same method, applied to four specific dated decisions, with the results a reader
+    can check. These four are <strong>Material Governance Failures (MGFs)</strong>: the site&rsquo;s
+    term for a decision where all four of these hold &mdash; the action was <em>high-stakes</em>,
+    a <em>material premise was false</em>, members had <em>authoritative notice before the final
+    vote</em>, and they had a <em>practical opportunity to cure it</em> and did not. The bar is
+    deliberately high. Eight further candidates were screened and rejected for failing one of the
+    four, each logged with the condition it failed. Each MGF below has a full explainer with the
+    primary sources.</p>
 
     <div class="mgf-grid">
       <a class="mgf-card" href="hopkins-fire-review.html">
@@ -439,10 +529,11 @@
       </a>
       <a class="mgf-card" href="public-safety-budget.html">
         <div class="mgf-when">23 June 2026</div>
-        <div class="mgf-t">Fire positions restored, police and crisis response cut</div>
-        <p>The Council found $200,000 to reverse a fire station closure and save nine firefighter
-        posts. In the same motion it let 39 police and dispatch positions go, plus the mobile
-        crisis team &mdash; on a county backstop the City&rsquo;s own report called uncertain.</p>
+        <div class="mgf-t">Budgeting Scare Tactics</div>
+        <p>A fire station closure was made contingent on the sales tax passing. Council then found
+        $200,000 to reverse that closure &mdash; and in the same motion let 39 police and dispatch
+        positions go, plus the mobile crisis team, on a county backstop its own report called
+        uncertain. Nobody moved to rank the budget by category first.</p>
         <span class="mgf-more">Read the explainer &rarr;</span>
       </a>
       <a class="mgf-card" href="district4-siting.html">
@@ -465,17 +556,23 @@
 <!-- ── Tier 4: the constructive counterpart ── -->
 <div class="alt-band">
   <div class="alt-inner">
-    <div class="alt-eyebrow">&#9670; What could have been asked instead</div>
+    <div class="alt-eyebrow">&#9670; A better method is available</div>
     <div class="alt-grid">
       <div>
-        <div class="alt-h2"><a href="wrong-question.html">What if Hopkins was the wrong question?</a></div>
-        <p class="alt-p">Everything above documents a decision that went badly. This one does the
-        opposite. It takes the <a href="crayon-box.html">sharpest crayon in the box</a> &mdash; <em>explore alternatives</em>
-        &mdash; and works out what an hour of using it on Hopkins would have produced.</p>
-        <p class="alt-p">The answer is an option nobody costed, which turns out to serve the ferry's
-        parking problem, the Marina's isolation, the neighborhood commercial districts, and the
-        arithmetic of where homeless services get sited. It might not have won. It was never on
-        the table.</p>
+        <div class="alt-h2"><a href="wrong-question.html">There is a way to get better answers, and here is one worked out</a></div>
+        <p class="alt-p">The claim of this site is not that Berkeley&rsquo;s council is unlucky.
+        It is that a different method would produce better decisions &mdash; and that claim is
+        worth nothing until somebody runs it. So we ran it, once, all the way through, on a real
+        item with a real record. <a href="wrong-question.html">Hopkins is the case study, not the
+        point.</a></p>
+        <p class="alt-p">It takes the <a href="crayon-box.html">sharpest crayon in the box</a>
+        &mdash; <em>explore alternatives</em> &mdash; and works out what an hour of using it would
+        have produced. The answer is an option nobody costed, which turns out to serve the
+        ferry&rsquo;s parking problem, the Marina&rsquo;s isolation, the neighborhood commercial
+        districts, and the arithmetic of where homeless services get sited. It might not have won.
+        It was never on the table.</p>
+        <p class="alt-p">Changing how a city decides is harder than changing what it decides, and
+        some officeholders and staff will resist it. That is what elections are for.</p>
         <a class="alt-btn" href="wrong-question.html">Read the worked example &rarr;</a>
       </div>
       <div class="alt-box">
@@ -500,11 +597,32 @@
     </div>
     <div class="block-note">
       <div class="block-note-h">&#9432; Read this as a record, not a ranking</div>
-      <p>This council votes together <strong>about 90% of the time</strong>. Grades therefore
-      cluster, and they should &mdash; a body that acts as one unit tends to succeed and fail as
-      one unit. Small gaps between members are far less meaningful than what the whole council
-      does, and a member near the top is not thereby governing well.</p>
-      <p>The individual grades exist to show where members diverge from the block. The
+      <p>The habits above are council-wide, but nine people practice them, and each of them
+      arrived at the shared vote in their own way. This section assesses that &mdash; individual
+      performance, measured against the habits above and the specific conduct in each member&rsquo;s
+      own record. It is not a ranking and it is not a hit piece. The standard being applied is
+      written down in the <a href="methodology.html">methodology</a>, in advance, and it is the
+      same standard for all nine.</p>
+      <p>Two things about the numbers. They cluster because the council votes as a block
+      &mdash; <strong>86.3% of 307 linked votes were unanimous</strong>, and the
+      council voted as a block on <strong>92.5% of 93 vote events</strong>. And they
+      are low across the board because no member is currently building different habits or asking
+      the questions that would prompt colleagues to. Whether they can change is not something this
+      site can answer. Voters can reasonably insist they try.</p>
+      <p><strong>An A is available.</strong> Nothing is graded on a curve, no member&rsquo;s grade
+      depends on another&rsquo;s, and earning one does not require winning votes on a council of
+      nine. It requires working on the things that matter and working on them in a way that
+      matches the
+      <a href="framework.html">method</a>: sorting an item into its
+      <a href="framework.html#cat1">category</a> before arguing about it, asking what the thing
+      costs to <em>own</em> and not only to buy, putting a real alternative on the table so the
+      choice is not between one option and nothing, naming exit criteria before signing on with a
+      partner, pulling a consent item that commits the city for decades, and holding a stated
+      position when the room turns. Those are ordinary acts a single member can perform without
+      anyone&rsquo;s permission. Each one is scored where it appears. Nobody is currently doing
+      enough of them.</p>
+      <p>The individual grades exist to show where members diverge from the block, for better or
+      for worse. The
       <a href="incidents/index.html">incident and governance-failure records</a> are the more specific
       claim, and they carry the citations.</p>
     </div>
