@@ -140,27 +140,24 @@
 .alt-inner { max-width: 1100px; margin: 0 auto; padding: 30px 40px 30px; }
 .alt-eyebrow{ font-size: 10px; font-weight: 700; text-transform: uppercase;
               letter-spacing: 2px; color: #2f7d5c; margin-bottom: 10px; }
-.alt-grid  { display: grid; grid-template-columns: 1.15fr 1fr; gap: 26px; align-items: start; }
-.alt-h2    { font-size: 24px; font-weight: 800; color: #1a1a2e; line-height: 1.22;
-              margin-bottom: 10px; letter-spacing: -.3px; }
-.alt-h2 a  { color: inherit; text-decoration: none; }
-.alt-h2 a:hover { color: #2f7d5c; }
-.alt-p     { font-size: 13.5px; line-height: 1.72; color: #45505f; margin-bottom: 12px; }
-.alt-p a   { color: #2f7d5c; font-weight: 600; text-decoration: underline;
-              text-underline-offset: 2px; }
-.alt-p a:hover { color: #1f5a41; }
-.alt-btn   { display: inline-block; background: #2f7d5c; color: #fff; font-size: 12px;
-              font-weight: 700; padding: 9px 16px; border-radius: 4px; text-decoration: none; }
-.alt-btn:hover { background: #266449; }
-.alt-box   { background: #fff; border: 1px solid #d5e3db; border-radius: 4px; padding: 14px 16px; }
-.alt-box-h { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.3px;
-              color: #2f7d5c; margin-bottom: 9px; }
+.alt-h2    { font-size: 26px; font-weight: 800; color: #1a1a2e; line-height: 1.2;
+              letter-spacing: -.4px; margin-bottom: 16px; }
+.alt-grid  { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: stretch; }
+.alt-btn   { display: inline-block; font-size: 11.5px; font-weight: 700; color: #2c4a7c;
+              text-decoration: none; }
+.alt-btn:hover { text-decoration: underline; text-underline-offset: 2px; }
+.alt-box   { background: #fff; border: 1px solid #d5e3db; border-radius: 4px; padding: 15px 17px;
+             display: flex; flex-direction: column; }
+.alt-box .alt-btn { margin-top: auto; align-self: flex-start; }
+.alt-box-h { font-size: 15px; font-weight: 800; color: #1a1a2e; margin-bottom: 7px; }
 .alt-box ul { margin: 0; padding-left: 16px; }
 .alt-box li { font-size: 12.5px; line-height: 1.6; color: #55606e; margin-bottom: 6px; }
+.alt-box-p { font-size: 12.5px; line-height: 1.62; color: #55606e; margin-bottom: 9px; }
+.alt-box-p strong { color: #2b3444; font-weight: 700; }
 @media (max-width: 760px) {
   .alt-inner { padding: 22px 18px; }
+  .alt-h2 { font-size: 21px; }
   .alt-grid { grid-template-columns: 1fr; gap: 16px; }
-  .alt-h2 { font-size: 20px; }
 }
 
 /* ── Material Governance Failures band ──────────────────────────────────────
@@ -342,7 +339,7 @@
 <div class="pat-band" id="habits">
   <div class="pat-inner">
     <div class="pat-eyebrow">&#9670; How the council actually decides</div>
-    <h2 class="pat-h2">Seven Habits of Highly Ineffective Governance</h2>
+    <h2 class="pat-h2">Eight Habits of Highly Ineffective Governance</h2>
     <p class="pat-lede">Bad decisions happen. The more important question is whether they share a
     method. <strong>These do.</strong> Berkeley repeatedly constrains the solution space before
     choosing within it, bypasses or weakens the reviews meant to test proposals, makes long-term
@@ -392,6 +389,14 @@
         <p>Berkeley mostly counts activity rather than outcomes. Without knowing what programs
         accomplish for what they cost, Council cannot reliably rank them &mdash; making
         across-the-board cuts less a priority decision than a substitute for one.</p>
+        <span class="pat-more">Read &rarr;</span>
+      </a>
+      <a class="pat-card" href="build-once.html">
+        <div class="pat-t">Build Once</div>
+        <p>A capital project gets appropriated, designed and built. What it costs to run is
+        decided later, by different people, out of a different budget. Nothing in the sequence
+        requires that number before the doors open &mdash; so the question arrives when the
+        building does, and by then the answer changes nothing.</p>
         <span class="pat-more">Read &rarr;</span>
       </a>
       <a class="pat-card" href="small-sites.html">
@@ -500,29 +505,25 @@
 <!-- ── Tier 4: the constructive counterpart ── -->
 <div class="alt-band">
   <div class="alt-inner">
-    <div class="alt-eyebrow">&#9670; The counterexample</div>
+    <div class="alt-eyebrow">&#9670; What better would look like</div>
+    <h2 class="alt-h2">Our framework in action</h2>
     <div class="alt-grid">
-      <div>
-        <div class="alt-h2"><a href="wrong-question.html">What would better decision-making actually look like?</a></div>
-        <p class="alt-p">Criticism is easy. A decision-making framework is useful only if it
-        produces better choices. So we applied this one to a real Berkeley decision and followed
-        it through.</p>
-        <p class="alt-p">The Hopkins case study starts by doing something Council often does not:
-        <strong>expanding the alternatives before choosing among them.</strong> That produces an
-        option nobody costed or seriously considered &mdash; one that could address the
-        ferry&rsquo;s parking problem, the Marina&rsquo;s isolation, neighborhood commercial
-        districts, and the geographic concentration of homeless services. It might not have won.
-        <strong>The failure was that it was never on the table.</strong></p>
-        <a class="alt-btn" href="wrong-question.html">Read the worked example &rarr;</a>
+      <div class="alt-box">
+        <div class="alt-box-h">Expand the Choices</div>
+        <p class="alt-box-p">Hopkins did not have to be a choice between safety and everything
+        residents would lose to achieve it. Expanding the alternatives reveals ways to preserve
+        more of both&mdash;and exposes options that never made it onto the table.</p>
+        <p class="alt-box-p">The point isn&rsquo;t that an alternative must win. It has to make it
+        onto the table.</p>
+        <a class="alt-btn" href="wrong-question.html">Read the Hopkins case study &rarr;</a>
       </div>
       <div class="alt-box">
-        <div class="alt-box-h">Why this page exists</div>
-        <ul>
-          <li>A critique that only prosecutes is easy to dismiss.</li>
-          <li>The framework is worth more as a tool than as a verdict.</li>
-          <li>Berkeley's decisions are routinely framed as two positions, each needing the other to lose.</li>
-          <li>That feels like rigor. It is what a small option set looks like from the inside.</li>
-        </ul>
+        <div class="alt-box-h">Show Your Work</div>
+        <p class="alt-box-p">Before Berkeley asks voters for more money, Council should show why
+        efficiency, alternatives, and reprioritization won&rsquo;t do the job. <strong>Cities
+        Berkeley routinely looks to for best practices already build that discipline into
+        budgeting.</strong> We can learn from them here, too.</p>
+        <a class="alt-btn" href="show-your-work.html">Read the proposal &rarr;</a>
       </div>
     </div>
   </div>
