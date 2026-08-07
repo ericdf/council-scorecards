@@ -194,7 +194,10 @@
   .mgf-grid { grid-template-columns: 1fr; }
 }
 
-.sc-section { padding: 32px 16px 48px; }
+/* Each band opens with a 3px rule in its own color; the scorecards need the same
+   edge or the section reads as a continuation of the one above it. */
+.sc-section { padding: 32px 16px 48px; border-top: 3px solid #1a1a2e;
+               background: #eef0f4; }
     .card { max-width: 540px; margin: 0 auto; background: #fff;
              border-radius: 8px; overflow: hidden;
              box-shadow: 0 4px 20px rgba(0,0,0,.12); }
