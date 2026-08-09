@@ -31,135 +31,33 @@
     .dp { transition: fill-opacity .15s; cursor: pointer; }
     a:hover .dp { fill-opacity: 1 !important; }
 
-    /* ── Framework band ── */
-    .fw-band   { background: #16213e; border-top: 3px solid #4e8ecb; }
-    .fw-inner  { max-width: 1100px; margin: 0 auto; padding: 34px 40px 30px; }
-    .fw-eyebrow{ font-size: 10px; font-weight: 700; text-transform: uppercase;
-                  letter-spacing: 2px; color: #4e8ecb; margin-bottom: 12px; }
-    .fw-grid   { display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap; }
-    .fw-left   { flex: 1 1 420px; min-width: 300px; }
-    .fw-right  { flex: 0 1 340px; min-width: 260px; }
-    .fw-h      { font-size: 27px; font-weight: 900; color: #fff; line-height: 1.2;
-                  letter-spacing: -.3px; }
-    .fw-h a    { color: #fff; text-decoration: none; }
-    .fw-h a:hover { color: #8fbde8; }
-    .fw-p      { font-size: 13.5px; color: #aab4cc; line-height: 1.75; margin-top: 12px; }
-    .fw-p strong { color: #dde4ef; }
-    .fw-cats   { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
-    .fw-cat    { background: #1e2a47; border-left: 3px solid #4e8ecb; border-radius: 0 4px 4px 0;
-                  padding: 9px 13px; flex: 1 1 150px; }
-    .fw-cat-n  { font-size: 9px; font-weight: 800; text-transform: uppercase;
-                  letter-spacing: 1.2px; color: #6f9fd0; }
-    .fw-cat-t  { font-size: 12.5px; font-weight: 700; color: #e8edf5; margin-top: 3px; }
-    .fw-actions{ margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap; }
-    .fw-btn    { display: inline-block; background: #4e8ecb; color: #fff; text-decoration: none;
-                  font-size: 12px; font-weight: 700; padding: 9px 16px; border-radius: 4px; }
-    .fw-btn:hover { background: #6ba3d9; }
-    .fw-btn.ghost { background: transparent; border: 1px solid #3d5680; color: #8fbde8; }
-    .fw-btn.ghost:hover { background: #1e2a47; }
-    .fw-quote  { border-left: 3px solid #4e8ecb; padding: 4px 0 4px 16px; }
-    .fw-quote-t{ font-size: 17px; font-weight: 700; color: #fff; line-height: 1.5; }
-    .fw-quote-b{ font-size: 11.5px; color: #7d8aa5; margin-top: 10px; line-height: 1.6; }
+    /* ── The standard band ──
+       Inherits the old framework band's dark treatment so the page keeps its
+       rhythm: hero, standard, failures, members. One link, no essay promos. */
+    .std-band  { background: #16213e; border-top: 3px solid #4e8ecb; }
+    .std-inner { max-width: 1100px; margin: 0 auto; padding: 30px 40px 28px; }
+    /* Two questions side by side on desktop, stacked on narrow screens. Each
+       column holds one answer, so neither runs to an unreadable measure. */
+    .std-qa    { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; }
+    .std-q-h   { font-size: 19px; font-weight: 800; color: #fff; line-height: 1.25;
+                  letter-spacing: -.2px; margin-bottom: 9px; }
+    /* No clamp needed: the grid column already holds the measure to about half
+       the 1100px band. */
+    .std-p     { font-size: 14px; color: #aab4cc; line-height: 1.75; margin: 0; }
+    .std-p + .std-p { margin-top: 12px; }
+    .std-p a   { color: #8fbde8; text-decoration: none; border-bottom: 1px solid #3d5f8a; }
+    .std-p a:hover { color: #fff; border-bottom-color: #8fbde8; }
+    .std-btn   { display: inline-block; margin-top: 16px; padding: 9px 18px;
+                  background: #4e8ecb; color: #fff; font-size: 12.5px; font-weight: 700;
+                  text-decoration: none; border-radius: 3px; letter-spacing: .3px; }
+    .std-btn:hover { background: #6ba3d8; }
     @media (max-width: 760px) {
-      .fw-inner { padding: 26px 20px 24px; }
-      .fw-h { font-size: 22px; }
+      .std-inner { padding: 26px 20px 24px; }
+      .std-qa { grid-template-columns: 1fr; gap: 24px; }
+      .std-q-h { font-size: 17px; }
     }
 
-    /* ── Method strip ── */
-    .method-strip { background: #f4f5f7; border-top: 1px solid #dde2e8;
-                     border-bottom: 3px solid #dde2e8; }
-    /* No link here by design: this is a credibility note in passing, not a route. A reader
-       three inches into the page should not be sent to a 700-line white paper. */
-    .method-inner { max-width: 1100px; margin: 0 auto; padding: 10px 40px;
-                     font-size: 11px; line-height: 1.65; color: #7f8c8d; }
-    .method-inner a { color: #4e8ecb; text-decoration: none; font-weight: 600; margin-left: 14px; }
-    .method-inner a:hover { text-decoration: underline; }
-
     /* ── Scorecards section ── */
-    /* ── Tier 2: how the council decides ───────────────────────────────────────
-   Sits between the framework band (the standard) and the MGF band (the damage).
-   Deliberately quieter than both: these are patterns, not proposals or events. */
-.pat-band  { background: #f3f5f8; border-top: 1px solid #dfe4ec; }
-.pat-inner { max-width: 1100px; margin: 0 auto; padding: 26px 40px 24px; }
-.pat-eyebrow{ font-size: 10px; font-weight: 800; text-transform: uppercase;
-              letter-spacing: 2px; color: #55617a; margin-bottom: 10px; }
-.pat-h2    { font-size: 26px; font-weight: 800; color: #1a1a2e; line-height: 1.2;
-              margin-bottom: 10px; letter-spacing: -.4px; }
-.pat-lede  { font-size: 14px; line-height: 1.7; color: #4a5364; max-width: 74ch;
-              margin-bottom: 22px; }
-.pat-grid  { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-              gap: 14px; }
-.pat-card  { display: block; background: #fff; border: 1px solid #dfe4ec;
-              border-radius: 4px; padding: 15px 17px; text-decoration: none;
-              transition: box-shadow .15s ease; }
-.pat-card:hover { box-shadow: 0 3px 12px rgba(30,45,80,.12); }
-.pat-t     { font-size: 15px; font-weight: 800; color: #1a1a2e; margin-bottom: 7px; }
-.pat-card p{ font-size: 12.5px; line-height: 1.62; color: #55606e; margin-bottom: 9px; }
-/* Where a card cites an external authority rather than our own reading of the record,
-   the attribution should carry more weight than the surrounding summary. */
-.pat-card strong { color: #2b3444; font-weight: 700; }
-.pat-more  { font-size: 11.5px; font-weight: 700; color: #2c4a7c; }
-/* The Budget Lab is the interactive form of the Crayon Box argument, so it sits with the
-   habits rather than only in the framework band's sidebar. Green marks it as a tool to use
-   rather than another card to read. */
-.pat-tool  { display: flex; gap: 20px; align-items: center; flex-wrap: wrap;
-              background: #eef6f1; border: 1px solid #cfe3d8; border-left: 4px solid #2f7d5c;
-              border-radius: 0 4px 4px 0; padding: 15px 18px; margin-top: 16px; }
-.pat-tool-l { flex: 1 1 380px; min-width: 260px; }
-.pat-tool-h { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.3px;
-              color: #2f7d5c; margin-bottom: 7px; }
-.pat-tool p { font-size: 12.5px; line-height: 1.62; color: #45535f; margin-bottom: 9px; }
-.pat-tool p:last-child { margin-bottom: 0; }
-.pat-tool p strong { color: #23303c; }
-.pat-tool-h a { color: inherit; text-decoration: underline; text-underline-offset: 2px;
-              text-decoration-thickness: 1px; }
-.pat-tool-h a:hover { color: #23303c; }
-.pat-tool p a { color: #2f7d5c; font-weight: 700; text-decoration: underline;
-              text-underline-offset: 2px; }
-.pat-tool p a:hover { color: #1f5a41; }
-.pat-tool-btn { flex: 0 0 auto; display: inline-block; background: #2f7d5c; color: #fff;
-              font-size: 12px; font-weight: 700; padding: 10px 16px; border-radius: 4px;
-              text-decoration: none; white-space: nowrap; }
-.pat-tool-btn:hover { background: #266449; }
-@media (max-width: 640px) {
-  .pat-inner { padding: 20px 18px; }
-  .pat-h2 { font-size: 21px; }
-  .pat-grid { grid-template-columns: 1fr; }
-  .pat-tool { gap: 13px; }
-  .pat-tool-btn { width: 100%; text-align: center; }
-}
-
-/* ── Tier 4: what could have been asked instead ────────────────────────────
-   The site's other three tiers state a standard and then document departures
-   from it. Without this band the whole thing only ever prosecutes. Placed AFTER
-   the failures deliberately: the page's own argument is that the alternative
-   should surface before you choose between two bad options, so a reader feels
-   the cost of not having asked and then sees what asking looks like. */
-.alt-band  { background: #f2f7f4; border-top: 3px solid #2f7d5c;
-              border-bottom: 1px solid #d5e3db; }
-.alt-inner { max-width: 1100px; margin: 0 auto; padding: 30px 40px 30px; }
-.alt-eyebrow{ font-size: 10px; font-weight: 700; text-transform: uppercase;
-              letter-spacing: 2px; color: #2f7d5c; margin-bottom: 10px; }
-.alt-h2    { font-size: 26px; font-weight: 800; color: #1a1a2e; line-height: 1.2;
-              letter-spacing: -.4px; margin-bottom: 16px; }
-.alt-grid  { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: stretch; }
-.alt-btn   { display: inline-block; font-size: 11.5px; font-weight: 700; color: #2c4a7c;
-              text-decoration: none; }
-.alt-btn:hover { text-decoration: underline; text-underline-offset: 2px; }
-.alt-box   { background: #fff; border: 1px solid #d5e3db; border-radius: 4px; padding: 15px 17px;
-             display: flex; flex-direction: column; }
-.alt-box .alt-btn { margin-top: auto; align-self: flex-start; }
-.alt-box-h { font-size: 15px; font-weight: 800; color: #1a1a2e; margin-bottom: 7px; }
-.alt-box ul { margin: 0; padding-left: 16px; }
-.alt-box li { font-size: 12.5px; line-height: 1.6; color: #55606e; margin-bottom: 6px; }
-.alt-box-p { font-size: 12.5px; line-height: 1.62; color: #55606e; margin-bottom: 9px; }
-.alt-box-p strong { color: #2b3444; font-weight: 700; }
-@media (max-width: 760px) {
-  .alt-inner { padding: 22px 18px; }
-  .alt-h2 { font-size: 21px; }
-  .alt-grid { grid-template-columns: 1fr; gap: 16px; }
-}
-
 /* ── Material Governance Failures band ──────────────────────────────────────
    Deliberately the loudest thing on the page after the hero. These are the
    findings a voter should read first, so the band uses the alert accent rather
@@ -167,11 +65,11 @@
 .mgf-band  { background: #fdf2f0; border-top: 3px solid #a03434;
               border-bottom: 1px solid #e8c4bc; }
 .mgf-inner { max-width: 1100px; margin: 0 auto; padding: 34px 40px 34px; }
-.mgf-eyebrow{ font-size: 10px; font-weight: 800; text-transform: uppercase;
-              letter-spacing: 2px; color: #a03434; margin-bottom: 10px; }
+.mgf-eyebrow{ font-size: 12px; font-weight: 800; text-transform: uppercase;
+              letter-spacing: 1.6px; color: #a03434; margin-bottom: 10px; }
 .mgf-h2    { font-size: 26px; font-weight: 800; color: #1a1a2e; line-height: 1.2;
               margin-bottom: 10px; letter-spacing: -.4px; }
-.mgf-lede  { font-size: 14px; line-height: 1.7; color: #5a4340; max-width: 74ch;
+.mgf-lede  { font-size: 14px; line-height: 1.7; color: #5a4340; max-width: 92ch;
               margin-bottom: 22px; }
 .mgf-grid  { display: grid; grid-template-columns: repeat(auto-fit, minmax(232px, 1fr));
               gap: 14px; }
@@ -185,9 +83,11 @@
               margin-bottom: 7px; }
 .mgf-card p{ font-size: 12.5px; line-height: 1.62; color: #55606e; margin-bottom: 9px; }
 .mgf-more  { font-size: 11.5px; font-weight: 700; color: #a03434; }
-.mgf-foot  { font-size: 12px; line-height: 1.65; color: #7a6560; margin-top: 20px;
-              padding-top: 14px; border-top: 1px dashed #e0c0b8; max-width: 88ch; }
-.mgf-foot a{ color: #8a2f2f; font-weight: 600; }
+/* Sits inline at the end of the lede, above the cards: the reader meets the
+   test before the four cases, not after. */
+.mgf-lede-link { color: #8a2f2f; font-weight: 700; text-decoration: none;
+              white-space: nowrap; }
+.mgf-lede-link:hover { text-decoration: underline; text-underline-offset: 2px; }
 @media (max-width: 640px) {
   .mgf-inner { padding: 24px 18px; }
   .mgf-h2 { font-size: 21px; }
@@ -205,8 +105,8 @@
     /* The scorecards exist because the record can inform a vote. That argument is the
        section's headline rather than a closing aside, so it sits at the top in the dark
        band with the section label demoted to an eyebrow above it. */
-    .card-head-eyebrow { font-size: 10px; font-weight: 800; text-transform: uppercase;
-                    letter-spacing: 2px; color: #7f93c0; margin-bottom: 9px; }
+    .card-head-eyebrow { font-size: 12px; font-weight: 800; text-transform: uppercase;
+                    letter-spacing: 1.6px; color: #7f93c0; margin-bottom: 9px; }
     .card-head h2 { font-size: 14px; font-weight: 700; letter-spacing: .3px; }
     .card-head h2.card-head-lead { font-size: 19px; font-weight: 700; line-height: 1.42;
                     letter-spacing: -.2px; color: #fff; max-width: 62ch; }
@@ -289,160 +189,43 @@
 </svg></div>
   </div>
 
-  <!-- ── Method strip ── -->
-  <div class="method-strip">
-    <div class="method-inner">
-      &#9670; The factual record on this site traces to primary sources &mdash; meeting
-      transcripts, annotated agendas, City Auditor reports, adopted budgets, and Berkeley&rsquo;s
-      audited financial statements. Where judgment is applied, the standard is written down first.
-    </div>
-  </div>
 </div>
 
-<!-- ── Framework band ── -->
-<div class="fw-band">
-  <div class="fw-inner">
-    <div class="fw-eyebrow">&#9670; The standard we measure against</div>
-    <div class="fw-grid">
-      <div class="fw-left">
-        <div class="fw-h"><a href="framework.html">A Strategy for Strategy &rarr;</a></div>
-        <p class="fw-p">Berkeley makes consequential decisions about money, staff capacity, and
-        Council attention without a durable method for deciding what deserves priority. The habits
-        and failures documented below are symptoms of that larger problem.
-        <strong>This framework proposes a method:</strong> decide what government must do, what it
-        should do with partners, and what it should not own &mdash; before debating the merits of
-        any particular proposal.</p>
-        <div class="fw-cats">
-          <div class="fw-cat"><div class="fw-cat-n">Category 1</div><div class="fw-cat-t">Must ensure</div></div>
-          <div class="fw-cat"><div class="fw-cat-n">Category 2</div><div class="fw-cat-t">Only with partners</div></div>
-          <div class="fw-cat"><div class="fw-cat-n">Category 3</div><div class="fw-cat-t">Must not own</div></div>
-        </div>
-        <div class="fw-actions">
-          <a class="fw-btn" href="framework.html">Read the white paper</a>
-          <a class="fw-btn ghost" href="framework-slides.html">View the slides</a>
-        </div>
+<!-- ── What a scorecard is ──
+     Replaces two bands that both circled provenance without answering the
+     question a first-time reader actually has. Q&A form, because that is what
+     they are asking. The standard link stays: SPLIT_SPEC keeps the policy
+     argument on the Decision Project, but severing the reader's path to the
+     standard would cost more than the duplication saved. -->
+<div class="std-band">
+  <div class="std-inner">
+    <div class="std-qa">
+      <div class="std-q">
+        <h2 class="std-q-h">What is a scorecard?</h2>
+        <p class="std-p">An attempt to measure whether a councilmember prioritizes effectively,
+        asks good questions, challenges unexamined orthodoxies, partners appropriately, stewards
+        the resources entrusted to them, uses staff and Council time to best effect, and gets
+        results. It also asks whether their constituent communications are timely, open, and
+        honest. The evidence is assembled
+        from meeting transcripts, annotated agendas, council newsletters and public statements,
+        City Auditor reports, adopted budgets, and Berkeley&rsquo;s audited financial
+        statements.</p>
       </div>
-      <div class="fw-right">
-        <div class="fw-quote">
-          <div class="fw-quote-t">The goal is not less government. It is government capable of doing important things well.</div>
-          <div class="fw-quote-b">Draft white paper &middot; August 2026 &middot; Prepared for civic discussion</div>
-        </div>
+      <div class="std-q">
+        <h2 class="std-q-h">Why keep them?</h2>
+        <p class="std-p">Evaluating the record of a councilmember requires poring through
+        thousands and thousands of words and observing hours and hours of meetings. Consequential
+        decisions are sometimes made late in the night; others accrete quietly over a longer
+        period and require forensic analysis to interpret.</p>
+        <p class="std-p">As of this writing, the Council has a concerning record of consequential
+        bad decisions. The
+        <a href="https://ericdf.github.io/berkeley-decision-project/">Berkeley Decision
+        Project</a> charts a different course &mdash; an invitation to make better choices. Scorecards
+        exist to help voters evaluate how the Mayor and their district&rsquo;s member are
+        performing.</p>
       </div>
     </div>
-  </div>
-</div>
-
-<!-- ── How the council actually decides ──
-     Tier 2 of three. The framework band above states the STANDARD (normative,
-     drawn from the white paper). This strip carries empirical findings about
-     method — council-wide, no dates, no individual attribution. The MGF band
-     below is what that method produced in specific dated decisions. Keeping
-     these separate matters: collapsing them into the framework band implied the
-     findings were part of the proposal. -->
-<div class="pat-band" id="habits">
-  <div class="pat-inner">
-    <div class="pat-eyebrow">&#9670; How the council actually decides</div>
-    <h2 class="pat-h2">Eight Habits of Highly Ineffective Governance</h2>
-    <p class="pat-lede">Bad decisions happen. The more important question is whether they share a
-    method. <strong>These do.</strong> Berkeley repeatedly constrains the solution space before
-    choosing within it, bypasses or weakens the reviews meant to test proposals, makes long-term
-    financial commitments on thin information, and devotes scrutiny with little relationship to
-    consequence. These are not isolated mistakes. They are recurring decision-making habits.</p>
-    <div class="pat-grid">
-      <a class="pat-card" href="crayon-box.html">
-        <div class="pat-t">The Crayon Box</div>
-        <p>There are at least seven ways to close a deficit. Berkeley reaches for four, and every
-        one of them raises money from somebody. The three that would change what the city spends
-        stay in the box.</p>
-        <span class="pat-more">Read &rarr;</span>
-      </a>
-      <a class="pat-card" href="pier-ferry.html">
-        <div class="pat-t">Checkpoints That Don&rsquo;t Check</div>
-        <p>A condition written to stop a project unless funding appears does not stop it.
-        Reviews get routed past the body with jurisdiction. The document holding the decisive
-        numbers is never presented to the people voting the money. Years and millions later,
-        nobody has decided whether the city can &mdash; or should &mdash; proceed.</p>
-        <span class="pat-more">Read &rarr;</span>
-      </a>
-      <a class="pat-card" href="bond-alibi.html">
-        <div class="pat-t">Bonds Win Elections; Budget Discipline Does Not</div>
-        <p>A chronically underfunded service has two fixes: raise new money, or move money from
-        something else. Only one produces a highly visible political accomplishment. The other
-        leaves no trace a voter could ever be shown.</p>
-        <span class="pat-more">Read &rarr;</span>
-      </a>
-      <a class="pat-card" href="consent-drip.html">
-        <div class="pat-t">Scrutiny Follows Controversy</div>
-        <p>One calendar gets debated; the other is adopted in a single motion. Which pile an item
-        lands in has little relationship to what it commits the city to. The record suggests
-        scrutiny follows present controversy instead: contested items get discussion; accumulating
-        obligations often do not.</p>
-        <span class="pat-more">Read &rarr;</span>
-      </a>
-      <a class="pat-card" href="constrained-choice.html">
-        <div class="pat-t">Which Version, Never Whether</div>
-        <p>A survey can only measure the choices it offers. Berkeley asks residents which design,
-        which location, which of these priorities &mdash; rarely whether to proceed at all. The
-        result is a percentage that measures agreement with a prepared list, and then travels as
-        though it measured public support for the decision.</p>
-        <span class="pat-more">Read &rarr;</span>
-      </a>
-      <a class="pat-card" href="measuring-nothing.html">
-        <div class="pat-t">You Can&rsquo;t Prioritize What You Can&rsquo;t Measure</div>
-        <p>Berkeley mostly counts activity rather than outcomes. Without knowing what programs
-        accomplish for what they cost, Council cannot reliably rank them &mdash; making
-        across-the-board cuts less a priority decision than a substitute for one.</p>
-        <span class="pat-more">Read &rarr;</span>
-      </a>
-      <a class="pat-card" href="build-once.html">
-        <div class="pat-t">Build Once</div>
-        <p>A capital project gets appropriated, designed and built. What it costs to run is
-        decided later, by different people, out of a different budget. Nothing in the sequence
-        requires that number before the doors open &mdash; so the question arrives when the
-        building does, and by then the answer changes nothing.</p>
-        <span class="pat-more">Read &rarr;</span>
-      </a>
-      <a class="pat-card" href="small-sites.html">
-        <div class="pat-t">Buy Once, Pay Forever</div>
-        <p>Berkeley compares what commitments cost to start, but rarely what they cost to carry.
-        Maintenance, reserves, follow-on subsidies and revenue effects sit outside the comparison
-        that decides the purchase. The City&rsquo;s own records show those costs arriving later,
-        one appropriation at a time.</p>
-        <span class="pat-more">Read &rarr;</span>
-      </a>
-    </div>
-    <div class="pat-tool">
-      <div class="pat-tool-l">
-        <div class="pat-tool-h">&#9881; Interactive &mdash; try <a href="crayon-box.html">the Crayon Box</a> yourself</div>
-        <p><a href="crayon-box.html">The Crayon Box</a> argues that Berkeley reaches for the four
-        options that raise money and doesn&rsquo;t touch the three that would change what it spends. <strong>The Berkeley Budget Lab</strong>
-        puts you in the chair with the City Manager&rsquo;s own scenarios: protect a department,
-        accept its cut, or make it absorb more. Every service you protect pushes the savings onto
-        one you did not &mdash; which is the choice reprioritizing forces, and the reason it is
-        rarely proposed.</p>
-      </div>
-      <a class="pat-tool-btn" href="https://ericdf.github.io/budget_lab/" target="_blank" rel="noopener noreferrer">Open the Budget Lab &rarr;</a>
-    </div>
-    <div class="pat-tool">
-      <div class="pat-tool-l">
-        <div class="pat-tool-h">&#9881; Interactive &mdash; what the habits cost you</div>
-        <p>Those habits arrive as a bill. <strong>The Berkeley Tax Explorer</strong> lets you do
-        that calculation comprehensively &mdash; every <strong>2026 measure</strong> together with
-        what you already pay, modeled against your own household rather than a typical one, and
-        projected out thirty years. It runs entirely in your browser: no account, no cookies, no
-        server, nothing collected, nothing shared.</p>
-        <p>Measure FF reached voters as a <em>rate</em> &mdash; 17 cents per square foot of
-        residential improvements &mdash; next to the aggregate it would raise, about $15 million a
-        year. Both true; neither is what a household pays. <strong>The voter had to do the
-        multiplication:</strong> 17 cents is $255 a year on a 1,500-square-foot home, $340 on
-        2,000, $425 on 2,500. A rate looks small, an aggregate looks like someone else&rsquo;s
-        money, and the number in between is the one nobody prints.</p>
-        <p><strong>And nobody rolls them up.</strong> Each measure seemed modest in isolation.
-        The butcher&rsquo;s bill is the cumulative tax burden &mdash; and assembling it is left to
-        you, which is why new revenue is <a href="crayon-box.html">the easy crayon</a>.</p>
-      </div>
-      <a class="pat-tool-btn" href="https://ericdf.github.io/berkeley-tax-explorer/" target="_blank" rel="noopener noreferrer">Open the Tax Explorer &rarr;</a>
-    </div>
+    <a class="std-btn" href="https://ericdf.github.io/berkeley-decision-project/framework.html">Read the framework &rarr;</a>
   </div>
 </div>
 
@@ -453,17 +236,16 @@
      up on them matters more than any number of routine votes. -->
 <div class="mgf-band">
   <div class="mgf-inner">
-    <div class="mgf-eyebrow">&#9888; Where the habits lead &middot; Material Governance Failures</div>
-    <h2 class="mgf-h2">Four decisions the city will live with</h2>
-    <p class="mgf-lede">Recurring habits matter because they produce consequences. These four
-    cases meet this site&rsquo;s deliberately high threshold for a <strong>Material Governance
-    Failure</strong>: a high-stakes decision proceeded despite a material false premise that
+    <div class="mgf-eyebrow">&#9888; Material Governance Failures</div>
+    <h2 class="mgf-h2">Four bad decisions the city will live with</h2>
+    <p class="mgf-lede">These cases meet this site&rsquo;s deliberately high threshold for a
+    <strong>Material Governance Failure</strong>: a high-stakes decision proceeded despite a material false premise that
     Council had authoritative notice of &mdash; and a practical opportunity to correct &mdash;
-    before the final vote. Each case is documented from the primary record; other candidates that
-    failed this test were excluded.</p>
+    before the final vote.
+    <a class="mgf-lede-link" href="methodology.html">How a governance failure is defined and tested &rarr;</a></p>
 
     <div class="mgf-grid">
-      <a class="mgf-card" href="hopkins-fire-review.html">
+      <a class="mgf-card" href="https://ericdf.github.io/berkeley-decision-project/hopkins-fire-review.html">
         <div class="mgf-when">28 July 2026</div>
         <div class="mgf-t">A street design approved on a fire review that did not exist</div>
         <p>The item said the Fire Department had signed off. Four hours before the vote the Fire
@@ -471,15 +253,15 @@
         adopted it unchanged, 7&ndash;2.</p>
         <span class="mgf-more">Read the explainer &rarr;</span>
       </a>
-      <a class="mgf-card" href="oxford-site.html">
+      <a class="mgf-card" href="https://ericdf.github.io/berkeley-decision-project/oxford-site.html">
         <div class="mgf-when">15 October 2025</div>
         <div class="mgf-t">A ready-made public site sold while the city hunted for one</div>
         <p>For five years Berkeley argued about where to put shelters. For five years a 1.26-acre
-        public site with a paved yard, restrooms and a commercial kitchen sat empty. It drew zero
+        public site with a paved yard, restrooms, and a commercial kitchen sat empty. It drew zero
         sealed bids and sold to a private developer for $3 million.</p>
         <span class="mgf-more">Read the explainer &rarr;</span>
       </a>
-      <a class="mgf-card" href="public-safety-budget.html">
+      <a class="mgf-card" href="https://ericdf.github.io/berkeley-decision-project/public-safety-budget.html">
         <div class="mgf-when">23 June 2026</div>
         <div class="mgf-t">Budgeting Scare Tactics</div>
         <p>A fire station closure was made contingent on the sales tax passing. Council then found
@@ -488,7 +270,7 @@
         uncertain. Nobody moved to rank the budget by category first.</p>
         <span class="mgf-more">Read the explainer &rarr;</span>
       </a>
-      <a class="mgf-card" href="district4-siting.html">
+      <a class="mgf-card" href="https://ericdf.github.io/berkeley-decision-project/district4-siting.html">
         <div class="mgf-when">2024&ndash;2025</div>
         <div class="mgf-t">Consultation scheduled after the money was approved, twice</div>
         <p>Two transitional-housing projects sited in one district in eleven months. Both times
@@ -496,38 +278,6 @@
         the site; neither consent item was pulled.</p>
         <span class="mgf-more">Read the explainer &rarr;</span>
       </a>
-    </div>
-
-    <p class="mgf-foot">These are not the only consequential decisions Council has made. They are
-    the ones examined so far that clear the site&rsquo;s deliberately high MGF threshold. A
-    member&rsquo;s absence from a case implies nothing beyond that.
-    <a href="methodology.html">How a governance failure is defined and tested &rarr;</a></p>
-  </div>
-</div>
-
-<!-- ── Tier 4: the constructive counterpart ── -->
-<div class="alt-band">
-  <div class="alt-inner">
-    <div class="alt-eyebrow">&#9670; What better would look like</div>
-    <h2 class="alt-h2">Our framework in action</h2>
-    <div class="alt-grid">
-      <div class="alt-box">
-        <div class="alt-box-h">Expand the Choices</div>
-        <p class="alt-box-p">Hopkins did not have to be a choice between safety and everything
-        residents would lose to achieve it. Expanding the alternatives reveals ways to preserve
-        more of both&mdash;and exposes options that never made it onto the table.</p>
-        <p class="alt-box-p">The point isn&rsquo;t that an alternative must win. It has to make it
-        onto the table.</p>
-        <a class="alt-btn" href="wrong-question.html">Read the Hopkins case study &rarr;</a>
-      </div>
-      <div class="alt-box">
-        <div class="alt-box-h">Show Your Work</div>
-        <p class="alt-box-p">Before Berkeley asks voters for more money, Council should show why
-        efficiency, alternatives, and reprioritization won&rsquo;t do the job. <strong>Cities
-        Berkeley routinely looks to for best practices already build that discipline into
-        budgeting.</strong> We can learn from them here, too.</p>
-        <a class="alt-btn" href="show-your-work.html">Read the proposal &rarr;</a>
-      </div>
     </div>
   </div>
 </div>
@@ -537,15 +287,14 @@
   <div class="card">
     <div class="card-head">
       <div class="card-head-eyebrow">Member Scorecards</div>
-      <h2 class="card-head-lead">Institutions have habits. Elected officials make them.</h2>
+      <h2 class="card-head-lead">Elections have consequences.</h2>
       <p>&#9888; = active incident record &nbsp;·&nbsp; Grades reflect all scored dimensions</p>
       <p class="card-head-updated">Scores updated 6 August 2026 &nbsp;·&nbsp; covering
-      61 meetings through 28 July 2026. Grades change as meetings are added; this
-      section is revised more often than the explainers above.</p>
+      61 meetings through 28 July 2026. Grades change as meetings are added.</p>
     </div>
     <div class="block-note">
       <div class="block-note-h">&#9432; Read this as a record, not a ranking</div>
-      <p>The patterns above are council-wide, but nine elected officials create the record. The
+      <p>Nine elected officials create the record. The
       scorecards assess how each member performs against the same published
       <a href="methodology.html">methodology</a>: what they work on, how they approach
       consequential decisions, when they diverge from the Council&rsquo;s dominant habits, and
@@ -570,6 +319,13 @@
       <tbody>
       <tr>
         <td class="name">
+          <a href="scorecard_Bartlett.html">Bartlett</a> <a href="incidents/index.html#bartlett" class="inc-badge" title="Active incident record — click for details">&#9888;&nbsp;Incident record</a> <br>
+          <span class="sub">District 3</span>
+        </td>
+        <td class="grade grade-d">D+</td>
+      </tr>
+      <tr>
+        <td class="name">
           <a href="scorecard_Blackaby.html">Blackaby</a> <a href="incidents/index.html#blackaby" class="inc-badge" title="Active incident record — click for details">&#9888;&nbsp;Incident record</a> <br>
           <span class="sub">District 6</span>
         </td>
@@ -577,10 +333,24 @@
       </tr>
       <tr>
         <td class="name">
+          <a href="scorecard_Humbert.html">Humbert</a> <a href="incidents/index.html#humbert" class="inc-badge" title="Active incident record — click for details">&#9888;&nbsp;Incident record</a> <br>
+          <span class="sub">District 8</span>
+        </td>
+        <td class="grade grade-d">D</td>
+      </tr>
+      <tr>
+        <td class="name">
           <a href="scorecard_Kesarwani.html">Kesarwani</a> <a href="incidents/index.html#kesarwani" class="inc-badge" title="Active incident record — click for details">&#9888;&nbsp;Incident record</a> <br>
           <span class="sub">District 1</span>
         </td>
         <td class="grade grade-c">C−</td>
+      </tr>
+      <tr>
+        <td class="name">
+          <a href="scorecard_LunaParra.html">LunaParra</a> <a href="incidents/index.html#lunaparra" class="inc-badge" title="Active incident record — click for details">&#9888;&nbsp;Incident record</a> <br>
+          <span class="sub">District 7</span>
+        </td>
+        <td class="grade grade-d">D+</td>
       </tr>
       <tr>
         <td class="name">
@@ -595,27 +365,6 @@
           <span class="sub">District 2</span>
         </td>
         <td class="grade grade-d">D+</td>
-      </tr>
-      <tr>
-        <td class="name">
-          <a href="scorecard_LunaParra.html">LunaParra</a> <a href="incidents/index.html#lunaparra" class="inc-badge" title="Active incident record — click for details">&#9888;&nbsp;Incident record</a> <br>
-          <span class="sub">District 7</span>
-        </td>
-        <td class="grade grade-d">D+</td>
-      </tr>
-      <tr>
-        <td class="name">
-          <a href="scorecard_Bartlett.html">Bartlett</a> <a href="incidents/index.html#bartlett" class="inc-badge" title="Active incident record — click for details">&#9888;&nbsp;Incident record</a> <br>
-          <span class="sub">District 3</span>
-        </td>
-        <td class="grade grade-d">D+</td>
-      </tr>
-      <tr>
-        <td class="name">
-          <a href="scorecard_Humbert.html">Humbert</a> <a href="incidents/index.html#humbert" class="inc-badge" title="Active incident record — click for details">&#9888;&nbsp;Incident record</a> <br>
-          <span class="sub">District 8</span>
-        </td>
-        <td class="grade grade-d">D</td>
       </tr>
       <tr>
         <td class="name">
