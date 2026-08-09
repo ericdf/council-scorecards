@@ -47,14 +47,27 @@
     .std-p + .std-p { margin-top: 12px; }
     .std-p a   { color: #8fbde8; text-decoration: none; border-bottom: 1px solid #3d5f8a; }
     .std-p a:hover { color: #fff; border-bottom-color: #8fbde8; }
-    .std-btn   { display: inline-block; margin-top: 16px; padding: 9px 18px;
-                  background: #4e8ecb; color: #fff; font-size: 12.5px; font-weight: 700;
-                  text-decoration: none; border-radius: 3px; letter-spacing: .3px; }
-    .std-btn:hover { background: #6ba3d8; }
+    /* The handoff between the two projects. Reads as a panel rather than a
+       button: a left rule and a lift off the band mark it as a transition,
+       loud enough to catch the eye but quieter than the MGF band below. */
+    .handoff   { display: block; margin-top: 26px; padding: 15px 20px;
+                  background: #1b2a4a; border-left: 3px solid #4e8ecb;
+                  border-radius: 0 4px 4px 0; text-decoration: none;
+                  transition: background .15s ease; }
+    .handoff:hover { background: #223559; }
+    .handoff-a { display: block; font-size: 13px; color: #8b98b4;
+                  letter-spacing: .2px; }
+    .handoff-b { display: block; margin-top: 5px; font-size: 15.5px; color: #dce4f0;
+                  line-height: 1.45; }
+    .handoff-b strong { color: #fff; font-weight: 800; }
+    .handoff-arrow { color: #4e8ecb; font-weight: 800; }
+    .handoff:hover .handoff-arrow { color: #8fbde8; }
     @media (max-width: 760px) {
       .std-inner { padding: 26px 20px 24px; }
       .std-qa { grid-template-columns: 1fr; gap: 24px; }
       .std-q-h { font-size: 17px; }
+      .handoff { margin-top: 22px; padding: 13px 16px; }
+      .handoff-b { font-size: 14.5px; }
     }
 
     /* ── Scorecards section ── */
@@ -217,15 +230,20 @@
         thousands and thousands of words and observing hours and hours of meetings. Consequential
         decisions are sometimes made late in the night; others accrete quietly over a longer
         period and require forensic analysis to interpret.</p>
-        <p class="std-p">As of this writing, the Council has a concerning record of consequential
-        bad decisions. The
-        <a href="https://ericdf.github.io/berkeley-decision-project/">Berkeley Decision
-        Project</a> charts a different course &mdash; an invitation to make better choices. Scorecards
-        exist to help voters evaluate how the Mayor and their district&rsquo;s member are
-        performing.</p>
+        <p class="std-p">The record includes consequential decisions that should have been
+        stopped before the final vote. Scorecards exist to help voters evaluate how the Mayor
+        and their district&rsquo;s member are performing.</p>
       </div>
     </div>
-    <a class="std-btn" href="https://ericdf.github.io/berkeley-decision-project/framework.html">Read the framework &rarr;</a>
+    <!-- Handoff, not a CTA. The two sites divide the work between them —
+         this one documents the record, the other asks what better
+         decision-making looks like — so the panel states that division and
+         lets the second sentence carry the navigation. -->
+    <a class="handoff" href="https://ericdf.github.io/berkeley-decision-project/">
+      <span class="handoff-a">This site documents the record.</span>
+      <span class="handoff-b">The <strong>Berkeley Decision Project</strong> asks what better
+      decision-making would look like. <span class="handoff-arrow">&rarr;</span></span>
+    </a>
   </div>
 </div>
 
