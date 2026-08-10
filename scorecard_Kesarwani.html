@@ -66,6 +66,43 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
 .ownership .oo-declined { color: #a03434; }
 .ownership .oo-list { margin: 0 0 4px 18px; padding: 0; }
 .ownership .oo-list li { font-size: 12.5px; line-height: 1.65; margin-bottom: 6px; color: #2c3e50; }
+/* Each case keeps its name, date and link on the surface; the basis narrative —
+   already told in "Why this grade" and the governance-failure block — sits behind
+   its own toggle rather than being retold in full a third time. */
+.oo-disc { display: inline; margin-left: 6px; }
+.oo-disc > summary { display: inline; }
+.ownership .oo-basis { font-size: 12px; line-height: 1.6; color: #555;
+            margin-top: 5px; padding-left: 10px; border-left: 2px solid #dfe4ea; }
+/* Progressive disclosure. Row-level tables and the score-building arithmetic move
+   off the default reading surface but stay in the document: <details> keeps them
+   reachable by keyboard and to screen readers, and the print rule below forces
+   every one of them open so the audit trail is never silently absent from a
+   printed or exported copy. The summary reuses the section's own heading — no
+   new label is invented for the toggle. */
+.disc { margin: 0; }
+.disc > summary { cursor: pointer; list-style: none; }
+.disc > summary::-webkit-details-marker { display: none; }
+.disc > summary .disc-lbl { font-size: 10.5px; font-weight: 700; text-transform: uppercase;
+            letter-spacing: .8px; color: #2c5aa0; }
+.disc > summary .disc-hint { font-size: 10px; font-weight: 600; color: #7f8c8d;
+            margin-left: 8px; text-transform: none; letter-spacing: 0; }
+.disc > summary:hover .disc-hint { color: #2c5aa0; }
+.disc > summary:focus-visible { outline: 2px solid #2c5aa0; outline-offset: 2px; }
+.disc[open] > summary .disc-hint { color: #7f8c8d; }
+.disc-body { padding-top: 10px; }
+/* §12: the result stays on the primary surface, the workbook behind the toggle. */
+.fs-headline { font-size: 13px; font-weight: 700; color: #2c3e50; margin-bottom: 10px; }
+.fs-headline-v { font-size: 17px; font-weight: 800; margin-left: 6px; }
+/* A closed <details> hides its children regardless of their own display value, so
+   printing has to neutralise the element itself rather than just unhide the body.
+   Without this the collapsed audit material would be silently missing from print. */
+@media print {
+  .disc { display: block !important; }
+  .disc > summary { display: block !important; }
+  .disc > summary .disc-hint { display: none !important; }
+  .disc > .disc-body { display: block !important; visibility: visible !important;
+            height: auto !important; overflow: visible !important; }
+}
 .why-grade .wg-h { font-size: 11px; font-weight: 800; text-transform: uppercase;
             letter-spacing: 1px; margin: 12px 0 6px; }
 .why-grade .wg-good { color: #1e7a4d; }
@@ -74,6 +111,12 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
 .why-grade .wg-list li { font-size: 12.5px; line-height: 1.65; margin-bottom: 6px; color: #2c3e50; }
 .why-grade .wg-bottom { margin-top: 12px; padding-top: 10px; border-top: 1px solid #e4e8ed;
             font-size: 13px; font-weight: 700; color: #1a1a2e; line-height: 1.6; }
+/* The hand-authored explanation may carry paragraphs. Body weight for the prose so
+   the emphasized lead sentence still reads as the lead; the block keeps its weight
+   when it is a single unmarked sentence. */
+.why-grade .wg-bottom p { font-weight: 400; margin: 0 0 10px; }
+.why-grade .wg-bottom p:last-child { margin-bottom: 0; }
+.why-grade .wg-bottom p strong { font-weight: 800; color: #1a1a2e; }
 /* The at-a-glance line leads the section: this council votes together 91% of the
    time, so how a member got to the vote is the differentiating fact, not the vote. */
 .why-grade .wg-unanimity { font-size: 11.5px; color: #6b7280; line-height: 1.6;
@@ -93,15 +136,7 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
 .mgf-notice li { font-size: 12px; line-height: 1.6; color: #6b3530; margin-bottom: 5px; }
 .mgf-notice a { color: #8a2f2f; }
 .mgf-notice .mgf-foot { font-size: 11px; color: #8a6560; margin-bottom: 0; }
-/* The verdict leads: what did this member do on the consequential decisions. */
-.mgf-notice .mgf-verdict { font-size: 15px; line-height: 1.5; color: #1a1a2e;
-              font-weight: 600; margin: 0 0 10px; padding-bottom: 9px;
-              border-bottom: 1px solid #e8c4bc; }
-.mgf-notice .mgf-verdict strong { font-weight: 800; }
-.mgf-notice .mgf-wrote  strong { color: #8a1f1f; }
-.mgf-notice .mgf-waved  strong { color: #a05a1f; }
-.mgf-notice .mgf-fixed  strong { color: #1e7a4d; }
-.mgf-notice .mgf-absent strong { color: #6b7280; }
+.mgf-notice .mgf-foot a { color: #8a2f2f; font-weight: 700; }
 .insight { display: flex; align-items: flex-start; margin-bottom: 8px; font-size: 13px; line-height: 1.5; color: #444; }
 .insight .icon { width: 20px; flex-shrink: 0; font-weight: 700; }
 .good  .icon { color: #27ae60; }
@@ -222,8 +257,6 @@ body { flex-direction: column !important; align-items: center !important; }
        went stale, and began contradicting the generated "Why this grade" block
        and the governance-failure notices below. See grade_explainer.py. -->
 
-  <div class="mgf-notice"><div class="mgf-h">Material governance failures</div><p class="mgf-verdict mgf-wrote">On the events examined below, Kesarwani <strong>wrote it</strong>.</p><p>These are decisions with consequences the city will carry for years. How a member showed up on these matters more than any number of routine votes.</p><ul><li><strong><a href="https://ericdf.github.io/berkeley-decision-project/hopkins-fire-review.html">Hopkins Street Fire Review Representation</a></strong> — 2026-07-28. Role: originator (severity 14.0 of 14, critical).</li><li><strong><a href="https://ericdf.github.io/berkeley-decision-project/oxford-site.html">Oxford Elementary Site — A Ready-Made Public Site Sold While the City Searched for Locations</a></strong> — 2025-10-15. Role: notified nonactor (severity 8.4 of 14, major).</li><li><strong><a href="https://ericdf.github.io/berkeley-decision-project/public-safety-budget.html">FY2027-28 Budget — Fire Positions Restored, Police, Dispatch and Crisis Response Cut</a></strong> — 2026-06-23. Role: post notice ratifier (no score attributed).</li></ul><p class="mgf-foot"><strong>What this is:</strong> examples of the council's performance on recent topics of consequence to the community. It is not a complete account of everything this council has done, and a member who does not appear on one of these has not been cleared of anything — that decision simply has not been examined. A grade ceiling of C+ applies. The calculated grade (C−) is already at or below it, so the ceiling does not change what is shown. A ceiling prevents unrelated strengths from restoring a top grade after a threshold failure; the numerical score is never altered to match it. See the methodology for the qualification test and role multipliers.</p></div>
-
   <div class="section">
     <div class="section-title">Performance Pillars</div>
     
@@ -260,6 +293,10 @@ body { flex-direction: column !important; align-items: center !important; }
           <div class="pillar-pct">36%</div>
         </div>
   </div>
+
+  <div class="section why-grade"><div class="section-title">Why this grade — C−</div><p class="wg-unanimity">This council votes together: 86% of recorded votes were unanimous, and the two least-aligned members still agree 91% of the time. Comparing votes alone will not tell them apart. What follows is how this member got there.</p><div class="wg-bottom wg-lead">In the details, and lost the plot on Hopkins. She is the council's second most legislatively active member and sits in the lower half for reaching after new revenue in debate — and she authored the item that told the Council the Fire Department had signed off on a street design it had never reviewed, then let the recommendation stand after the Fire Chief said so out loud. Detail work is her strength; it did not save the one item where it mattered most.</div><div class="wg-h wg-good">What Kesarwani does well</div><ul class="wg-list"><li class="wg-i-good">Ranks second of nine on taxpayer alignment — his votes and stated positions resist new spending more than most colleagues'.</li><li class="wg-i-good">Keeps to city business: 78% of speaking time is on core municipal matters rather than symbolic or out-of-jurisdiction items.</li><li class="wg-i-good">Present for every major binding budget vote in the period.</li><li class="wg-i-good">Can formulate and advance legislation — third-most of nine on legislative skill, with 1 discretionary items authored.</li><li class="wg-i-good">Credited for acting against the council's habit when it was inconvenient: Publicly demanded City Attorney propose real position cuts and submit a written reduction plan — 'if you don't do it, we're gonna have to make…. (2 such instances are credited.)</li></ul><div class="wg-h wg-bad">What went wrong</div><ul class="wg-list"><li class="wg-i-bad"><strong>Hopkins Street Fire Review Representation</strong> — carried primary responsibility for it. Rated critical on the governance-failure scale.</li><li class="wg-i-bad"><strong>Oxford Elementary Site — A Ready-Made Public Site Sold While the City Searched for Locations</strong> — was told and did not act. Rated major on the governance-failure scale.</li><li class="wg-i-bad">Missed 6 full sessions — the job requires being in the room.</li></ul><p class="wg-gap">This is built from the public record and it is not complete. Absence of a finding here means we have not documented one, not that none exists. Corrections and additions are welcome.</p></div>
+
+  <div class="mgf-notice"><div class="mgf-h">Material governance failures</div><p>These are decisions with consequences the city will carry for years. How a member showed up on these matters more than any number of routine votes.</p><ul><li><strong><a href="https://ericdf.github.io/berkeley-decision-project/hopkins-fire-review.html">Hopkins Street Fire Review Representation</a></strong> — 2026-07-28. Role: originator (severity 14.0 of 14, critical).</li><li><strong><a href="https://ericdf.github.io/berkeley-decision-project/oxford-site.html">Oxford Elementary Site — A Ready-Made Public Site Sold While the City Searched for Locations</a></strong> — 2025-10-15. Role: notified nonactor (severity 8.4 of 14, major).</li><li><strong><a href="https://ericdf.github.io/berkeley-decision-project/public-safety-budget.html">FY2027-28 Budget — Fire Positions Restored, Police, Dispatch and Crisis Response Cut</a></strong> — 2026-06-23. Role: post notice ratifier (no score attributed).</li></ul><p class="mgf-foot"><a href="methodology.html">How a governance failure is defined and tested &rarr;</a></p></div>
 
 
   <div class="recent-inc-section">
@@ -468,6 +505,8 @@ body { flex-direction: column !important; align-items: center !important; }
       Curated list of binding fiscal votes Dec 2024–Jul 2025. Source: annotated agenda PDFs.
     </div>
     <div class="stat-grid" style="margin-bottom:12px"><div class="stat-box"><div class="stat-val" style="color:#27ae60">0/7</div><div class="stat-lbl">Binding fiscal votes<br><b>missed</b></div></div><div class="stat-box"><div class="stat-val" style="color:#e67e22">7</div><div class="stat-lbl">Endorsed status quo<br>(voted YES)</div></div></div>
+    <details class="disc"><summary><span class="disc-lbl">Major Fiscal Votes — 7 Binding Decisions<span class="disc-hint">show detail</span></span></summary>
+    <div class="disc-body">
     <table style="width:100%;border-collapse:collapse">
       <thead>
         <tr style="background:#f0f2f5">
@@ -481,6 +520,8 @@ body { flex-direction: column !important; align-items: center !important; }
       <tbody><tr><td style='padding:4px 8px 4px 0;font-size:10px;color:#777;white-space:nowrap'>2025-01-21</td><td style='font-size:10px;color:#888;white-space:nowrap'>TEFRA Bond</td><td style='font-size:10.5px;color:#2c3e50'>CMFA Bond – 2001 Ashby Ave</td><td style='font-size:10.5px;font-weight:700;text-align:right;white-space:nowrap'>$45.0M</td><td style='text-align:center;padding-left:8px'><span style='font-size:10px;font-weight:800;color:#e67e22;white-space:nowrap'>YES</span></td></tr><tr><td style='padding:4px 8px 4px 0;font-size:10px;color:#777;white-space:nowrap'>2025-05-20</td><td style='font-size:10px;color:#888;white-space:nowrap'>Revenue Bond</td><td style='font-size:10.5px;color:#2c3e50'>Lease Revenue Notes – Fire HQ</td><td style='font-size:10.5px;font-weight:700;text-align:right;white-space:nowrap'>$11.0M</td><td style='text-align:center;padding-left:8px'><span style='font-size:10px;font-weight:800;color:#e67e22;white-space:nowrap'>YES</span></td></tr><tr><td style='padding:4px 8px 4px 0;font-size:10px;color:#777;white-space:nowrap'>2025-05-20</td><td style='font-size:10px;color:#888;white-space:nowrap'>GO Bond</td><td style='font-size:10.5px;color:#2c3e50'>$35M GO Bonds – Measure O Housing</td><td style='font-size:10.5px;font-weight:700;text-align:right;white-space:nowrap'>$35.0M</td><td style='text-align:center;padding-left:8px'><span style='font-size:10px;font-weight:800;color:#e67e22;white-space:nowrap'>YES</span></td></tr><tr><td style='padding:4px 8px 4px 0;font-size:10px;color:#777;white-space:nowrap'>2025-05-20</td><td style='font-size:10px;color:#888;white-space:nowrap'>Budget Amendment</td><td style='font-size:10.5px;color:#2c3e50'>FY2025 Budget Amendment 1st Reading</td><td style='font-size:10.5px;font-weight:700;text-align:right;white-space:nowrap'>$85.7M</td><td style='text-align:center;padding-left:8px'><span style='font-size:10px;font-weight:800;color:#e67e22;white-space:nowrap'>YES</span></td></tr><tr><td style='padding:4px 8px 4px 0;font-size:10px;color:#777;white-space:nowrap'>2025-06-03</td><td style='font-size:10px;color:#888;white-space:nowrap'>Budget Amendment</td><td style='font-size:10.5px;color:#2c3e50'>FY2025 Budget Amendment 2nd Reading</td><td style='font-size:10.5px;font-weight:700;text-align:right;white-space:nowrap'>$144.0M</td><td style='text-align:center;padding-left:8px'><span style='font-size:10px;font-weight:800;color:#e67e22;white-space:nowrap'>YES</span></td></tr><tr><td style='padding:4px 8px 4px 0;font-size:10px;color:#777;white-space:nowrap'>2025-06-24</td><td style='font-size:10px;color:#888;white-space:nowrap'>Budget Adoption</td><td style='font-size:10.5px;color:#2c3e50'>FY2026 Budget Adoption 1st Reading</td><td style='font-size:10.5px;font-weight:700;text-align:right;white-space:nowrap'>$1.45B</td><td style='text-align:center;padding-left:8px'><span style='font-size:10px;font-weight:800;color:#e67e22;white-space:nowrap'>YES</span></td></tr><tr><td style='padding:4px 8px 4px 0;font-size:10px;color:#777;white-space:nowrap'>2025-07-08</td><td style='font-size:10px;color:#888;white-space:nowrap'>Budget Adoption</td><td style='font-size:10.5px;color:#2c3e50'>FY2026 Budget Adoption 2nd Reading</td><td style='font-size:10.5px;font-weight:700;text-align:right;white-space:nowrap'>$1.52B</td><td style='text-align:center;padding-left:8px'><span style='font-size:10px;font-weight:800;color:#e67e22;white-space:nowrap'>YES</span></td></tr></tbody>
     </table>
     <div style="margin-top:8px;font-size:10px;color:#7f8c8d;font-style:italic">YES = endorsed the spending authorization (budget adoptions = chose not to cut or reprioritize). ABSENT = missed a binding vote — items are only on the agenda because the Mayor expects passage.</div>
+    </div>
+    </details>
   </div>
 
   <div class="section">
@@ -625,6 +666,9 @@ body { flex-direction: column !important; align-items: center !important; }
   
   <div class="section">
     <div class="section-title">Fiscal Stewardship Alignment — Score Breakdown<span class="evid-basis evid-text" data-tip="Combines official record data (votes, authorship) with text analysis (rhetoric signals). See METHODOLOGY.md for component weights.">Text analysis + official record</span></div>
+    <div class="fs-headline">Final score <span class="fs-headline-v">+0.475</span></div>
+    <details class="disc"><summary><span class="disc-lbl">Fiscal Stewardship Alignment — Score Breakdown<span class="disc-hint">show calculation</span></span></summary>
+    <div class="disc-body">
     <div style="font-size:10px;color:#7f8c8d;margin-bottom:12px;line-height:1.6">
       How the Fiscal Stewardship score is built. Each row below adds or subtracts from a
       running total. The result is kept within a 0&ndash;100% range because the score is a
@@ -669,48 +713,11 @@ body { flex-direction: column !important; align-items: center !important; }
       pension liability, investment non-compliance, reserve policy).
       This is a diagnostic — not yet incorporated into the composite score.
     </div>
+    </div>
+    </details>
   </div>
 
-  <div class="section ownership"><div class="section-title">Ownership of Outcome — 14%</div><p class="oo-lede">Whether this member behaved as the decision-maker on consequential matters where they had standing to act. Losing an argument counts as ownership; declining to have it does not.</p><div class="oo-h oo-declined">Declined to engage</div><ul class="oo-list"><li><strong><a href="https://ericdf.github.io/berkeley-decision-project/hopkins-fire-review.html">Hopkins alignment fixed before the fire review existed</a></strong> — 2026-07-28. Authored the item and led it through the meeting; after the Chief stated the configuration had not been reviewed, did not amend the recommendation, qualify the p.7 claim, or seek a continuance.</li><li><strong><a href="https://ericdf.github.io/berkeley-decision-project/oxford-site.html">Oxford Elementary site sold while the City sought land for shelters</a></strong> — 2025-10-15. Present in open session 2025-03-18 when the site's availability and suitability were raised in public comment. Seven months remained before the auction closed. No item, referral, staff direction or bid followed from any member.</li><li><strong><a href="https://ericdf.github.io/berkeley-decision-project/public-safety-budget.html">Citygate police staffing study — 60% expected attrition, received without action</a></strong> — 2025-09-09. Present; no engagement with the study on the record.</li><li><strong><a href="https://ericdf.github.io/berkeley-decision-project/bond-alibi.html">Rocky Road streets audit — received and filed five years after issue</a></strong> — 2025-10-28. Present. The status report on a 2020 City Auditor finding of structural street underfunding was received and filed; the annotated agenda records the action in full as 'Received and filed.' No motion on paving-policy reform, the recurring General Fund allocation, or the district-split practice.</li></ul></div>
-
-  <div class="section why-grade"><div class="section-title">Why this grade — C−</div><p class="wg-unanimity">This council votes together: 86% of recorded votes were unanimous, and the two least-aligned members still agree 91% of the time. Comparing votes alone will not tell them apart. What follows is how this member got there.</p><div class="wg-bottom wg-lead">In the details, and lost the plot on Hopkins. She is the council's second most legislatively active member and sits in the lower half for reaching after new revenue in debate — and she authored the item that told the Council the Fire Department had signed off on a street design it had never reviewed, then let the recommendation stand after the Fire Chief said so out loud. Detail work is her strength; it did not save the one item where it mattered most.</div><div class="wg-h wg-good">What Kesarwani does well</div><ul class="wg-list"><li class="wg-i-good">Ranks second of nine on taxpayer alignment — his votes and stated positions resist new spending more than most colleagues'.</li><li class="wg-i-good">Keeps to city business: 78% of speaking time is on core municipal matters rather than symbolic or out-of-jurisdiction items.</li><li class="wg-i-good">Present for every major binding budget vote in the period.</li><li class="wg-i-good">Can formulate and advance legislation — third-most of nine on legislative skill, with 1 discretionary items authored.</li><li class="wg-i-good">Credited for acting against the council's habit when it was inconvenient: Publicly demanded City Attorney propose real position cuts and submit a written reduction plan — 'if you don't do it, we're gonna have to make…. (2 such instances are credited.)</li></ul><div class="wg-h wg-bad">What went wrong</div><ul class="wg-list"><li class="wg-i-bad"><strong>Hopkins Street Fire Review Representation</strong> — carried primary responsibility for it. Rated critical on the governance-failure scale.</li><li class="wg-i-bad"><strong>Oxford Elementary Site — A Ready-Made Public Site Sold While the City Searched for Locations</strong> — was told and did not act. Rated major on the governance-failure scale.</li><li class="wg-i-bad">Missed 6 full sessions — the job requires being in the room.</li></ul><p class="wg-gap">This is built from the public record and it is not complete. Absence of a finding here means we have not documented one, not that none exists. Corrections and additions are welcome.</p></div>
-
-  <div class="section">
-    <div class="section-title">Key Findings</div>
-    <div class="insight good"><span class="icon">✓</span><span>#2 in overall rating — among the strongest taxpayer alignment measured here</span></div><div class="insight good"><span class="icon">✓</span><span>Raises cost and funding questions more often than most — fiscal-concern language appears 17 times in the transcript record</span></div><div class="insight good"><span class="icon">✓</span><span>5 detected instances of position-change language — a signal of openness to argument, not a verified reversal</span></div><div class="insight bad"><span class="icon">✗</span><span>Voted yes on every one of 54 tracked spending roll-calls while invoking fiscal-concern language 17 times in the transcript record — the concern is in the speech, not the vote</span></div><div class="insight bad"><span class="icon">✗</span><span>Fully absent from 6 of 74 sessions — never arrived, no vote cast</span></div><div class="insight warn"><span class="icon">△</span><span>Voted NO 6 times across 304 tracked items</span></div>
-    <p style='font-size:12px;color:#7f8c8d;margin-top:10px'>Recent focus trend: <b>improving</b> <span style="color:#27ae60">▲</span> (meeting focus +13.7% vs all-time avg)</p>
-  </div>
-
-  
-  <div class="section">
-    <div class="section-title">Opportunities for Improvement</div>
-    <div style="font-size:10px;color:#7f8c8d;margin-bottom:12px;font-style:italic">
-      Highest-leverage actions this member could take to improve their Fiscal Stewardship score,
-      ordered by estimated score impact. Based on the same methodology as the scorecard.
-    </div>
-    
-    <div class="opp-item">
-      <div class="opp-num">1</div>
-      <div class="opp-body">
-        <div class="opp-action">Engage on the record with Financial Condition Audit findings</div>
-        <div class="opp-rationale">Audit alignment score 0.30/1.0. The April 2026 audit documented a $32–33M structural deficit, 66% pension funded ratio, and $1.8B capital backlog. On-record statements supporting a structural balance policy, Section 115 Trust contributions, or investment policy compliance would each raise this sub-score and recover an estimated 0.03 composite points.</div>
-      </div>
-    </div>
-    <div class="opp-item">
-      <div class="opp-num">2</div>
-      <div class="opp-body">
-        <div class="opp-action">Pair tax and bond advocacy with explicit cut-seeking questions</div>
-        <div class="opp-rationale">New revenue preference rate is 0.4/10k words. Revenue advocacy without companion cut analysis generates a penalty of 0.014. Asking 'what can we cut?' or 'what is the reprioritization alternative?' alongside bond proposals would reduce or eliminate this penalty.</div>
-      </div>
-    </div>
-    <div class="opp-item">
-      <div class="opp-num">3</div>
-      <div class="opp-body">
-        <div class="opp-action">Redirect authorship from out-of-scope items (0 class-9 items)</div>
-        <div class="opp-rationale">Out-of-scope authorship generates a scope penalty of 0.07. Class-9 items are things the city arguably should not be doing — county service duplication, out-of-jurisdiction advocacy, governance structures that insulate dysfunction. Focusing authorship on P1/P2 items would recover ~0.01 points.</div>
-      </div>
-    </div>
-  </div>
+  <div class="section ownership"><div class="section-title">Ownership of Outcome — 14%</div><p class="oo-lede">Whether this member behaved as the decision-maker on consequential matters where they had standing to act. Losing an argument counts as ownership; declining to have it does not.</p><div class="oo-h oo-declined">Declined to engage</div><ul class="oo-list"><li><strong><a href="https://ericdf.github.io/berkeley-decision-project/hopkins-fire-review.html">Hopkins alignment fixed before the fire review existed</a></strong> — 2026-07-28.<details class="disc oo-disc"><summary><span class="disc-hint">show detail</span></summary><div class="disc-body oo-basis">Authored the item and led it through the meeting; after the Chief stated the configuration had not been reviewed, did not amend the recommendation, qualify the p.7 claim, or seek a continuance.</div></details></li><li><strong><a href="https://ericdf.github.io/berkeley-decision-project/oxford-site.html">Oxford Elementary site sold while the City sought land for shelters</a></strong> — 2025-10-15.<details class="disc oo-disc"><summary><span class="disc-hint">show detail</span></summary><div class="disc-body oo-basis">Present in open session 2025-03-18 when the site's availability and suitability were raised in public comment. Seven months remained before the auction closed. No item, referral, staff direction or bid followed from any member.</div></details></li><li><strong><a href="https://ericdf.github.io/berkeley-decision-project/public-safety-budget.html">Citygate police staffing study — 60% expected attrition, received without action</a></strong> — 2025-09-09.<details class="disc oo-disc"><summary><span class="disc-hint">show detail</span></summary><div class="disc-body oo-basis">Present; no engagement with the study on the record.</div></details></li><li><strong><a href="https://ericdf.github.io/berkeley-decision-project/bond-alibi.html">Rocky Road streets audit — received and filed five years after issue</a></strong> — 2025-10-28.<details class="disc oo-disc"><summary><span class="disc-hint">show detail</span></summary><div class="disc-body oo-basis">Present. The status report on a 2020 City Auditor finding of structural street underfunding was received and filed; the annotated agenda records the action in full as 'Received and filed.' No motion on paving-policy reform, the recurring General Fund allocation, or the district-split practice.</div></details></li></ul></div>
 
   <div class="evid-footnote">
     <span class="evid-basis evid-official" data-tip="Drawn from annotated agenda PDFs and official city records. Not subject to interpretation — these are the facts as recorded." style="vertical-align:baseline">Official record</span>
@@ -775,5 +782,21 @@ body { flex-direction: column !important; align-items: center !important; }
     </div>
   </div>
 </div>
+<!-- Print handling only. Collapsed audit detail must not be silently absent from a
+     printed or exported copy, and CSS cannot reliably open a closed <details>. This
+     opens them for printing and restores the screen state afterward. It does nothing
+     else and adds no interface. -->
+<script>
+addEventListener('beforeprint',function(){
+  document.querySelectorAll('details.disc').forEach(function(d){
+    if(!d.open){d.dataset.wasClosed='1';d.open=true;}
+  });
+});
+addEventListener('afterprint',function(){
+  document.querySelectorAll('details.disc[data-was-closed="1"]').forEach(function(d){
+    d.open=false;delete d.dataset.wasClosed;
+  });
+});
+</script>
 </body>
 </html>
