@@ -36,14 +36,13 @@
        rhythm: hero, standard, failures, members. One link, no essay promos. */
     .std-band  { background: #16213e; border-top: 3px solid #4e8ecb; }
     .std-inner { max-width: 1100px; margin: 0 auto; padding: 30px 40px 28px; }
-    /* Two questions side by side on desktop, stacked on narrow screens. Each
-       column holds one answer, so neither runs to an unreadable measure. */
-    .std-qa    { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; }
+    /* One question now, so the band no longer splits into columns. The measure
+       is clamped instead, which the second column used to do implicitly. */
+    .std-qa    { display: grid; grid-template-columns: 1fr; gap: 34px; }
     .std-q-h   { font-size: 19px; font-weight: 800; color: #fff; line-height: 1.25;
                   letter-spacing: -.2px; margin-bottom: 9px; }
-    /* No clamp needed: the grid column already holds the measure to about half
-       the 1100px band. */
-    .std-p     { font-size: 14px; color: #aab4cc; line-height: 1.75; margin: 0; }
+    .std-p     { font-size: 14px; color: #aab4cc; line-height: 1.75; margin: 0;
+                  max-width: 58rem; }
     .std-p + .std-p { margin-top: 12px; }
     .std-p a   { color: #8fbde8; text-decoration: none; border-bottom: 1px solid #3d5f8a; }
     .std-p a:hover { color: #fff; border-bottom-color: #8fbde8; }
@@ -55,9 +54,9 @@
                   border-radius: 0 4px 4px 0; text-decoration: none;
                   transition: background .15s ease; }
     .handoff:hover { background: #223559; }
-    .handoff-a { display: block; font-size: 13px; color: #8b98b4;
-                  letter-spacing: .2px; }
-    .handoff-b { display: block; margin-top: 5px; font-size: 15.5px; color: #dce4f0;
+    /* The panel carries a single sentence now, so .handoff-b no longer needs to
+       clear a line above it. */
+    .handoff-b { display: block; font-size: 15.5px; color: #dce4f0;
                   line-height: 1.45; }
     .handoff-b strong { color: #fff; font-weight: 800; }
     .handoff-arrow { color: #4e8ecb; font-weight: 800; }
@@ -128,17 +127,13 @@
        explainers. Say so here so a reader knows which parts of the page move. */
     .card-head-updated { margin-top: 9px !important; padding-top: 9px;
                     border-top: 1px solid #2f3d5c; color: #7f93c0 !important; }
+    /* The only interpretive guidance left above the grades, so it reads at body
+       size rather than the 10px used for the metadata lines around it. */
+    .card-head-note { font-size: 12.5px !important; color: #aab4cc !important;
+                    max-width: 62ch; }
     @media (max-width: 640px) {
       .card-head h2.card-head-lead { font-size: 16px; }
     }
-    .block-note   { background: #f4f6f9; border-bottom: 1px solid #e2e7ee;
-                     padding: 14px 24px 15px; }
-    .block-note-h { font-size: 10px; font-weight: 700; text-transform: uppercase;
-                     letter-spacing: 1.1px; color: #4e6b8f; margin-bottom: 7px; }
-    .block-note p { font-size: 11.5px; line-height: 1.65; color: #4a5568; margin-bottom: 7px; }
-    .block-note p:last-child { margin-bottom: 0; }
-    .block-note strong { color: #1a1a2e; }
-    .block-note a { color: #2c5aa0; }
     table { width: 100%; border-collapse: collapse; }
     thead tr { background: #f0f2f5; }
     th { font-size: 10px; text-transform: uppercase; letter-spacing: .8px;
@@ -205,44 +200,27 @@
 </div>
 
 <!-- ── What a scorecard is ──
-     Replaces two bands that both circled provenance without answering the
-     question a first-time reader actually has. Q&A form, because that is what
-     they are asking. The standard link stays: SPLIT_SPEC keeps the policy
-     argument on the Decision Project, but severing the reader's path to the
-     standard would cost more than the duplication saved. -->
+     One question, answered, then straight to the findings. The two-band Q&A that
+     stood here explained the project before showing any of it; a first-time
+     reader does not need the methodological case made before the first finding.
+     The handoff stays: SPLIT_SPEC keeps the policy argument on the Decision
+     Project, and severing the reader's path to it would cost more than the
+     duplication saved. -->
 <div class="std-band">
   <div class="std-inner">
     <div class="std-qa">
       <div class="std-q">
-        <h2 class="std-q-h">What is a scorecard?</h2>
-        <p class="std-p">An attempt to measure whether a councilmember prioritizes effectively,
-        asks good questions, challenges unexamined orthodoxies, partners appropriately, stewards
-        the resources entrusted to them, uses staff and Council time to best effect, and gets
-        results. It also asks whether their constituent communications are timely, open, and
-        honest. The evidence is assembled
-        from meeting transcripts, annotated agendas, council newsletters and public statements,
-        City Auditor reports, adopted budgets, and Berkeley&rsquo;s audited financial
-        statements.</p>
-      </div>
-      <div class="std-q">
-        <h2 class="std-q-h">Why keep them?</h2>
-        <p class="std-p">Evaluating the record of a councilmember requires poring through
-        thousands and thousands of words and observing hours and hours of meetings. Consequential
-        decisions are sometimes made late in the night; others accrete quietly over a longer
-        period and require forensic analysis to interpret.</p>
-        <p class="std-p">The record includes consequential decisions that should have been
-        stopped before the final vote. Scorecards exist to help voters evaluate how the Mayor
-        and their district&rsquo;s member are performing.</p>
+        <h2 class="std-q-h">What are we measuring?</h2>
+        <p class="std-p">Whether councilmembers prioritize effectively, ask good questions,
+        challenge unsupported assumptions, steward public resources, and get results.</p>
+        <p class="std-p">The record comes from meeting transcripts, agendas, public statements,
+        audits, budgets and audited financial statements.</p>
       </div>
     </div>
-    <!-- Handoff, not a CTA. The two sites divide the work between them —
-         this one documents the record, the other asks what better
-         decision-making looks like — so the panel states that division and
-         lets the second sentence carry the navigation. -->
     <a class="handoff" href="https://ericdf.github.io/berkeley-decision-project/">
-      <span class="handoff-a">This site documents the record.</span>
-      <span class="handoff-b">The <strong>Berkeley Decision Project</strong> asks what better
-      decision-making would look like. <span class="handoff-arrow">&rarr;</span></span>
+      <span class="handoff-b">The <strong>Berkeley Decision Project</strong> asks how the City
+      could make better decisions. These scorecards ask how its elected officials actually
+      perform. <span class="handoff-arrow">&rarr;</span></span>
     </a>
   </div>
 </div>
@@ -256,45 +234,40 @@
   <div class="mgf-inner">
     <div class="mgf-eyebrow">&#9888; Material Governance Failures</div>
     <h2 class="mgf-h2">Four bad decisions the city will live with</h2>
-    <p class="mgf-lede">These cases meet this site&rsquo;s deliberately high threshold for a
-    <strong>Material Governance Failure</strong>: a high-stakes decision proceeded despite a material false premise that
-    Council had authoritative notice of &mdash; and a practical opportunity to correct &mdash;
-    before the final vote.
+    <p class="mgf-lede">These aren&rsquo;t ordinary policy disagreements. In each case, Council had
+    authoritative notice of a material problem before the final decision &mdash; and an
+    opportunity to correct it.
     <a class="mgf-lede-link" href="methodology.html">How a governance failure is defined and tested &rarr;</a></p>
 
     <div class="mgf-grid">
       <a class="mgf-card" href="https://ericdf.github.io/berkeley-decision-project/hopkins-fire-review.html">
         <div class="mgf-when">28 July 2026</div>
         <div class="mgf-t">A street design approved on a fire review that did not exist</div>
-        <p>The item said the Fire Department had signed off. Four hours before the vote the Fire
-        Chief said on the record that his department had never reviewed the design. The Council
-        adopted it unchanged, 7&ndash;2.</p>
+        <p>Four hours before the vote, the Fire Chief said his department had never reviewed the
+        design. Council adopted it unchanged, 7&ndash;2.</p>
         <span class="mgf-more">Read the explainer &rarr;</span>
       </a>
       <a class="mgf-card" href="https://ericdf.github.io/berkeley-decision-project/oxford-site.html">
         <div class="mgf-when">15 October 2025</div>
         <div class="mgf-t">A ready-made public site sold while the city hunted for one</div>
-        <p>For five years Berkeley argued about where to put shelters. For five years a 1.26-acre
-        public site with a paved yard, restrooms, and a commercial kitchen sat empty. State law
-        gave the City first claim on it. The City passed, and it sold to a private developer for
+        <p>A 1.26-acre public site sat empty for five years while Berkeley struggled to site
+        homeless services. It drew no sealed bids and sold to a private developer for
         $3 million.</p>
         <span class="mgf-more">Read the explainer &rarr;</span>
       </a>
       <a class="mgf-card" href="https://ericdf.github.io/berkeley-decision-project/public-safety-budget.html">
         <div class="mgf-when">23 June 2026</div>
         <div class="mgf-t">Budgeting Scare Tactics</div>
-        <p>A fire station closure was made contingent on the sales tax passing. Council then found
-        $200,000 to reverse that closure &mdash; and in the same motion let 39 police and dispatch
-        positions go, plus the mobile crisis team, on a county backstop its own report called
-        uncertain. Nobody moved to rank the budget by category first.</p>
+        <p>A fire-station closure was tied to passage of the sales tax. Council later found
+        $200,000 to reverse it while cutting 39 police and dispatch positions and the mobile
+        crisis team.</p>
         <span class="mgf-more">Read the explainer &rarr;</span>
       </a>
       <a class="mgf-card" href="https://ericdf.github.io/berkeley-decision-project/district4-siting.html">
         <div class="mgf-when">2024&ndash;2025</div>
         <div class="mgf-t">Consultation scheduled after the money was approved, twice</div>
-        <p>Two transitional-housing projects sited in one district in eleven months. Both times
-        the neighborhood was told after the funds were committed. Neither staff report named
-        the site; neither consent item was pulled.</p>
+        <p>Two transitional-housing projects were sited in one district in eleven months. Both
+        times, neighborhood consultation came after the funding commitment.</p>
         <span class="mgf-more">Read the explainer &rarr;</span>
       </a>
     </div>
@@ -308,28 +281,10 @@
       <div class="card-head-eyebrow">Member Scorecards</div>
       <h2 class="card-head-lead">Elections have consequences.</h2>
       <p>&#9888; = active incident record &nbsp;·&nbsp; Grades reflect all scored dimensions</p>
-      <p class="card-head-updated">Scores updated 6 August 2026 &nbsp;·&nbsp; covering
-      61 meetings through 28 July 2026. Grades change as meetings are added.</p>
-    </div>
-    <div class="block-note">
-      <div class="block-note-h">&#9432; Read this as a record, not a ranking</div>
-      <p>Nine elected officials create the record. The
-      scorecards assess how each member performs against the same published
-      <a href="methodology.html">methodology</a>: what they work on, how they approach
-      consequential decisions, when they diverge from the Council&rsquo;s dominant habits, and
-      whether that divergence improves or worsens the decision.</p>
-      <p>The scores cluster partly because the votes cluster: <strong>86.3% of
-      307 linked votes were unanimous</strong>, and Council voted as a block on
-      <strong>92.5% of 93 vote events</strong>. But unanimity does not make
-      individual conduct invisible. Members can ask for alternatives, challenge unsupported
-      premises, pull consequential consent items, demand operating costs, define exit criteria,
-      and hold a stated position when the room turns.</p>
-      <p><strong>An A is available.</strong> Grades are not curved and no member&rsquo;s score
-      depends on another&rsquo;s. A member does not have to win a vote to demonstrate better
-      governance. The scorecards measure whether they try.</p>
-      <p>The grades show where members diverge from the block, for better or worse. The
-      <a href="incidents/index.html">incident and governance-failure records</a> make the more
-      specific claims and carry the citations.</p>
+      <p class="card-head-updated">Scores updated 6 August 2026 &nbsp;·&nbsp; 61
+      meetings through 28 July 2026</p>
+      <p class="card-head-note">Grades measure each member against the same published
+      methodology. They are not curved and do not depend on how other members perform.</p>
     </div>
     <table>
       <thead>
@@ -403,10 +358,8 @@
         Mayor — Evaluated Separately
       </div>
       <div style="font-size: 12px; color: #555; line-height: 1.6; margin-bottom: 12px;">
-        The mayor sets the agenda, chairs meetings, and holds unique powers unavailable to
-        district council members. She is graded on <em>Mayoral Accountability</em> —
-        agenda curation, constituent communications, meeting management, and accountability
-        gap — not the same Voter Alignment metric used for district members.
+        The mayor has powers and responsibilities district members do not, so she is graded on a
+        separate Mayoral Accountability measure.
       </div>
       <table style="width:100%;border-collapse:collapse">
         <tbody>
