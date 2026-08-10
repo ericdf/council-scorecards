@@ -329,7 +329,7 @@ strong { color: #1a1a2e; }
 <td>Reduces scope penalty in Fiscal Stewardship Alignment</td>
 </tr>
 <tr>
-<td><strong>Pair revenue advocacy with cut-seeking</strong></td>
+<td><strong>Pair revenue advocacy with reprioritization analysis</strong></td>
 <td>new_revenue_preference_rate ≥ 0.3</td>
 <td>Reduces new revenue preference penalty</td>
 </tr>
@@ -521,7 +521,7 @@ strong { color: #1a1a2e; }
 <li>Votes no on spending (rare and high-signal)</li>
 <li>Fiscal understatement: council-authored items claiming "None" or "Staff time" fiscal impact when the scope clearly incurs real obligations — new permit regimes, bans, citywide policy frameworks. Detected via <code>check_fiscal_understatement()</code> in <code>agenda_scraper.py</code>; scored −0.015/item authored, −0.007/item cosponsored, capped at −0.04. The failure may reflect naivete (not understanding what the proposal will require), weak effort (not thinking it through), or disregard for transparency — the penalty applies regardless of motive because the result is the same: the council and public lack a realistic cost picture when the item is heard.</li>
 <li>Special interest alignment score (inverse: deeper alignment with a spending constituency's status quo — e.g. homeless services apparatus, cycle track advocacy — without demanding accountability for outcomes = less taxpayer-aligned; Homeless Services Status-Quo Alignment (HSA) is the primary implemented instance)</li>
-<li><strong>New revenue preference vs. fiscal concern:</strong> These are not the same signal. Asking "what can we cut?" is fiscal work. Asking "should we put a bond on the ballot?" is identifying a revenue path without doing the reprioritization work first. The two are tracked separately. New revenue preference without companion cut analysis scores negative (up to −0.10). Partial credit applies if the same member also uses fiscal probing language (cut_credit).</li>
+<li><strong>New revenue preference vs. fiscal concern:</strong> These are not the same signal. Asking what the city could spend differently — reprioritize, deliver more efficiently, or have someone else deliver — is fiscal work. Asking "should we put a bond on the ballot?" is identifying a revenue path without doing the reprioritization work first. The two are tracked separately. New revenue preference without companion reprioritization analysis scores negative (up to −0.10). Partial credit applies if the same member also uses fiscal probing language (cut_credit). The signal is about the range of options considered before choosing new revenue, not about cutting: the detection keywords already credit efficiency and alternative-delivery questions, and <a href="https://ericdf.github.io/berkeley-decision-project/crayon-box.html">The Crayon Box</a> names three unused options of which only one resembles a cut.</li>
 </ul>
 <hr />
 <h3>Tier 3 — Informed Voter</h3>
