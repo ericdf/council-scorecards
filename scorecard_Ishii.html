@@ -82,6 +82,14 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
    every one of them open so the audit trail is never silently absent from a
    printed or exported copy. The summary reuses the section's own heading — no
    new label is invented for the toggle. */
+/* The plain-language finding that leads each record section. The stat grid behind
+   it is one click away; this sentence is what a reader is meant to take. */
+.sec-lead { font-size: 13.5px; line-height: 1.6; color: #2c3e50; font-weight: 600;
+            margin: 0 0 10px; max-width: 62ch; }
+/* A retired measure kept on the page for transparency, marked so it cannot be
+   mistaken for a scoring input. */
+.sec-note { font-size: 11px; line-height: 1.6; color: #7f8c8d; margin: 6px 0 10px;
+            padding-left: 10px; border-left: 2px solid #dfe4ea; max-width: 62ch; }
 .disc { margin: 0; }
 .disc > summary { cursor: pointer; list-style: none; }
 .disc > summary::-webkit-details-marker { display: none; }
@@ -317,7 +325,7 @@ body { flex-direction: column !important; align-items: center !important; }
 
   <div class="section why-grade"><div class="section-title">Why this grade — D−</div><div class="wg-bottom wg-lead">Presides, and does not decide. She reaches for new revenue in debate more than any other member and sits seventh of nine on taxpayer alignment. As Mayor she chaired the session where the Fire Chief corrected the record on Hopkins, co-sponsored the item, and did not act on the correction. Her role gives her more agenda-setting power than anyone; the record shows her using it to move items rather than to test them.</div></div>
 
-  <div class="mgf-notice"><div class="mgf-h">Material governance failures</div><p>These are decisions with consequences the city will carry for years. How a member showed up on these matters more than any number of routine votes.</p><ul><li><strong><a href="https://ericdf.github.io/berkeley-decision-project/hopkins-fire-review.html">Hopkins Street Fire Review Representation</a></strong> — 2026-07-28. Role: co sponsor (severity 11.2 of 14, major).</li><li><strong><a href="https://ericdf.github.io/berkeley-decision-project/oxford-site.html">Oxford Elementary Site — A Ready-Made Public Site Sold While the City Searched for Locations</a></strong> — 2025-10-15. Role: notified nonactor (severity 8.4 of 14, major).</li><li><strong><a href="https://ericdf.github.io/berkeley-decision-project/public-safety-budget.html">FY2027-28 Budget — Fire Positions Restored, Police, Dispatch and Crisis Response Cut</a></strong> — 2026-06-23. Role: co sponsor (severity 10.4 of 14, major).</li></ul><p class="mgf-foot"><a href="methodology.html">How a governance failure is defined and tested &rarr;</a></p></div>
+  <div class="mgf-notice"><div class="mgf-h">Material governance failures</div><p>These are decisions with consequences the city will carry for years. How a member showed up on these matters more than any number of routine votes.</p><ul><li><strong><a href="https://ericdf.github.io/berkeley-decision-project/hopkins-fire-review.html">Hopkins Street Fire Review Representation</a></strong> — 2026-07-28. Role: co sponsor (severity 11.2 of 14, major).</li><li><strong><a href="https://ericdf.github.io/berkeley-decision-project/oxford-site.html">Oxford Elementary Site — A Ready-Made Public Site Sold While the City Searched for Locations</a></strong> — 2025-10-15. Role: notified nonactor (severity 8.4 of 14, major).</li><li><strong><a href="https://ericdf.github.io/berkeley-decision-project/public-safety-budget.html">FY2027-28 Budget — Fire Positions Restored, Police, Dispatch and Crisis Response Cut</a></strong> — 2026-06-23. Role: co sponsor (severity 10.4 of 14, major).</li><li><strong><a href="https://ericdf.github.io/berkeley-decision-project/build-once.html">African American Holistic Resource Center — Capital Advanced Without a Resolved Operating Model</a></strong> — 2025-10-14. Role: notified nonactor (no score attributed).</li></ul><p class="mgf-foot"><a href="methodology.html">How a governance failure is defined and tested &rarr;</a></p></div>
 
   
   <div class="section" style="background:#f8f9fa">
@@ -626,6 +634,9 @@ body { flex-direction: column !important; align-items: center !important; }
       with adequate deliberation. Extended meetings also close democratic participation:
       ordinary residents with jobs and families cannot wait until 1&nbsp;AM to speak.
     </div>
+    <p class="sec-lead">Meetings routinely run past their scheduled end. 19 of 51 required a formal extension vote; 5 ran past 11 PM and 2 past midnight. Personal attendance was 100%. (Extension figures cover the first 51 meetings analysed.)</p>
+    <details class="disc"><summary><span class="disc-lbl">Meeting management &mdash; the record<span class="disc-hint">show the numbers</span></span></summary>
+    <div class="disc-body">
     <div class="stat-grid" style="margin-bottom:14px">
       <div class="stat-box">
         <div class="stat-val" style="color:#e67e22">19/51</div>
@@ -645,6 +656,8 @@ body { flex-direction: column !important; align-items: center !important; }
         <div class="stat-lbl">Mayor&rsquo;s personal<br>attendance rate (100%)</div>
       </div>
     </div>
+    </div>
+    </details>
     <details class="disc"><summary><span class="disc-lbl">Case study &mdash; April 28, 2025<span class="disc-hint">show detail</span></span></summary>
     <div class="disc-body">
     <div style="background:#fdf9f0;border-left:3px solid #e67e22;padding:10px 14px;font-size:11.5px;line-height:1.6;color:#555">
@@ -751,7 +764,7 @@ body { flex-direction: column !important; align-items: center !important; }
 
   <div class="footer">
     <span>Berkeley City Council Scorecard &nbsp;&middot;&nbsp; Mayor&rsquo;s accountability evaluated separately from district members</span>
-    <span>Generated 2026-08-06</span>
+    <span>Generated 2026-09-29</span>
   </div>
 
 

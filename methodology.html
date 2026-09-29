@@ -70,1057 +70,565 @@ strong { color: #1a1a2e; }
 <div class="nav"><a href="index.html"><div class="t">&#8962; BERKELEY CITY COUNCIL SCORECARDS</div><div class="s">Independent analysis. Informed voters. Better government.</div></a></div>
 <div class="wrap">
   <h1>Berkeley City Council Scorecard — Methodology</h1>
-<p><strong>Version:</strong> April 2026</p>
+<p><strong>Version:</strong> 1.0 · 11 August 2026<br />
+<strong>Status:</strong> Normative. This document governs. Where the implementation disagrees with it,<br />
+the implementation is wrong and the discrepancy is technical debt, recorded in<br />
+<code>SCORING.md</code>.</p>
+<p>The previous methodology is preserved as <code>METHODOLOGY_LEGACY.md</code>. It described a scoring<br />
+system this document supersedes.</p>
 <hr />
+<h2>1. The question</h2>
 <blockquote class="lede">
-<p>Berkeley faces real governing problems: fiscal strain, infrastructure backlog, pension costs, and public safety pressure. City Council has limited time and resources. These scorecards evaluate whether members use them to deliver real results for Berkeley residents.</p>
+<p><strong>Does the member exercise municipal governing authority competently, deliberately,<br />
+accountably, and with appropriate prioritization?</strong></p>
 </blockquote>
+<p>That is the whole standard. Everything below serves it.</p>
+<p>It is deliberately not <em>"does the member align with taxpayer interests."</em> That earlier<br />
+framing pulled consistently toward <em>less spending is better</em>, which is a policy<br />
+preference wearing the costume of a standard. A member can enthusiastically fund a<br />
+project and govern it excellently — establish the problem, compare interventions,<br />
+specify outcomes, determine lifecycle cost, secure operating funding, pause at an unsafe<br />
+gate, deliver it. That is good governance, and a methodology that cannot say so is<br />
+measuring the wrong thing.</p>
+<p>A low score is not evidence the model is too harsh. A high score is not a design<br />
+objective. <strong>There is no target grade distribution</strong>, and no threshold may be adjusted to<br />
+produce one.</p>
 <hr />
-<h2>What This Is and Why It Exists</h2>
-<p>Berkeley faces real governing problems. The City Council oversees a mid-sized city with a $630M budget, a structural fiscal deficit city staff has described as unsustainable, $2.1B in unfunded capital obligations and deferred maintenance, $695M in net pension liability, persistent pressure on public safety, and labor agreements that constrain what any of those problems can look like as policy. Managing those realities requires discipline, prioritization, and sustained attention. <a href="https://ericdf.github.io/berkeley-decision-project/framework.html">A Strategy for Strategy</a>, the budget framework published alongside these scorecards, is a proposal for supplying exactly that — a repeatable test applied before the politics of any individual proposal begin, sorting what the city must ensure, what it should undertake only with committed partners, and what it should not own at all.</p>
-<p>But the incentives of local politics do not always reward those qualities, and several of the <a href="https://ericdf.github.io/berkeley-decision-project/">recurring decision problems documented on the Berkeley Decision Project</a> are what that looks like in practice. A bond measure gives a member something to campaign on; holding a recurring budget line steady does not — Berkeley ran five street measures while the recurring allocation sat unchanged since 2014 (<a href="https://ericdf.github.io/berkeley-decision-project/bond-alibi.html">Bonds Win Elections</a>). Buying a building is a ribbon-cutting; the thirty-year operating bill arrives long after (<a href="https://ericdf.github.io/berkeley-decision-project/small-sites.html">Buy Once, Maintain Forever</a>). Deliberation fires on contention rather than magnitude, so commitments the city carries for decades pass unremarked while a symbolic resolution consumes an evening (<a href="https://ericdf.github.io/berkeley-decision-project/consent-drip.html">Two Calendars</a>). And a consultation narrowed before it reaches residents returns support rather than an inconvenient answer (<a href="https://ericdf.github.io/berkeley-decision-project/constrained-choice.html">Which Version, Never Whether</a>).</p>
-<p>The same asymmetry explains the option set itself. Raising revenue distributes a cost thinly across taxpayers who are not in the room; reprioritizing, finding efficiencies, or asking whether someone else could deliver a service better all impose a concentrated cost on an identifiable group that is — staff, a department, a constituency, an organized bargaining unit. The first requires no one to be told no. The others require naming what stops, and naming it to people who will be at the next meeting. That is a structural reason the four money-raising options stay in use and the three that would change what the city spends do not (<a href="https://ericdf.github.io/berkeley-decision-project/crayon-box.html">The Crayon Box</a>), and it holds without attributing any motive to any member.</p>
-<p>A June 2026 item shows the shape of it. Berkeley's environmental health division does not cover its costs; even after a fee increase, a councilmember put the remaining General Fund subsidy at roughly $750,000 a year on the record, uncontested. Alameda County performs the same inspections for other cities — Berkeley, staff told Council, is "one of the few cities in the state that has its own environmental health division." Two councilmembers asked what transferring the function would look like. Staff answered that they could analyze the costs and benefits, including "the benefits of having staff who can do this work," and the Council adopted the fee increase unanimously. No referral was made and no analysis was directed. The benefit of keeping the work in-house was asserted; the cost of doing so was already quantified.</p>
-<p>The counterfactual is worth stating plainly, because it is the part of this that never gets said out loud: a member who moved to consolidate a function, contract a service out, or eliminate a class of position would be imposing a concentrated, visible loss on an organized constituency that turns out, endorses, and will be at the next meeting. Would they expect that constituency's support at the next election? The question answers itself, and it explains why an option can remain formally available and practically unused. Nothing here suggests any member weighed it that way. The point is that no one has to.</p>
-<p>The constraint is visible in how efficiency gets proposed when it is proposed. In July 2026 a member raised piloting automation on the City's after-hours answering service — and noted, before making the case, that the service "is an outsourced service. It does not affect any city staff." The reassurance was offered unprompted, about a contract already held outside the workforce. That is what an unspoken boundary looks like from the inside: not a rule anyone states, but a line proposals are shaped to avoid crossing.</p>
-<p>Not every habit has a reward behind it. Some are failures of capability rather than incentive — a city that <a href="https://ericdf.github.io/berkeley-decision-project/measuring-nothing.html">cannot measure whether its programs work</a> has no basis on which to rank them, and nobody gains politically from that. The two compound each other: without outcome data, a member who wants to stop something cannot show it is failing, so the concentrated cost of proposing it lands with nothing to justify it. The distinction still matters for scoring, though. These scorecards assess conduct against a documented standard, not motive — a member is credited for asking the question and putting an alternative on the table, whatever the reason it was hard to do.</p>
-<p>Berkeley residents also live under real financial constraints of their own. Housing costs are high. Everyday expenses are high. Many households have limited tolerance for continual tax increases, new parcel taxes, higher fees, or additional debt layered onto an already expensive city. Responsible governance must account for the fiscal capacity of residents as well as the fiscal needs of government.</p>
-<p>Council members are often rewarded for highly visible constituent casework, ideological signaling, symbolic resolutions, and commentary on issues beyond the council's practical authority. Those activities may generate attention or political goodwill, but they do not necessarily address Berkeley's core fiscal, operational, and governance challenges.</p>
-<p>The record bears this out in the plainest possible terms. A resolution on a foreign ceasefire drew 197 speakers and a three-hour public comment period extended twice; a single street's paving alignment drew 160. In the same record, the item establishing whether the city can measure if any of its programs work passed on the <a href="https://ericdf.github.io/berkeley-decision-project/consent-drip.html">consent calendar</a> with no debate, no speakers and no letters — see <a href="https://ericdf.github.io/berkeley-decision-project/measuring-nothing.html">Measuring Nothing</a>. The council is entirely capable of sustained deliberation. It allocates that capacity to contention rather than to consequence.</p>
-<p>That tension is the reason these scorecards exist.</p>
-<hr />
-<h2>The Information Problem</h2>
-<p>Berkeley residents are asked to evaluate elected officials in an environment that is difficult for any ordinary voter to track. Council meetings often run four to five hours. Agendas can span hundreds of pages. Staff reports, audits, budget documents, commission materials, newsletters, and public statements accumulate continuously.</p>
-<p>No resident with a normal life can reasonably monitor all of it.</p>
-<p>The common substitutes are also limited:</p>
+<h2>2. Scope is not quality</h2>
+<p>The Category framework answers <em>whether and how</em> the City should be involved. It does not<br />
+answer whether a decision was well made.</p>
 <ul>
-<li>Politicians' own communications are curated narratives designed, understandably, to build support.</li>
-<li>News coverage focuses on the controversy or headline of the week, not long-running patterns of conduct.</li>
-<li>Campaign messaging is designed to sell, not to be audited against what was actually delivered.</li>
-<li>Official public engagement is often narrowed before it reaches residents — surveys that ask which design or which location rather than whether to proceed, and that report a percentage without ever offering the choice that would have tested the premise. See <a href="https://ericdf.github.io/berkeley-decision-project/constrained-choice.html">Which Version, Never Whether</a>.</li>
+<li><strong>Category 1</strong> — Berkeley must ensure it is done. Core municipal outcomes, and the<br />
+  routine administration that keeps them running.</li>
+<li><strong>Category 2</strong> — Berkeley should act with partners. Legitimate public purposes where<br />
+  the City should normally enable, coordinate, regulate or contract rather than become<br />
+  the operator.</li>
+<li><strong>Category 3</strong> — Berkeley should not own or continue it. Work outside the City's proper<br />
+  scale, duplicating a capable provider, lacking essential partners, or materially<br />
+  diluting Category 1 performance. <strong>Not a moral judgment about the subject.</strong></li>
 </ul>
-<p>What is often missing is a sustained evaluation of how officials actually use the office over time — whether their words and deeds part company, how much time goes to matters that don't address Berkeley's documented problems, and whether they take ownership of hard issues or deflect.</p>
-<hr />
-<h2>What These Scorecards Measure</h2>
-<p>These scorecards are an attempt to provide that evaluation. They examine the public record, including:</p>
-<ul>
-<li>votes and policy positions</li>
-<li>attendance and participation</li>
-<li>budget and fiscal choices</li>
-<li>issue selection and prioritization</li>
-<li>consistency between rhetoric and conduct</li>
-<li>demonstrated ownership of difficult city problems</li>
-<li>communications with constituents</li>
-</ul>
-<p>The purpose is not to reward charisma, popularity, or ideological alignment. It is to assess governing performance.</p>
-<hr />
-<h2>The Standard Being Applied</h2>
-<p>These scorecards use an explicit and transparent governing standard: elected officials should devote the council's limited time and the city's finite resources to Berkeley's most pressing documented problems.</p>
-<p>That includes matters such as: fiscal sustainability, infrastructure and maintenance backlogs, public safety performance, housing and land-use execution within city authority, service delivery and administrative competence, and long-term stewardship.</p>
-<p>Officials who focus on those responsibilities, make tradeoffs honestly, and help move solutions forward receive credit. The scoring cuts both ways: time and votes directed at matters outside Berkeley's jurisdiction count against the score, and documented local crises that go unaddressed count against it too. Being excellent at things a city council cannot change does not offset failing at things it can.</p>
-<hr />
-<h2>Not Neutral — Transparent</h2>
-<p>These scorecards do not claim to be value-free. Every political evaluation rests on assumptions, whether disclosed or hidden.</p>
-<p>The assumptions here are stated openly: municipal office should primarily be used to govern the municipality well.</p>
-<p>Reasonable people may disagree with that framework, the weighting of criteria, or specific judgments. That is legitimate. The methodology is published so those disagreements can be concrete and substantive rather than implicit.</p>
-<hr />
-<h2>Why Publish This</h2>
-<p>Healthy democratic accountability requires more than elections every few years. It requires understandable records, coherent standards, and public argument about performance.</p>
-<p>These scorecards are offered in that spirit — not as the final word, but as a serious attempt to ask and answer an important question: how well is Berkeley governed, and who is helping govern it well?</p>
-<hr />
-<h2>Philosophy</h2>
-<p>This scorecard is explicitly voter-aligned, not neutral. The evaluative framework assumes the voter cares about:</p>
+<p><strong>A Category 1 classification establishes only that the City has a legitimate<br />
+responsibility to act. It creates neither a presumption of good governance nor a penalty<br />
+for acting.</strong></p>
+<p>It does not mean taking the work on was wise — much of what a city "must" do is mandatory<br />
+only because an earlier council decided it would be. It does not mean the work was handled<br />
+well. It does not mean money inside it was well spent.</p>
+<p>This matters because <strong>every governance failure this site documents concerns Category 1<br />
+work.</strong> Street safety, public safety budgeting, homeless-services siting. If Category 1<br />
+implied "fine," the site's most serious findings would be immunized by their own<br />
+classification.</p>
+<p>Two questions, always separate:</p>
 <ol>
-<li>
-<p><strong>Taxpayer alignment</strong> — Does the member champion taxpayer interests, or treat property owners and residents as a funding source for their agenda? Do they demand alternatives to taxes and bonds, question efficiency, and push back on the status quo? Or do they reach for new revenue as a first resort?</p>
-</li>
-<li>
-<p><strong>Focus</strong> — Does the member spend the council's time on core city services (public safety, infrastructure, basic city operations), or on performative, ideological, and non-core items that consume staff bandwidth and budget without delivering core value?</p>
-</li>
-<li>
-<p><strong>Attendance &amp; Vote Presence</strong> — Did the member actually do the job? Attendance at meetings — especially for binding fiscal votes — is the minimum bar.</p>
-</li>
+<li><strong>Role</strong> — is the City acting in the right category, at the right level?</li>
+<li><strong>Quality</strong> — given that role, did the member help make a disciplined, evidence-based,<br />
+   fiscally responsible decision?</li>
 </ol>
-<p><strong>This is not a promise-keeping scorecard.</strong> A member who campaigned on housing affordability and never mentioned the structural deficit is not evaluated on housing affordability. They are evaluated on whether they engage with Berkeley's documented Priority 1 (P1) fiscal crises — because those crises exist regardless of what any member promised, and a representative who ignores them is not serving the taxpayer regardless of their campaign platform. A voter who wants to build a scorecard measuring housing production or homeless services expansion can do so; this one measures something different.</p>
-<p>The scoring <strong>does not</strong> treat budget growth, new programs, or bond issuances as neutral acts. A YES vote on a budget adoption is a choice to endorse the status quo and forgo reprioritization. An absence during a major fiscal vote is a failure of the core duty of the office. A referral to study a new tax is the beginning of a political infrastructure campaign, not a neutral process step.</p>
+<h3>2.1 Two review tests</h3>
+<p>A project can fail twice, and the failures are scored separately.</p>
+<p><strong>Premise review.</strong> Was the original problem sufficiently established, and was the chosen<br />
+intervention justified against alternatives and measurable outcomes? What problem was<br />
+documented? How was its scale established? Why this intervention? What alternatives were<br />
+compared? What outcomes was it expected to improve? What evidence would later show<br />
+whether it worked?</p>
+<p><strong>Continuation review.</strong> Given current evidence, costs, performance and fiscal<br />
+conditions, does the inherited course still deserve to advance?</p>
+<p>Collapsing them produces both false exoneration and false blame. <em>"The project was<br />
+already approved"</em> answers only the historical authorization question — it establishes<br />
+neither that the premise was sound nor that continuation is justified now.</p>
 <hr />
-<h2>Scorecard Structure: Descriptive and Normative Layers</h2>
-<p>Each member scorecard is divided into two explicit layers:</p>
-<p><strong>Layer A — What the Record Shows:</strong> Objective measures drawn from official records and attributed transcript speech. No weighting or judgment applied. Includes: attendance, major fiscal vote participation, voting record (NO votes, abstentions, absences), items authored/cosponsored, staff direction volume, core/non-core speech share, fiscal concern mentions, new revenue preference mentions, spending votes. These facts are nearly unimpeachable — critics who dispute the overall grade must engage at the layer B level (philosophy and weights), not at this level.</p>
-<p><strong>Layer B — Fiscal Stewardship Assessment:</strong> The scorecard's normative framework applied to the layer A facts. Includes: Homeless Services Status-Quo Alignment (HSA) score, Taxpayer Alignment breakdown, composite grades and pillar scores, key findings. This layer explicitly encodes the scorecard's values: taxpayer alignment, focus on core services, attendance accountability. Reasonable people can disagree with these weights. The structure makes that disagreement productive — it is a dispute about the normative layer, not about the facts.</p>
+<h2>3. What is scored</h2>
+<h3>3.1 Acts, not vocabulary</h3>
+<p><strong>No score may change because a member used a word or discussed a subject.</strong> Not for<br />
+foreign policy, policing, taxation, surveillance, homelessness, climate, immigration, or<br />
+any other topic.</p>
+<p>Keyword lists may find candidates for human review. They may never assign or alter a<br />
+grade. Adding or deleting a word in a transcript must not move a score.</p>
+<p>This is not a preference. It is the finding of four failed attempts, recorded in<br />
+<code>METHODOLOGY_NOTES.md</code>. The most recent produced a classifier where <strong>43% of what it<br />
+flagged as out-of-scope was core municipal business</strong> — police oversight, surveillance<br />
+procurement, and tax policy, which is the site's own central subject.</p>
+<h3>3.2 Style is not evidence; substance is</h3>
+<p><strong>Linguistic style is not scored.</strong> No warmth, humility, first-person usage, verbosity,<br />
+collegiality-by-tone, or similarity to colleagues. Personality is not governance.</p>
+<p><strong>A member's words are evidence when they contain a factual claim, commitment, governing<br />
+principle, explanation, or other substantive representation relevant to official<br />
+conduct.</strong></p>
+<h3>3.3 No policy-area variable</h3>
+<p>No service area may be a scoring input. Not homelessness, policing, transportation,<br />
+climate, or economic development.</p>
+<p>A service area may accumulate many low ratings if its decisions repeatedly fail the<br />
+general rubric — <strong>that conclusion must emerge from the decisions, not be embedded in the<br />
+formula.</strong> The retired homeless-services alignment variable made one policy area roughly a<br />
+quarter of every grade through a coefficient. Its underlying conduct is now scored under<br />
+the ordinary rules: funding without outcome evidence under Oversight, defending<br />
+continuation without examining alternatives under Decision Quality, seeking new resources<br />
+without examining existing spending under Fiscal Stewardship.</p>
+<p>That is a harder criticism, not a softer one. <em>"You scored badly because you support<br />
+homeless services"</em> is dismissible. <em>"Here are the ordinary rules of competent governance,<br />
+and here are the decisions that failed them"</em> is not.</p>
+<h3>3.4 The material decision set</h3>
+<p><strong>Materiality first.</strong> The scorecard distinguishes governance performance; it does not<br />
+adjudicate every vote. Approving the minutes must not dilute approving a facility with no<br />
+operating plan.</p>
+<p>A decision is material when it commits substantial money or creates a recurring<br />
+obligation; creates, expands, continues, restructures or terminates a program; acquires<br />
+or disposes of a significant asset; sets durable policy; directs substantial staff work;<br />
+consumes attention disproportionate to the decision required; responds or fails to<br />
+respond to an audit or missed target; is a Category 3 action consuming any municipal<br />
+resource; or presents a principle–action contradiction.</p>
+<p>Routine administration is recorded, not scored.</p>
+<p><strong>Dollar value is the wrong trigger.</strong> Tested against the corpus, a $1M threshold selects<br />
+100 items, of which 70 are Category 1 vendor procurement — landscape maintenance, culvert<br />
+repair, fire apparatus. A contract becomes material when the <em>commitment behind it</em> is at<br />
+issue, not because of its face value.</p>
+<h3>3.5 The wrapper rule</h3>
+<p>Classify the governing act before Council, not every element inside its administrative<br />
+wrapper. Updating a capital project list is Category 1 administration even when the list<br />
+contains a Category 3 project; the embedded project retains its own character and is<br />
+scored separately where material. <strong>Category does not propagate in either direction.</strong> The<br />
+purpose of wrapper classification is accurate taxonomy, not score laundering.</p>
+<h3>3.6 Votes are governance acts</h3>
+<p>Scope scoring may not be limited to authorship. Measured against this corpus, only <strong>25 of<br />
+120 material decisions carry an attributable author</strong>, so <strong>for most material Council<br />
+decisions the binding vote — not authorship — is the primary observable exercise of an<br />
+individual member's governing authority.</strong> A scorecard built on authorship alone would be<br />
+blind to roughly four fifths of the record.</p>
+<p>Conversely, <strong>opposing, narrowing, defeating or redirecting a Category 3 proposal is not<br />
+penalized and may earn credit.</strong> Polarity is mandatory.</p>
 <hr />
-<h2>Data Sources</h2>
+<h2>4. Dimensions</h2>
+<p>Five, each answering a different question. <strong>Weights are reserved to calibration.</strong></p>
 <table>
 <thead>
 <tr>
-<th>Source</th>
-<th>What it provides</th>
+<th>Dimension</th>
+<th>Question</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Meeting transcripts</strong> (51 PDFs, txt)</td>
-<td>Attributed speech per member: rhetoric, debate style, fiscal language, special interest alignment signals</td>
+<td><strong>Role and Scope</strong></td>
+<td>Is the City acting within its proper role, in the proper form?</td>
 </tr>
 <tr>
-<td><strong>Annotated agenda PDFs</strong> (58 sessions)</td>
-<td>Authoritative post-meeting record: exact attendance (roll call time, arrivals), per-item vote breakdown (Ayes/Noes/Abstain/Absent)</td>
+<td><strong>Fiscal and Lifecycle Stewardship</strong></td>
+<td>Are money, assets, staff capacity and future obligations treated as scarce?</td>
 </tr>
 <tr>
-<td><strong>Agenda JSONs</strong> (58 sessions)</td>
-<td>Pre-meeting agenda items: title, dollar amount, authors, cosponsors, non-core flag, fiscal flags</td>
+<td><strong>Decision Quality</strong></td>
+<td>Did the member help find the best available solution rather than approve the one presented?</td>
 </tr>
 <tr>
-<td><strong>Staff report PDFs</strong> (packet scraper)</td>
-<td>Procurement signals: waived competitive bid, backdated contracts, no-alternatives clauses</td>
+<td><strong>Oversight and Results</strong></td>
+<td>Is approval treated as the start of accountability rather than the end of the decision?</td>
 </tr>
 <tr>
-<td><strong>Budgets and CAFRs</strong> (Finance Director)</td>
-<td>Adopted annual budgets and Comprehensive Annual Financial Reports establish the city's own financial self-description: fund balances, appropriations, staffing levels, debt obligations, and the City Manager's budget message language. Distinct from City Auditor reports in origin and purpose: CAFRs are management-prepared financial statements with an external audit opinion on fair presentation; City Auditor reports are independent performance and operational audits initiated by the auditor, not management. Used to establish factual baseline — revenue trends, expenditure growth, reserve levels — against which council behavior is evaluated.</td>
-</tr>
-<tr>
-<td><strong>City Auditor reports</strong> (<code>audit_findings.json</code>)</td>
-<td>Independent documented findings that establish ground truth: what the city's financial condition actually is, what structural problems exist, and what warranted action looks like. Audits are tracked in a separate registry; the council's response — or non-response — is the scored event. Three reports currently tracked: Rocky Road streets audit (Oct 2025), Homeless Response Team audit (Jul 2025), Financial Condition audit (Apr 2026).</td>
-</tr>
-<tr>
-<td><strong>Incidents</strong> (<code>incidents.json</code>)</td>
-<td>Out-of-meeting behaviors: constituent interactions, public statements, newsletters, and patterns not captured in formal proceedings. Each incident is assigned one of three evidence tiers — A (primary public record), B (reputable reporting or member communications), C (direct observation) — which determine its effective scoring weight. Incidents with an <code>audit_ref</code> field are grounded in a specific City Auditor finding.</td>
+<td><strong>Institutional Responsibility</strong></td>
+<td>Can the public rely on the member's stated principles and factual claims as an account of how they govern?</td>
 </tr>
 </tbody>
 </table>
-<p>Annotated agendas are the authoritative source for <strong>what actually happened</strong> (outcomes, votes, attendance). Transcripts fill the gap between plan and outcome — capturing the deliberation, rhetoric, and interpersonal style that votes alone don't reveal. City Auditor reports provide the independent factual baseline against which council action is evaluated.</p>
-<p><strong>Why this reference standard matters:</strong> The Priority 1 (P1) problems scored here are grounded in the city's own professional documents — consecutive City Manager budget messages, City Auditor findings, infrastructure condition reports — not in the scorecard author's political preferences. A member who disagrees with the evaluation cannot simply claim it is ideological; they must dispute the City Manager's finding that the structural deficit is "not sustainable," or the Auditor's finding of a 66% pension funded ratio, or the MTC's finding of PCI 57. The city's own organization has documented what is broken. The scorecard asks whether elected officials are engaging with those findings.</p>
-<hr />
-<h2>Scoring Tiers</h2>
-<h3>Tier 1 — Letter Grade</h3>
-<p>A single A–F composite representing overall alignment with taxpayer interests. Computed from weighted sub-scores (see below). Designed to be the one number a busy voter can reference.</p>
-<p><strong>Composite formula:</strong></p>
-<pre><code>composite = max(0.0,
-    taxpayer_alignment × 0.55 + focus × 0.25
-    + lsi × 0.10 + character × 0.10
-    − attendance_deduction
-    − low_engagement_adj
-    + audit_penalties
-)
-</code></pre>
-<p>Where <code>taxpayer_alignment = taxpayer_base × 0.60 + audit_composite × 0.40</code>.</p>
-<p><strong>Component weights and deductions:</strong></p>
+<h3>4.1 Rating scale</h3>
+<p>Each material decision receives 0–4 on each applicable dimension.</p>
 <table>
 <thead>
 <tr>
-<th>Component</th>
-<th>Role</th>
-<th>Notes</th>
+<th>Rating</th>
+<th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Taxpayer alignment</td>
-<td>55% weight</td>
-<td>The core question: whose interests does this member champion? (blended with audit alignment at 60/40)</td>
+<td><strong>4 — Exemplary</strong></td>
+<td>Materially improves the decision: sharpens scope, exposes tradeoffs, tests assumptions, compares credible alternatives, secures lifecycle or outcome analysis, corrects a failing course.</td>
 </tr>
 <tr>
-<td>Focus</td>
-<td>25% weight</td>
-<td>What did they spend the council's time on?</td>
+<td><strong>3 — Sound</strong></td>
+<td>Meets the expected standard of competent municipal governance.</td>
 </tr>
 <tr>
-<td>LSI</td>
-<td>10% weight</td>
-<td>Legislative sophistication (domain knowledge, fiscal literacy, inquiry rate, decisiveness, process)</td>
+<td><strong>2 — Mixed</strong></td>
+<td>Defensible but materially incomplete.</td>
 </tr>
 <tr>
-<td>Character</td>
-<td>10% weight</td>
-<td>Collegiality, humility, warmth, low self-referential appeals</td>
+<td><strong>1 — Deficient</strong></td>
+<td>Advances or accepts a materially weak decision despite identifiable deficiencies, or acts against a clearly stated principle without credible explanation.</td>
 </tr>
 <tr>
-<td>Attendance deduction</td>
-<td>Up to −0.30</td>
-<td>Convex curve: lenient for 1–2 absences, severe for 4–5 (see Fiscal Vote Record)</td>
-</tr>
-<tr>
-<td>Low engagement adjustment</td>
-<td>Up to −0.10</td>
-<td>Triggered when member authors no Priority 1 (P1) referrals AND shows low fiscal engagement (see P1/P2/P3 Framework)</td>
-</tr>
-<tr>
-<td>Audit-grounded penalties</td>
-<td>−0.05 to −0.20</td>
-<td>Applied after composite blend: structural silence, one-time masking, cross-fund transfers, Section 115 depletion</td>
+<td><strong>0 — Serious failure</strong></td>
+<td>Causes, advances, protects, or fails to confront a major governance failure.</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Grade thresholds:</strong> A+ ≥ 90 · A ≥ 83 · A− ≥ 77 · B+ ≥ 70 · B ≥ 63 · B− ≥ 57 · C+ ≥ 50 · C ≥ 43 · C− ≥ 37 · D+ ≥ 30 · D ≥ 23 · D− ≥ 17 · F &lt; 17</p>
+<p><strong>3 is the expected standard, not praise.</strong> Holding office, attending, voting on routine<br />
+business and being collegial do not exceed it.</p>
+<h3>4.2 When a dimension applies</h3>
+<p>A dimension applies when <strong>the record contains evidence bearing on the question that<br />
+dimension asks</strong> — not because the decision could in principle raise it.</p>
+<p><strong>The default is not applicable.</strong> Marking a dimension applicable and rating it 3 because<br />
+nothing looks wrong is prohibited: it converts absence of evidence into evidence of<br />
+competence.</p>
+<p>Where a dimension is plainly engaged but the record does not show what the member did,<br />
+mark it inapplicable and note it. Accumulated notes are a finding about the <strong>corpus</strong>,<br />
+not the member.</p>
+<p><strong>Authorship alone does not establish Decision Quality.</strong> Authoring places a matter before<br />
+Council — a Role and Scope fact. Decision Quality requires a decision-shaping act: an<br />
+amendment or substitute, a referral for analysis, a documented question that tested an<br />
+assumption, a stated comparison of alternatives, an attached condition or exit criterion.<br />
+Authorship, co-sponsorship and a recorded vote are not, without more, decision-shaping<br />
+acts.</p>
+<p><strong>Institutional Responsibility requires a representation to test</strong> — a stated principle,<br />
+criterion, factual claim, commitment or explanation, <em>and</em> an act to compare it against.<br />
+It does not apply to procedural regularity, to the form an act took, or to ordinary<br />
+participation.</p>
+<h3>4.3 Principle–action inconsistency</h3>
+<p>Officials may change their minds, and may conclude a general principle does not control a<br />
+particular case. What is scoreable is <strong>unreconciled inconsistency in the exercise and<br />
+explanation of public power</strong> — not hypocrisy, and not motive.</p>
+<p>All four conditions must hold: a clear stated principle; a comparable later matter; a<br />
+material official act inconsistent with it; and no adequate reconciliation.</p>
+<p>Describe the contradiction; do not diagnose motive. Do not use "dishonest," "bad faith,"<br />
+or comparable labels absent independent evidence of intent. <strong>A member who identifies the<br />
+tension and explains why the principle yields differently has governed well.</strong></p>
+<h3>4.4 Silence</h3>
+<p>Scoreable only when the member had an identifiable responsibility or opportunity, the<br />
+problem was material, the evidence was reasonably available, and the record shows no<br />
+meaningful response before or during a consequential decision.</p>
+<p>No generic newsletter-silence, speech-silence, or low-word-count penalty.</p>
+<h3>4.5 Sparse evidence</h3>
+<p>Thin records are reported as thin. <strong>No default or invented score</strong> may be assigned<br />
+because evidence is missing. Where coverage cannot support a responsible composite,<br />
+publish the records and withhold the grade. Transcript word count is never an eligibility<br />
+rule.</p>
+<h3>4.6 Absolute, not relative</h3>
+<p>No member's score may depend on another's. No normalization across the council. Adding or<br />
+removing an officeholder cannot move anyone's grade.</p>
 <hr />
-<h2>Longitudinal Decay</h2>
-<p>Rhetoric and behavior are time-sensitive. A member who said concerning things two years ago but has since moderated should not carry that signal at full weight indefinitely. Conversely, a member who has been consistent over the entire period should score the same as one who is only recently reform-oriented.</p>
-<p><strong>Formula:</strong> Each time-sensitive signal is weighted by:</p>
-<pre><code>effective_weight = e^(−λ × age_in_years)    λ = 0.7
-</code></pre>
-<table>
-<thead>
-<tr>
-<th>Age</th>
-<th>Weight</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Current</td>
-<td>1.00</td>
-</tr>
-<tr>
-<td>1 year</td>
-<td>~0.50</td>
-</tr>
-<tr>
-<td>2 years</td>
-<td>~0.25</td>
-</tr>
-<tr>
-<td>3 years</td>
-<td>~0.12</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Applies to:</strong><br />
-- Incident scoring (each incident's <code>scoring_impact × tier_weight</code> is multiplied by the decay factor before summing)<br />
-- Rhetoric signals: fiscal concern rate, new revenue preference rate, self-referential appeals, collegiality, humility, warmth (via per-meeting decay-weighted aggregation)<br />
-- Newsletter Priority 1 (P1) silence events</p>
-<p><strong>Does NOT apply to:</strong><br />
-- Bond/tax referral votes (durable official acts — authoring a ballot measure is a permanent record)<br />
-- Annotated agenda votes (YES/NO/absent on spending items)<br />
-- Major fiscal votes<br />
-- Homeless Services Status-Quo Alignment (HSA) score (full-text aggregation without per-meeting dates; planned for future update)</p>
-<p><strong>Opt-out:</strong> Individual incidents can carry <code>"no_decay": true</code> to exempt them from decay (e.g., a member who authored a bond measure that is still active).</p>
+<h2>5. The duties of office</h2>
+<h3>5.1 The inventory duty</h3>
+<p><strong>Someone stepping into the role must take inventory of the initiatives already in<br />
+motion.</strong> They were binned Category 1 or 2 by a previous Council. The incoming member owes<br />
+the office a judgment about whether they are in the right bin, and whether they are moving<br />
+toward meaningful objectives with metrics.</p>
+<p>This is not a reform proposal. It is what taking responsibility for a portfolio means<br />
+wherever one custodian succeeds another. <strong>Administering an inherited portfolio without<br />
+assessing it is not neutrality — it is a decision to continue everything, made by not<br />
+deciding.</strong></p>
+<p>The questions: Is it in the right bin? If Category 1, is <em>this</em> the right discharge of the<br />
+responsibility? If Category 2, has involvement drifted into operation? Is there a stated<br />
+objective? Are there metrics anyone reads? What recurring obligation does it create, and<br />
+has that been funded or assumed? What gate comes next, and how reversible is the position<br />
+after it?</p>
+<p>On accession, and periodically thereafter. <strong>A portfolio assessed once in a four-year term<br />
+is not assessed.</strong></p>
+<p>This is reasonable triage, not exhaustive historical review. Most items return healthy<br />
+continuation.</p>
+<h3>5.2 The continuation question</h3>
+<p><strong>Before voting to continue a material commitment, a member owes the office an answer to<br />
+one question: is this thing, which the City is legitimately responsible for, in a state<br />
+that warrants continuing it?</strong></p>
+<p>Category 1 does not answer that question. Treating the category as the answer is how<br />
+predecessor decisions become permanent apparent necessities.</p>
+<p><strong>The duty is discharged by asking.</strong> The finding is never that the wrong conclusion was<br />
+reached; it is that no judgment was formed. A member who, asked afterward why they voted<br />
+for a commitment, must go and find out what it costs to run, has demonstrated the question<br />
+was not asked before the vote.</p>
+<h3>5.3 Authority creates responsibility</h3>
+<p><strong>When an officeholder has sufficient notice of a material governance deficiency and<br />
+possesses practical authority to force its reconsideration, exercising reasonable judgment<br />
+about whether and how to use that authority is part of the duty of office.</strong></p>
+<p>"Opportunity" alone reads as optional — <em>he could have pulled it from consent</em>. The<br />
+standard is stronger: under the circumstances, responsible performance of the office<br />
+called for doing something. Not a duty to reach any particular conclusion — <strong>a duty to<br />
+force the unresolved question into the decision process while meaningful choices remain.</strong></p>
+<p><strong>Success is not the test. Using the office is.</strong> A member need not have the votes to<br />
+reverse a trajectory in order to bear responsibility for responding to it.</p>
+<h3>5.4 Consent is a governance choice</h3>
+<p><strong>Consent is an affirmative judgment that an item has earned routine continuation, not the<br />
+absence of a judgment about it.</strong></p>
+<p>Consent should mean: this is sufficiently healthy, routine, understood and consistent with<br />
+existing policy that Council need not spend scarce deliberative capacity on it. It must<br />
+not mean: staff placed it on consent, therefore continuation is presumed.</p>
+<p>The triage test is cheap. What is this? When and why was it authorized? Has anything<br />
+material changed? Is it on budget? Are promised outcomes or prerequisites present? Are<br />
+there unresolved audits? Does it deepen a recurring obligation? Is an irreversible gate<br />
+approaching?</p>
+<p><strong>Most items return healthy continuation and stay on consent. That is the point</strong> —<br />
+competent triage preserves attention for the few matters that need governing judgment.</p>
+<p>Where the check surfaces an unresolved governing question, the item does not belong on<br />
+consent. <strong>Pulling it does not imply opposition</strong>; it implies the question cannot<br />
+responsibly be buried inside routine continuation.</p>
+<p>Measured against this corpus: 128 of 307 linked votes are consent items, 19 at or above<br />
+$1M totalling $3.76B, across 11 of the 34 meetings carrying consent — <strong>1.7 items per<br />
+affected meeting.</strong> The objection that portfolio review would produce nine-hour meetings<br />
+is not supported by the volume.</p>
+<h3>5.5 Heightened district responsibility</h3>
+<p><strong>A member has heightened portfolio responsibility for material City projects, assets,<br />
+services and conditions concentrated within their district.</strong></p>
+<p>This heightens <strong>notice and opportunity, not culpability.</strong> District representation makes<br />
+the constructive-notice question easier to answer for that member — it does not answer it.</p>
+<p>It cuts both ways. The duty is to know, examine, surface and govern — not to oppose,<br />
+protect, or deliver whatever constituents want. <strong>A district member is not a parochial<br />
+veto-holder</strong>, and a member who used district standing to shield a deficient project from<br />
+scrutiny would be exercising the same responsibility badly.</p>
+<p><strong>Support for an objective does not diminish the duty to ensure successful delivery.</strong> A<br />
+member may appropriately Stop or Change a favored project precisely because unresolved<br />
+deficiencies threaten the objective they support.</p>
+<p>Applied identically to a failing fire station, a marina capital project, a street<br />
+reconstruction, or a cultural facility. <strong>If the rule only ever fires on projects the<br />
+scorecard dislikes, it is being applied wrongly.</strong></p>
+<h3>5.6 Start / Stop / Continue / Change</h3>
+<p>Council should routinely subject material activity to four questions: what should begin,<br />
+what should terminate or be refused advancement, what has earned continued commitment, and<br />
+what should continue only after redesign or rescoping.</p>
+<p><strong>Stop includes projects not yet ready to proceed.</strong> A project need not have failed<br />
+operationally before responsible governance requires a halt.</p>
+<p><strong>Continuation is itself a decision. It should be justified rather than assumed.</strong></p>
 <hr />
-<h2>Opportunities for Improvement</h2>
-<p>Each member scorecard and the summary document include a ranked list of the highest-leverage actions a member could take to improve their composite score. This section explains the logic behind those recommendations.</p>
-<h3>Per-Member Opportunities</h3>
-<p>Five opportunity types are evaluated, ranked by estimated composite impact, and the top five are shown:</p>
-<table>
-<thead>
-<tr>
-<th>Opportunity</th>
-<th>Trigger condition</th>
-<th>How it helps</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Demand HSA outcome metrics</strong></td>
-<td>Homeless Services Status-Quo Alignment (HSA) score ≥ 45</td>
-<td>Shifts HSA rhetoric toward accountability-oriented language</td>
-</tr>
-<tr>
-<td><strong>Back fiscal concerns with votes</strong></td>
-<td>High concern rate, zero NO votes, and HSA ≥ 45 or ≥ 3 fiscal vote absences</td>
-<td>Closes rhetoric–action gap; strengthens composite_fiscal_ref_penalty</td>
-</tr>
-<tr>
-<td><strong>Attend major fiscal votes</strong></td>
-<td>fiscal_vote_absent &gt; 0</td>
-<td>Eliminates attendance deduction</td>
-</tr>
-<tr>
-<td><strong>Redirect non-core authorship</strong></td>
-<td>composite_off_penalty &gt; 0.03</td>
-<td>Reduces scope penalty in Fiscal Stewardship Alignment</td>
-</tr>
-<tr>
-<td><strong>Pair revenue advocacy with reprioritization analysis</strong></td>
-<td>new_revenue_preference_rate ≥ 0.3</td>
-<td>Reduces new revenue preference penalty</td>
-</tr>
-<tr>
-<td><strong>Engage with audit findings</strong></td>
-<td>audit_alignment_composite &lt; 0.35</td>
-<td>Improves audit alignment sub-score</td>
-</tr>
-<tr>
-<td><strong>Increase fiscal engagement</strong></td>
-<td>fiscal_raw &lt; 0.15 (fallback)</td>
-<td>Improves fiscal discipline component</td>
-</tr>
-</tbody>
-</table>
-<p>Estimated impact is expressed as composite grade points (0.0–1.0 scale). Items are sorted by descending estimated impact; ties are broken by definition order.</p>
-<p>These are <strong>directional recommendations</strong> — they identify where the data shows the largest gaps. They do not guarantee a specific grade improvement because other signals could change in the same direction.</p>
-<h3>Council-Wide Opportunities</h3>
-<p>The summary PDF includes a separate page of systemic findings that no single member can fix alone. These reflect council-wide norms, agenda management practices, and collective voting behavior:</p>
-<table>
-<thead>
-<tr>
-<th>Finding</th>
-<th>Trigger</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Reduce bloc voting</strong></td>
-<td>Block vote rate ≥ 60%</td>
-</tr>
-<tr>
-<td><strong>Fiscal pre-vote questions norm</strong></td>
-<td>≥ half of members with fiscal_raw &lt; 0.30</td>
-</tr>
-<tr>
-<td><strong>Triage staff referrals</strong></td>
-<td>Total referrals across all members ≥ 5</td>
-</tr>
-<tr>
-<td><strong>Rhetoric–action gap</strong></td>
-<td>≥ 2 members with rhetoric_action_gap_score ≥ 0.15</td>
-</tr>
-<tr>
-<td><strong>Refocus non-core authorship</strong></td>
-<td>≥ 3 members with composite_off_penalty &gt; 0.05</td>
-</tr>
-<tr>
-<td><strong>HSA accountability metrics</strong></td>
-<td>≥ 55% of members with hsa_score ≥ 55</td>
-</tr>
-</tbody>
-</table>
-<p>Council-wide findings are not scored — they document structural patterns for voters and elected officials who want to change those patterns.</p>
+<h2>6. Inherited governance</h2>
+<p><strong>Prior Council approval establishes history, not necessity.</strong></p>
+<p><strong>Taking office does not create responsibility for the origin of inherited conditions. It<br />
+does create responsibility for governing them from that point forward.</strong></p>
+<p><strong>Succession changes responsibility for origin; it does not interrupt responsibility for<br />
+response.</strong></p>
+<p>A member assumes responsibility for an inherited trajectory when, after sufficient notice<br />
+and opportunity, they affirmatively continue, extend, protect, or materially fail to<br />
+challenge it.</p>
+<h3>6.1 Decision gates and manufactured inevitability</h3>
+<p><strong>Council must not use progressive commitment to substitute for unresolved<br />
+justification.</strong> Advancing a project in ways that create sunk costs, contractual<br />
+obligations, physical facts on the ground, or political expectations reduces the City's<br />
+practical ability to reconsider it later. <strong>Those effects are themselves material<br />
+consequences of the decision to advance.</strong></p>
+<p><strong>Where an unresolved deficiency becomes harder to address after the next decision gate,<br />
+the duty to scrutinize increases before that gate is crossed.</strong> Scrutiny is owed most at<br />
+the point where it can still change something.</p>
+<p>A badly governed project can become effectively irreversible <em>before completion</em>. Where<br />
+that happens, the failure is not only the final commitment — it is the sequence that<br />
+removed future choices.</p>
+<p><strong>Do not assert motive.</strong> Intent is rarely provable and is not needed. State the<br />
+institutional effect: <em>continuing construction increased the cost and political difficulty<br />
+of reconsideration while the operating model remained unresolved.</em></p>
+<p>Incremental commitment is ordinary and often correct. The failure is incremental<br />
+commitment used <em>instead of</em> resolving a known prerequisite. The test is whether the<br />
+question was being worked while the project advanced, or merely deferred.</p>
+<h3>6.2 Notice: actual and constructive</h3>
+<p><strong>Actual notice</strong> exists when the record establishes that the member or office received,<br />
+discussed, acknowledged, voted on, or demonstrably encountered the information.</p>
+<p><strong>Constructive notice</strong> may be found when an issue was sufficiently prominent, formally<br />
+documented, relevant to a live responsibility, and reasonably discoverable through ordinary<br />
+portfolio review. Relevant factors: materiality; prominence and formality of the source;<br />
+whether Council formally received it; whether it remained unresolved; whether related<br />
+decisions kept coming before Council.</p>
+<p><strong>Constructive notice is a standard of reasonable governing diligence, not a device for<br />
+imposing hindsight liability.</strong> It must not rest on the mere existence of information<br />
+somewhere in City records.</p>
+<p><strong>Actual and constructive notice must never be silently equated.</strong> A finding resting on<br />
+constructive notice is weaker and must say so.</p>
+<h3>6.3 Temporal responsibility</h3>
+<p><strong>Time affects responsibility according to the nature of the governing act.</strong> Decay applies<br />
+to isolated past acts, not to unresolved conditions under continuing jurisdiction.</p>
+<p>The operative test: <strong>is this old conduct, or is this an old problem the current<br />
+officeholder keeps choosing not to solve?</strong></p>
+<ul>
+<li><strong>Discrete act</strong> — bounded in time. Attaches to officeholders with notice and<br />
+  opportunity then. <strong>Decays.</strong> A member elected later does not inherit culpability merely<br />
+  because consequences persist.</li>
+<li><strong>Continuing trajectory</strong> — an unresolved condition repeatedly presented to current<br />
+  officeholders. <strong>Does not decay.</strong> Responsibility refreshes at each material gate and may<br />
+  accumulate through repeated non-intervention. Ten years of worsening condition is not one<br />
+  ten-year-old failure fading away; it is a sequence of renewed opportunities to govern.</li>
+<li><strong>Inherited consequence</strong> — damage caused before arrival. Responsibility attaches to the<br />
+<strong>current response</strong>, once authority, notice and a realistic corrective opportunity<br />
+  coexist.</li>
+</ul>
+<p>The rule is symmetric: years of correction accrue credit that likewise does not decay.</p>
+<h3>6.4 Opportunity accounting</h3>
+<p>A trajectory record carries <strong>three counts, never one</strong>: opportunities identified,<br />
+opportunities adjudicated, opportunities unresolved.</p>
+<p><strong>An opportunity count is not a finding.</strong> It records where responsibility <em>could</em> have<br />
+accrued, not whether it did. Left as a bare number it hardens into culpability before<br />
+adjudication — "six budget cycles" starts reading as six failures.</p>
+<p>Reported as: <em>six material opportunities identified; four adjudicated; two unresolved.</em><br />
+Where unresolved is greater than zero, any narrative must say so.</p>
 <hr />
-<h2>A+ Ceiling Conditions</h2>
-<p>A+ is not available to a member who is silent or miscalibrated on Berkeley's documented structural crises. The grade requires not just absence of bad behavior but <strong>aspirations set at the level the city's own documents say the problems demand</strong>. Setting sights too low on a documented crisis accepts a trajectory the city's own adopted reports describe as ruinous.</p>
-<h3>The general principle: outcomes accountability</h3>
-<p>The core test applies to any domain where significant public money is spent:</p>
-<blockquote>
-<p><strong>A serious elected official demands measurable outcomes for significant public expenditures.</strong> This applies equally to street maintenance, homeless services, public health, contracted social services, and staffing. The amount spent and the absence of measurement are what trigger the standard, not the political valence of the program. A member who approves or tolerates large recurring spending in any domain without requiring performance metrics, outcome data, or accountability mechanisms is not doing the job.</p>
-</blockquote>
-<p>Silence is not neutrality. A member who does not demand accountability for a major spending program is implicitly endorsing it.</p>
-<h3>Currently scored: Homeless Services Status-Quo Alignment (HSA)</h3>
-<p>HSA is one instance of the general principle — the one with the richest transcript signal and the best-documented evidence of unaccountable spending. Berkeley's homeless services apparatus ($21M+/yr, 33+ programs, Housing First mandate, decade of growth with no measurable reduction in visible homelessness) is where the scoring algorithm is best instrumented, not because homelessness is uniquely important but because the evidence record is clearest. A separate signal would be built for any other major program that shares the same profile: large recurring cost, clear measurable objective, council has not demanded outcome data.</p>
-<p>HSA measures how invested a member is in the existing apparatus versus demanding accountability, outcome metrics, and reform. Scale: 0 (reform-oriented) → 100 (status-quo aligned). The scoring formula uses a quadratic curve: HSA 50 (neutral/silent) → taxpayer_alignment contribution capped at 0.25 of its maximum. A+ requires HSA well below 50 — not because demanding accountability for homeless services is uniquely virtuous, but because this is the largest unaccountable program in Berkeley's budget and neutrality on it signals a broader tolerance for unaccountable spending.</p>
-<h3>Documented ceiling conditions not yet scored</h3>
-<p>The following are known gaps where the A+ ceiling should apply but the algorithm does not yet detect it. Each follows the same structure as HSA: significant recurring cost, measurable standard the city's own documents establish, council response that falls short.</p>
-<p><strong>Infrastructure outcomes accountability.</strong> The city's adopted goal is PCI 70. The Rocky Road audit (Oct 2025) found: current PCI ≈ 57; achieving PCI 70 requires $42M/year; the GF allocation is $2–8M/year; deferred maintenance costs $7 in repairs for every $1 spent early; delays will quadruple costs by 2050. PCI 70 is not an aspirational ceiling — it is the floor below which deterioration accelerates rapidly. A member who accepts PCI 70 as the goal without demanding the $42M/year to get there has accepted a 5× funding shortfall as normal. Same structure as HSA: large program, measurable objective, council has not demanded the outcome. <em>Gap: transcript signal cannot yet distinguish whether a member treats PCI 70 as a ceiling or a floor.</em></p>
-<p><strong>Structural balance policy gap.</strong> The City Auditor explicitly recommended the council adopt a GFOA policy requiring assessment of whether recurring revenues match recurring expenditures. No member has moved to adopt it. Three consecutive budget cycles have included verbatim "not sustainable" findings. A council that receives that language repeatedly without adopting a structural balance requirement is not demanding accountability from its own budget process. <em>Gap: motion has not yet been made; absence of motion is the finding.</em></p>
-<p><strong>Reserve policy backslide.</strong> The reserve target was lowered from 30% to 20–30% in July 2025, timed to avoid non-compliance rather than achieve the original goal. Combined reserves are ~14.5%, below even the revised floor. An A+ member voted against the revision or demanded a plan to reach the original target. <em>Gap: vote is on record; not yet wired into scoring.</em></p>
-<p><strong>Investment policy non-compliance.</strong> City investments have underperformed LAIF for 9 consecutive quarters. The council receives quarterly evidence and has not acted. An A+ member has demanded corrective action on the record. <em>Gap: quarterly reports are on the action calendar; member response detectable in transcripts but not yet scored.</em></p>
-<p><strong>Section 115 Trust depletion.</strong> The council shifted from contributing $2M/year to the pension pre-funding trust to withdrawing $3–6M/year to balance an operating budget the City Manager calls structurally unsustainable. An A+ member has objected to this trajectory on the record. <em>Gap: vote-based; not yet wired into scoring.</em></p>
-<h3>The common structure</h3>
-<p>Each condition follows the same pattern: significant recurring expenditure or structural obligation; measurable standard the city's own documents establish; council response that falls short; member who does not challenge the gap. Absence of objection is not neutrality — it is ratification.</p>
-<h2>The HSA condition is implemented because transcript signals are rich (sympathy/skeptic keyword matching across 51 meetings). The others await vote-record wiring (reserve policy, Section 115) or improved transcript pattern detection (infrastructure, structural balance). All are planned.</h2>
-<h2>P1/P2/P3 Priority Framework</h2>
-<p>Council work is tiered by urgency and alignment with Berkeley's documented structural problems.</p>
-<table>
-<thead>
-<tr>
-<th>Tier</th>
-<th>Label</th>
-<th>Definition</th>
-<th>Examples</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>P1</strong></td>
-<td>Crisis work</td>
-<td>Directly addresses a documented structural problem (fiscal deficit, infrastructure backlog, pension liability, core services)</td>
-<td>Budget reprioritization, fiscal referrals, no votes on spending, demand for efficiency data</td>
-</tr>
-<tr>
-<td><strong>P2</strong></td>
-<td>Beneficial delivery</td>
-<td>Legitimate city function with a clear, measurable objective — not in crisis, but real</td>
-<td>Housing project approvals, specific public art commissions, parks maintenance, public safety equipment</td>
-</tr>
-<tr>
-<td><strong>P3</strong></td>
-<td>Discretionary / ceremonial</td>
-<td>Within Berkeley's general authority but low-priority, unaccountable, or purely performative</td>
-<td>Cultural festivals, proclamations, arts grant programs, out-of-jurisdiction resolutions</td>
-</tr>
-</tbody>
-</table>
-<p><strong>The Priority 1 (P1) engagement test:</strong> A member who generates only P2 activity — approves contracts, shows up for votes, stays out of trouble — but never engages with the P1 crises documented in the city's own reports is not doing the full job. A member who generates P3 activity while P1 problems go unaddressed is actively substituting low-priority work for the high-priority work the city's own documents say is urgent.</p>
-<p><strong>Scoring implication:</strong> Members with zero P1 referrals authored and low fiscal engagement (fiscal vote presence + fiscal concern rate) receive a low P1 engagement penalty of up to −0.10 applied to the composite grade. The penalty scales with the engagement gap — a member with no P1 referrals but high fiscal concern rhetoric and consistent vote attendance receives no penalty; a member with no referrals, low rhetoric, and frequent absences receives the full penalty.</p>
-<hr />
-<h2>Consent Calendar Classification</h2>
-<p>Consent calendar items — passed en bloc without floor debate — are classified into five tiers that feed into the agenda scoring and Priority 1/2/3 (P1/P2/P3) analysis.</p>
+<h2>7. Attribution</h2>
+<p>The unit is <strong>member × material decision</strong>.</p>
+<h3>7.1 Three predicates</h3>
+<p>An attribution must establish all three before a role is assigned:</p>
+<ol>
+<li><strong>Notice</strong> — what did the member reasonably know, and when? Must precede the act it<br />
+   indicts.</li>
+<li><strong>Opportunity</strong> — what practical authority did they hold at a gate still open to them?<br />
+   Read with §5.3: the question is not merely whether an instrument existed but whether<br />
+   responsible performance called for its use.</li>
+<li><strong>Response</strong> — what did they do with it, including doing nothing, stated as such.</li>
+</ol>
+<p><strong>Where no opportunity is identified, the member is not a corrective-failure case.</strong><br />
+Absence of an instrument is not conduct.</p>
+<p>Opportunity is typed, not free text: <code>consent_pull</code>, <code>motion</code>, <code>amendment</code>, <code>deferral</code>,<br />
+<code>request_analysis</code>, <code>request_audit</code>, <code>public_challenge</code>, <code>other</code>, <code>none_identified</code>.</p>
+<h3>7.2 Responsibility classes</h3>
 <table>
 <thead>
 <tr>
 <th>Class</th>
-<th>Label</th>
-<th>What it means</th>
-<th>Examples</th>
+<th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>1</strong></td>
-<td>P1 core</td>
-<td>Directly addresses a documented structural crisis</td>
-<td>Police staffing, fire equipment, infrastructure contracts, budget amendments</td>
+<td><strong>Origin</strong></td>
+<td>Materially originated, sponsored, designed or drove the course.</td>
 </tr>
 <tr>
-<td><strong>2</strong></td>
-<td>P2 delivery</td>
-<td>Legitimate city function, clear deliverable</td>
-<td>Housing project approvals, specific public art commissions, park improvements, fleet maintenance</td>
+<td><strong>Affirmative continuation</strong></td>
+<td>Knowingly acted to continue or deepen it after deficiencies warranted reconsideration.</td>
 </tr>
 <tr>
-<td><strong>3</strong></td>
-<td>P3 discretionary</td>
-<td>Within city authority but low priority or performative</td>
-<td>Cultural festivals, arts grant programs, proclamations, council office budget relinquishments</td>
+<td><strong>Corrective failure</strong></td>
+<td>Inherited it, had notice and meaningful opportunity, materially failed to force reconsideration.</td>
 </tr>
 <tr>
-<td><strong>8</strong></td>
-<td>Administrative necessity</td>
-<td>Has to happen regardless; minimal policy content</td>
-<td>Minutes approval, bid solicitations, routine contract renewals, CalPERS side letters, grant applications for ongoing programs</td>
+<td><strong>Protection from reconsideration</strong></td>
+<td>Used official power or procedure to prevent warranted scrutiny. Categorically different from ratifying.</td>
 </tr>
 <tr>
-<td><strong>9</strong></td>
-<td>Questionable scope</td>
-<td>City doing what another body should do, or shouldn't be doing at all</td>
-<td>County health service duplication, out-of-jurisdiction resolutions, non-competitive personnel rules, vague consulting without deliverables</td>
+<td><strong>Corrective action</strong></td>
+<td>Opposed, exposed, narrowed, conditioned, delayed, redirected, or attempted correction.</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Art commissions:</strong> Specific public artwork contracts for named artists at named locations are class 2 (city delivers public art). Arts consulting, strategic planning, and grant-award programs are class 3 (program overhead). Grant acceptance for ongoing programs is class 8 (administrative).</p>
-<p><strong>Class 9 vs. class 3:</strong> Class 3 items are low-priority but within Berkeley's appropriate scope. Class 9 items represent scope the city arguably should not carry — county service duplication, political advocacy outside city authority, and governance structures that insulate dysfunction from accountability.</p>
-<p>Consent calendar classifications are stored in <code>agendas/classified/consent_items_classified.csv</code> (594 items, Dec 2024–Apr 2026). Distribution: 1=41, 2=268, 3=58, 8=174, 9=53.</p>
-<p>Action calendar classifications are stored in <code>agendas/classified/action_items.csv</code> (175 items, Dec 2024–Apr 2026). Distribution: 1=40, 2=47, 3=17, 8=56, 9=15.</p>
-<p><strong>Classification is topic-tier, not quality-of-response.</strong> A Priority 1 (P1) topic handled badly (e.g., a ballot-measures funding discussion that defaults to new taxes without contemplating cuts) is still class 1 — it addresses the right problem. The pipeline scores the quality of the response separately via fiscal concern rhetoric, new revenue preference signals, and vote record. Classifying it as P3 would undercount the council's P1 engagement; the penalty for the wrong answer belongs in the scoring layer, not the classification layer.</p>
+<p><strong>Mere tenure during a failure does not establish responsibility.</strong> Absence is scored in<br />
+attendance, not here. Supporting a course <em>before</em> the defect was reasonably knowable<br />
+establishes no responsibility for the failure — treating it as such is hindsight scoring.</p>
+<h3>7.3 Participation</h3>
+<p>Responsibility scales with relationship to the act: author and sponsor highest, binding<br />
+vote next, co-sponsorship and material amendment below, advocacy without a binding act<br />
+lower, passing comment not at all. <strong>The ladder's shape is normative; its coefficients are<br />
+reserved to calibration.</strong></p>
+<h3>7.4 Uniform failures</h3>
+<p>Where a record genuinely differentiates roles, attribution differentiates. Where it does<br />
+not, <strong>uniform attribution is the accurate description.</strong> An attribution scheme producing<br />
+sharply different roles on a uniform failure would be inventing distinctions the record<br />
+does not contain.</p>
+<p>A body that acts as one unit fails as one unit. Individual attribution exists to<br />
+distinguish roles within a shared failure, not to sort members.</p>
 <hr />
-<h3>Tier 2 — Key Facts (visible on main scorecard)</h3>
-<p>Three plain-language facts that explain the grade. No jargon.</p>
-<h4>Attendance &amp; Vote Presence</h4>
-<ul>
-<li><strong>Source:</strong> Annotated agenda PDFs (authoritative roll call records)</li>
-<li><strong>Components:</strong> Sessions fully absent (never arrived) · Sessions late at roll call · Fiscal vote absences</li>
-<li><strong>Framing:</strong> "Present for X of Y major budget votes" is the key line — budget votes are the council's most consequential act and absences on them are the primary attendance signal regardless of excuse</li>
-</ul>
-<h4>Stayed Focused</h4>
-<ul>
-<li><strong>Source:</strong> Transcripts + agenda item classification</li>
-<li><strong>Metric:</strong> Core Agenda Share = (core-service words / total words) − (non-core words / total words), normalized 0–100</li>
-<li><strong>Core services:</strong> public safety, infrastructure (roads, sidewalks, utilities, facilities), permitting, basic city operations, bicycle transportation infrastructure</li>
-<li><strong>Non-core:</strong> foreign policy statements, ideological resolutions, performative oversight theater, fluff programs without measurable outcomes</li>
-<li><strong>Borderline / neutral:</strong> Arts programming and cultural events are not scored as non-core by default — they are a city function, albeit a lower-priority one. They are noted if a specific incident shows them being used to crowd out or distract from more consequential work.</li>
-<li><strong>Scope-creep within core items:</strong> Even a core-service measure can be penalized if it is loaded with non-core additions — e.g., bundling protected cycle tracks in new locations, environmental enhancements, or ideological carve-outs into a streets repair measure converts a straightforward repair obligation into a progressive amenity program. The focus signal captures this at the agenda item and transcript level.</li>
-<li><strong>Framing:</strong> The council has limited time and staff bandwidth. Every non-core item is a choice to not work on something that matters.</li>
-</ul>
-<h4>Fiscal Stewardship Alignment</h4>
-<ul>
-<li><strong>Source:</strong> Transcripts + annotated agenda votes + agenda item authorship</li>
-<li><strong>This is the most important dimension.</strong> A member who talks fiscal restraint but authors bond referrals and votes yes on every budget is doing something specific: treating new revenue as the default rather than the last resort. A member who demands efficiency data, questions alternatives to new revenue, and actually votes no on bloated items is representing the payer.</li>
-<li><strong>Key sub-signals</strong> (see Tier 4 for detail):</li>
-<li>Fiscal concern rhetoric rate (mentions of cost, efficiency, alternatives per 10k words)</li>
-<li>Non-core items authored (active choice to consume budget on non-core items)</li>
-<li>New revenue preference: authored/supported new tax or bond measures without accompanying cut analysis — scored <em>negative</em>, not neutral (see below)</li>
-<li>Rhetoric–action gap: voiced fiscal concern AND voted yes on large spending items</li>
-<li>Votes no on spending (rare and high-signal)</li>
-<li>Fiscal understatement: council-authored items claiming "None" or "Staff time" fiscal impact when the scope clearly incurs real obligations — new permit regimes, bans, citywide policy frameworks. Detected via <code>check_fiscal_understatement()</code> in <code>agenda_scraper.py</code>; scored −0.015/item authored, −0.007/item cosponsored, capped at −0.04. The failure may reflect naivete (not understanding what the proposal will require), weak effort (not thinking it through), or disregard for transparency — the penalty applies regardless of motive because the result is the same: the council and public lack a realistic cost picture when the item is heard.</li>
-<li>Special interest alignment score (inverse: deeper alignment with a spending constituency's status quo — e.g. homeless services apparatus, cycle track advocacy — without demanding accountability for outcomes = less taxpayer-aligned; Homeless Services Status-Quo Alignment (HSA) is the primary implemented instance)</li>
-<li><strong>New revenue preference vs. fiscal concern:</strong> These are not the same signal. Asking what the city could spend differently — reprioritize, deliver more efficiently, or have someone else deliver — is fiscal work. Asking "should we put a bond on the ballot?" is identifying a revenue path without doing the reprioritization work first. The two are tracked separately. New revenue preference without companion reprioritization analysis scores negative (up to −0.10). Partial credit applies if the same member also uses fiscal probing language (cut_credit). The signal is about the range of options considered before choosing new revenue, not about cutting: the detection keywords already credit efficiency and alternative-delivery questions, and <a href="https://ericdf.github.io/berkeley-decision-project/crayon-box.html">The Crayon Box</a> names three unused options of which only one resembles a cut.</li>
-</ul>
+<h2>8. Material Governance Failures</h2>
+<p><strong>A Material Governance Failure is a decision, series of decisions, or sustained failure to<br />
+act that materially alters the City's assets, finances, services, institutions,<br />
+neighborhoods or public realm; produces substantial and durable adverse consequences; and<br />
+cannot readily be corrected through ordinary subsequent governance.</strong></p>
+<p>Four characteristics: transformative consequence; durability; governance causation; scale.<br />
+An MGF may arise from one dramatic decision or from cumulative governance over time.</p>
+<h3>8.1 Two lanes</h3>
+<p>The earlier definition required a <strong>material premise failure</strong> plus <strong>authoritative<br />
+notice</strong>. That describes one subtype and was mistaken for the whole category. It fits<br />
+misrepresentation cases and excludes the broader class — deteriorating infrastructure,<br />
+progressive commitment without a viable operating model, conditions allowed to destroy an<br />
+established public use.</p>
+<p><strong>Decision-integrity MGF.</strong> Material premise failure, misrepresentation, or authoritative<br />
+contradiction before final action. Qualification: high-stakes governmental action; material<br />
+premise failure; authoritative notice before final action; practical opportunity to cure.</p>
+<p><strong>Stewardship / trajectory MGF.</strong> A consequential City condition or commitment allowed to<br />
+become seriously impaired, difficult to reverse, or structurally embedded despite<br />
+authority, notice and meaningful opportunities to intervene. Qualification: high-stakes<br />
+condition or commitment; material and persisting deficiency; notice — actual or<br />
+constructive — during the member's tenure; repeated material decision gates at which<br />
+intervention was practical.</p>
+<p>The accretive machinery of §6.3 and §6.4 belongs to the second lane.</p>
+<h3>8.2 Severity</h3>
+<p>Seven factors, each 0/1/2, summing 0–14: decision centrality, stakes, evidentiary clarity,<br />
+notice before action, opportunity to cure, failure to cure, durability.</p>
+<p>Bands: 0–4 routine · 5–7 serious · 8–11 major · 12–14 critical.</p>
+<p><strong>Durability is assessed against when reconsideration became impractical, not against<br />
+completion.</strong> Otherwise the test rewards the sequencing §6.1 condemns.</p>
+<p>Severity factors and band placement are <strong>carried forward unchanged pending calibration</strong>,<br />
+so that existing fixtures remain interpretable.</p>
+<h3>8.3 One fact, one place</h3>
+<p>A single act may inform more than one dimension only when it answers genuinely different<br />
+questions. It may not be counted twice within a dimension, nor scored in a dimension and<br />
+then subtracted again as a free-standing adjustment.</p>
 <hr />
-<h3>Tier 3 — Informed Voter</h3>
-<p>Metrics that require some familiarity with how city government works, but are explainable in a sentence.</p>
-<h4>Collegiality &amp; Conduct</h4>
-<ul>
-<li><strong>Source:</strong> Transcripts and constituent communications</li>
-<li><strong>What it measures:</strong> A measure of the member as a colleague and public servant. Combines four dimensions: collegiality (acknowledges and builds on others' contributions), humility (updates positions when presented with new information), warmth (treats staff, colleagues, and the public with genuine respect), and self-referential appeals (instances where a member relies on personal identity, credentials, history, or self-positioning as persuasive support in place of substantive argument or evidence — lower is better).</li>
-<li><strong>Formula:</strong> <code>Character = 0.35×collegiality + 0.25×humility + 0.20×warmth + 0.20×(1 − self-referential appeals)</code></li>
-<li><strong>Evidentiary basis:</strong> Text analysis</li>
-</ul>
-<h4>Constituency Preference Gap</h4>
-<ul>
-<li><strong>Source:</strong> Transcripts + vote record</li>
-<li><strong>What it measures:</strong> Composite signal for how out-of-step a member is with a constituent who expects fiscal accountability. High gap = high non-core speech, high self-referential appeals, and low fiscal engagement.</li>
-<li><strong>Formula:</strong> <code>Constituency Preference Gap = 0.40×non-core speech% + 0.30×self-referential appeals + 0.30×(1 − fiscal engagement)</code></li>
-</ul>
-<h4>Homeless Services Status-Quo Alignment (HSA)</h4>
-<p><em>The primary implemented example of special interest alignment scoring.</em><br />
-- <strong>Source:</strong> Transcripts + agenda cosponsorship<br />
-- <strong>Scale:</strong> 0 (reform-oriented) → 100 (status-quo aligned)<br />
-- <strong>What it measures:</strong> How invested is the member in the existing homeless services apparatus — $21.7M+/yr across 33+ programs, Housing First mandate, low-barrier ideology — versus demanding accountability, outcomes data, and reform?<br />
-- <strong>Why it matters:</strong> HSA is the primary implemented instance of the general outcomes-accountability principle (see A+ Ceiling Conditions). Berkeley's homeless spending has grown for a decade with no measurable reduction in visible homelessness. The same standard — demand metrics, question the model, require accountability for results — applies to any major program, but this is where the evidence record and transcript signal are richest. A member who champions more spending and resists outcome metrics is not representing the taxpayers who fund the program.<br />
-- <strong>Score distribution:</strong> See current scorecard output. High scores indicate deep alignment with the existing homeless services apparatus and resistance to accountability reform; low scores indicate a reform or outcomes-focused orientation.</p>
-<h4>Unanimity Vote Rate</h4>
-<ul>
-<li><strong>Source:</strong> Transcripts (roll-call extraction)</li>
-<li><strong>Council-wide rate:</strong> ~92% of votes are unanimous</li>
-<li><strong>What it means:</strong> The council almost never disagrees in public. This is a council-level finding, not a per-member score. Individual deviations (no votes, abstentions) are tracked separately and are high-signal precisely because they are rare.</li>
-</ul>
+<h2>9. Evidence standards</h2>
+<p>Every figure traces to a primary document. If a figure cannot be reproduced from the<br />
+document it is attributed to, it is left out and the omission stated.</p>
+<p><strong>Corpus figures go stale the moment transcripts are added.</strong> Re-derive; never copy.</p>
+<p><strong>Compare every per-member finding against the other eight before stating it.</strong> Claims that<br />
+sound damning are often the council norm.</p>
+<p><strong>Notice must precede the act it indicts.</strong> Check the chronology first.</p>
+<p><strong>Bound claims to what was examined.</strong> "Nothing in the record" implies exhaustive review;<br />
+"nothing in the transcripts, the agenda record, or the technical basis of the July 2026<br />
+item" is equally forceful and precisely true.</p>
+<p><strong>Gaps must be legible.</strong> Completeness is not a publishing gate, but "not yet examined"<br />
+must read differently from "examined and nothing found."</p>
 <hr />
-<h3>Tier 4 — Inside Baseball</h3>
-<p>Detailed signals for readers who want to understand the methodology or propose changes.</p>
-<h4>Rhetoric–Action Gap</h4>
-<ul>
-<li><strong>Source:</strong> Transcripts cross-referenced with agenda vote/authorship records</li>
-<li><strong>Logic:</strong> A member who frequently invokes fiscal discipline language AND authors large spending items or non-core agenda items is doing something specific. The score measures the gap between stated fiscal concern and revealed spending behavior. A gap of zero — rhetoric and action aligned — is available to any member who either stops the rhetoric or starts acting on it.</li>
-<li><strong>Threshold:</strong> Triggered when fiscal concern rate ≥ 0.5 mentions/10k words AND spend authored ≥ $500k</li>
-</ul>
-<h4>Staff Direction Volume</h4>
-<ul>
-<li><strong>Source:</strong> Transcripts</li>
-<li><strong>What it measures:</strong> How often a member directs staff to study, prepare, or report on something. Each referral consumes staff bandwidth. Classified by whether the referral topic is core-service or non-core.</li>
-<li><strong>Why it's "inside baseball":</strong> The mechanism (staff referrals as a budget and bandwidth tool) is familiar to city-government watchers but opaque to general voters.</li>
-</ul>
-<h4>Agenda Authorship Activity</h4>
-<ul>
-<li><strong>Source:</strong> Transcripts (self-identification as author or co-author)</li>
-<li><strong>What it measures:</strong> How often a member brings or co-sponsors agenda items. More sponsorships = more active agenda-setting. Combined with non-core classification to distinguish productive from wasteful.</li>
-</ul>
-<h4>Procurement Risk Signals</h4>
-<ul>
-<li><strong>Source:</strong> Staff report PDFs (packet scraper)</li>
-<li><strong>Signals tracked:</strong> Waived competitive bid · Backdated/retroactive contracts · No alternatives considered</li>
-<li><strong>What it measures:</strong> How often does a member vote yes on contracts or spending items with procurement red flags? This is a passive measure (most procurement is staff-driven) but patterns over time reveal whether members ask questions before approving.</li>
-</ul>
-<h4>Annotated Vote Statistics</h4>
-<ul>
-<li><strong>Source:</strong> Annotated agenda PDFs (all 58 sessions)</li>
-<li><strong>Fields:</strong> annot_vote_total · annot_vote_yes · annot_vote_no · annot_vote_abstain · annot_vote_absent · annot_abstain_rate · annot_contested_abstain</li>
-<li><strong>Abstention semantics:</strong> "I chose not to use my voting power on this matter." A pattern of abstaining signals disengagement, masked disagreement (fear of voting no), or failure to prepare. The council is elected to vote. Systematic abstention is a failure of the job function — constituents deserve a position, not a pass.</li>
-<li><strong>Contested abstentions</strong> (abstaining when ≥1 other member voted no) are the highest-signal variant: the member knew there was a real choice to make and declined to make it. This is the strongest indicator of conflict avoidance over representation.</li>
-<li><strong>Current findings:</strong> See current scorecard output for per-member abstention rates and contested abstention counts.</li>
-</ul>
-<h4>Fiscal Vote Record (Major Binding Votes)</h4>
-<ul>
-<li><strong>Source:</strong> Annotated agenda PDFs, cross-referenced with curated vote list</li>
-<li><strong>7 binding fiscal votes tracked</strong> (Dec 2024–Apr 2026):</li>
-<li>2025-01-21 · CMFA Bond – 2001 Ashby Ave · $44.9M</li>
-<li>2025-05-20 · Lease Revenue Notes – Fire HQ · $11M</li>
-<li>2025-05-20 · GO Bonds – Measure O Housing · $35M</li>
-<li>2025-05-20 · FY2025 Budget Amendment (1st reading) · $85.7M</li>
-<li>2025-06-03 · FY2025 Budget Amendment (2nd reading) · $144M</li>
-<li>2025-06-24 · FY2026 Budget Adoption (1st reading) · $1.45B</li>
-<li>2025-07-08 · FY2026 Budget Adoption (2nd reading) · $1.52B</li>
-<li><strong>Budget adoption framing:</strong> A YES vote is not neutral. It is a choice not to cut, not to reprioritize, and not to address Berkeley's structural deficit. Every member present voted yes unanimously on the FY2026 budget at 1am.</li>
-<li><strong>Attendance deduction curve:</strong> Uses a convex power curve: <code>(absences/total)^1.5 × 0.25</code>. This is lenient for 1–2 absences (−0.013 and −0.038) and severe for 4–5 absences (−0.120 and −0.151). The design reflects the judgment that one missed vote can have a real excuse; missing most major votes signals a different disposition. Maximum attendance deduction: −0.25.</li>
-</ul>
+<h2>10. Calibration and safeguards</h2>
+<p>Weights, grade thresholds, participation coefficients, materiality weights and MGF<br />
+consequence mechanics are <strong>reserved to calibration</strong>.</p>
+<blockquote>
+<p>The scoring scale is anchored to substantive standards, not to the observed<br />
+distribution. Grade thresholds shall be established only after blind calibration against<br />
+a representative fixture set, and shall not subsequently be adjusted to produce a desired<br />
+distribution.</p>
+</blockquote>
+<p>Protocol: freeze a fixture set drawn from <strong>several members</strong>; two reviewers rate<br />
+independently and blind; resolve disagreement by <strong>refining definitions</strong>, never by<br />
+averaging unexplained judgments; measure agreement in order — attributability, dimension<br />
+applicability, participation role, materiality, rating, rationale.</p>
+<p><strong>If two reviewers cannot apply the rubric consistently, the rubric is not ready. That is a<br />
+finding, not a failure.</strong></p>
+<p>A fixture's inputs may not be adjusted after seeing its result.</p>
+<h3>10.1 Computational rules</h3>
+<ol>
+<li><strong>Spec controls code.</strong> Where they disagree, the implementation is wrong.</li>
+<li><strong>Each derived quantity is computed exactly once.</strong> This rule exists because Civic Focus<br />
+   was derived independently in two files with a comment saying they must match and nothing<br />
+   enforcing it; it drifted twice, most recently by 0.30 on a pillar carrying 25% of the<br />
+   grade.</li>
+<li><strong>Versioned scoring.</strong> Every published score identifies its spec and data version.</li>
+<li><strong>Regression tests on frozen fixtures.</strong></li>
+<li><strong>No silent formula changes.</strong> Anything capable of moving a score requires a version bump<br />
+   and a changelog entry.</li>
+<li><strong>Reproducible.</strong> A published score must be reconstructable from disclosed records and<br />
+   rules.</li>
+<li><strong>No undocumented inputs.</strong> If a quantity can change a grade, it belongs in this document.</li>
+</ol>
 <hr />
-<h2>Audit Findings Stream</h2>
-<p>City Auditor reports are a separate evidentiary stream from incidents. They are not scored directly — the council's <em>response</em> to an audit is what gets scored.</p>
-<p><strong>Why this distinction matters:</strong> Incidents capture specific moments of individual behavior. Auditor reports establish independent, documented ground truth: facts the council is obligated to know, findings that create a duty to act, and a record that removes the ability to claim ignorance. When a council member subsequently acts in a way that contradicts a documented audit finding, that action is now interpretable as a choice — not a gap in knowledge.</p>
-<p><strong>How audits feed into scoring:</strong><br />
-1. An audit is released and enters the registry (<code>audit_findings.json</code>) with key findings, auditor recommendations, and the action a taxpayer-aligned council should take.<br />
-2. When the audit goes on the council agenda, the council's first response is recorded. "Receive and file" without a companion motion is the baseline failure; a substantive motion by any member is the positive signal.<br />
-3. Subsequent council actions that contradict audit findings are scored harder because the ground truth is documented. A vote for a fifth bond cycle <em>after</em> receiving an audit that identified GF underfunding as the root cause of street decay is a different act than the same vote without that record.<br />
-4. Incidents that are grounded in an audit cite the registry key via the <code>audit_ref</code> field in <code>incidents.json</code>.</p>
-<p><strong>Ordinary voters will not read City Auditor reports.</strong> The audit findings registry (<code>scores/pdfs/audit_findings.pdf</code>) does that work — it translates what each audit found, what was warranted, and what the council actually did into a readable record. The pattern across audits — findings received, filed, and converted into bond campaigns — is the accountability story the scorecard is designed to tell.</p>
-<p><strong>Audits currently tracked</strong> (see <code>audit_findings.json</code>):<br />
-- <code>streets_rocky_road_2025</code> — Rocky Road streets audit (Oct 2025): response documented; council received and filed, then directed a $300M bond with no GF reprioritization motion<br />
-- <code>homeless_response_team_2025</code> — HRT audit (Jul 2025): pending council action; findings primarily staff-operational<br />
-- <code>financial_condition_2026</code> — Financial condition audit (Apr 2026): pending council action; $32–33M structural deficit, 66% pension funded ratio, $1.8B unfunded capital, GFOA policy gap</p>
+<h2>11. Relationship to the written scorecard</h2>
+<p>The number is constrained by this rubric. The prose may be more pointed — identifying<br />
+patterns, contradictions and consequences — provided it distinguishes documented fact,<br />
+framework judgment, inference, and opinion.</p>
+<p><strong>The model exists to make hard criticism more defensible, not less forceful.</strong></p>
 <hr />
-<h2>Incident Tracking</h2>
-<p>Transcripts and agenda records capture what happens on the dais and in formal meetings. They do not capture everything that matters.</p>
-<p><strong>Incidents</strong> are documented accountability events that cannot be measured by transcript keyword analysis or voting records alone. An incident can arise from any verifiable source: meeting transcripts, constituent communications, news coverage, court filings, public records requests, auditor reports, or other public documents. Incidents are not limited to behavior inside formal proceedings — a newspaper article, a court filing, or a public records violation can all be the basis for an incident.</p>
-<p>Incidents are scored on named <strong>dimensions</strong>, each of which carries a <strong>pillar tag</strong> indicating which aspect of a council member's performance is implicated:</p>
-<ul>
-<li><strong>Character &amp; Conduct</strong> — conflicts of interest, disclosure and recusal failures, public misrepresentation, abuse of office, quality of response to documented wrongdoing</li>
-<li><strong>Fiscal Stewardship</strong> — contractor oversight failures, spending decisions made without available performance evidence, use of public funds without accountability mechanisms</li>
-</ul>
-<p>A single incident can implicate multiple pillars: a conflict-of-interest failure affects Character &amp; Conduct; if that conflict also caused public funds to flow to a contractor without proper oversight, it affects Fiscal Stewardship as well. Each dimension is scored and pillar-tagged independently, and its score rolls into its tagged pillar at full weight — there is no splitting or dilution across pillars.</p>
-<p>Incidents can be <strong>positive</strong> as well as negative. A member who proactively surfaces a conflict of interest, demands a performance review, or votes no on a contractor reauthorization pending an audit earns points here.</p>
-<p>Members with no incidents on record are not assumed clean — it means nothing has been documented yet.</p>
-<h3>Behavioral incidents (automated pipeline)</h3>
-<p>A separate, automated incident system (<code>incidents.json</code>) tracks behavioral patterns observable in transcripts and agenda records:</p>
-<ul>
-<li>A constituent interaction that reveals a pattern of evasion or performative engagement</li>
-<li>A public statement expressing a preference for borrowing over cutting</li>
-<li>A pattern of scheduling "input meetings" after votes have already occurred</li>
-<li>An observable disposition visible in the agenda record but not explicitly verbalized</li>
-</ul>
-<h3>How incidents are documented</h3>
-<p>Incidents are stored in <code>incidents.json</code> with structured fields:</p>
+<h2>12. Companion documents</h2>
 <table>
 <thead>
 <tr>
-<th>Field</th>
+<th>Document</th>
 <th>Contents</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>category</code></td>
-<td>One of seven categories (see below)</td>
+<td><code>SCORING.md</code></td>
+<td>What the software currently computes, and where it does not yet comply</td>
 </tr>
 <tr>
-<td><code>date</code></td>
-<td>Date or approximate period</td>
+<td><code>METHODOLOGY_NOTES.md</code></td>
+<td>Negative results, corpus limitations, calibration fixtures, design history</td>
 </tr>
 <tr>
-<td><code>description</code></td>
-<td>Plain-language description of the behavior</td>
+<td><code>METHODOLOGY_LEGACY.md</code></td>
+<td>The superseded methodology, preserved</td>
 </tr>
 <tr>
-<td><code>source</code></td>
-<td>How the behavior was observed or established</td>
-</tr>
-<tr>
-<td><code>scoring_impact</code></td>
-<td>Suggested adjustment to composite score (typically −0.10 to +0.10)</td>
-</tr>
-<tr>
-<td><code>evidence_tier</code></td>
-<td>A / B / C — see below</td>
-</tr>
-<tr>
-<td><code>audit_ref</code></td>
-<td>Optional. Key into the auditor registry when the incident is a response to a specific audit finding</td>
+<td><code>governance_failures.json</code></td>
+<td>MGF events, attributions, and the operative schema</td>
 </tr>
 </tbody>
 </table>
-<h4>Evidence tiers</h4>
-<p>The strength of a claim should be proportional to the strength of the evidence behind it. Each incident is assigned a tier that determines its effective weight in scoring:</p>
-<table>
-<thead>
-<tr>
-<th>Tier</th>
-<th>Definition</th>
-<th>Weight</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>A</td>
-<td>Primary public record: agenda items, vote records, official city emails, member official statements and farewell letters</td>
-<td>1.00</td>
-</tr>
-<tr>
-<td>B</td>
-<td>Reputable reporting or personal newsletters: Berkeleyside, Berkeley Scanner, member personal-domain email</td>
-<td>0.75</td>
-</tr>
-<tr>
-<td>C</td>
-<td>Direct observation or author knowledge: scorecard author's firsthand account without contemporaneous documentation</td>
-<td>0.50</td>
-</tr>
-</tbody>
-</table>
-<p>Incidents with an <code>audit_ref</code> receive an additional <strong>0.50× multiplier</strong> on top of their tier weight. The audit mechanism already penalizes the council's failure to act on a finding; the incident captures the specific member's behavior within that context. Applying full incident weight on top of the audit penalty would double-charge the same underlying failure.</p>
-<h3>Incident categories</h3>
-<table>
-<thead>
-<tr>
-<th>Category</th>
-<th>Direction</th>
-<th>What it captures</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>revenue_without_cuts</code></td>
-<td>Negative</td>
-<td>Sought new revenue without first asking what can be cut or done more efficiently</td>
-</tr>
-<tr>
-<td><code>performative_engagement</code></td>
-<td>Negative</td>
-<td>Symbolic engagement — held meetings or sought input after decisions were made; performative not deliberative</td>
-</tr>
-<tr>
-<td><code>alternatives_dismissed</code></td>
-<td>Negative</td>
-<td>Explicitly closed off alternatives without analysis or evidence</td>
-</tr>
-<tr>
-<td><code>claimed_ignorance</code></td>
-<td>Negative</td>
-<td>Claimed not to know something they were obligated to know</td>
-</tr>
-<tr>
-<td><code>union_deference</code></td>
-<td>Negative</td>
-<td>Sided with city unions without requesting productivity data or efficiency tradeoffs</td>
-</tr>
-<tr>
-<td><code>fiscal_integrity</code></td>
-<td><strong>Positive</strong></td>
-<td>Pushed back on spending, demanded cost data, or advocated for cuts</td>
-</tr>
-<tr>
-<td><code>constituent_service</code></td>
-<td><strong>Positive</strong></td>
-<td>Genuinely responsive constituent engagement with demonstrated follow-through</td>
-</tr>
-</tbody>
-</table>
-<h3>How incidents feed into scoring</h3>
-<p><strong>Editorial incidents</strong> (the publicly documented incident pages) carry dimension-level pillar tags. Each dimension's score rolls into its tagged pillar at full weight. A dimension tagged Character &amp; Conduct affects the Character pillar; a dimension tagged Fiscal Stewardship affects the Fiscal Stewardship pillar. If a single incident has dimensions in two pillars, both pillars are affected independently — there is no dilution. A per-pillar cap of ±0.30 prevents any single incident from zeroing out any one pillar.</p>
-<p><strong>Behavioral incidents</strong> (<code>incidents.json</code>) feed into the automated composite via the Fiscal Stewardship Alignment component. Each incident's raw <code>scoring_impact</code> is multiplied by its tier weight before being summed. Incidents linked to a City Auditor finding via <code>audit_ref</code> receive an additional 0.50× multiplier: the audit mechanism already penalizes the council's failure to act on a finding; the incident captures the member's specific behavior within that context.</p>
-<p>Weighted behavioral incident totals are capped at ±0.30 before being applied to Fiscal Stewardship Alignment. The cap prevents any single member's incident record from dominating the overall score.</p>
-<p>Members with no incidents in the log are not assumed clean — it means nothing has been documented yet. A member with many incidents has a richer evidentiary record.</p>
-<h4>What the cap cannot do</h4>
-<p>The ±0.30 cap is correct for ordinary incidents. It prevents a heavily documented member from being punished merely because more evidence was collected about them, and it limits the effect of any single editorial judgment.</p>
-<p>It has one consequence worth stating plainly: <strong>once a member reaches the cap, additional incidents have no effect, and severity becomes invisible.</strong> Twelve accumulated minor lapses and one catastrophic failure both land on the same floor. A member at −0.30 from a decade of small things scores identically to a member at −0.30 from a single event that misrepresented a public-safety finding to the Council.</p>
-<p>That is the wrong result. It is addressed not by removing the cap but by removing a specific class of event from the capped pool entirely — see <strong>Material Governance Failures</strong> below.</p>
-<hr />
-<h2>Material Governance Failures</h2>
-<p>Most incidents are additive: they accumulate, and the cap keeps that accumulation proportionate. Some failures are not additive. They are <strong>threshold</strong> failures — single events that call a member's governing judgment, honesty, or fitness into question in a way that no amount of routine good conduct offsets.</p>
-<p>A <strong>Material Governance Failure</strong> is scored as a discrete event outside the ordinary incident pool. It bypasses the ±0.30 cap, cannot be canceled by unrelated positive incidents, is attributed individually by role, and may impose a <strong>grade ceiling</strong> as well as a direct composite deduction.</p>
-<p>This extends a mechanism the scorecard already uses. A+ Ceiling Conditions (above) establish that some conduct cannot be fully compensated for by strength elsewhere. Material Governance Failures apply the same logic further down the scale.</p>
-<h3>Qualification test</h3>
-<p>An event enters this lane only when <strong>all four</strong> conditions hold. Any one failing returns it to the ordinary pool.</p>
-<table>
-<thead>
-<tr>
-<th>Condition</th>
-<th>Requirement</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>High-stakes action</strong></td>
-<td>Public safety, emergency response or evacuation, substantial expenditure, taxation or debt, legal exposure, conflict of interest, material contractor or program oversight, or a difficult-to-reverse commitment</td>
-</tr>
-<tr>
-<td><strong>Material premise failure</strong></td>
-<td>A factual, professional, legal, or evidentiary premise offered in support is unsupported by its cited source, outside the scope of the cited review, contradicted by an authoritative source, stated with materially greater certainty than the evidence supports, materially incomplete, or presented as completed analysis that has not occurred. The premise must matter to the decision — a peripheral error does not qualify. <strong>The audience may be the Council or the electorate</strong> — see below.</td>
-</tr>
-<tr>
-<td><strong>Authoritative notice</strong></td>
-<td>Before final action, the member receives notice sufficient to understand the premise may be wrong: a department head's statement, City Attorney opinion, auditor finding, staff report, written correction, or a direct statement in open session</td>
-</tr>
-<tr>
-<td><strong>Practical opportunity to cure</strong></td>
-<td>Before final action, the member could have corrected the document, amended the motion, disclosed the uncertainty, postponed, referred the matter, voted no, or supported a substitute preserving analysis</td>
-</tr>
-</tbody>
-</table>
-<h4>Statements to voters count</h4>
-<p>A premise offered to the <strong>electorate</strong> in support of a ballot measure is treated the same as one offered to the Council, and the duty is if anything higher. A councilmember who signs a ballot argument is not commenting; they are asking voters to authorize taxation or debt on the strength of what the argument says.</p>
-<p>Qualifying material includes signed ballot arguments and rebuttals in the official voter information guide, official campaign statements, and formal City communications about a measure. These are Tier A: they are published, attributed, and archived.</p>
-<p>The test is the same — was the statement supported, complete, and within the scope of what the evidence established? — and so are the limits. A measure's supporters are entitled to argue for it, to emphasize its strengths, and to be wrong about predictions. Persuasion is not misrepresentation. What does not qualify as ordinary advocacy is characterizing the choice before voters in a way the measure's own terms do not support.</p>
-<p><strong>Why this is scored at all.</strong> A decision made on a false premise can be revisited when the premise is corrected. A decision authorised by voters on a false premise cannot: the mandate persists, and it is subsequently cited as evidence of what the public wanted. Misleading the electorate does not merely produce one bad outcome — it launders every downstream failure as the public's own choice. Where a governance failure is later defended by reference to voter approval, the accuracy of what voters were told is part of the record.</p>
-<h3>Event severity</h3>
-<p>Seven factors, each scored 0, 1, or 2. Raw severity is their sum, 0–14.</p>
-<table>
-<thead>
-<tr>
-<th>Factor</th>
-<th>0</th>
-<th>1</th>
-<th>2</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Decision centrality</td>
-<td>Peripheral</td>
-<td>Materially supported the action</td>
-<td>The stated or indispensable basis</td>
-</tr>
-<tr>
-<td>Stakes</td>
-<td>Low</td>
-<td>Meaningful policy or financial consequence</td>
-<td>Safety, major expenditure, or legal exposure</td>
-</tr>
-<tr>
-<td>Evidentiary clarity</td>
-<td>Genuinely disputed</td>
-<td>Strong contrary evidence</td>
-<td>Direct contradiction from an authoritative primary source</td>
-</tr>
-<tr>
-<td>Notice before action</td>
-<td>None meaningful</td>
-<td>Member had reason to know</td>
-<td>Explicit correction before the decision</td>
-</tr>
-<tr>
-<td>Opportunity to cure</td>
-<td>None practical</td>
-<td>Limited</td>
-<td>Clear opportunity to correct, amend, postpone, or vote no</td>
-</tr>
-<tr>
-<td>Failure to cure</td>
-<td>Corrected before action</td>
-<td>Partially addressed</td>
-<td>Claim stood and action proceeded</td>
-</tr>
-<tr>
-<td><strong>Durability</strong></td>
-<td>Reversible at low cost</td>
-<td>Creates a multi-year obligation</td>
-<td>Creates a long-lived or practically irreversible obligation</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Why durability is scored separately.</strong> <em>A Strategy for Strategy</em> identifies the recurring Berkeley failure as commitments that outlive the assumptions and the money that justified them: grant deadlines substituting for evidence packages, pilots made permanent without their promised evaluation, capital built without an operating plan. A decision that is wrong and reversible is a mistake; a decision that is wrong and locks the City in for a decade is a different kind of failure. Folding irreversibility into "stakes" made the two score identically. It is now its own factor, and a maximum-severity finding requires it.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: right;">Raw severity</th>
-<th>Event classification</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: right;">0–4</td>
-<td>Routine — ordinary incident pool</td>
-</tr>
-<tr>
-<td style="text-align: right;">5–7</td>
-<td>Serious — ordinary incident pool</td>
-</tr>
-<tr>
-<td style="text-align: right;">8–11</td>
-<td>Major Governance Failure</td>
-</tr>
-<tr>
-<td style="text-align: right;">12–14</td>
-<td>Critical Governance Failure</td>
-</tr>
-</tbody>
-</table>
-<p>Raw severity describes the <em>event</em>. It does not yet describe any member's responsibility.</p>
-<h3>Individual attribution</h3>
-<p>Responsibility is assigned by role. Nine members participating in one event receive one event record and nine attribution records — never nine duplicate incidents.</p>
-<table>
-<thead>
-<tr>
-<th>Role</th>
-<th style="text-align: right;">Multiplier</th>
-<th>Definition</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Originator</td>
-<td style="text-align: right;">1.00</td>
-<td>Authored, introduced, or formally asserted the premise</td>
-</tr>
-<tr>
-<td>Post-notice defender</td>
-<td style="text-align: right;">0.85</td>
-<td>Repeated or defended the premise after correction</td>
-</tr>
-<tr>
-<td>Co-sponsor</td>
-<td style="text-align: right;">0.80</td>
-<td>Lent their name to the item itself</td>
-</tr>
-<tr>
-<td>Post-notice ratifier</td>
-<td style="text-align: right;">0.50</td>
-<td>Voted to proceed after correction without seeking a cure</td>
-</tr>
-<tr>
-<td>Attempted cure, then ratified</td>
-<td style="text-align: right;">0.35</td>
-<td>Supported a motion that would have cured the failure, then ratified when it failed</td>
-</tr>
-<tr>
-<td>Pre-notice supporter</td>
-<td style="text-align: right;">0.25</td>
-<td>Supported before correction, took no position after</td>
-</tr>
-<tr>
-<td>Passive nonparticipant</td>
-<td style="text-align: right;">0.00</td>
-<td>Absent or recused</td>
-</tr>
-<tr>
-<td>Corrective actor</td>
-<td style="text-align: right;">0.00</td>
-<td>Sought correction, delay, or analysis; or voted against proceeding</td>
-</tr>
-</tbody>
-</table>
-<p><code>effective_severity = raw_severity × role_multiplier</code>, then classified on the same 8.0 / 12.0 thresholds. A member's role can therefore produce a different classification from the event's.</p>
-<h3>Consequences</h3>
-<table>
-<thead>
-<tr>
-<th>Individual classification</th>
-<th style="text-align: right;">Composite adjustment</th>
-<th>Grade ceiling</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Serious participation</td>
-<td style="text-align: right;">Ordinary pool only</td>
-<td>None</td>
-</tr>
-<tr>
-<td>Major Governance Failure</td>
-<td style="text-align: right;">−0.05</td>
-<td>B+</td>
-</tr>
-<tr>
-<td>Critical Governance Failure</td>
-<td style="text-align: right;">−0.10</td>
-<td>C+</td>
-</tr>
-<tr>
-<td>Proven deliberate deception, or second unmitigated critical failure</td>
-<td style="text-align: right;">−0.15</td>
-<td>D+</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Why both a deduction and a ceiling.</strong> The deduction measures how much the event should move the composite. The ceiling prevents unrelated strengths — attendance, collegiality, routine fiscal signals — from restoring a top grade after a threshold failure. Without it, a member could retain an A-range grade following a critical integrity failure, which would misstate what the grade means.</p>
-<p>When a ceiling lowers the displayed grade below the calculated composite, <strong>both are shown</strong>. The numerical score is never silently altered to match the ceiling; the normative judgment is made explicit and auditable.</p>
-<h3>Deliberate deception is a separate, higher finding</h3>
-<p>A false representation is not a lie. <strong>Proven deliberate deception</strong> requires clear evidence that the member knew the representation was false or materially unsupported, intended reliance on it, and repeated or concealed it despite that knowledge — contemporaneous emails, prior written acknowledgments, admissions, or deliberate alteration of source language.</p>
-<p>Absent that evidence, findings use language such as <em>material misrepresentation</em>, <em>unsupported representation</em>, <em>claim contradicted by the responsible official</em>, or <em>material premise left uncorrected</em>. The scorecard does not state that a member lied merely because a representation was false.</p>
-<h3>Anti-double-counting</h3>
-<p>A Material Governance Failure <strong>replaces</strong> ordinary incident scoring for the same conduct. The same act is not scored twice under two labels. Independent signals measuring genuinely separate acts — the underlying vote record, attendance, a later refusal to correct the record, concealment or retaliation after the fact — may remain.</p>
-<h3>Non-fungibility and remediation</h3>
-<p>Unrelated positive conduct cannot offset a Material Governance Failure. Good constituent service, attendance, and sponsorship of useful unrelated measures do not purchase forgiveness for a threshold failure. Only conduct responsive to <em>the same failure</em> mitigates it:</p>
-<table>
-<thead>
-<tr>
-<th>Remediation</th>
-<th>Effect</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Cured before final action</td>
-<td>Returns to ordinary incident treatment</td>
-</tr>
-<tr>
-<td>Prompt correction after action, plus meaningful reconsideration</td>
-<td>Deduction halved; ceiling raised one band</td>
-</tr>
-<tr>
-<td>Partial correction or disclosed uncertainty</td>
-<td>Deduction reduced 25%</td>
-</tr>
-<tr>
-<td>Admission without corrective action</td>
-<td>Deduction reduced no more than 25%; ceiling stands</td>
-</tr>
-<tr>
-<td>Later analysis happens to validate the decision</td>
-<td><strong>No mitigation</strong></td>
-</tr>
-<tr>
-<td>Defensive restatement, blame-shifting, or silent deletion</td>
-<td>No mitigation</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Outcome does not erase process failure.</strong> A subsequent favorable result does not retroactively validate a decision made on a misrepresented evidentiary basis. That a design later passes review does not establish that it had been reviewed when the Council was told it had.</p>
-<h3>Decay</h3>
-<p>Material Governance Failures do not use ordinary incident decay. They hold full weight for the term in which they occurred:</p>
-<table>
-<thead>
-<tr>
-<th>Age</th>
-<th style="text-align: right;">Weight</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0–2 years</td>
-<td style="text-align: right;">1.00</td>
-</tr>
-<tr>
-<td>&gt;2–4 years</td>
-<td style="text-align: right;">0.75</td>
-</tr>
-<tr>
-<td>&gt;4–6 years</td>
-<td style="text-align: right;">0.50</td>
-</tr>
-<tr>
-<td>&gt;6 years</td>
-<td style="text-align: right;">0.25</td>
-</tr>
-</tbody>
-</table>
-<p>Documented remediation can reduce a failure faster than time does. Passive passage of time is not evidence of reform.</p>
-<h3>Evidence standard and required disclosure</h3>
-<p>A Major or Critical finding must rest primarily on <strong>Tier A</strong> evidence — agenda records, official recommendations, meeting transcripts, department-head statements, staff reports, auditor reports, vote records, or public records. Tier B reporting may supply context but cannot independently establish the finding. Tier C observation is never sufficient.</p>
-<p>Every Major or Critical finding must publish: the material claim; the source cited for it; what that source actually established; the authoritative contradiction; when each member received notice; what cures were available; what each member did afterward; the severity scoring factor by factor; each member's role multiplier; and any remediation considered.</p>
-<h3>Clustering is expected</h3>
-<p>A single event can produce a finding against most of the council at once. That is not a malfunction of the method, and it should not be read as one.</p>
-<p>Berkeley's council votes as a block on <strong>92.5% of recorded vote events</strong>. A body that acts as one unit fails as one unit. When a failure is genuinely council-wide — an item nobody amended, an opportunity nobody took — a council-wide finding is the accurate description of what happened.</p>
-<p>These records are <strong>not a stack ranking</strong>. Individual attribution exists to distinguish <em>roles</em> within a shared failure — who authored it, who co-sponsored, who ratified, who tried to cure it — not to sort members against one another. A member with no attribution on a given event was absent, recused, or acted correctively; it does not mean they governed better in general, and a member carrying a ceiling is not thereby the worst member on the council.</p>
-<p>The scorecard's per-member grades answer a different question from these event records. Where the two are in tension, the event record is the more specific claim and carries the citations.</p>
-<h3>Every finding ships with an explainer</h3>
-<p>A Material Governance Failure is not published unless a public explainer page accompanies it. This is enforced in the build: <code>publish.sh</code> refuses to deploy when an event's explainer file is missing.</p>
-<p>The reason is that the score is not the finding. A grade ceiling a reader cannot trace to a sourced narrative is an assertion, not accountability. Each explainer is written for someone with no prior knowledge of the subject and must contain a dated chronology; the material claim with its cited source and what that source actually established, quoted verbatim; the authoritative contradiction or the omitted fact; what each member did and when; a full source list; and an explicit section stating what the finding does <strong>not</strong> establish, disclaiming any motive not in evidence.</p>
-<p>That last requirement does the most work. A reader who can see the limits of a claim can judge the claim.</p>
-<h3>Safeguard</h3>
-<p>This classification requires Tier A evidence, satisfaction of all four qualification conditions, factor-by-factor scoring, individual role attribution, a published explanation, an explicit anti-double-counting review, and consistent application regardless of whether the scorecard author agrees with the policy outcome.</p>
-<blockquote>
-<p><strong>It must never be applied because the author disagrees with the result. The trigger is the failure of the governing process under consequential conditions — not the merits of the decision that process produced.</strong></p>
-</blockquote>
-<p>Events are recorded in <code>governance_failures.json</code>, one event object with per-member attribution records.</p>
-<h4>Audit silence</h4>
-<p>A separate penalty applies to members who were present at a formal audit presentation, voted to receive and file, and produced no follow-up motion within the response window. This is distinct from an incident: it is an automated signal for undifferentiated silence. Members who have a documented incident with an <code>audit_ref</code> matching the audit are exempt — their behavior post-audit is already individually characterized, whether positive or negative. Members in the <code>follow_up_authored_by</code> list in <code>audit_findings.json</code> are also exempt.</p>
-<p>The silence penalty is −0.04 per audit event, applied to Fiscal Stewardship Alignment before the composite calculation.</p>
-<p>The full incident catalogue is rendered as a separate PDF (<code>scores/pdfs/incidents.pdf</code>) for sharing with readers who want to see the underlying evidence behind scores.</p>
-<hr />
-<h2>Structural Context</h2>
-<p>These facts are not per-member scores but inform what "taxpayer-aligned" means in Berkeley's specific context. Any member who does not publicly challenge these structural problems is implicitly endorsing them.</p>
-<ul>
-<li><strong>Staffing level:</strong> Berkeley has more city employees per resident than any other city in California. This is not a measure of service quality — it is a measure of cost structure. The city duplicates services provided by Alameda County (e.g., maintains its own Health Department when every comparable city uses the county Health Department instead). The result is a fixed cost base that is among the highest in the state, with no corresponding premium in outcomes.</li>
-<li><strong>COVID precedent:</strong> During COVID-19, the then-Mayor declared every city employee an "essential worker" — explicitly exempting all city staff from layoffs even as workloads (e.g., library pages with no books to shelve) collapsed. Other jurisdictions used the pandemic as a forcing function to reprioritize, eliminate redundant positions, and restructure. Berkeley did none of this. No current council member has proposed revisiting that precedent or conducting a post-COVID staffing review.</li>
-<li><strong>Duplication of county services:</strong> Berkeley operates a standalone Health Department, mental health division, and homeless response infrastructure that parallel and sometimes conflict with Alameda County services. The City Auditor's 2025 review of the Homeless Response Team documented this fragmentation. No council member has proposed consolidating with county services as an efficiency measure.</li>
-<li><strong>Financial Condition Audit (April 2026):</strong> The City Auditor's FY2016–FY2025 financial condition review documents a city in structural imbalance, with no corrective trajectory visible in council action:</li>
-<li><strong>Structural deficit:</strong> General Fund projected deficit of $32M (FY2027) and $33M (FY2028). Recent budgets were balanced using one-time measures: $4.7M from the workers' compensation reserve (FY2025) and a $3M withdrawal from the Section 115 pension pre-funding trust.</li>
-<li><strong>Spending growth:</strong> GF expenses grew 33% in real terms over the audit period; government-wide expenses grew 20% in real terms. Largest category growth: community development/housing +119%, health/welfare +107%. Salaries and benefits represent approximately two-thirds of the GF budget.</li>
-<li><strong>Staffing growth:</strong> FTE count grew 30%, from 1,336 to 1,747. The audit does not assess productivity per employee; no council member has publicly requested this analysis. Two related questions also go unasked: (1) <strong>Technology-driven redundancy</strong> — where technology has replaced manual work (e.g., license-plate-reader enforcement replacing manual permit sales), the positions that technology displaced remain on payroll with no council inquiry into whether those roles have been reassigned to genuine need or simply retained; (2) <strong>Outsourcing assessment</strong> — Berkeley employs its own refuse collectors, a practice no comparable city in the region maintains; no council member has requested an analysis of services that could be delivered more efficiently by contract. Both questions represent standard public-sector cost management that the council has not applied.</li>
-<li><strong>Pension risk:</strong> Net pension liability of $694.8M; funded ratio 66% (categorized as "high risk" and tied for 2nd-worst among comparable jurisdictions). Annual pension payments rising from $76M (FY2024) to projected $108M by FY2034. The Section 115 trust — a pension pre-funding reserve designed as a rainy-day buffer — has met its annual contribution goal in only 2 of 7 years and had $3M withdrawn in FY2025 to help balance the operating budget.</li>
-<li><strong>Capital collapse:</strong> Unfunded capital and deferred maintenance grew from $603.5M (FY2017) to $1.8B (FY2024). The required biennial unfunded capital liability report for FY2025 was not produced — city management cited "limited staff time." The council cannot deliberate on what it has not been shown.</li>
-<li><strong>GFOA policy gap:</strong> The council's adopted fiscal policies do not require assessing whether recurring revenues match recurring expenditures — a foundational GFOA best practice. The auditor explicitly recommends the council adopt this requirement. No member has moved to do so.</li>
-<li><strong>Debt trajectory:</strong> GO bonds of $205.4M represent 80% of outstanding debt ($1,524/resident). The proposed $300M infrastructure bond (2026 ballot) would increase debt service tax rates for approximately 20 years before declining — layered on top of a structural operating deficit that borrowing cannot solve.</li>
-<li><strong>Council response to date:</strong> The unanimous March 2026 vote to commission a $300M bond survey — taken with full knowledge of the structural deficit, the Section 115 withdrawal, and the pension trajectory — is the clearest available evidence of the council's revealed priority ordering: new debt over structural repair.</li>
-</ul>
-<hr />
-<h2>Known Limitations and Open Questions</h2>
-<ul>
-<li><strong>Transcript coverage:</strong> Not all meetings have transcripts; some are garbled or poorly formatted. Rhetoric scores are only as good as the transcript quality.</li>
-<li><strong>Rhetoric–action gap:</strong> A member who frequently invokes fiscal discipline language but authors large spending items and votes yes on every budget is doing something specific: using fiscal rhetoric as cover rather than as a guide to action. The <code>rhetoric_action_gap_score</code> pipeline variable partially captures this gap but could be refined.</li>
-<li><strong>Borrow-first language:</strong> Members who express a preference for systematic bond issuance over general fund reprioritization — framing new debt as the natural response to infrastructure gaps rather than a last resort — are signaling a revenue-first disposition. This is currently captured weakly in transcript rhetoric — a dedicated signal is planned.</li>
-<li><strong>Tax/bond referral tracking:</strong> Authoring or cosponsoring a referral to study a new tax or bond is the first step in a political infrastructure campaign. Now tracked as <code>FISCAL_REFERRAL_VOTES</code> (a curated list of upstream steps toward bond/tax ballot measures) and scored via <code>score_fiscal_referral_votes()</code>: −0.03 per item authored, −0.01 per item supported as cosponsor or aye vote, capped at −0.09. Weighted into taxpayer alignment as of April 2026.</li>
-<li><strong>Union and labor posture:</strong> Members who consistently side with city unions in labor negotiations (without asking for productivity data or considering service-level tradeoffs) are imposing costs on taxpayers. Currently not scored directly.</li>
-<li><strong>Street paving misallocation:</strong> Berkeley's streets are among the worst in Alameda County — and the council's response has been an unbroken cycle of bond measures with no corresponding general fund reprioritization. Key facts from audit and city reporting: the Pavement Condition Index (PCI) was ~57 as of 2024, rated "at risk" by the Metropolitan Transportation Commission — 10 points below the regional average and 3 below the threshold where "deterioration accelerates rapidly." Deferred maintenance backlog exceeds $250M. From 2018–2022 the city paved less than 3 miles/year; in 2018 zero streets were paved because staff failed to get bids out in time. General fund allocation to streets was $4.9–11.3M/year through 2020 — the council had to adopt a formal $15.3M/year commitment by policy in 2022 simply to commit to the minimum baseline. Achieving a PCI of 70 would require $42M/year. Regular maintenance is 5–10x cheaper than rehabilitation (MTC). The council's bond cycle: Measure M (2012) → T1 (2016) → L (failed at 59%, needed 2/3, 2022) → EE/FF (2024, best-case projected to merely hold PCI at 57) → new $300M bond + half-cent sales tax on 2026 ballot. No member has publicly called for the general fund reprioritization that would actually close the gap. Documented partially through incident tracking; not yet a dedicated pipeline signal.</li>
-<li><strong>Measure FF endorsement (2024 ballot):</strong> The pre-2025 City Council endorsed Measure FF over Measure EE in the November 2024 election. Measure EE was the simpler parcel tax focused on street and sidewalk repair. Measure FF was the larger, more expensive version that bundled in protected cycle tracks where none existed, environmental enhancements, and green infrastructure alongside streets. Structurally, this endorsement reveals a standing disposition: even when addressing a core-service crisis (street decay), the council preferred the vehicle that includes progressive amenities. Council members seated at the time are attributable to this endorsement; members elected in November 2024 are not. This is a council-level contextual finding rather than a per-member scored incident. Bicycle transportation infrastructure (bike lanes, bike boulevards, maintenance of existing facilities) is considered core service; new cycle track construction in locations where none existed is scope expansion.</li>
-<li><strong>Constituent newsletter as advocacy:</strong> Members occasionally use official constituent communications to mobilize support for county-level spending measures. This is outside a councilmember's jurisdiction and compounds taxpayer burden across city and county levels. County and city measures are additive obligations on the same tax base — members typically avoid cross-advertising to prevent voters from calculating cumulative burden. Documented through incident tracking; not yet a scoring signal.</li>
-<li><strong>Committee participation:</strong> The Finance Committee and Budget &amp; Finance Working Group are where substantive fiscal deliberation often occurs, but their minutes record only votes — not participation, debate, or the questions members asked. A member who does serious fiscal work in committee and is quieter in plenary sessions would be undercounted; a member who performs engagement in plenary while contributing nothing in committee would be overcounted. This gap is unresolvable with publicly available records.</li>
-<li><strong>Composite grade calibration:</strong> The Tier 1 letter grade is implemented and producing results (as of Apr 2026). The formula (70% taxpayer, 30% focus, attendance/low-engagement deductions) will continue to be refined as more data accumulates.</li>
-<li><strong>Fiscal referral author-matching:</strong> The agenda JSON parser may not always identify the primary author of a referral item when authorship is attributed informally or through co-sponsorship structures. Members whose referral activity is undercounted via the automated parser should be cross-checked against the manual incident record. A more robust author-matching pass is planned.</li>
-<li><strong>Material Governance Failure — ratifier calibration:</strong> At a 0.50 multiplier, a bare post-notice ratifier on a maximum-severity event scores 6.0 effective severity — inside the "serious" band, below the 7.0 Major threshold. A member who votes to proceed after an authoritative correction therefore receives no direct consequence unless they also authored or co-sponsored the item. This may be correct: a councilmember can reasonably defer to an item's sponsor on technical findings, and the vote itself remains in the public record. It may also be too lenient. The multiplier is deliberately documented here rather than tuned to produce a particular result, and should be revisited after the algorithm has been applied to several historical events.</li>
-<li><strong>On this council, nobody can claim the fiscal position was news.</strong> Berkeley produces a standing stream of authoritative fiscal notice, and it does so because the Council required it. Resolution No. 65,748 N.S., adopted 29 May 2012, obliges the City Manager to publish a biennial report of current and projected City liabilities. The 16 March 2021 edition was presented at a Council <strong>worksession</strong> — a format for deliberation, not consent — and told members that pension contributions would rise <strong>more than $40 million over ten years</strong> "putting a strain on resources and services," that retiree health plans were funded as low as <strong>6.16%</strong>, and that unfunded infrastructure needs ran to roughly <strong>$1.1 billion</strong>. The same report found that "the City's ability to borrow is negatively impacted by its unfunded liabilities," which is contemporaneous evidence against the bond-first posture documented elsewhere on this site. Alongside it sit the City Manager's transmittal letter in every adopted biennial budget, year-end and quarterly updates on the Action Calendar, and the externally audited annual financial report. The externally audited annual financial report says the same thing on a confirmed schedule: net pension liability of <strong>$650.0 million</strong> transmitted to the Mayor and Council on 30 December 2021, and <strong>$442.5 million</strong> on 15 December 2022 — a swing that reflects actuarial recognition rather than any real paydown, since the figure rebounds to $678.4 million the following year.</li>
-</ul>
-<p>There is a further point that does not depend on any document. <strong>Candidates seek this office knowing what the office entails.</strong> A Berkeley councilmember is elected to govern a city carrying a nine-figure unfunded pension liability, a billion-dollar infrastructure backlog, and retiree health plans funded as low as 6.16%. Not knowing that is not a defense; it is a failure to prepare for a job actively sought.</p>
-<p>The consequence for scoring is specific and deliberately narrowing. For conduct after March 2021, the question is rarely whether a member was on notice about the operating baseline, the pension trajectory, or the infrastructure backlog — they were, on a recurring cycle of the Council's own making, and they stood for election on that basis. What remains at issue is whether the record put before the body on a particular item was complete and accurate. That is a separate test, it is the one that does the real filtering, and it is where a finding against an individual member has to be argued.<br />
-- <strong>Vacancy savings were the balancing mechanism, and they are spent.</strong> Berkeley balanced recent budgets substantially by holding positions vacant and booking the salary savings. The FY2026 adopted budget assumed an 8% vacancy savings rate; a May 2025 analysis identified 104 vacant General Fund positions worth roughly $19.9M, of which about $9.3M was captured by holding them vacant. The City's Finance Director characterized this on the record on 20 May 2025: <em>"these are just short-term fixes. Our unfunded liabilities for pension is about over $600 million, so $26 million is dwarfed."</em> Two consequences follow, and both matter for reading any spending item. First, a vacant position is not a saving — it is a deferred cost, because the position returns to the baseline unless it is actually eliminated. Second, authorising <strong>new</strong> permanent positions during this period is worse than its headline cost implies: it enlarges the recurring baseline that the vacancy cushion was covering, at the point where the cushion is exhausted. By FY2027-28 the city was eliminating rather than merely freezing — 138 proposed position reductions, 100 vacant and 38 filled. This is context for scoring, not itself a per-member finding.<br />
-- <strong>No member spends meaningful time on the documented structural problems.</strong> The <code>p1_speech_pct</code> signal measures the share of a member's speaking time in turns containing the specific vocabulary of a documented structural failure — "structural deficit," "CalPERS," "pavement condition index," and similar. It is deliberately tight: a member saying "budget" or "roads" generically does not register. Measured across the corpus, <strong>seven of nine members sit at or below 1.0%</strong>, four are at or below 0.5%, and the council-wide maximum is 4.9%. This is the answer to a question often asked the other way round. The instinct is to fault individual members for time spent on matters outside Berkeley's authority — and off-mission speech does run 17% to 31%, which is high. But off-mission share does not separate members much, and the member most often criticized for it sits fourth of nine. What separates nobody, because nobody does it, is engagement with the problems the City's own auditor has documented. The finding is council-wide and is recorded as such rather than scored against individuals.<br />
-- <strong>This council votes together, so votes alone cannot tell members apart.</strong> Measured across 307 recorded votes: <strong>86.3% were unanimous</strong>, median pairwise agreement between members is <strong>95.7%</strong>, and the least-aligned pair on the council (Blackaby and Lunaparra) still agrees <strong>90.7%</strong> of the time. Only 42 votes in the period were contested at all. This is the single most important fact about reading the scorecard: a member cannot be characterized by what they voted for, because almost everyone voted for almost everything. The differentiating question is <em>how each member arrived at the shared vote</em> — what they asked first, what they proposed instead, whether they moved a substitute, whether they held a stated position when it came under pressure. Each member's scorecard therefore opens with an at-a-glance line answering that question, and the supporting detail follows. Note also that dissent is not by itself a virtue: Lunaparra is on the losing side of contested votes more than twice as often as any other member and sits second-lowest on taxpayer alignment. Direction matters, not frequency.<br />
-- <strong>Per-member characterizations are checked against the other eight before being written.</strong> A claim that sounds damning often turns out to be the council norm. Three characterizations were cut during drafting for exactly this reason: "reaches for new revenue more than others" was drafted for Taplin, who is in fact second to Ishii; "unfocused" was drafted for Bartlett, whose 29% off-mission speech is matched by two members and exceeded by a third; and "the council's most verbose member" was inherited from an earlier summary and is false — the spread in average turn length runs 33.5 to 20.2 words and the member in question sits third. What survives comparison is what gets published.<br />
-- <strong>The record is incomplete by design, and gaps are marked.</strong> Waiting for a complete record would mean publishing nothing: the corpus is 61 transcripts and 68 annotated agendas against a council that has met for years, committee participation is largely unrecorded, and authorship metadata stops in March 2026. Every member scorecard therefore carries an explicit notice that absence of a finding means the finding has not been documented, not that none exists, together with an invitation to submit corrections. Silence in the record is never presented as a verdict.<br />
-- <strong>The Crayon Box — a standing test, applied by hand.</strong> Berkeley's council paints with two or three crayons when five or six are in the box. Closing a structural deficit admits at least six approaches: new taxes and new bonds, which are in constant use, and reprioritization, efficiency review, service-level reduction and provider comparison, which are rarely lifted. On any item that proposes new revenue, the standing questions are: <em>which alternatives were available; which were raised; by whom; and if none were raised, is that recorded?</em> Which crayons a member reaches for is a readable signal of disposition. More diagnostic is <strong>inconsistency</strong>: a member who applies efficiency review to one program and reaches for new revenue on a structurally identical one may be applying no consistent principle. That is not decisive on its own — it is a bad smell that warrants investigation, and it is logged as a question, never scored as a finding.<br />
-- <strong>The Crayon Box — competing motions are the evidence.</strong> The reliable instrument is not what members say but what they choose when a genuine alternative is on the floor. A substitute motion forces every member to pick, on the same item, in the same minute, on the record. That controls for everything the speech measures could not: a roll call has one name per vote, so staff presentations cannot contaminate it; the motions are known quantities, so polarity is unambiguous; and one vote is one datum, so repeated discussion cannot inflate it. Three distinct findings come out of it. <strong>(1) Unanimous silence.</strong> No member raises any alternative — that is blindness, whether intentional or not, and it is a council-wide condition rather than an individual failure. <strong>(2) Revealed preference.</strong> An alternative was offered and lost; the roll call shows exactly who reached for it. The Hopkins item is the worked example — an analysis-first substitute lost 4-5, a second substitute removing the unreviewed alignment lost 3-6, and the main motion carried 7-2. <strong>(3) The switch.</strong> A member states a principle and then votes against it on the same item. This is the strongest of the three, because the member supplied the standard themselves, so the finding requires no external benchmark and cannot be answered with "you simply disagree with them." Findings of type (3) are recorded against the member's own stated position, quoted verbatim, with the vote that contradicted it. <strong>(4) Mislabeling the crayon.</strong> The first three concern <em>which</em> option is chosen; this one concerns a false claim about <em>what an option is</em>. Telling the council that a configuration carried Fire Department support when the Fire Chief has stated on the record that it was never reviewed is not a narrow palette — it is handing the body a blue crayon labeled green. This is the one that crosses into Material Governance Failure territory, because it corrupts the record every other member is choosing from, which is exactly what qualification condition 2 (material premise failure) exists to catch. It also explains the role multipliers: the originator applies the false label, and a post-notice ratifier keeps drawing after being told the color is wrong. Narrow selection is a disposition that can be argued about on the merits; mislabeling is not.<br />
-- <strong>The Crayon Box — why it is not automated (negative result, Aug 2026).</strong> Keyword detection for the four unused options was built (<code>CRAYON_BOX_KW</code> in <code>council_scorecard.py</code>) and tested against all 55 transcripts. It does not work and is deliberately left unwired. Over the raw corpus the patterns mostly match staff, not members — the budget-presentation feed says "we're proposing to eliminate that position" dozens of times. Restricted to attributed member speech the contamination persists, because attribution folds long staff presentations into the chair's turn: the Budget &amp; Finance chair scored 27 hits against a revenue baseline of 1, of which 22 are staff-voice constructions delivered by the City Manager's team. Polarity is also unhandled — "reallocating the funding into investing in our seniors" is a reprioritization proposal in the defund direction, and crediting it as fiscal discipline would mislead. And repetition inflates counts: one referral discussed across a single item produced six of nine provider-comparison hits. The root cause is shared with two abandoned governance-failure keyword screens: keyword lists test <em>prose</em>, while the question is whether an <em>option was put on the table</em> — an act, not a vocabulary. The lists are retained as a search tool for finding passages to read by hand, which is how the published finding was assembled.<br />
-- <strong>Substitute motions are not captured in structured data.</strong> The competing-motion test above must currently be built by hand from transcripts. Of 58 annotated agenda files, 17 record a vote line and none records substitute-motion text — the annotated agenda captures the final disposition, not the alternatives that were offered and defeated. The defeated substitute is precisely the evidence the test needs. Every finding of this kind therefore requires reading the item turn by turn, which is how the Hopkins record was assembled. A parser that extracts substitute motions and their roll calls from transcripts would make the test systematic rather than artisanal, and is the single highest-value addition to the pipeline.<br />
-- <strong>Speaker attribution: staff presentations no longer count as the chair's speech (fixed Aug 2026).</strong> Berkeley's transcripts label shared-microphone turns by room ("Boardroom:", "Redwood Room:") rather than by speaker, so attribution runs a state machine that holds the current speaker across turns. That is right when the floor passes between councilmembers and wrong the moment it passes to staff: the call-on detector only resolves council names, so a chair handing off to the City Manager left the floor pinned on the chair and every sentence of the ensuing budget presentation landed in that member's corpus. Measured by staff-voice constructions per 10,000 attributed words, the distortion tracked who chairs rather than what anyone said — Kesarwani 5.79, Taplin 2.96, Ishii 2.65, against Humbert 0.38. Three guards now apply: turns in unmistakable presentation voice are dropped from the member's corpus, an explicit hand-off to a named staff title releases the floor, and "Cypress Room" was added to the room labels (523 turns had been discarded entirely). After the fix the same measure reads Kesarwani 2.11, Taplin 0.45, Ishii 0.20, Bartlett 0.19, Humbert 0.00. Kesarwani's residual is genuine: she presents her own budget supplementals, where "we are proposing" means her co-sponsors. The hand-off release is deliberately <strong>bounded to six turns</strong>. An unbounded version was worse than the original bug — a chair running public comment produces no call-on pattern ("Next is Wendy A.", "your time's up"), so the floor never returned and 783 of Blackaby's own turns were discarded, an 18.7% cut to his corpus. Any future tightening should be tested against a chair running public comment, not only against a budget presentation. Effect on published scores was small and uniform: every composite moved by less than 0.005, with no reordering and no grade changes. Net corpus size rose 1.0%, because recovering Cypress Room added more than the guards removed.<br />
-- <strong>Material Governance Failure — historical backfill:</strong> The two-lane model was adopted in August 2026 and first applied to a July 2026 event. A full pass over the incident record was completed on 2026-08-04, driven by reader annotation of all 45 incidents rather than by keyword search — the earlier keyword screens were abandoned as unsound, once for using a severity threshold derived from the very measure under test. Five events now qualify; five are logged as screened and rejected in <code>governance_failures.json -&gt; screening_log</code>, each with the condition that failed. The absence of a finding for an earlier event should still be read as "not assessed" unless it appears in the screening log.<br />
-- <strong>Notice must precede the act.</strong> Condition 3 is where most candidate failures die, and the chronology is checked before anything else. An authoritative finding released <em>after</em> the conduct it describes cannot supply notice for that conduct, however precisely it characterizes it — the 2026-04-08 financial-condition audit against the Oct–Dec 2025 bond activity is the reference case. Two consequences follow. First, genuinely bad decisions taken in good ignorance are not Material Governance Failures, and are recorded as Ownership of Outcome or as ordinary incidents instead. Second, an authoritative report sitting uncalendared is not yet notice to anyone: non-response to a report the City Manager has not scheduled is a scheduling fact, not a council decision. Such reports are held as watch items under <code>pending_investigations</code> with the qualifying standard written down in advance of the meeting, so the test is set before the outcome is known.<br />
-- <strong>Ownership of Outcome — sampling bias in the "shown" ledger:</strong> Seven of nine members currently carry zero documented instances of ownership <em>shown</em>, and the two exceptions earned theirs at a single meeting examined turn by turn. The ledger is built by investigating failures, so engagement that occurs in ordinary business goes unrecorded, and the dimension currently describes where the author has looked closely as much as how members behave. Bayesian smoothing toward a neutral prior keeps a thin record from reading as a damning zero, and members below three instances are not scored at all — but the top score being 50% is an artefact of coverage, not a finding about the council. Reading the per-instance lists is more informative than comparing the percentages until several more meetings have been examined at the same depth.</p>
-<hr />
-<h2>Proposing Changes</h2>
-<p>This document is the authoritative description of the scoring methodology. If you want to propose a new signal, adjusted weight, or different framing:</p>
-<ol>
-<li>Identify which tier the signal belongs to</li>
-<li>Describe the data source (transcript keyword, annotated agenda field, agenda item flag)</li>
-<li>Describe the direction of scoring (higher = better or worse for taxpayers?)</li>
-<li>Propose a weight relative to existing signals in that tier</li>
-</ol>
-<p>Send proposals to the maintainer. The underlying pipeline (<code>pipeline.py</code>) is modular — adding a new scoring function is straightforward once the signal is well-defined.</p>
   <div class="back"><a href="index.html">&larr; Back to the home page</a></div>
 </div>
 </body>

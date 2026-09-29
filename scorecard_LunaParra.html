@@ -79,6 +79,14 @@ body { background: #f0f2f5; display: flex; justify-content: center; }
    every one of them open so the audit trail is never silently absent from a
    printed or exported copy. The summary reuses the section's own heading — no
    new label is invented for the toggle. */
+/* The plain-language finding that leads each record section. The stat grid behind
+   it is one click away; this sentence is what a reader is meant to take. */
+.sec-lead { font-size: 13.5px; line-height: 1.6; color: #2c3e50; font-weight: 600;
+            margin: 0 0 10px; max-width: 62ch; }
+/* A retired measure kept on the page for transparency, marked so it cannot be
+   mistaken for a scoring input. */
+.sec-note { font-size: 11px; line-height: 1.6; color: #7f8c8d; margin: 6px 0 10px;
+            padding-left: 10px; border-left: 2px solid #dfe4ea; max-width: 62ch; }
 .disc { margin: 0; }
 .disc > summary { cursor: pointer; list-style: none; }
 .disc > summary::-webkit-details-marker { display: none; }
@@ -248,7 +256,7 @@ body { flex-direction: column !important; align-items: center !important; }
     </div>
     <div class="hdr-right">
       <div class="overall-label">Voter Alignment</div>
-      <div class="overall-grade grade-d">D+</div>
+      <div class="overall-grade grade-c">C</div>
       <div style='font-size:10px;color:#8899bb;margin-top:4px'>as of 2026-07-28</div>
     </div>
   </div>
@@ -264,39 +272,39 @@ body { flex-direction: column !important; align-items: center !important; }
           <div class="pillar-label">Fiscal Stewardship <span style="font-size:10px;color:#aab;font-weight:400">55%</span>
             <div class="pillar-desc">Votes, bills &amp; rhetoric on fiscal discipline</div>
           </div>
-          <div class="pillar-grade grade-f">F</div>
-          <div class="pillar-bar"><svg width="260" height="18" style="vertical-align:middle"><rect width="260" height="18" rx="4" fill="#ecf0f1"/><rect width="31" height="18" rx="4" fill="#e74c3c"/></svg></div>
-          <div class="pillar-pct">12%</div>
+          <div class="pillar-grade grade-d">D+</div>
+          <div class="pillar-bar"><svg width="260" height="18" style="vertical-align:middle"><rect width="260" height="18" rx="4" fill="#ecf0f1"/><rect width="90" height="18" rx="4" fill="#e67e22"/></svg></div>
+          <div class="pillar-pct">35%<span style="font-size:10px;font-weight:700;color:#e74c3c;margin-left:5px;white-space:nowrap">▼−3%</span></div>
         </div>
         <div class="pillar-row">
           <div class="pillar-label">Civic Focus <span style="font-size:10px;color:#aab;font-weight:400">25%</span>
-            <div class="pillar-desc">Share of speech on core city business</div>
+            <div class="pillar-desc">Share of authored items within Berkeley's proper role</div>
           </div>
-          <div class="pillar-grade grade-b">B+</div>
-          <div class="pillar-bar"><svg width="260" height="18" style="vertical-align:middle"><rect width="260" height="18" rx="4" fill="#ecf0f1"/><rect width="185" height="18" rx="4" fill="#2ecc71"/></svg></div>
-          <div class="pillar-pct">71%</div>
+          <div class="pillar-grade grade-a">A</div>
+          <div class="pillar-bar"><svg width="260" height="18" style="vertical-align:middle"><rect width="260" height="18" rx="4" fill="#ecf0f1"/><rect width="218" height="18" rx="4" fill="#2ecc71"/></svg></div>
+          <div class="pillar-pct">84%</div>
         </div>
         <div class="pillar-row">
           <div class="pillar-label">Legislative Skill <span style="font-size:10px;color:#aab;font-weight:400">10%</span>
             <div class="pillar-desc">Can this member move the needle?</div>
           </div>
-          <div class="pillar-grade grade-a">A</div>
-          <div class="pillar-bar"><svg width="260" height="18" style="vertical-align:middle"><rect width="260" height="18" rx="4" fill="#ecf0f1"/><rect width="220" height="18" rx="4" fill="#2ecc71"/></svg></div>
-          <div class="pillar-pct">85%</div>
+          <div class="pillar-grade grade-a">A−</div>
+          <div class="pillar-bar"><svg width="260" height="18" style="vertical-align:middle"><rect width="260" height="18" rx="4" fill="#ecf0f1"/><rect width="208" height="18" rx="4" fill="#2ecc71"/></svg></div>
+          <div class="pillar-pct">80%<span style="font-size:10px;font-weight:700;color:#e74c3c;margin-left:5px;white-space:nowrap">▼−5%</span></div>
         </div>
         <div class="pillar-row">
           <div class="pillar-label">Character <span style="font-size:10px;color:#aab;font-weight:400">10%</span>
             <div class="pillar-desc">Collegiality, humility &amp; restraint</div>
           </div>
-          <div class="pillar-grade grade-c">C−</div>
-          <div class="pillar-bar"><svg width="260" height="18" style="vertical-align:middle"><rect width="260" height="18" rx="4" fill="#ecf0f1"/><rect width="105" height="18" rx="4" fill="#e67e22"/></svg></div>
-          <div class="pillar-pct">40%</div>
+          <div class="pillar-grade grade-c">C+</div>
+          <div class="pillar-bar"><svg width="260" height="18" style="vertical-align:middle"><rect width="260" height="18" rx="4" fill="#ecf0f1"/><rect width="143" height="18" rx="4" fill="#3498db"/></svg></div>
+          <div class="pillar-pct">55%<span style="font-size:10px;font-weight:700;color:#27ae60;margin-left:5px;white-space:nowrap">▲+15%</span></div>
         </div>
   </div>
 
-  <div class="section why-grade"><div class="section-title">Why this grade — D+</div><p class="wg-unanimity">This council votes together: 86% of recorded votes were unanimous, and the two least-aligned members still agree 91% of the time. Comparing votes alone will not tell them apart. What follows is how this member got there.</p><div class="wg-bottom wg-lead"><p><strong>Present for everything and willing to dissent.</strong> She attended every session in the period, votes no more often than any colleague, and posts the council's highest Legislative Skill score &mdash; she can formulate a proposal and move it through the process. Those are real governing capacities.</p><p>The Legislative Skill pillar measures whether a member can advance council action. It does not assume every use of that ability advances Berkeley's core needs, and that distinction is why the overall grade is a D+ rather than better.</p><p>She authored eight discretionary agenda items, seven of which fall outside the city's control or authority, and 28% of her speaking time goes the same way. She posts the council's highest alignment with existing homeless-services spending against its second-lowest taxpayer score &mdash; support for the service model without a demand for evidence it is producing results.</p><p>The record also contains failures of ownership. She was in the room when the Oxford site was named in public comment and did not pursue it before the sale, an omission shared with every member. More specifically hers: she voted to remove the Police Accountability Board's director and then criticized the Council's commitment to police accountability, without reconciling the two. The grade is absolute, not curved. Activity earns credit here when it is directed at Berkeley's documented problems. Hers is directed elsewhere.</p></div><div class="wg-h wg-good">What LunaParra does well</div><ul class="wg-list"><li class="wg-i-good">Shows up. No missed sessions and no chronic lateness.</li><li class="wg-i-good">Present for every major binding budget vote in the period.</li><li class="wg-i-good">Can formulate and advance legislation — most of nine on legislative skill, with 8 discretionary items authored.</li></ul><div class="wg-h wg-bad">What went wrong</div><ul class="wg-list"><li class="wg-i-bad"><strong>Oxford Elementary Site — A Ready-Made Public Site Sold While the City Searched for Locations</strong> — was told and did not act. Rated major on the governance-failure scale.</li><li class="wg-i-bad">Defends the existing homeless-services spending without asking what it has achieved.</li><li class="wg-i-bad">28% of speaking time goes to matters outside the city's control or authority.</li><li class="wg-i-bad">Documented incidents of substance count against the grade, the heaviest being: Voted to fire the Police Accountability Director, then issued a statement she was 'concerned that the City and City Council does not prioritize or…. (5 such incidents are scored in total.)</li></ul><p class="wg-gap">This is built from the public record and it is not complete. Absence of a finding here means we have not documented one, not that none exists. Corrections and additions are welcome.</p></div>
+  <div class="section why-grade"><div class="section-title">Why this grade — C</div><p class="wg-unanimity">This council votes together: 85% of recorded votes were unanimous, and the two least-aligned members still agree 90% of the time. Comparing votes alone will not tell them apart. What follows is how this member got there.</p><div class="wg-bottom wg-lead"><p><strong>Present for everything and willing to dissent.</strong> She attended every session in the period, votes no more often than any colleague, and posts the council's highest Legislative Skill score &mdash; she can formulate a proposal and move it through the process. Those are real governing capacities.</p><p>The Legislative Skill pillar measures whether a member can advance council action. It does not assume every use of that ability advances Berkeley's core needs, and that distinction is why the overall grade is a D+ rather than better.</p><p>She authored eight discretionary agenda items, seven of which fall outside the city's control or authority, and 28% of her speaking time goes the same way. She posts the council's highest alignment with existing homeless-services spending against its second-lowest taxpayer score &mdash; support for the service model without a demand for evidence it is producing results.</p><p>The record also contains failures of ownership. She was in the room when the Oxford site was named in public comment and did not pursue it before the sale, an omission shared with every member. More specifically hers: she voted to remove the Police Accountability Board's director and then criticized the Council's commitment to police accountability, without reconciling the two. The grade is absolute, not curved. Activity earns credit here when it is directed at Berkeley's documented problems. Hers is directed elsewhere.</p></div><div class="wg-h wg-good">What LunaParra does well</div><ul class="wg-list"><li class="wg-i-good">Shows up. No missed sessions and no chronic lateness.</li><li class="wg-i-good">Present for every major binding budget vote in the period.</li><li class="wg-i-good">Can formulate and advance legislation — most of nine on legislative skill, with 8 discretionary items authored.</li></ul><div class="wg-h wg-bad">What went wrong</div><ul class="wg-list"><li class="wg-i-bad"><strong>Oxford Elementary Site — A Ready-Made Public Site Sold While the City Searched for Locations</strong> — was told and did not act. Rated major on the governance-failure scale.</li><li class="wg-i-bad">Defends the existing homeless-services spending without asking what it has achieved.</li><li class="wg-i-bad">34% of speaking time goes to matters outside the city's control or authority.</li><li class="wg-i-bad">Documented incidents of substance count against the grade, the heaviest being: Voted to fire the Police Accountability Director, then issued a statement she was 'concerned that the City and City Council does not prioritize or…. (5 such incidents are scored in total.)</li></ul><p class="wg-gap">This is built from the public record and it is not complete. Absence of a finding here means we have not documented one, not that none exists. Corrections and additions are welcome.</p></div>
 
-  <div class="mgf-notice"><div class="mgf-h">Material governance failures</div><p>These are decisions with consequences the city will carry for years. How a member showed up on these matters more than any number of routine votes.</p><ul><li><strong><a href="https://ericdf.github.io/berkeley-decision-project/hopkins-fire-review.html">Hopkins Street Fire Review Representation</a></strong> — 2026-07-28. Role: post notice ratifier (no score attributed).</li><li><strong><a href="https://ericdf.github.io/berkeley-decision-project/oxford-site.html">Oxford Elementary Site — A Ready-Made Public Site Sold While the City Searched for Locations</a></strong> — 2025-10-15. Role: notified nonactor (severity 8.4 of 14, major).</li><li><strong><a href="https://ericdf.github.io/berkeley-decision-project/public-safety-budget.html">FY2027-28 Budget — Fire Positions Restored, Police, Dispatch and Crisis Response Cut</a></strong> — 2026-06-23. Role: post notice ratifier (no score attributed).</li></ul><p class="mgf-foot"><a href="methodology.html">How a governance failure is defined and tested &rarr;</a></p></div>
+  <div class="mgf-notice"><div class="mgf-h">Material governance failures</div><p>These are decisions with consequences the city will carry for years. How a member showed up on these matters more than any number of routine votes.</p><ul><li><strong><a href="https://ericdf.github.io/berkeley-decision-project/hopkins-fire-review.html">Hopkins Street Fire Review Representation</a></strong> — 2026-07-28. Role: post notice ratifier (no score attributed).</li><li><strong><a href="https://ericdf.github.io/berkeley-decision-project/oxford-site.html">Oxford Elementary Site — A Ready-Made Public Site Sold While the City Searched for Locations</a></strong> — 2025-10-15. Role: notified nonactor (severity 8.4 of 14, major).</li><li><strong><a href="https://ericdf.github.io/berkeley-decision-project/public-safety-budget.html">FY2027-28 Budget — Fire Positions Restored, Police, Dispatch and Crisis Response Cut</a></strong> — 2026-06-23. Role: post notice ratifier (no score attributed).</li><li><strong><a href="https://ericdf.github.io/berkeley-decision-project/build-once.html">African American Holistic Resource Center — Capital Advanced Without a Resolved Operating Model</a></strong> — 2025-10-14. Role: notified nonactor (no score attributed).</li></ul><p class="mgf-foot"><a href="methodology.html">How a governance failure is defined and tested &rarr;</a></p></div>
 
 
   <div class="recent-inc-section">
@@ -459,7 +467,10 @@ body { flex-direction: column !important; align-items: center !important; }
 
   
   <div class="section">
-    <div class="section-title">Attendance — 74 Sessions (Annotated Agenda Record)<span class="evid-basis evid-official" data-tip="Drawn from annotated agenda PDFs and official city records. Not subject to interpretation — these are the facts as recorded.">Official record</span></div>
+    <div class="section-title">Attendance<span class="evid-basis evid-official" data-tip="Drawn from annotated agenda PDFs and official city records. Not subject to interpretation — these are the facts as recorded.">Official record</span></div>
+    <p class="sec-lead">Shows up. Across 74 sessions: 2 late arrivals.</p>
+    <details class="disc"><summary><span class="disc-lbl">Attendance — 74 sessions<span class="disc-hint">show the numbers</span></span></summary>
+    <div class="disc-body">
     <div style="font-size:10px;color:#7f8c8d;margin-bottom:10px;font-style:italic">
       Source: post-meeting annotated agenda PDFs — the authoritative attendance record.
       "Fully absent" = listed absent at roll call and never arrived.
@@ -496,11 +507,14 @@ body { flex-direction: column !important; align-items: center !important; }
         <div style="font-size:11px;font-weight:700;color:#27ae60">97%</div>
       </div>
     </div>
+    </div>
+    </details>
   </div>
 
   
   <div class="section">
     <div class="section-title">Major Fiscal Votes — 7 Binding Decisions<span class="evid-basis evid-official" data-tip="Drawn from annotated agenda PDFs and official city records. Not subject to interpretation — these are the facts as recorded.">Official record</span></div>
+    <p class="sec-lead">Present for every major fiscal vote, and voted yes on all of them.</p>
     <div style="font-size:10px;color:#7f8c8d;margin-bottom:10px;font-style:italic">
       Curated list of binding fiscal votes Dec 2024–Jul 2025. Source: annotated agenda PDFs.
     </div>
@@ -525,9 +539,12 @@ body { flex-direction: column !important; align-items: center !important; }
   </div>
 
   <div class="section">
-    <div class="section-title">Voting Record — 307 Items (Annotated Agenda)<span class="evid-basis evid-official" data-tip="Drawn from annotated agenda PDFs and official city records. Not subject to interpretation — these are the facts as recorded.">Official record</span></div>
+    <div class="section-title">Voting Record<span class="evid-basis evid-official" data-tip="Drawn from annotated agenda PDFs and official city records. Not subject to interpretation — these are the facts as recorded.">Official record</span></div>
+    <p class="sec-lead">Dissents more than most — 14 no votes. Across 271 recorded items: 14 no, 6 abstentions, 1 item-level absences.</p>
+    <details class="disc"><summary><span class="disc-lbl">Voting record — 271 items<span class="disc-hint">show the numbers</span></span></summary>
+    <div class="disc-body">
     <div style="font-size:10px;color:#7f8c8d;margin-bottom:8px;font-style:italic">
-      Source: annotated agenda PDFs across all 307 items with a parseable vote.
+      Source: annotated agenda PDFs across all 271 items with a parseable vote.
       Council block-vote rate: 92% — individual deviations are high-signal precisely because they are rare.
     </div>
     <div class="stat-grid">
@@ -548,10 +565,15 @@ body { flex-direction: column !important; align-items: center !important; }
         <div class="stat-lbl">Contested abstentions<br><em>(others voted no)</em></div>
       </div>
     </div>
+    </div>
+    </details>
   </div>
 
   <div class="section">
-    <div class="section-title">Agenda Impact &amp; Efficiency<span class="evid-basis evid-official" data-tip="Drawn from annotated agenda PDFs and official city records. Not subject to interpretation — these are the facts as recorded.">Official record</span></div>
+    <div class="section-title">Agenda Impact<span class="evid-basis evid-official" data-tip="Drawn from annotated agenda PDFs and official city records. Not subject to interpretation — these are the facts as recorded.">Official record</span></div>
+    <p class="sec-lead">Authors 8 discretionary items. 1 staff directions issued.</p>
+    <details class="disc"><summary><span class="disc-lbl">Agenda impact &amp; efficiency<span class="disc-hint">show the numbers</span></span></summary>
+    <div class="disc-body">
     <div class="stat-grid">
       <div class="stat-box">
         <div class="stat-val">8</div>
@@ -562,52 +584,62 @@ body { flex-direction: column !important; align-items: center !important; }
         <div class="stat-lbl">Staff Direction Volume<br>(40–80 hrs each, no opp-cost review)</div>
       </div>
       <div class="stat-box">
-        <div class="stat-val">27w</div>
-        <div class="stat-lbl">Avg words per turn<br>Rank #5 of 8</div>
+        <div class="stat-val">36w</div>
+        <div class="stat-lbl">Avg words per turn<br>Rank #7 of 8</div>
       </div>
       <div class="stat-box">
-        <div class="stat-val">2%</div>
+        <div class="stat-val">4%</div>
         <div class="stat-lbl">Turns &gt;200 words<br>(monologue territory)</div>
       </div>
     </div>
+    </div>
+    </details>
   </div>
 
   
   <div class="section">
-    <div class="section-title">Spending Votes — Roll-Call Record<span class="evid-basis evid-official" data-tip="Drawn from annotated agenda PDFs and official city records. Not subject to interpretation — these are the facts as recorded.">Official record</span></div>
+    <div class="section-title">Spending Votes<span class="evid-basis evid-official" data-tip="Drawn from annotated agenda PDFs and official city records. Not subject to interpretation — these are the facts as recorded.">Official record</span></div>
+    <p class="sec-lead">Approves essentially all spending that reaches a roll call. $7.7B approved, $1M opposed (100% yes).</p>
+    <details class="disc"><summary><span class="disc-lbl">Spending votes — roll-call record<span class="disc-hint">show the numbers</span></span></summary>
+    <div class="disc-body">
     <div style="font-size:10px;color:#7f8c8d;margin-bottom:8px;font-style:italic">
       Dollar amounts from agenda items matched to extracted roll-calls.
       Coverage is partial: unanimous voice votes and some formats not captured.
     </div>
-    <div class="stat-grid"><div class="stat-box"><div class="stat-val" style="color:#2c3e50">$7116.0M</div><div class="stat-lbl">Voted <b>YES</b> on<br>(54 spending votes)</div></div><div class="stat-box"><div class="stat-val" style="color:#27ae60">$1708.9M</div><div class="stat-lbl">Voted <b>NO</b> on<br>(dissent from block)</div></div><div class="stat-box"><div class="stat-val" style="color:#27ae60">81%</div><div class="stat-lbl">YES rate on<br>spending items</div></div></div>
+    <div class="stat-grid"><div class="stat-box"><div class="stat-val" style="color:#2c3e50">$7706.2M</div><div class="stat-lbl">Voted <b>YES</b> on<br>(33 spending votes)</div></div><div class="stat-box"><div class="stat-val" style="color:#27ae60">$650K</div><div class="stat-lbl">Voted <b>NO</b> on<br>(dissent from block)</div></div><div class="stat-box"><div class="stat-val" style="color:#7f8c8d">100%</div><div class="stat-lbl">YES rate on<br>spending items</div></div></div>
     <div style="margin-top:10px;padding:8px 12px;background:#f0f7ff;border-left:3px solid #3498db;border-radius:4px;font-size:12px;line-height:1.6"><b>Largest YES vote:</b> $1717.4M &nbsp;·&nbsp; 2026-07-07<br><span style="color:#555">FY 2027 Annual Appropriations Ordinance</span></div>
+    </div>
+    </details>
   </div>
 
   
   <div class="section">
-    <div class="section-title">Speech Content — What Was Said<span class="evid-basis evid-text" data-tip="Derived from keyword classification of attributed meeting transcripts, constituent communications, and member public statements. Full methodology at METHODOLOGY.md.">Text analysis</span></div>
+    <div class="section-title">Speech Content<span class="evid-basis evid-text" data-tip="Derived from keyword classification of attributed meeting transcripts, constituent communications, and member public statements. Full methodology at METHODOLOGY.md.">Text analysis</span></div>
+    <p class="sec-lead">Reaches for new revenue in debate without raising cost.</p>
+    <details class="disc"><summary><span class="disc-lbl">Speech content — what was said<span class="disc-hint">show the numbers</span></span></summary>
+    <div class="disc-body">
+    <!-- Core / non-core speech share removed 2026-08-10 with the keyword classifier.
+         Both were computed from the same topic blacklist, which matched police
+         oversight, surveillance procurement and tax policy as "non-core" — 43% of its
+         hits were municipal business. They fed no grade after the Category migration,
+         and a percentage on a scorecard reads as scored whatever the caption says.
+         Scope is now reported as authored Category 1/2/3 counts. See WASTE_AUDIT.md. -->
     <div class="stat-grid">
       <div class="stat-box">
-        <div class="stat-val">70%</div>
-        <div class="stat-lbl">Core agenda share<br>(budget, infrastructure, safety, housing)</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-val">28%</div>
-        <div class="stat-lbl">Non-core speech share<br>(foreign policy, ideological resolutions)</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-val">4</div>
-        <div class="stat-lbl">Fiscal concern mentions<br>(0.9 per 10k words)</div>
+        <div class="stat-val">0</div>
+        <div class="stat-lbl">Fiscal concern mentions<br>(0.0 per 10k words)</div>
       </div>
       <div class="stat-box">
         <div class="stat-val">1</div>
-        <div class="stat-lbl">New revenue mentions<br>(0.3 per 10k words; tax/bond advocacy)</div>
+        <div class="stat-lbl">New revenue mentions<br>(0.6 per 10k words; tax/bond advocacy)</div>
       </div>
     </div>
     <div style="font-size:10px;color:#7f8c8d;margin-top:8px;font-style:italic">
       Counts are decay-weighted (recent meetings count more than older ones).
       Source: attributed transcript speech.
     </div>
+    </div>
+    </details>
   </div>
 
   <div class="layer-divider">
@@ -617,7 +649,16 @@ body { flex-direction: column !important; align-items: center !important; }
 
   
   <div class="section">
-    <div class="section-title">Homeless Services Status-Quo Alignment<span class="evid-basis evid-text" data-tip="Derived from keyword classification of attributed meeting transcripts, constituent communications, and member public statements. Full methodology at METHODOLOGY.md.">Text analysis</span></div>
+    <div class="section-title">Homeless Services Status-Quo Alignment<span class="evid-basis evid-text" data-tip="Derived from keyword classification of attributed meeting transcripts, constituent communications, and member public statements. Full methodology at METHODOLOGY.md.">Descriptive &mdash; not scored</span></div>
+    <p class="sec-lead">Defends the existing homeless-services spending, without a comparable record of asking what it achieves.</p>
+    <p class="sec-note">This measure no longer affects any grade. It made one policy area
+    roughly a quarter of every composite, which embedded a policy preference in the
+    formula. Conduct on homeless services is now scored under the ordinary rules &mdash;
+    funding without outcome evidence under oversight, defending continuation without
+    examining alternatives under decision quality, seeking new resources without
+    examining existing spending under fiscal stewardship.</p>
+    <details class="disc"><summary><span class="disc-lbl">Homeless services alignment<span class="disc-hint">show the numbers</span></span></summary>
+    <div class="disc-body">
     <div style="font-size:10px;color:#7f8c8d;margin-bottom:8px;font-style:italic">
       According to the City Manager&rsquo;s Office, Berkeley spent $35M on homelessness-related
       activities in fiscal year 2024 (operating costs only; capital expenditures directed by the
@@ -638,13 +679,18 @@ body { flex-direction: column !important; align-items: center !important; }
         <div style="font-size:10px;color:#95a5a6;margin-top:2px">0 = reform-oriented &nbsp;·&nbsp; 100 = status-quo aligned</div>
       </div>
     </div>
-    <div style='margin-top:6px;font-size:11px;color:#555'>Rhetoric: <b>5</b> status-quo-aligned signals (<em>housing first, trauma-informed, unhoused neighbors&hellip;</em>) &nbsp;&nbsp;<b>0</b> accountability signals (<em>Grants Pass, cost-per-client, metrics&hellip;</em>)</div>
+    <div style='margin-top:6px;font-size:11px;color:#555'>Rhetoric: <b>3</b> status-quo-aligned signals (<em>housing first, trauma-informed, unhoused neighbors&hellip;</em>) &nbsp;&nbsp;<b>0</b> accountability signals (<em>Grants Pass, cost-per-client, metrics&hellip;</em>)</div>
     <div style='margin-top:4px;font-size:11px;color:#555'>Cosponsored/authored <b>1</b> homeless-services agenda item(s).</div>
+    </div>
+    </details>
   </div>
 
   
   <div class="section">
-    <div class="section-title">Agenda Behavior — Consent &amp; Action Calendars<span class="evid-basis evid-official" data-tip="Drawn from annotated agenda PDFs and official city records. Not subject to interpretation — these are the facts as recorded.">Official record</span></div>
+    <div class="section-title">Agenda Behavior<span class="evid-basis evid-official" data-tip="Drawn from annotated agenda PDFs and official city records. Not subject to interpretation — these are the facts as recorded.">Official record</span></div>
+    <p class="sec-lead">Authors 3 Category 3 items, all on the consent calendar.</p>
+    <details class="disc"><summary><span class="disc-lbl">Agenda behavior — consent &amp; action calendars<span class="disc-hint">show the numbers</span></span></summary>
+    <div class="disc-body">
     <div style="font-size:10px;color:#7f8c8d;margin-bottom:8px;line-height:1.6">
       Berkeley&rsquo;s council agenda is divided into two calendars. The <b>consent calendar</b>
       is a list of items voted on together as a single block, with no individual debate — a
@@ -656,17 +702,19 @@ body { flex-direction: column !important; align-items: center !important; }
     </div>
     <div style="font-size:11px;font-weight:600;color:#7f8c8d;text-transform:uppercase;
                 letter-spacing:.8px;margin-bottom:6px">Consent Calendar</div>
-    <div class="stat-grid"><div class="stat-box"><div class="stat-val" style="font-size:18px;color:#e74c3c">2</div><div class="stat-lbl" style="margin-top:4px">Off-mission items<br>buried in consent (authored)</div></div><div class="stat-box"><div class="stat-val" style="font-size:18px;color:#f39c12">2</div><div class="stat-lbl" style="margin-top:4px">Off-mission consent<br>items co-sponsored</div></div><div class="stat-box"><div class="stat-val" style="font-size:18px;color:#2c3e50">0</div><div class="stat-lbl" style="margin-top:4px">False &ldquo;None&rdquo; fiscal<br>claims (authored/cospon.)</div></div><div class="stat-box"><div class="stat-val" style="font-size:18px">$3,250</div><div class="stat-lbl" style="margin-top:4px">Discretionary relinquishments<br>(8 items from council budget)</div></div></div>
+    <div class="stat-grid"><div class="stat-box"><div class="stat-val" style="font-size:18px;color:#e74c3c">3</div><div class="stat-lbl" style="margin-top:4px">Category 3 items<br>authored on consent</div></div><div class="stat-box"><div class="stat-val" style="font-size:18px;color:#2c3e50">0</div><div class="stat-lbl" style="margin-top:4px">False &ldquo;None&rdquo; fiscal<br>claims (authored/cospon.)</div></div><div class="stat-box"><div class="stat-val" style="font-size:18px">$3,250</div><div class="stat-lbl" style="margin-top:4px">Discretionary relinquishments<br>(8 items from council budget)</div></div></div>
     <div style="font-size:11px;font-weight:600;color:#7f8c8d;text-transform:uppercase;
                 letter-spacing:.8px;margin:12px 0 6px">Action Calendar</div>
-    <div class="stat-grid"><div class="stat-box"><div class="stat-val" style="font-size:18px;color:#2c3e50">0</div><div class="stat-lbl" style="margin-top:4px">Off-mission items<br>brought to action calendar</div></div><div class="stat-box"><div class="stat-val" style="font-size:18px;color:#f39c12">1</div><div class="stat-lbl" style="margin-top:4px">Off-mission action<br>items co-sponsored</div></div><div class="stat-box"><div class="stat-val" style="font-size:18px;color:#e74c3c">$2,575,000</div><div class="stat-lbl" style="margin-top:4px">Budget referrals authored<br>on action calendar (2 items)</div></div></div>
-    <div style="margin-top:12px;padding:10px 12px;background:#fff5f5;border-left:3px solid #e74c3c;border-radius:4px;font-size:12px;line-height:1.6"><b style="color:#e74c3c">Fiscal Consistency Flag</b> — 3.76 fiscal-concern speeches vs. $2,575,000 authored in budget referrals<br><span style="color:#95a5a6;font-size:10.5px">3.76 fiscal-concern mentions in speeches; $2,575,000 in budget referrals authored on action calendar</span></div>
+    <div class="stat-grid"><div class="stat-box"><div class="stat-val" style="font-size:18px;color:#2c3e50">0</div><div class="stat-lbl" style="margin-top:4px">Category 3 items<br>brought to action calendar</div></div><div class="stat-box"><div class="stat-val" style="font-size:18px;color:#e74c3c">$2,575,000</div><div class="stat-lbl" style="margin-top:4px">Budget referrals authored<br>on action calendar (2 items)</div></div></div>
+    
+    </div>
+    </details>
   </div>
 
   
   <div class="section">
     <div class="section-title">Fiscal Stewardship Alignment — Score Breakdown<span class="evid-basis evid-text" data-tip="Combines official record data (votes, authorship) with text analysis (rhetoric signals). See METHODOLOGY.md for component weights.">Text analysis + official record</span></div>
-    <div class="fs-headline">Final score <span class="fs-headline-v">+0.123</span></div>
+    <div class="fs-headline">Final score <span class="fs-headline-v">+0.348</span></div>
     <details class="disc"><summary><span class="disc-lbl">Fiscal Stewardship Alignment — Score Breakdown<span class="disc-hint">show calculation</span></span></summary>
     <div class="disc-body">
     <div style="font-size:10px;color:#7f8c8d;margin-bottom:12px;line-height:1.6">
@@ -680,35 +728,30 @@ body { flex-direction: column !important; align-items: center !important; }
 
       <tr class="group-header"><td colspan="3">Base — from voting record and agenda behavior</td></tr>
       <tr class="data-row">
-        <td>HSA alignment</td>
-        <td class="note">HSA score 85.0/100 → inverse 15% → quadratic → 2.2% &nbsp;(75% weight)</td>
-        <td class="contrib pos">+0.733</td>
-      </tr>
-      <tr class="data-row">
         <td>Scope discipline</td>
-        <td class="note">Off-mission penalty 20.0% → discipline 80.0% &nbsp;(25% weight)</td>
-        <td class="contrib pos">+0.200</td>
+        <td class="note">Category 3 authorship 18.0% → scope discipline 82.0%</td>
+        <td class="contrib pos">+0.820</td>
       </tr>
       <tr class="subtotal">
         <td colspan="2">Raw score</td>
-        <td class="contrib">+0.217</td>
+        <td class="contrib">+0.820</td>
       </tr>
 
       <tr class="group-header"><td colspan="3">Adjustments — documented behaviors and penalties</td></tr>
       <tr class="data-row"><td>Incident record</td><td class="note">7 incidents, tier-weighted, capped ±0.30</td><td class="contrib neg">-0.300</td></tr>
       <tr class="data-row"><td>Audit silence</td><td class="note">streets rocky road 2025</td><td class="contrib neg">-0.040</td></tr>
-      <tr class="data-row"><td>New revenue preference penalty</td><td class="note">Revenue advocacy without companion reprioritization analysis</td><td class="contrib neg">-0.012</td></tr>
+      <tr class="data-row"><td>New revenue preference penalty</td><td class="note">Revenue advocacy without companion reprioritization analysis</td><td class="contrib neg">-0.021</td></tr>
       <tr class="data-row"><td>Fiscal referral penalty</td><td class="note">Bond/tax campaign direction (capped −0.09)</td><td class="contrib neg">-0.050</td></tr>
       <tr class="data-row"><td>Rhetoric penalty</td><td class="note">Fiscal concern rhetoric with no dissent votes (high HSA or serial fiscal-vote absence)</td><td class="contrib zero">—</td></tr>
 
       <tr class="total-row">
         <td colspan="2">Final score (kept within 0–100% range)</td>
-        <td class="contrib">+0.123</td>
+        <td class="contrib">+0.348</td>
       </tr>
     </table>
     <div style="margin-top:14px;padding:10px 12px;background:#f8f9fa;border-radius:6px;font-size:11.5px;color:#2c3e50">
-      <b>P1 speech share:</b> 0.9% of words spoken
-      (359 of 42,209 words) were in turns engaging with a
+      <b>P1 speech share:</b> 1.3% of words spoken
+      (282 of 22,166 words) were in turns engaging with a
       documented structural failure (structural deficit, infrastructure backlog,
       pension liability, investment non-compliance, reserve policy).
       This is a diagnostic — not yet incorporated into the composite score.
@@ -729,7 +772,7 @@ body { flex-direction: column !important; align-items: center !important; }
 
   <div class="footer">
     <span>Berkeley City Council Scorecard &nbsp;·&nbsp; Metrics explained in the <em>Berkeley City Council Scorecard Summary</em></span>
-    <span>Generated 2026-08-06</span>
+    <span>Generated 2026-09-29</span>
   </div>
 
 
